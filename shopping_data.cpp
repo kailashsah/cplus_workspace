@@ -143,7 +143,7 @@ void generateFiles(string input_file_name) {
 	fileAverage.close();
 
 	ofstream filePopular(strFilePopular);
-	for(auto item : highest_orders.rbegin())
+	for(auto item : highest_orders)
 		{
 
 		string write = item.second.first + "," + item.second.second;
