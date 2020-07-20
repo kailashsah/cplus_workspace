@@ -24,9 +24,9 @@ namespace norton {
 
 	}
 
+/*int main() {
+	norton::main();
+}*/
 }
 
-int main() {
-	norton::main();
-}
 
