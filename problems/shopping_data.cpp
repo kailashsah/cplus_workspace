@@ -162,9 +162,11 @@ namespace shopping_data {
 	}
 
 }
-/*int main ()
+/*
+int main ()
  {
  shopping_data::main();
  return 0;
-}*/
+}
+*/
 
