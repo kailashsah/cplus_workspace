@@ -10,7 +10,7 @@
 
 using namespace std;
 
-namespace tuple {
+namespace tuple_ {
 
 	void find_contact()
 	{
@@ -149,7 +149,6 @@ namespace tuple {
 
 	};
 
-	void row_number() ;
 	void row_number()
 	{
 		/* scenario
@@ -217,7 +216,7 @@ namespace tuple {
 
 	/*int main()
 	{
-	tuple::main();
+	tuple_::main();
 
 	}*/
 }
