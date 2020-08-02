@@ -105,7 +105,8 @@ namespace shopping_data {
 
 		product *var = NULL;
 		int orders_size = orders.size();
-		map<float, pair<string, string>> highest_orders; // get the highest average order
+		map<float, pair<string, string>> highest_orders; //(avg, (productname, brand))
+		// highest_orders -> get the highest average order
 
 		for (auto product_name : product_category) {
 			int order_sum = 0;
@@ -114,7 +115,7 @@ namespace shopping_data {
 			auto found = orders.equal_range(product_name);
 
 			for (auto it = found.first; it != found.second; it++) {
-				var = it->second;
+				var = it->second; // Product Object
 				order_sum += var->quantity;
 				if (max < var->quantity) {
 					max = var->quantity;
@@ -135,7 +136,7 @@ namespace shopping_data {
 
 		ofstream fileAverage(strFileAverage);
 		for (auto item : highest_orders) {
-			string write = item.second.first + "," + to_string(item.first);
+			string write = item.second.first + "," + to_string(item.first); // (product_name , avg)
 			fileAverage << write << endl;
 		}
 
@@ -144,7 +145,7 @@ namespace shopping_data {
 		ofstream filePopular(strFilePopular);
 		for (auto item : highest_orders) {
 
-			string write = item.second.first + "," + item.second.second;
+			string write = item.second.first + "," + item.second.second; // (product_name, brand)
 			filePopular << write << endl;
 		}
 		filePopular.close();
@@ -153,6 +154,7 @@ namespace shopping_data {
 
 	int main() {
 
+		cout << "shopping_data::main()" << endl;
 		string input_file_name = "input.csv";
 		//getline(cin, input_file_name);
 

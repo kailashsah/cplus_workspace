@@ -72,14 +72,14 @@ namespace thread_local_space {
 		// Create multiple threads.
 
 		for (i = 0; i < THREADCOUNT; i++) {
-			hThread[i] = CreateThread(NULL, // default security attributes
+			hThread[i] = (NULL, // default security attributes
 					0,                           // use default stack size
 					(LPTHREAD_START_ROUTINE) ThreadFunc, // thread function
 					NULL,                    // no thread function argument
 					0,                       // use default creation flags
 					&IDThread);              // returns thread identifier
 
-			// Check the return value for success.
+			// Check the return valuCreateThreade for success.
 			if (hThread[i] == NULL)
 				ErrorExit("CreateThread error\n");
 		}

@@ -55,6 +55,7 @@ namespace containers {
 
 	void forward_list_demo() {
 		forward_list<int> fl;
+
 		auto print = [&fl](int item) {
 			cout << setw(4) << item;
 			//for_each(fl.begin(), fl.end(), [](int a) {cout << setw(4) << a; });
@@ -82,7 +83,7 @@ namespace containers {
 
 		cout << endl;
 		cout << "after splice_after fl_1" << endl;
-		fl_1.splice_after(fl_1.begin(), fl_2);
+		fl_1.splice_after(fl_1.begin(), fl_2); // insert f2 after the position given
 		for_each(fl_1.begin(), fl_1.end(), print);
 
 	}
@@ -178,8 +179,10 @@ namespace containers {
 
 		cout << b1 << endl << b2 << endl;
 
+		cout << "after bitwise OR operation" << endl;
 		cout << (b1 ^ b2) << endl; // bitwise xor operation 0,0 = 1,1 -> 0  ||  1,0 = 0,1 -> 1
 
+		cout << "after bitwise OR operation storing in bitwise object" << endl;
 		b1 = b1 ^ b2;  // same output as above
 		cout << b1 << endl;
 
@@ -280,13 +283,13 @@ namespace containers {
 	int main() {
 
 		//linked_list();
-		//forward_list_demo();
+//		forward_list_demo();
 		//set_demo();
 		//deque_demo();
 		//find_elements_unordered_map();
 
 		//hash_demo();
-		//bit_set();
+//		bit_set();
 		//tuple_demo();
 		//map_basic();
 
@@ -296,8 +299,9 @@ namespace containers {
 
 }
 
-//int main()
-//{
-//	containers::main();
-//	return 0;
-//}
+/*
+int main() {
+	containers::main();
+	return 0;
+}
+*/

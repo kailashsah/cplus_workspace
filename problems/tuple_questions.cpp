@@ -271,18 +271,22 @@ namespace tuple_questions {
 
 	int main() {
 
+		cout << "tuple_questions::main()" ;
 		// search_contact();  // question (2)
 
 		//sum_plus_minus();  // question (3)
 
 		// row_number();  // question (4)
 
+		getchar();
 		return 0;
 	}
 
 }
 
+/*
 int main() {
 	tuple_questions::main();
 
 }
+*/
