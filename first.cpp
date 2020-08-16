@@ -44,7 +44,45 @@ namespace test {
 		}
 	};
 
+	class Int1 {
+	public:
+		int x = 0;
+
+		Int1() {
+			cout << "const";
+		}
+//	public:
+//				virtual ~Int1() =0;
+
+	};
+
+//	Int1::~Int1(){}
+	class Int2: public Int1 {
+
+	};
+
+	int foo(int n) {
+
+		cout << "I am function pointer" << endl;
+		return 0;
+	}
+
+	void function_pointer() {
+		int (*fp)(int) = foo;
+		fp(0);
+		(*fp)(1);
+	}
+
 	void conversion_ctr() {
+
+		{
+			int count = 5;
+
+			while (count-- > 0) {
+			}
+		}
+
+		Int1 obj1(); // creation of object
 
 		Int obj(7);
 		obj = 8; // conversion constructor
@@ -54,7 +92,9 @@ namespace test {
 		s = static_cast<string>(obj);
 
 		cout << s << endl;
+
 	}
+
 // -----------------------------------------------------
 	/*
 	 class abc
@@ -583,12 +623,15 @@ namespace test {
 
 //		unique_ptr_demo();
 //		conversion_ctr();
+		function_pointer();
 
 		getchar();
 	}
 
 }
+/*
 int main() {
 	test::main();
 	return 0;
 }
+*/
