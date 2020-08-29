@@ -3,7 +3,8 @@
 #include <cstring>
 #include <algorithm>
 #include <functional>
-
+#include <chrono>
+#include <thread>
 using namespace std;
 
 namespace student_candies_inc {
@@ -92,8 +93,15 @@ namespace student_candies_inc {
 
 			int candies = stoi(x_temp);
 
+			auto beg = std::chrono::high_resolution_clock::now();
+
 			int *result = assign(student /*student*/, candies /*candies*/);
+			_sleep(0);
+			//std::this_thread::sleep_for(chrono::milliseconds(20000) );
+			auto end = std::chrono::high_resolution_clock::now();
 			cout << endl;
+			cout << "total time : ";
+			cout << chrono::duration_cast<chrono::milliseconds>(end - beg).count()<<  endl;
 
 			do {
 				cout << "enter x to terminate, otherwise any key : ";
@@ -107,6 +115,7 @@ namespace student_candies_inc {
 		return 0;
 	}
 }
+
 
 int main()
 {

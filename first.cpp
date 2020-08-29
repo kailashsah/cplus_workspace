@@ -614,6 +614,14 @@ namespace test {
 	 // -
 	 // -----------------------------------------------------
 	 */
+
+
+	template <typename ... T>
+	auto sum_variadic_template (const T& ... param)
+	{
+		return (param + ...);
+	}
+
 	int main() {
 
 		cout << "test::main()" << endl;
@@ -623,15 +631,19 @@ namespace test {
 
 //		unique_ptr_demo();
 //		conversion_ctr();
-		function_pointer();
+//		function_pointer();
+
+		cout << sum_variadic_template (1,2,3) << endl;
 
 		getchar();
 	}
 
 }
 /*
+
 int main() {
 	test::main();
 	return 0;
 }
 */
+
