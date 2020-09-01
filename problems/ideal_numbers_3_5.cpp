@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <functional>
 #include <fstream>
+#include <cstdlib>
 
 #define _CRT_SECURE_NO_WARNINGS
 using namespace std;
@@ -53,7 +54,7 @@ namespace ideal_num_3_5 {
 		char *path;
 		size_t len;
 		//getenv(path, &len, "OUTPUT_PATH");
-		path = getenv("OUTPUT_PATH");
+		path = std::getenv("OUTPUT_PATH");
 		//ofstream fout(getenv("OUTPUT_PATH"));
 		/*ofstream fout(path);
 

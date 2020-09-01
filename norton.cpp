@@ -22,6 +22,7 @@ namespace norton {
 
 		getchar();
 
+		return 0;
 	}
 
 /*int main() {

@@ -5,6 +5,7 @@
 #include <functional>
 #include <chrono>
 #include <thread>
+#include <string> // getline()
 using namespace std;
 
 namespace student_candies_inc {
@@ -96,7 +97,7 @@ namespace student_candies_inc {
 			auto beg = std::chrono::high_resolution_clock::now();
 
 			int *result = assign(student /*student*/, candies /*candies*/);
-			_sleep(0);
+//			_sleep(0);
 			//std::this_thread::sleep_for(chrono::milliseconds(20000) );
 			auto end = std::chrono::high_resolution_clock::now();
 			cout << endl;
@@ -117,8 +118,10 @@ namespace student_candies_inc {
 }
 
 
+/*
 int main()
 {
 	student_candies_inc ::main();
 	return 0;
 }
+*/

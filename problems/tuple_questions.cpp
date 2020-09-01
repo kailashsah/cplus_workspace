@@ -6,6 +6,8 @@
 #include <numeric>
 #include <algorithm>
 #include <list>
+#include <utility> 
+#include <functional> // ptr_fun()
 
 using namespace std;
 

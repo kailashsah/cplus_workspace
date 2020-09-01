@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include  <cstring>
+#include <string>
 using namespace std;
 
 namespace student_candies {

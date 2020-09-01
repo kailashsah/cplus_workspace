@@ -4,6 +4,7 @@
 #include <algorithm>
 #include "conio.h"
 #include <memory>
+#include <string> // to_string()
 
 using namespace std;
 
@@ -40,7 +41,7 @@ namespace test {
 		}
 		operator string() // conversion operator
 		{
-			to_string(x);
+			return to_string(x);
 		}
 	};
 
@@ -616,10 +617,29 @@ namespace test {
 	 */
 
 
+	/*
+	// c++ 20
 	template <typename ... T>
 	auto sum_variadic_template (const T& ... param)
 	{
 		return (param + ...);
+	}*/
+
+	void structure()
+	{
+		struct ABC {
+			 int a;
+			//ABC() :a{10} {};
+			//ABC() :a( 10 ) {};
+		};
+
+		struct ABC objSt;
+		struct ABC *ptrSt;
+		struct ABC *ptrSt_1 = NULL;
+
+		struct ABC *ptrSt_2 = new ABC;
+		cout << ptrSt_2->a << endl;
+		delete ptrSt_2;
 	}
 
 	int main() {
@@ -633,17 +653,19 @@ namespace test {
 //		conversion_ctr();
 //		function_pointer();
 
-		cout << sum_variadic_template (1,2,3) << endl;
+		//cout << sum_variadic_template (1,2,3) << endl; // c++20
 
+		structure();
 		getchar();
+		return 0;
 	}
 
 }
-/*
+
 
 int main() {
 	test::main();
 	return 0;
 }
-*/
+
 
