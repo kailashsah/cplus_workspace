@@ -662,10 +662,11 @@ namespace test {
 
 }
 
-
+/*
 int main() {
 	test::main();
 	return 0;
 }
+*/
 
 
