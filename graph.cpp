@@ -170,12 +170,14 @@ namespace dfs_search {
 
 }
 
-
+/*
 int main ()
 {
 	dfs_search::main();
 	getchar();
 	return 0;
 }
+*/
+
 
 
