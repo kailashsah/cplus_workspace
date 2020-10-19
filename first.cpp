@@ -641,6 +641,19 @@ namespace test {
 		cout << ptrSt_2->a << endl;
 		delete ptrSt_2;
 	}
+	int func_ret_0()
+	{
+		return 1;
+	}
+	void callee_check_return()
+	{
+		int rc = -1;
+		if ((rc = func_ret_0()) > 0)
+			cout << "rc is greater than zero" << endl;
+		else
+			cout << "rc is lesser than zero" << endl;
+
+	}
 
 	int main() {
 
@@ -655,7 +668,8 @@ namespace test {
 
 		//cout << sum_variadic_template (1,2,3) << endl; // c++20
 
-		structure();
+		//structure();
+		callee_check_return();
 		getchar();
 		return 0;
 	}
