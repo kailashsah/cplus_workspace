@@ -145,6 +145,7 @@
     <ClCompile Include="src\ds_multiset_range.cpp" />
     <ClCompile Include="src\inheritance.cpp" />
     <ClCompile Include="src\is_pointer_src.cpp" />
+    <ClCompile Include="src\misc.cpp" />
     <ClCompile Include="src\misc_11.cpp" />
     <ClCompile Include="src\mix.cpp" />
     <ClCompile Include="src\shared_ptr.cpp" />
