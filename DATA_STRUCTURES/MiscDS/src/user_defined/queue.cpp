@@ -27,6 +27,7 @@ int dequeue()
 	}
 	return elem;
 }
+
 void run_queue() {
 	int i, n = 0, x, elem;
 	char ch[100];
