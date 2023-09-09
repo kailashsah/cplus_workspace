@@ -140,6 +140,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="bit_cast.cpp" />
+    <ClCompile Include="constexpr.cpp" />
     <ClCompile Include="Misc20.cpp" />
     <ClCompile Include="src\atomic_shared.cppm" />
     <ClCompile Include="src\atomic_shared_impl.cppm" />

@@ -122,7 +122,7 @@ int run_ref()
 //.................................................
 
 class B { public: int i; };
-void run_vector()
+void run_vectorr()
 {
 	vector <B*> vec;
 	B* c = nullptr;

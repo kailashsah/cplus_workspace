@@ -76,7 +76,7 @@ void run_unique_ptr()
 }
 //.................................................
 void shared(shared_ptr<Base> baseObj);
-void run_shared_ptr(){
+void run_shared_ptrr(){
     shared_ptr<Base> baseObj{ new Derived() };
     baseObj->foo();
     shared(baseObj);

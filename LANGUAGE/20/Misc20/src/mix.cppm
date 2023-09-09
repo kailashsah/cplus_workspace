@@ -17,6 +17,10 @@ using namespace std;
 // explicit(bool), ctor made explicit at compile time
 // run_explicit_bool();
 // mid point
+constexpr int addOne(int n)
+{
+	return [n] { return n + 1; }();
+}
 
 ////////////////////////  // map contains
 void run_map()

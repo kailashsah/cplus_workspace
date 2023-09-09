@@ -141,7 +141,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Misc17.cpp" />
-    <ClCompile Include="misc_17.cpp" />
+    <ClCompile Include="static_inline.cpp" />
+    <ClCompile Include="variants.cpp" />
     <ClCompile Include="templ_integer_seq.cpp" />
     <ClCompile Include="templ_templ_argument.cpp" />
   </ItemGroup>
