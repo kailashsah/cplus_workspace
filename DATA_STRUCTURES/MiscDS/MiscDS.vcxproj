@@ -143,7 +143,9 @@
     <ClCompile Include="array.cpp" />
     <ClCompile Include="list.cpp" />
     <ClCompile Include="MiscDS.cpp" />
+    <ClCompile Include="src\library_defined\map.cpp" />
     <ClCompile Include="src\library_defined\priority_queue.cpp" />
+    <ClCompile Include="src\library_defined\set.cpp" />
     <ClCompile Include="src\user_defined\graph_cycle.cpp" />
     <ClCompile Include="src\user_defined\linkedlist.cpp" />
     <ClCompile Include="src\user_defined\queue.cpp" />

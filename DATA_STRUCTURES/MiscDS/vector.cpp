@@ -49,3 +49,63 @@ void vector_2D_array() {
 
 
 }
+//.................................................
+
+void vec_impl()
+{
+
+	std::string cs = "hello";
+	vector<int> veci = { 1,2,5,2,4,5 };
+	//veci.push_back(5);
+	//veci.pop_back();
+	veci.insert(veci.begin(), { 55, 66, 77 });
+	veci.at(3);
+	veci.emplace_back(88);
+
+	// iterate &  erase
+	for (auto it = veci.begin(); it != veci.end(); ) {
+		it = find(it, veci.end(), 5);
+
+		if (it != veci.end())
+		{
+			cout << "found:" << it - veci.begin() << endl;
+			it = veci.erase(it);
+			//it++;
+		}
+	}
+
+	// erase if 2 is found
+	/*for (auto it = veci.begin(); it < veci.end();)
+	{
+
+		if (*it == 2)
+		{
+			it = veci.erase(it);
+
+		}
+		else
+			it++;
+
+
+	}*/
+
+	// print
+	for (auto n : veci) {
+		cout << n << "\n";
+	}
+
+	cout << cs << endl;
+
+
+}
+void print(int a)
+{
+	// used in vector_for_each()
+	cout << " " << a;
+}
+void vector_for_each()
+{
+	vector<int> v_int = { 1,2,3,6,5 };
+	for_each(v_int.begin(), v_int.end(), print);
+	for_each(v_int.begin(), v_int.end(), [](int& a) { cout << " " << a; });
+}
