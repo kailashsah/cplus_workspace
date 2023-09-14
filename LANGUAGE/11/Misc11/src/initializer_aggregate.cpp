@@ -28,23 +28,23 @@ void run_aggregate_initialization()
 	b = a; // assignment
 
 
-	//A a = A( 1, 2 );// ctor 2 param
-	//A a = { 1, 2 }; // ctor 2 param, if ini list not present
-	//A a = A{ 1, 2 }; // ctor 2 param , if ini list not present
-	//A a{ 1, 2 }; // ctor 2 param, if no ini list
-	//A a{ 1, 2, 3 }; // ini list
-	//A a = A{ 1 }; // ctor 1 param
+	A a1 = A( 1, 2 );// ctor 2 param
+	A a2 = { 1, 2 }; // ctor 2 param, if ini list not present
+	A a3 = A{ 1, 2 }; // ctor 2 param , if ini list not present
+	A a4{ 1, 2 }; // ctor 2 param, if no ini list
+	//A a5{ 1, 2, 3 }; // ini list // todo
+	A a6 = A{ 1 }; // ctor 1 param
 
-	//A a { 1 }; // ctor 1 param
-	//A a(1); // ok 
+	A a7 { 1 }; // ctor 1 param
+	A a8(1); // ok 
 
-	//A a; // default 
-	//a = A{ 1 }; // ctor 1 param -> m assign
-	//a = A(1); // same
+	A a9; // default 
+	a9 = A{ 1 }; // ctor 1 param -> m assign
+	a9 = A(1); // same
 }
 
 //int main()
 //{
-//	run_virtual_static();
+//	run_aggregate_initialization();
 //	return 0;	
 //}
