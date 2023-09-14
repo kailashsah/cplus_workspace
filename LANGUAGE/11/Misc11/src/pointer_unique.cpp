@@ -18,7 +18,7 @@ void uniqueptr()
 	// 2.	
 	unique_ptr<int[]> arr_one{ new int[10] }; //ok
 	
-	// 3. ptr pointint to int array[] 
+	// 3. ptr pointing to int array[] 
 	unique_ptr<int[]> arr = make_unique<int[]>(10);			//ok
 	cout << "Garbage value held by 10 as unique ptr array : ";
 	for (int i{}; i < 10; ++i) 

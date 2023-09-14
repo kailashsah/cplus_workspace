@@ -16,7 +16,7 @@ int fun(int* ptr)
 
 
 
-int fuc_caller(void)
+int const_modify(void)
 {
 	const int val = 10;
 	const int* ptr = &val;
@@ -34,4 +34,9 @@ int volatile_func(void)
 	int* c1 = const_cast <int*> (b1); // const_cast  also removes the volatile from variable
 	cout << "typeid of c1 " << typeid(c1).name() << '\n';
 	return 0;
+}
+
+void run_const_cast() {
+	volatile_func();
+	const_modify();
 }

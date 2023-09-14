@@ -102,6 +102,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -143,16 +144,37 @@
     <ClCompile Include="Misc11.cpp" />
     <ClCompile Include="move_constructor.cpp" />
     <ClCompile Include="r_value.cpp" />
-    <ClCompile Include="src\unique_ptr.cpp" />
+    <ClCompile Include="src\class_member.cpp" />
+    <ClCompile Include="src\initializer_aggregate.cpp" />
+    <ClCompile Include="src\type_alias.cpp" />
+    <ClCompile Include="src\cast_static.cpp" />
+    <ClCompile Include="src\conversion_operator.cpp" />
+    <ClCompile Include="src\draft.cpp" />
+    <ClCompile Include="src\exception.cpp" />
+    <ClCompile Include="src\exception_two.cpp" />
+    <ClCompile Include="src\iterator_istream.cpp" />
+    <ClCompile Include="src\pointers.cpp" />
+    <ClCompile Include="src\pointer_shared_cyclic_dep.cpp" />
+    <ClCompile Include="src\pointer_shared_two.cpp" />
+    <ClCompile Include="src\pointer_unique_two.cpp" />
+    <ClCompile Include="src\static_object.cpp" />
+    <ClCompile Include="src\struct.cpp" />
+    <ClCompile Include="src\template.cpp" />
+    <ClCompile Include="src\pointer_unique.cpp" />
     <ClCompile Include="src\ds_multiset_range.cpp" />
     <ClCompile Include="src\inheritance.cpp" />
     <ClCompile Include="src\is_pointer_src.cpp" />
-    <ClCompile Include="src\misc.cpp" />
-    <ClCompile Include="src\misc_11.cpp" />
     <ClCompile Include="src\mix.cpp" />
-    <ClCompile Include="src\shared_ptr.cpp" />
+    <ClCompile Include="src\pointer_shared.cpp" />
+    <ClCompile Include="src\template_two.cpp" />
     <ClCompile Include="src\test_shallowcopy.cpp" />
     <ClCompile Include="src\tutorial.cpp" />
+    <ClCompile Include="src\type_decltype.cpp" />
+    <ClCompile Include="src\version_cplus.cpp" />
+    <ClCompile Include="src\virtual_inheritance.cpp" />
+    <ClCompile Include="src\virtual_inheritance_three.cpp" />
+    <ClCompile Include="src\virtual_inheritance_two.cpp" />
+    <ClCompile Include="src\virtual_static.cpp" />
     <ClCompile Include="string.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
