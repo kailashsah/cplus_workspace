@@ -30,7 +30,7 @@ void run_stack_as_array() {
 	int q;
 	int type, cost;
 	scanf_s("%d", &q);
-	while (q>0)
+	while (q > 0)
 	{
 		scanf_s("%d", &type);
 

@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="MiscDPattern.cpp" />
     <ClCompile Include="src\crtp.cpp" />
+    <ClCompile Include="virtual_constructor.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

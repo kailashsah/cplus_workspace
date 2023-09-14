@@ -10,14 +10,14 @@ struct Node
 
 };
 
-Node* newNode(int i )
+Node* newNode(int i)
 {
 	Node* p = new Node;
 	p->i = i;
 	p->left = nullptr;
 	p->right = nullptr;
 	return p;
-   
+
 }
 
 #include <queue>
@@ -44,7 +44,7 @@ int checkHalves(Node* node, int sum, int& ans)
 	int l = 0, r = 0;
 	if (node == nullptr)
 		return 0;
-	
+
 	if (node->left)
 	{
 		l = checkHalves(node->left, sum, ans);
@@ -87,7 +87,7 @@ Node* insertHalfTree()
 	root->left = newNode(-1);
 	root->right = newNode(-1);
 
-	
+
 	root->right->right = newNode(1);
 	return root;
 }

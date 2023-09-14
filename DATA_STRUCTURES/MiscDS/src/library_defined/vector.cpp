@@ -45,15 +45,11 @@ void vector_2D_array() {
 		cout << row[0] << " " << row[1];
 		cout << endl;
 	}
-
-
-
 }
 //.................................................
 
 void vec_impl()
 {
-
 	std::string cs = "hello";
 	vector<int> veci = { 1,2,5,2,4,5 };
 	//veci.push_back(5);
@@ -85,17 +81,13 @@ void vec_impl()
 		}
 		else
 			it++;
-
-
 	}*/
 
 	// print
 	for (auto n : veci) {
 		cout << n << "\n";
 	}
-
 	cout << cs << endl;
-
 
 }
 void print(int a)
@@ -103,9 +95,56 @@ void print(int a)
 	// used in vector_for_each()
 	cout << " " << a;
 }
-void vector_for_each()
+void vector_for_each_one()
 {
 	vector<int> v_int = { 1,2,3,6,5 };
 	for_each(v_int.begin(), v_int.end(), print);
 	for_each(v_int.begin(), v_int.end(), [](int& a) { cout << " " << a; });
+
 }
+
+void vector_for_each_two() {
+	std::vector<double> v{ 1.0, 2.2, 4.0, 5.5, 7.2 };
+	double r = 4.0;
+	std::for_each(v.begin(), v.end(), [&](double& v)
+		{ v += r; });
+	std::for_each(v.begin(), v.end(), [](double v) { std::cout << v << " "; });
+
+}
+class Person {};
+void vector_size() {
+
+	vector<int> vec;
+	cout << vec.max_size() << endl;
+	vector <Person> v_per;
+	cout << sizeof(Person) << endl;
+	cout << v_per.max_size() << endl;
+}
+
+void vector_swap() {
+	// swap in vectors
+	vector<int> n{ 1,2,3 };
+	vector<int> p;
+	cout << "n size: " << n.size() << endl;
+	n.swap(p);
+	cout << n.size() << endl;
+	cout << p.size() << endl;
+	for_each(p.begin(), p.end(), [](const int i) { cout << i; });
+
+}
+void run_vector()
+{
+	fill_array();
+	vector_2D_array();
+	vec_impl();
+	vector_for_each_one();
+	vector_for_each_two();
+	vector_size();
+	vector_swap();
+}
+
+//int main()
+//{
+//	run_vector();
+//	return 0;	
+//}
