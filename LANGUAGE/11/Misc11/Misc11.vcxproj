@@ -162,7 +162,7 @@
     <ClCompile Include="src\template.cpp" />
     <ClCompile Include="src\pointer_unique.cpp" />
     <ClCompile Include="src\ds_multiset_range.cpp" />
-    <ClCompile Include="src\inheritance.cpp" />
+    <ClCompile Include="src\cast_dynamic.cpp" />
     <ClCompile Include="src\is_pointer_src.cpp" />
     <ClCompile Include="src\mix.cpp" />
     <ClCompile Include="src\pointer_shared.cpp" />

@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 
+/*
+	https://www.learncpp.com/cpp-tutorial/struct-aggregate-initialization/ 
+*/
 class A
 {
 	int i;
