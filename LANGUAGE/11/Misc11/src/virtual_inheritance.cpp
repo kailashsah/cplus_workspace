@@ -1,15 +1,15 @@
 #include <iostream>
 using namespace std;
 
-class A
+class InheritBase
 {
 public:
-	virtual ~A() {}
+	virtual ~InheritBase() {}
 	virtual void foo() { cout << endl; cout << "A::foo()"; }
 	virtual void bar() {}
 };
 
-class B : public virtual A
+class B : public virtual InheritBase
 {
 
 public:
@@ -17,7 +17,7 @@ public:
 
 
 };
-class C : public virtual A
+class C : public virtual InheritBase
 {
 public:
 	void bar() { cout << endl; printf("\n c::bar"); }
@@ -35,12 +35,12 @@ void run_virtual_inheritance() {
 	obj.foo();
 
 	//
-	A* ptr = new A();
+	InheritBase* ptr = new InheritBase();
 	B* ptrD = dynamic_cast <B*> (ptr);
 	ptrD->test();
 
 	//
-	A* obj_A = new D();
+	InheritBase* obj_A = new D();
 	obj_A->foo();
 }
 

@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 
-class A {
+class TryException {
 public:
-    ~A() noexcept(false)
+    ~TryException() noexcept(false)
     {
         cout << "dtor" << endl;
         /*
@@ -25,8 +25,8 @@ public:
 void run_dtor_exception()
 {
     try {
-        A a;
-        A b;
+        TryException a;
+        TryException b;
         cout << "inside try" << endl;
         // dtor called for a, b
     }

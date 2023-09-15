@@ -99,11 +99,10 @@ void run_main() {
 	run_templates();
 }
 
-int main()
-{
-	run_main();
-	
-	return 0;
-}
+//int main()
+//{
+//	run_main();
+//	return 0;
+//}
 
 

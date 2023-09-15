@@ -9,7 +9,7 @@ class A
 	int i;
 	int y;
 public:
-	A() { cout << "default ctor"; };
+	A() { cout << "default ctor1"; };
 	A(int i) {
 		cout << "ctor 1 param" << endl;
 	}
@@ -21,6 +21,7 @@ public:
 	//A(initializer_list<int>) { cout << "ini list " << endl; }
 
 };
+
 void run_aggregate_initialization()
 {
 	A a = A(1,2);// ctor 2 param
