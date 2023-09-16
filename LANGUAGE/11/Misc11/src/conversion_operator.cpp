@@ -42,8 +42,9 @@ void run_conversion_operator()
 	Int obj(3);
 
 	//1.
+	cout << endl << "//1. operator string(): " << endl;
 	string str = obj; // conversion op
-	cout << endl << "//1. operator string(): " << str << endl;
+	cout << str << endl;
 
 	//2.
 	cout << endl << "//2. obj assignment" << endl;
@@ -72,12 +73,12 @@ void run_conversion_operator()
 		}
 	*/
 
-	cout << endl << "//5. string str2 = static_cast<string>(obj); - " ;
+	cout << endl << "//5. string str2 = static_cast<string>(obj); - ";
 	string str2 = static_cast<string>(obj); cout << str2 << endl;
 	/*
 		translated into -- string str2 = static_cast<string>(	static_cast<string>(obj.operator string())	);
 	*/
-	
+
 	cout << endl << "//6. obj = static_cast<Int>(40);; - ";
 	obj = static_cast<Int>(40); // obj.operator=(static_cast<Int>(Int(40))); // it create temp obj first
 	obj.print();
@@ -88,3 +89,31 @@ int main()
 	run_conversion_operator();
 	return 0;
 }
+
+/*
+	Parameterized Ctor called
+
+	//1. operator string():
+	Conversion Operator
+	3
+
+	//2. obj assignment
+	Parameterized Ctor called
+	assignment called
+	dtor called for x: 20
+	value of obj.x : 20
+
+	//3. move()
+	Parameterized Ctor called
+	assignment called
+	dtor called for x: 30
+
+	//5. string str2 = static_cast<string>(obj); - Conversion Operator
+	30
+
+	//6. obj = static_cast<Int>(40);; - Parameterized Ctor called
+	assignment called
+	dtor called for x: 40
+	value of obj.x : 40
+	dtor called for x: 40
+*/
