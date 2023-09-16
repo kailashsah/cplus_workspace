@@ -24,19 +24,45 @@ int const_modify(void)
 	cout << fun(ptr1);
 	cout << endl;
 	return 0;
+
+	/*
+		output -
+		20
+	*/
 }
 //.................................................
 int volatile_func(void)
 {
 	int a1 = 40;
 	const volatile int* b1 = &a1;
-	cout << "typeid of b1 " << typeid(b1).name() << '\n';
+	cout << "typeid of b1 (const volatile int* b1 = &a1;) :  " << typeid(b1).name() << '\n' << endl;
+
+	// 1.
 	int* c1 = const_cast <int*> (b1); // const_cast  also removes the volatile from variable
-	cout << "typeid of c1 " << typeid(c1).name() << '\n';
+	cout << "typeid of c1 (int* c1 = const_cast <int*> (b1)) :  " << typeid(c1).name() << '\n';
+	
+	// 2. 
+	//int* c1 = static_cast <int*> (b1);
+	/*
+		Error	C2440	'static_cast': cannot convert from 'volatile const int *' to 'int *'
+	*/	
 	return 0;
+
+	/*
+		output -
+		typeid of b1 (const volatile int* b1 = &a1;) :  int const volatile *
+
+		typeid of c1 (int* c1 = const_cast <int*> (b1)) :  int *
+	*/
 }
 
 void run_const_cast() {
 	volatile_func();
 	const_modify();
 }
+
+//int main()
+//{
+//	run_const_cast();
+//	return 0;
+//}

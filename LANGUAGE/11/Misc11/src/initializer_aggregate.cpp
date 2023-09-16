@@ -17,7 +17,10 @@ public:
 	A(const A&) { cout << "copy" << endl; }
 	A(A&&) { cout << "move" << endl; }
 	A& operator=(A&&) { cout << "m assign" << endl; return *this; }
-	A& operator=(const A&) { cout << "assign" << endl; }
+	A& operator=(const A&) { 
+		cout << "assign" << endl; 
+		return *this;
+	}
 	//A(initializer_list<int>) { cout << "ini list " << endl; }
 
 };
