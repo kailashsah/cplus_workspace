@@ -1,6 +1,10 @@
 #include <iostream>
 using namespace std;
 
+/*
+	Objects are stored in a stack during static initialization and have an automatic storage duration, i.e., the object will be destroyed automatically at the end of the scope, but during dynamic initialization, objects are stored in a heap and we must manually delete the object after use.
+
+*/
 class TryStaticBase
 {
 	int x;

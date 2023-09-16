@@ -88,6 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,6 +147,8 @@
     <ClCompile Include="r_value.cpp" />
     <ClCompile Include="src\class_member.cpp" />
     <ClCompile Include="src\initializer_aggregate.cpp" />
+    <ClCompile Include="src\template_lazy.cpp" />
+    <ClCompile Include="src\template_lazy_initialization.cpp" />
     <ClCompile Include="src\type_alias.cpp" />
     <ClCompile Include="src\cast_static.cpp" />
     <ClCompile Include="src\conversion_operator.cpp" />
@@ -161,7 +164,6 @@
     <ClCompile Include="src\struct.cpp" />
     <ClCompile Include="src\template.cpp" />
     <ClCompile Include="src\pointer_unique.cpp" />
-    <ClCompile Include="src\ds_multiset_range.cpp" />
     <ClCompile Include="src\cast_dynamic.cpp" />
     <ClCompile Include="src\is_pointer_src.cpp" />
     <ClCompile Include="src\mix.cpp" />

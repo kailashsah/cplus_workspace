@@ -7,6 +7,9 @@ public:
 	~Derived()
 	{
 		//delete this;
+		/*
+			unhandled exception - stack overflow
+		*/
 	}
 };
 
@@ -26,9 +29,12 @@ void run_exception()
 	catch (Base& b) {
 		cout << "Caught Base Exception";
 	}
+	//getchar();
 
-
-	getchar();
+	/*
+		output -
+		Caught Derived Exception
+	*/
 }
 
 //int main()

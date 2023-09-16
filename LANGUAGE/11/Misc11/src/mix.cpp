@@ -31,7 +31,7 @@ void run_placment_new_constructor()
 
 //....................................
 int operator "" _int(const char* str, std::size_t ss) {
-	return std::stoi(str);
+	return std::stoi(str); // <string>
 }
 void run_literal()
 {

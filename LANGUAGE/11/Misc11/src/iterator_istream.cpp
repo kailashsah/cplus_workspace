@@ -7,6 +7,7 @@ void run_input_stream_iterator()
 {
 	istringstream str{ "1 2 4" };
 	auto itr = istream_iterator<int>(str);
+	
 	for (; itr != istream_iterator<int>(); ++itr)
 	{
 		cout << *itr;  

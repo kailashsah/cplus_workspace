@@ -84,11 +84,11 @@ void run_conversion_operator()
 	obj.print();
 }
 
-int main()
-{
-	run_conversion_operator();
-	return 0;
-}
+//int main()
+//{
+//	run_conversion_operator();
+//	return 0;
+//}
 
 /*
 	Parameterized Ctor called

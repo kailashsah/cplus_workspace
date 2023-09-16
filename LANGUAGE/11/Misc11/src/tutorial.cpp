@@ -48,7 +48,7 @@ void run_tie()
 	//useful for unpacking std::pair and std::tuple objects
 	// With tuples...
 	std::string playerName;
-	std::tie(std::ignore,	 playerName, std::ignore) = std::make_tuple(91, "John Tavares", "NYI");
+	std::tie(std::ignore, playerName, std::ignore) = std::make_tuple(91, "John Tavares", "NYI");
 
 	// With pairs...
 	std::string yes, no;
@@ -78,12 +78,12 @@ void run_range_based_loop()
 
 void run_member_init()
 {
-	class AA{ 
-		int a{0};
+	class AA {
+		int a{ 0 };
 		string str{};
 
 	public:
-		AA() : a{0}{}
+		AA() : a{ 0 } {}
 	};
 }
 
@@ -92,7 +92,7 @@ void run_member_init()
 void run_chrono()
 {
 	auto start = chrono::high_resolution_clock::now();
-	
+
 	this_thread::sleep_for(chrono::milliseconds(2500));
 	auto end = chrono::high_resolution_clock::now();
 	auto aa = chrono::duration_cast<chrono::milliseconds> (end - start);
@@ -121,14 +121,18 @@ int run_ref()
 
 //.................................................
 
-class B { public: int i; };
+class B {
+public: 
+	int i;
+};
+
 void run_vectorr()
 {
 	vector <B*> vec;
 	B* c = nullptr;
 	vec.push_back(c);
-	
-	auto a = vec[0];	
+
+	auto a = vec[0];
 	if (vec[0])
 		cout << vec[0]->i; // crash if no if validation, use reference_wrapper instead
 	else
@@ -138,15 +142,15 @@ void run_vectorr()
 void run_reference_vector()
 {
 	vector <reference_wrapper<B>> vec;
-	
+
 	B b;
-	b.i = 20;	
-	
+	b.i = 20;
+
 	vec.push_back(b);
-	
+
 	b.i = 40;
 	auto a = vec[0];
-	printt( to_string( a.get().i));
+	printt(to_string(a.get().i));
 }
 //-------------------------------------------------------
 
@@ -164,7 +168,7 @@ void run_begin_end()
 	//
 	//int arr[100] = {}; // initialize all to zero
 	//
-	int arr[100] ;
+	int arr[100];
 	fill(begin(arr), end(arr), 3);
 	//
 	copy(begin(arr), end(arr), ostream_iterator<int>(cout, " "));
