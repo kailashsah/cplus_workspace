@@ -91,9 +91,9 @@ void run_tute()
 	cout << "main ends here" << endl;
 }
 
-int main()
-{
-	run_tute();
-	return 0;
-}
+//int main()
+//{
+//	run_tute();
+//	return 0;
+//}
 
