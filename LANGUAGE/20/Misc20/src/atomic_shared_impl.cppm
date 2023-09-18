@@ -103,7 +103,7 @@ void run_atomic_shared_ptr_impl()
     std::atomic<std::shared_ptr<int>> a = make_shared<int>(5);
     auto aa = a.load();
     cout << typeid(aa).name();
-    std::cout << " " << *(aa.get());
+    std::cout << " " << *(aa.get()); //5
 }
 
 
