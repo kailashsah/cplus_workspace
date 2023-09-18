@@ -42,7 +42,7 @@ void run_unique_ptr_two()
 	case_one_unique();
 
 	//2. unique_ptr in argument
-	cout << endl << "case_two_unique() : " << endl;
+	cout << endl << "case_two_unique() unique_ptr in argument : " << endl;
 	unique_ptr<BaseUq> baseObj = make_unique<DerivedUq>();
 	case_two_unique(baseObj);
 }
