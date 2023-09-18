@@ -141,7 +141,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="MiscDS.cpp" />
+    <ClCompile Include="src\algo_stl\fill.cpp" />
     <ClCompile Include="src\algo_stl\fill_n.cpp" />
+    <ClCompile Include="src\algo_stl\iota.cpp" />
     <ClCompile Include="src\library_defined\array.cpp" />
     <ClCompile Include="src\library_defined\foward_list.cpp" />
     <ClCompile Include="src\library_defined\list.cpp" />
