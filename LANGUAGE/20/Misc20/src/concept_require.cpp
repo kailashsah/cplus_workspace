@@ -1,7 +1,5 @@
 #include <iostream>
 #include "cplus20.h" //#define cplus20
-
-
 using namespace std;
 #ifdef cplus20
 
