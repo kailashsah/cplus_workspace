@@ -9,60 +9,6 @@
 using namespace std;
 void printt(string str);
 
-//.....................................................
-/*
-void run_print_tuple(set<tuple<int, int, int> >& setOfTuples);
-void run_tie();
-void run_tuple();
-void run_range_based_loop();
-run_chrono();
-void run_member_init();
-run_ref();
-run_reference_vector();
-run_begin_end();
-*/
-//------------------------------------------------------
-
-void run_print_tuple(set<tuple<int, int, int> >& setOfTuples)
-{
-	for (auto x : setOfTuples)
-	{
-		tuple<int, int, int> tp = x;
-		cout << get<0>(x); // alternative of above
-
-		cout << get<0>(tp) <<
-			' ' << get<1>(tp) <<
-			' ' << get<2>(tp) << '\n';
-	}
-}
-void run_print_tuple_caller()
-{
-	set<tuple<int, int, int>> stup;
-	tuple<int, int, int> tuple1 = make_tuple(1, 2, 3);
-	stup.insert(tuple1);
-	run_print_tuple(stup);
-}
-
-void run_tie()
-{
-	//useful for unpacking std::pair and std::tuple objects
-	// With tuples...
-	std::string playerName;
-	std::tie(std::ignore, playerName, std::ignore) = std::make_tuple(91, "John Tavares", "NYI");
-
-	// With pairs...
-	std::string yes, no;
-	std::tie(yes, no) = std::make_pair("yes", "no");
-}
-void run_tuple()
-{
-	// cout << tuple_size<decltype(geek)>::value << endl;
-	auto playerProfile = std::make_tuple(51, "Frans Nielsen", "NYI");
-	std::get<0>(playerProfile); // 51
-	std::get<1>(playerProfile); // "Frans Nielsen"
-	std::get<2>(playerProfile); // "NYI"
-}
-
 //-------------------------------------------------------
 
 void run_range_based_loop()
@@ -102,27 +48,29 @@ void run_chrono()
 //.................................................
 void update(int& data)  //expects a reference to int
 {
+	// demo of std::ref(data)
 	data = 15;
 }
 int run_ref()
 {
 	int data = 10;
 
-	// This doesn't compile as the data value is copied when its reference is expected.
+	//1. This doesn't compile as the data value is copied when its reference is expected.
 	//std::thread t2(update, data);   
-	//std::thread t1(update, move(data));
+	//std::thread t3(update, move(data));
 
+	//2.
 	std::thread t1(update, std::ref(data));  // works, if reference provided in this way
-
 	t1.join();
 	printt(to_string(data)); //  15
+
 	return 0;
 }
 
 //.................................................
 
 class B {
-public: 
+public:
 	int i;
 };
 
@@ -161,34 +109,25 @@ void printt(string str)
 
 //-------------------------------------------------------
 
-void run_begin_end()
+void run_initializer_list()
 {
-	//int arr[100];
-	// iota(begin(arr), end(arr), 0);
-	//
-	//int arr[100] = {}; // initialize all to zero
-	//
-	int arr[100];
-	fill(begin(arr), end(arr), 3);
-	//
-	copy(begin(arr), end(arr), ostream_iterator<int>(cout, " "));
-	cout << endl;
+	int arr2[100] = {}; // initialize all to zero
+	
 }
 //-------------------------------------------------------
 void run_tute()
 {
-	//run_print_tuple_caller();
 	//run_range_based_loop();
 	//run_chrono();
 	//run_ref();
 	//run_reference_vector();
-	//run_begin_end();
+	run_initializer_list();
 	cout << "main ends here" << endl;
 }
 
-//int main()
-//{
-//	run_tute();
-//	return 0;
-//}
+int main()
+{
+	run_tute();
+	return 0;
+}
 

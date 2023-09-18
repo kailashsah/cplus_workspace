@@ -149,6 +149,7 @@
     <ClCompile Include="src\initializer_aggregate.cpp" />
     <ClCompile Include="src\template_lazy.cpp" />
     <ClCompile Include="src\template_lazy_initialization.cpp" />
+    <ClCompile Include="src\tuple_tie.cpp" />
     <ClCompile Include="src\type_alias.cpp" />
     <ClCompile Include="src\cast_static.cpp" />
     <ClCompile Include="src\conversion_operator.cpp" />
@@ -166,13 +167,14 @@
     <ClCompile Include="src\pointer_unique.cpp" />
     <ClCompile Include="src\cast_dynamic.cpp" />
     <ClCompile Include="src\is_pointer_src.cpp" />
-    <ClCompile Include="src\mix.cpp" />
+    <ClCompile Include="src\tutorial_two.cpp" />
     <ClCompile Include="src\pointer_shared.cpp" />
     <ClCompile Include="src\template_two.cpp" />
     <ClCompile Include="src\test_shallowcopy.cpp" />
-    <ClCompile Include="src\tutorial.cpp" />
+    <ClCompile Include="src\tutorial_one.cpp" />
     <ClCompile Include="src\type_decltype.cpp" />
     <ClCompile Include="src\version_cplus.cpp" />
+    <ClCompile Include="src\virtual_from_constructor.cpp" />
     <ClCompile Include="src\virtual_inheritance.cpp" />
     <ClCompile Include="src\virtual_inheritance_three.cpp" />
     <ClCompile Include="src\virtual_inheritance_two.cpp" />

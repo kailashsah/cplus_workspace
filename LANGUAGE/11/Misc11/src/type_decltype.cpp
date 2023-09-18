@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 
+/*
+	'auto' lets you declare a variable with a particular type whereas decltype lets you extract the type from the variable so decltype is sort of an operator that evaluates the type of passed expression
+*/
 //auto test(const auto & v) // parameter cannot have a type that contains 'auto'
 auto test(const int& v)
 {
