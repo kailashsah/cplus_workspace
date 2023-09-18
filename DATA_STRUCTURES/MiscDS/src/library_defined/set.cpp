@@ -23,6 +23,7 @@ void set_impl()
 
 	// remove all occurrences of item 5
 	for (auto it = set_unorder.begin(); it != set_unorder.end(); ) {
+		
 		it = set_unorder.find(5);
 
 		if (it != set_unorder.end())

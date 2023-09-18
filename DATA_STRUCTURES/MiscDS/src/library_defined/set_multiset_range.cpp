@@ -15,23 +15,26 @@ void run_multiset()
 	colors.insert({ 5, "violet" });
 
 
-
-	/*for (auto [begin, end] = colors.equal_range(4);
-		auto & it : std::ranges::subrange(begin, end))
+	//2. find value 
+	auto [begin, end] = colors.equal_range(4);
+	for(auto & it : std::ranges::subrange(begin, end))
 	{
 		std::cout << "    " << it.second << std::endl;
-	}*/
-	auto ran = colors.equal_range(4);
-	// first method 
-	/*for (auto it = ran.first; it != ran.second; ++it) {
+	}
+	
+	//3.
+	auto ran = colors.equal_range(4);	
+	for (auto it = ran.first; it != ran.second; ++it) {
 		cout << it->second << " "; // blue green
-	}*/
+	}
 
-	// second method
+	//4.
 	for_each(
 		ran.first,
 		ran.second,
-		[](std::multimap<const long, const std::string>::value_type& x) {std::cout << " " << x.second; }
+		[](std::multimap<const long, const std::string>::value_type& x) {
+			std::cout << " " << x.second; 
+		}
 	);
 }
 

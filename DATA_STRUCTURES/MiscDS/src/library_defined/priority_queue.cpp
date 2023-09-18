@@ -6,7 +6,7 @@ using namespace std;
 //.................................................
 
 void heap_min() {
-	priority_queue <int, vector<int> , greater<int> > minheap;
+	priority_queue <int, vector<int>, greater<int> > minheap; // < type, container, class Compare >
 	minheap.push(3);
 	minheap.push(6);
 	minheap.push(9);
