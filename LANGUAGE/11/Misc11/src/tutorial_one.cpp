@@ -67,39 +67,6 @@ int run_ref()
 	return 0;
 }
 
-//.................................................
-
-class B {
-public:
-	int i;
-};
-
-void run_vectorr()
-{
-	vector <B*> vec;
-	B* c = nullptr;
-	vec.push_back(c);
-
-	auto a = vec[0];
-	if (vec[0])
-		cout << vec[0]->i; // crash if no if validation, use reference_wrapper instead
-	else
-		printt("null ptr");
-}
-
-void run_reference_vector()
-{
-	vector <reference_wrapper<B>> vec;
-
-	B b;
-	b.i = 20;
-
-	vec.push_back(b);
-
-	b.i = 40;
-	auto a = vec[0];
-	printt(to_string(a.get().i));
-}
 //-------------------------------------------------------
 
 void printt(string str)
@@ -120,7 +87,6 @@ void run_tute()
 	//run_range_based_loop();
 	//run_chrono();
 	//run_ref();
-	//run_reference_vector();
 	run_initializer_list();
 	cout << "main ends here" << endl;
 }
