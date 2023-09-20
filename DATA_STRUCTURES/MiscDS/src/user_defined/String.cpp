@@ -9,14 +9,16 @@ private:
 	char* m_pBuf = nullptr;
 
 public:
-	String() { 
+	String() {
+		cout << "default ctor called" << endl;
+
 		m_pBuf = new char[1];
 		m_pBuf[0] = '\0';
-		cout << "default ctor called" << endl;
 		//m_pBuf = nullptr; 
 	}
 	String(const char* pbuf) {
-		cout << "ctr called" << endl;
+		cout << "one param ctor called for -- "<< pbuf << endl;
+
 		long len = strlen(pbuf);
 		m_pBuf = new char[len + 1];
 		strcpy(m_pBuf, pbuf);
@@ -24,14 +26,17 @@ public:
 	}
 	~String()
 	{
-		cout << "dtor called" << endl;
+		if (m_pBuf)
+			cout << "dtor called for --" << m_pBuf << endl;
+		else cout << "dtor called for -- null value" << endl;
+
 		if (m_pBuf != nullptr)
 			delete[] m_pBuf;
 	}
 	void print()
 	{
-		if(m_pBuf)
-		cout << m_pBuf << endl;
+		if (m_pBuf)
+			cout << m_pBuf << endl;
 
 	}
 	friend ostream& operator<< (ostream& os, const String& str)
@@ -39,13 +44,13 @@ public:
 		os << str.m_pBuf;
 		return os;
 	}
-	friend istream& operator>> (istream& in,  String& str)
+	friend istream& operator>> (istream& in, String& str)
 	{
 		cout << "insert optr called" << endl;
-		
+
 		char* buff = new char[1000];
 		memset(buff, 0, sizeof(buff));
-		in >> * buff;
+		in >> *buff;
 		cout << "before assignment" << endl;
 		str = String{ buff };  // move assignment operator called after ctor
 		delete[] buff;
@@ -63,23 +68,28 @@ public:
 	}
 	String(String&& str) noexcept
 	{
-		cout << "move ctr called" << endl;
+		cout << "move ctor called" << endl;
+		
 		//delete[] this->m_pBuf; // delete str, temp variable as in call
 		this->m_pBuf = new char[strlen(str.m_pBuf) + 1];
 		strcpy(this->m_pBuf, str.m_pBuf);
+		
+		// for arg pointers
 		delete[] str.m_pBuf;
 		str.m_pBuf = nullptr;
-		
+
 	}
 	String& operator =(String&& str)
 	{
-		cout << "mv assignment called" << endl;
+		cout << "move assignment called" << endl;
 		if (this != &str)
 		{
 			delete[] m_pBuf;
 			//this->m_pBuf = new char[strlen(str.m_pBuf) + 1]; // not the proper way
 			//strcpy(this->m_pBuf, str.m_pBuf);
 			this->m_pBuf = str.m_pBuf;
+			
+			// for arg pointers
 			str.m_pBuf = nullptr;
 			//str.~String();
 		}
@@ -91,9 +101,9 @@ public:
 #include <stdlib.h>
 #include <string.h>
 
-//I had putten the main Function Bellow this function.
+//I had put the main Function Below this function.
 //d for asking string,f is pointer to the string pointer
-void GetStr(const char*d, char** f)
+void GetStr(const char* d, char** f)
 {
 	printf("%s", d);
 	for (int i = 0; 1; i++)
@@ -113,9 +123,11 @@ void GetStr(const char*d, char** f)
 
 void read_string()
 {
+	cout << endl << "read_string() : " << endl;
+
 	// read indefinite characters from console.
-	char* s = NULL;		
-	GetStr("Enter string : ",  & s);
+	char* s = NULL;
+	GetStr("Enter string : ", &s);
 	printf("Your String:- %s \nAnd It's length:- %lu\n", s, (strlen(s)));
 	//printf("Your String:- %s \n", *s);
 	free(s);
@@ -123,31 +135,49 @@ void read_string()
 
 void run_stringcpp()
 {
+	//1.
 	read_string();
 
-	//String str_src;	String str_two;
-	//str_src = move(str_two); // move ctor called
-	//cout << str_src << endl;
+	//2. move assignment
+	cout << endl << "str_src = move(str_two) : " << endl;
 
-	//String str_mv =  std::move(String("mv")) ; // move ctor
-	//cout << str_mv<< endl;
+	String str_src("one");
+	String str_two("two");
+	str_src = move(str_two); // move assignment called
+	cout << str_src << endl;
 
-	/*String str("abc");
+	//3. move ctor
+	cout << endl << "String str_mv =  std::move(String(\"mv\")) : " << endl;
+	String str_mv = std::move(String("mv")); // move ctor
+	cout << str_mv << endl;
+	/*
+		String str_mv =  std::move(String("mv")) :
+		one param ctor called for -- mv
+		move ctor called
+		dtor called for --mv
+		mv
+	*/
+
+	//4. assignment
+	cout << endl << "assignment : " << endl;
+
+	String str("abc");
 	String str1 = "saa11111";
 
 	str = str1;
 	cout << str << endl;
 	cout << str1 << endl;
-	*/
-
-	//String str_cin; // insertion optor
-	//cin >> str_cin;
-	//cout << "after cin  " << str_cin << endl;
-	//
-
 	
+	//5. 
+	cout << endl << "insertion optor : " << endl;
+	String str_cin; // insertion optor
+	cin >> str_cin;
+	cout << "after cin  " << str_cin << endl;
+	
+
 	cout << "prg stopped" << endl;
 }
+
 //int main()
 //{
 //	run_stringcpp();

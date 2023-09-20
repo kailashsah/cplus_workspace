@@ -6,6 +6,8 @@
 using namespace std;
 
 #include <stdio.h>
+//................................................. as array
+
 #define MAX 10
 int stack[MAX];
 int top = -1;
@@ -13,28 +15,26 @@ int elment;
 
 void push(int data)
 {
-
 	top = top + 1;
 	stack[top] = data;
-
-
 }
+
 void pop()
 {
 	printf("%d\n", stack[top]);
 
 	top = top - 1;
-
 }
+
 void run_stack_as_array() {
 	int q;
 	int type, cost;
-	scanf_s("%d", &q);
+	scanf_s("%d", &q); // q = time want to run loop
 	while (q > 0)
 	{
 		scanf_s("%d", &type);
 
-		if (type == 1)
+		if (type == 1) // pop
 		{
 			if (top != -1)
 			{
@@ -46,7 +46,7 @@ void run_stack_as_array() {
 
 			}
 		}
-		if (type == 2)
+		if (type == 2) // push
 		{
 			scanf_s("%d", &cost);
 
@@ -61,12 +61,14 @@ void run_stack_as_array() {
 	_getch();
 }
 
-//.................................................
+//................................................. as class
 
 class Stack
 {
 private:
-	int stackArray[100]; int top;
+	int stackArray[100]; 
+	int top;
+
 public:
 	Stack() {
 		top = -1;
@@ -99,7 +101,7 @@ void run_stack() {
 	while (noOfQueries-- > 0)
 	{
 		cin >> queryType;
-		if (queryType == 1)
+		if (queryType == 1) // pop
 		{
 
 			if (orderStack.IsEmpty())
@@ -107,7 +109,7 @@ void run_stack() {
 			else
 				cout << orderStack.Pop();
 		}
-		else if (queryType == 2)
+		else if (queryType == 2) // push
 		{
 
 			cin >> cost;

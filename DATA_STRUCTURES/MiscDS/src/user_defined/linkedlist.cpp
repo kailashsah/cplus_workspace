@@ -32,7 +32,7 @@ public:
 		}
 		else
 		{
-			tail->next = tmp;
+			tail->next = tmp;// for chaining/linking with previous element.
 			//tail = tail->next;
 			tail = tmp;
 
@@ -42,9 +42,12 @@ public:
 	{
 		node* tmp;
 		tmp = head;
-		while (tmp->next != NULL)
+		while (tmp != NULL)
 		{
 			os << tmp->data;
+			if (tmp->next == NULL)
+				break; // reached last element. // for safer side.
+
 			tmp = tmp->next;
 		}
 
@@ -60,16 +63,18 @@ public:
 		}
 	}
 };
+
 void run_linkedlist() {
 	linked_list a;
 	a.add_node(1);
 	a.add_node(2);
 	a.add_node(3);
-	//a.display();
-	a.print();
+	a.display(); // 1 2 3
+	//a.print();
 }
+
 //int main()
 //{
-//    run_linkedlist();
-//    return 0;
+//	run_linkedlist();
+//	return 0;
 //}

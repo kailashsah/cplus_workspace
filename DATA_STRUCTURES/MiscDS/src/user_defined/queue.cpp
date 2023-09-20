@@ -4,25 +4,25 @@
 #include "conio.h"
 
 
-int f = 0, r = -1, q[100], size = 0;
+int front = 0, rear = -1, que[100], size = 0;
 
 void enqueue(int x)
 {
-	r = r + 1; // increment rear
-	q[r] = x;
+	rear = rear + 1; // increment rear
+	que[rear] = x;
 	size = size + 1;
 }
 
 int dequeue()
 {
 	int elem;
-	if (f > r)
+	if (front > rear)
 		elem = -22; // front cannot be greater than back
 	else
 	{
 		// increment fron pointer, decrease size
-		elem = q[f];
-		f = f + 1;
+		elem = que[front];
+		front = front + 1;
 		size = size - 1;
 	}
 	return elem;
@@ -30,7 +30,7 @@ int dequeue()
 
 void run_queue() {
 	int i, n = 0, x, elem;
-	char ch[100];
+	char ch[100]; // enqueue/dequeue for 100 times
 	scanf_s("%d", &n);
 	for (i = 0; i < n; i++)
 	{

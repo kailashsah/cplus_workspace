@@ -41,6 +41,10 @@ int GetSize(Node* root)
 
 int checkHalves(Node* node, int sum, int& ans)
 {
+	/*
+		https://www.geeksforgeeks.org/number-of-ways-to-divide-a-binary-tree-into-two-halves/
+	*/
+
 	int l = 0, r = 0;
 	if (node == nullptr)
 		return 0;
@@ -91,15 +95,22 @@ Node* insertHalfTree()
 	root->right->right = newNode(1);
 	return root;
 }
+
+void run_tree() {
+	//1.
+	Node* rootFrSize = insertforSize();
+	cout << "tree size " << GetSize(rootFrSize) << endl;
+	cout << "tree sum " << find_sum(rootFrSize) << endl;
+	
+	//2.
+	Node* root = insertHalfTree();
+	int ans = 0;
+	checkHalves(root, find_sum(root), ans);
+	cout << "Divide tree into two halves, tree possible " << ans << endl; // 1
+}
+
 //int main()
 //{
-//	//Node* root = insertforSize();
-//	Node* root = insertHalfTree();
-//	cout << "tree size " << GetSize(root) << endl;
-//	cout << "tree sum " << find_sum(root);
-//	int ans = 0;
-//	checkHalves(root, find_sum(root), ans);
-//	cout << "tree possible " << ans << endl;
-//	
+//	run_tree();
 //	return 0;
 //}

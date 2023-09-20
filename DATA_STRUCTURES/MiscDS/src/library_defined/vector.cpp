@@ -176,8 +176,8 @@ void run_vector()
 	vector_swap();
 }
 
-int main()
-{
-	run_vector();
-	return 0;
-}
+//int main()
+//{
+//	run_vector();
+//	return 0;
+//}
