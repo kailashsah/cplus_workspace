@@ -4,6 +4,11 @@ using namespace std;
 
 struct B {
 	string val_;
+	B()
+	{
+		cout << "ctor called "  << endl;
+	}
+	B(const B& val) { cout << "copy ctor called one parameter" << endl; }
 	B(string&& val) : val_(std::move(val))  // 1.
 	{
 		// val_ = std::move(val); // 2.
@@ -21,13 +26,19 @@ void run_move_constructor() {
 	auto b2 = B("b1");
 	auto b0 = B("b0");
 	auto* b1 = new B("b2");
+
+	cout << endl << "B b_a2(B(\"a\")) : "  << endl;
+	B b_a2(B("a")); //move ctor called for a
+	B b_a3= B("a");
+
+	cout << "prg ends" << endl;
 }
 
-//int main()
-//{
-//	run_move_constructor();
-//	return 0;
-//}
+int main()
+{
+	run_move_constructor();
+	return 0;
+}
 /*
  output-
 	move ctor called for a
