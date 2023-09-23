@@ -10,25 +10,26 @@ class InheritBase
 public:
 	virtual ~InheritBase() {}
 	virtual void foo() { cout << "InheritBase::foo()" << endl;; }
-	virtual void bar() {  cout << "InheritBase::bar()" << endl;; }
+	virtual void bar() { cout << "InheritBase::bar()" << endl;; }
 };
 
-class B :  virtual public InheritBase
+class B : virtual public InheritBase
 {
 
 public:
-	void test() {  cout << "B::test" << endl; }
-	
+	void test() { cout << "B::test" << endl; }
+
 	//void bar() {
 	//	printf("\n c::bar"); cout << endl;
 	//	//'DHybrid': ambiguous inheritance of 'void InheritBase::bar(void)'	
 	//}
 
 };
-class C :  virtual public InheritBase
+class C : virtual public InheritBase
 {
 public:
-	void bar() {  printf("\n c::bar"); cout << endl;
+	void bar() {
+		printf("\n c::bar"); cout << endl;
 	}
 };
 
@@ -38,17 +39,21 @@ class DHybrid : public B, public C
 
 void run_virtual_inheritance() {
 	DHybrid obj;
-	
+
 	//1.
 	cout << endl << "DHybrid bar() : " << endl;
 	obj.B::bar(); // class B copy of bar()
+
 	//2.
 	cout << endl << "DHybrid test() : " << endl;
 	obj.test(); // why test is called here, given its not a virtual  (IMP)
 	/*
 		translated into
 		 static_cast<B&>(obj).test();
+
+		 reason - for non-virutual methods, it links statically not dynamically
 	*/
+
 	//3.
 	cout << endl << "DHybrid foo() : " << endl;
 	obj.foo(); // static_cast<InheritBase&>(obj).foo();
