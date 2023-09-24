@@ -1,11 +1,11 @@
-
 #include <iostream>
-
 using namespace std;
+/*
+	https://www.geeksforgeeks.org/a-product-array-puzzle/ 
+*/
 
 void productArray(int arr[], int n)
 {
-
 	// Base case
 	if (n == 1) {
 		cout << 0;
@@ -26,19 +26,30 @@ void productArray(int arr[], int n)
 	/* Right most element of right array is always 1 */
 	right[n - 1] = 1;
 
-	/* Construct the left array */
+	cout << "Construct the left array" << endl;
 	for (i = 1; i < n; i++)
 	{
 		left[i] = arr[i - 1] * left[i - 1];
-		cout << left[i] << ",";
+		//cout << left[i] << ",";
 	}
 	cout << endl;
-	/* Construct the right array */
+	
+	// print left
+	cout << endl;
+	for (i = 0; i < n; i++)
+		cout << left[i] << " ";
+	cout << endl;
+
+	cout << "Construct the right array" << endl;	
 	for (j = n - 2; j >= 0; j--)
 	{
 		right[j] = arr[j + 1] * right[j + 1];
-		cout << right[j] << ",";
+		
 	}
+	// print right
+	cout << endl;	
+	for (i = 0; i < n; i++)
+		cout << right[i] << " ";
 
 	cout << endl;
 	/* Construct the product array using left[] and right[] */
@@ -52,12 +63,32 @@ void productArray(int arr[], int n)
 
 
 	return;
-
-	// driver code
-
-	/*int arr[] = {10, 3, 5, 6, 2};
-int n = sizeof(arr) / sizeof(arr[0]);
-cout << "The product array is: \n";
-productArray(arr, n);
-*/
 }
+/*
+	output -- 
+	The product array is { 10, 3, 5, 6, 2 } :
+	Construct the left array
+	10,30,150,900,
+
+	1 10 30 150 900
+	Construct the right array
+
+	180 60 12 2 1
+
+	180 600 360 300 900
+*/
+void run_array_product()
+{
+	int arr[] = { 10, 3, 5, 6, 2 };
+	int n = sizeof(arr) / sizeof(arr[0]);
+	cout << "The product array is { 10, 3, 5, 6, 2 } : \n";
+	productArray(arr, n);
+
+}
+
+//int main()
+//{
+//	run_array_product();
+//	return 0;
+//}
+
