@@ -7,11 +7,12 @@ void string_split() {
 
 	string str = "first 21 second 21 third ";
 	cout << endl << "string_split() for '2' in : " << str << endl;
+	
 	//1.
 	stringstream ss(str);
 	string strr;
 	cout << "using getline() " << endl;
-	while (getline(ss, strr, '2')) // '2' is delimiter
+	while (getline(ss, strr, '2')) // '2' is delimiter // can go with only char
 	{
 		cout << strr << " ";
 	}
@@ -19,7 +20,7 @@ void string_split() {
 	//2.
 	cout << endl;
 	cout << "using strtok() " << endl;
-	char* token = strtok(const_cast<char*>(str.data()), "2");
+	char* token = strtok(const_cast<char*>(str.data()), "2"); // with string 
 	while (token != nullptr) {
 		cout << token << " ";
 		token = strtok(0, "2");
@@ -75,19 +76,19 @@ void string_remove_space()
 	std::string str1 = "Text with some   spaces \0";
 
 	//1.
-	auto noSpaceEnd = std::remove(str1.begin(), str1.end(), ' '); // <algorithm>
+	auto noSpaceEndItr = std::remove(str1.begin(), str1.end(), ' '); // <algorithm>
 
-	cout << "noSpace iterator value " << *noSpaceEnd << endl; //noSpaceEnd  - iterator postion till the end is all are set to removal, but not removed till we call erase();	
+	cout << "noSpace iterator value " << *noSpaceEndItr << endl; //noSpaceEnd  - iterator postion till the end is all are set to removal, but not removed till we call erase();	
 	cout << "after remove() is called " << str1 << " " << str1.size() << endl;;
 
 	// erasing all spaces
-	str1.erase(noSpaceEnd, str1.end());
+	str1.erase(noSpaceEndItr, str1.end());
 	cout << "after erase() is called " << str1 << " " << str1.size() << endl;;
 
 	//2.
 	// The spaces are removed from the string only logically.
 	// Note, we use view, the original string is still not shrunk:
-	cout << std::string_view(str1.begin(), noSpaceEnd) << " size: " << str1.size() << '\n'; // C++20
+	cout << std::string_view(str1.begin(), noSpaceEndItr) << " size: " << str1.size() << '\n'; // C++20
 	cout << endl;
 }
 

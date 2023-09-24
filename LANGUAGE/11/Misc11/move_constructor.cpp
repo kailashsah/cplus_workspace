@@ -6,7 +6,7 @@ struct B {
 	string val_;
 	B()
 	{
-		cout << "ctor called "  << endl;
+		cout << "ctor called " << endl;
 	}
 	B(const B& val) { cout << "copy ctor called one parameter" << endl; }
 	B(string&& val) : val_(std::move(val))  // 1.
@@ -24,12 +24,11 @@ void run_move_constructor() {
 	string a;
 	B b_a(string("a")); // these all call move constructor
 	auto b2 = B("b1");
-	auto b0 = B("b0");
 	auto* b1 = new B("b2");
 
-	cout << endl << "B b_a2(B(\"a\")) : "  << endl;
+	cout << endl << "B b_a2(B(\"a\")) : " << endl;
 	B b_a2(B("a")); //move ctor called for a
-	B b_a3= B("a");
+	B b_a3 = B("a");
 
 	cout << "prg ends" << endl;
 }

@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 /*
-	Put simply, an lvalue is an object reference and an rvalue is a value.
-	In C++, an rvalue is an unnamed object or a member of such an object which is not a reference.
-	rvalue - an expression that could not be the left hand side of an assignment, but that could only be the right hand side.
+	1. Put simply, an lvalue is an object reference and an rvalue is a value.
+	2. an rvalue is an unnamed object or a member of such an object which is not a reference.
+	3. rvalue is an expression that could not be the left hand side of an assignment, but that could only be the right hand side.
 */
 struct S {
 	int a = 0;
@@ -30,9 +30,10 @@ void pointers_rvalue()
 	cout << "after ref1 = 1;: " << endl;
 	cout << "value of x: " << x << endl;
 	cout << "value of ref1: " << ref1 << endl;
+	
 	//int& ref2{ 5 }; // connot conver int to int&
+	
 	const int& ref3{ 5 };
-	x = 3;
 	cout << "const int& ref3{ 5 } : " << ref3 << endl;
 
 	int&& ref5{ 5 };

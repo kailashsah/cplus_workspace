@@ -9,7 +9,7 @@ public:
 		/*
 			//1.
 			throw 1;  // terminate the program
-			// solution is below
+			// solution is below step 2.
 
 			output -
 				inside try

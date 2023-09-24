@@ -21,18 +21,21 @@ public:
 	void foo() override {
 		cout << "Child version" << endl;
 	}
+	void test() {}
 };
 
 void run_virtual_inheritance_three()
 {
 	//2.
 	// child -> parent == upcasting (safe)
+	// Upcasting can cause object slicing when a derived class object is passed by value as a base class object. as in foo(Base derived_obj).
 	Parent* pPar = nullptr;
 	Child* pChild = new Child;
 	pPar = pChild; // implicit cast allowed
 	pPar = (Parent*) pChild;
 	pPar = dynamic_cast<Parent*> (pChild); // no harm in down_cast
 	pPar->foo(); // child version
+	//pPar->test(); // error C2039: 'test': is not a member of 'Parent'
 
 	//3.
 	// parent -> child == downcasting (unsafe)

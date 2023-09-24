@@ -2,9 +2,10 @@
 using namespace std;
 
 /*
-	Lazy means the instantiation of a member function of a class template happens only when needed.
-	https://www.modernescpp.com/index.php/surprise-included-inheritance-and-member-functions-of-class-templates/
+	1. Lazy means the instantiation of a member function of a class template happens only when needed.
+	2. https://www.modernescpp.com/index.php/surprise-included-inheritance-and-member-functions-of-class-templates/
 */
+
 template<class T>
 struct Lazy {
 	void func() { std::cout << "func\n"; }

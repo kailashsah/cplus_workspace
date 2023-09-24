@@ -42,7 +42,7 @@ void run_virtual_static()
 	if (!pParentt)
 		cout << "dynamic_cast<MyClass*>(new My2()) -- failed" << endl;
 	else
-		pParentt->foo(); // base .. it wouldnot call the static version of foo()
+		pParentt->foo(); // base .. it wouldnot call the static version of foo()  // IMP
 
 	//4.
 	cout << "end"; // not printed if prg terminates

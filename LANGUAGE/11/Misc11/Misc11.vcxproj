@@ -156,7 +156,7 @@
     <ClCompile Include="src\conversion_operator.cpp" />
     <ClCompile Include="src\draft.cpp" />
     <ClCompile Include="src\exception.cpp" />
-    <ClCompile Include="src\exception_two.cpp" />
+    <ClCompile Include="src\exception_inner.cpp" />
     <ClCompile Include="src\iterator_istream.cpp" />
     <ClCompile Include="src\pointers.cpp" />
     <ClCompile Include="src\pointer_shared_cyclic_dep.cpp" />

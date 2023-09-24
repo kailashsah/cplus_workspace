@@ -34,7 +34,7 @@ void run_virtual_inheritance_two()
 	//transmitter trans;
 	/*
 		object of abstract type is not allowed, 'void storable::read(void)' has no overrider.
-		if this method is givne, void read() {} -- compiler is OK
+		if this method is given, void read() {} -- compiler is OK
 
 	*/ 
 

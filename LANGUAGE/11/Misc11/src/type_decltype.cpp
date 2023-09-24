@@ -13,11 +13,11 @@ auto test(const int& v)
 	*/
 	string ss(typeid(a1).name());
 	cout << ss << endl; //int
-	a1++; // is this legal? Why
+	a1++; // is this legal? Why -> becoz const is ignored in "auto"
 
 
 	decltype(v) a2{ 2 }; // what is a2's qualified TYPE?
-	cout << typeid(a2).raw_name() << endl; //.h
+	cout << typeid(a2).raw_name() << endl; //.h //typeid(a2).name() retuns i
 	/*
 	 a2++; // is this legal? Why
 	'a2': you cannot assign to a variable that is const	Misc11
