@@ -20,7 +20,7 @@ void run_forward_list()
 
 	// Assigning repeating values using assign()
 	// 5 elements with value 10
-	flist2.assign(5, 10);
+	flist2.assign(5, 10); // 10 10 10 10 10
 
 
 	//Assigning values of list 1 to list 3

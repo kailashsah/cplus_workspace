@@ -143,10 +143,10 @@ void vector_size() {
 	cout << endl << "vector_size() : " << endl;
 
 	vector<int> vec;
-	cout << " vec.max_size()" << vec.max_size() << endl; // 1073741823
+	cout << " vec.max_size()" << vec.max_size() << endl; // 1.073.741.823
 	vector <Person> v_per;
 	cout << sizeof(Person) << endl; // 1
-	cout << " v_per.max_size()" << v_per.max_size() << endl; //2.147.483.647
+	cout << " v_per.max_size()" << v_per.max_size() << endl; //2.147.483.647 -> 2GB
 	cout << endl;
 
 }
