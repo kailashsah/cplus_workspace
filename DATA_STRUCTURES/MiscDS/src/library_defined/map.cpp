@@ -16,6 +16,7 @@ void map_impl()
 	mapi.insert(pair<int, string>(5, "five"));
 	mapi.insert(make_pair(5, "five"));
 	mapi.insert(pair<int, string>(1, "one"));
+	
 
 	//2.
 	//std::qsort(mapi.begin(), mapi.end());
@@ -65,6 +66,7 @@ void map_impl_sqbracket()
 	mapi.insert(pair<int, int>(5, 5));
 	mapi.insert(pair<int, int>(6, 6));
 	mapi.insert(pair<int, int>(6, 6));
+	mapi.emplace(7, 7);
 	if (mapi[5] == 5)
 		cout << mapi[5] << endl; // 5 // access element using key	
 

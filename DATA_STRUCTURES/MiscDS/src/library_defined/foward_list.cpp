@@ -53,6 +53,19 @@ void run_forward_list()
 			The elements of third forward list are : 1 2 3
 	*/
 }
+#include<algorithm> // for_each
+void run_forward_list_second() {
+	forward_list<int> flist(5);
+	puts("");
+
+	for_each(flist.begin(), flist.end(), [i = 0](auto& a)mutable{++i; a = i; }); // 12345
+	// flist.emplace_after();
+
+	flist.emplace_after(flist.begin(), 9); // only two functions push_front(), insert_after();
+	flist.emplace_front(8);
+	for (auto a : flist)
+		cout << a; // 8192345
+}
 
 //int main()
 //{

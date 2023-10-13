@@ -1,6 +1,6 @@
 #include<iostream>
 
-#define _CRT_SECURE_NO_WARNINGS
+
 using namespace std;
 
 class String
@@ -21,7 +21,7 @@ public:
 
 		long len = strlen(pbuf);
 		m_pBuf = new char[len + 1];
-		strcpy(m_pBuf, pbuf);
+		strcpy_s(m_pBuf, len + 1, pbuf);
 
 	}
 	~String()
@@ -63,7 +63,7 @@ public:
 		cout << "assignment called" << endl;
 		delete[] this->m_pBuf;
 		this->m_pBuf = new char[strlen(str.m_pBuf) + 1];
-		strcpy(this->m_pBuf, str.m_pBuf);
+		strcpy_s(this->m_pBuf, strlen(str.m_pBuf) + 1, str.m_pBuf);
 		return *this;
 	}
 	String(String&& str) noexcept
@@ -72,7 +72,7 @@ public:
 		
 		//delete[] this->m_pBuf; // delete str, temp variable as in call
 		this->m_pBuf = new char[strlen(str.m_pBuf) + 1];
-		strcpy(this->m_pBuf, str.m_pBuf);
+		strcpy_s(this->m_pBuf, strlen(str.m_pBuf) + 1, str.m_pBuf);
 		
 		// for arg pointers
 		delete[] str.m_pBuf;

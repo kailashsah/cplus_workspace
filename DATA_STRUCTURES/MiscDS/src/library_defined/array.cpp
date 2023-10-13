@@ -56,7 +56,7 @@ void array_impl()
 	
 	//4.
 	auto pos = find(sta.begin(), sta.end(), 4); // find item
-	auto itrEnd = remove(sta.begin(), sta.end(), 5); // remove first occurrence of item  5
+	auto itrEnd = remove(sta.begin(), sta.end(), 5); // remove all occurrence of item  5 in the given range
 	// erase() not available for std::array class
 	/*
 		These algorithms will not actually remove any elements, but instead only move them to the end of the sequence, so that all "removed" elements fall behind a certain boundary in your range. This boundary is returned as an iterator.

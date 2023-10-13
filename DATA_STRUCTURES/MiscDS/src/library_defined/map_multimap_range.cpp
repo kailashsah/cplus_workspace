@@ -3,7 +3,7 @@
 #include <algorithm>
 
 using namespace std;
-void run_multiset()
+void run_multimap()
 {
 	std::multimap<const long, const std::string> colors;
 
@@ -16,11 +16,13 @@ void run_multiset()
 
 
 	//2. find value 
-	auto [begin, end] = colors.equal_range(4);
+	// error - requires : c++17 for structural bindings
+	
+	/*auto [begin, end] = colors.equal_range(4);
 	for(auto & it : std::ranges::subrange(begin, end))
 	{
 		std::cout << "    " << it.second << std::endl;
-	}
+	}*/
 	
 	//3.
 	auto ran = colors.equal_range(4);	
@@ -40,6 +42,6 @@ void run_multiset()
 
 //int main()
 //{
-//	run_multiset();
+//	run_multimap();
 //	return 0;
 //}
