@@ -150,6 +150,7 @@
     <ClCompile Include="src\library_defined\map_multimap_range.cpp" />
     <ClCompile Include="src\library_defined\priority_queue.cpp" />
     <ClCompile Include="src\library_defined\set.cpp" />
+    <ClCompile Include="src\library_defined\tuple_tie.cpp" />
     <ClCompile Include="src\library_defined\vector.cpp" />
     <ClCompile Include="src\user_defined\graph_cycle.cpp" />
     <ClCompile Include="src\user_defined\linkedlist.cpp" />
