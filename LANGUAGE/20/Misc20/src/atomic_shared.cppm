@@ -42,6 +42,7 @@ void run_atomic_shared_ptr()
 	//    thread2.join();
 	std::osyncstream(std::cout) << "ends" << endl;
 }
+
 void run_simple_shared_ptr()
 {
 	shared_ptr<int> ptr = make_shared<int>(10);

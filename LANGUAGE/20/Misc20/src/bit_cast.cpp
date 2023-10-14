@@ -1,8 +1,13 @@
 #include <iostream>
-
 using namespace std;
 
-void run_int_float_ptr()
+/*
+	1. reinterpret_cast<> https://www.geeksforgeeks.org/reinterpret_cast-in-c-type-casting-operators/ 
+	2. When it is needed to interpret the bytes of an object as a value of a different type, std::memcpy or std::bit_cast (since C++20) can be used
+	3. It is generating a new object as if by copying its value representation from an existing one. It's a low-level tool, but it's not a tool that messes with the type system. So it would be strange to spell a "safe" operation the same way you spell a "dangerous" one.
+*/
+
+void run_bit_cast()
 {
 	// int ptr & float ptr
 	int* pint = new int{ 5 };

@@ -1,10 +1,8 @@
 
 //#include <iostream>
 import <iostream>;
-#include "../cplus20.h" //#define cplus20
 using namespace std;
 
-#ifdef cplus20
 
 import AdvancedMathematicsModule;   // module
 
@@ -27,7 +25,6 @@ void run_module() {
 //}
 
 
-#endif // cplus20
 
 /*
 	1. A module is made up of one or more source code files compiled into a binary file. The binary file describes all the exported types, functions, and templates in the module. When a source file imports a module, the compiler reads in the binary file that contains the contents of the module. Reading the binary file is much faster than processing a header file. Also, the binary file is reused by the compiler every time the module is imported, saving even more time. Because a module is built once rather than every time it's imported, build time can be reduced, sometimes dramatically.

@@ -1,9 +1,6 @@
 #include <iostream>
-#include "./cplus20.h"
 using namespace std;
 
-//#define cplus20
-#ifdef cplus20
 
 #include <coroutine> 
 
@@ -72,4 +69,3 @@ resumable fun_corountine()
 
 ////////////////////////
 
-#endif

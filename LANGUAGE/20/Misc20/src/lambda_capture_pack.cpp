@@ -1,9 +1,6 @@
 #include <iostream>
-#include "./cplus20.h"
 using namespace std;
 
-//#define cplus20
-#ifdef cplus20
 
 // lambda init capture
 template <typename... Args>
@@ -54,4 +51,3 @@ auto print_lambda_capture_ref(ostream& out, Args&&... args) // by reference
 
 ////////////////////////
 
-#endif

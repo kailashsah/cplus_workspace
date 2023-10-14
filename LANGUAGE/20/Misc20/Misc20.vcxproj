@@ -140,12 +140,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="bit_cast.cpp" />
-    <ClCompile Include="constexpr.cpp" />
-    <ClCompile Include="Misc20.cpp" />
     <ClCompile Include="src\atomic_shared.cppm" />
     <ClCompile Include="src\atomic_shared_impl.cppm" />
+    <ClCompile Include="src\bit_cast.cpp" />
+    <ClCompile Include="src\concept_in_fn.cpp" />
     <ClCompile Include="src\concept_require.cpp" />
+    <ClCompile Include="src\concept_user_defined.cpp" />
+    <ClCompile Include="src\constexpr.cpp" />
     <ClCompile Include="src\coroutine_generator.cpp" />
     <ClCompile Include="src\coroutine_resume.cpp" />
     <ClCompile Include="src\forwarding.cppm" />
@@ -156,9 +157,7 @@
     <ClCompile Include="src\nested_class.cpp" />
     <ClCompile Include="src\span.cppm" />
     <ClCompile Include="src\templ_in_lambdas.cppm" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\cplus20.h" />
+    <ClCompile Include="src\to_array.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,9 +1,7 @@
 #include <iostream>
-#include "cplus20.h" //#define cplus20
 
 
 using namespace std;
-#ifdef cplus20
 
 #include <map>
 #include <list>
@@ -126,21 +124,10 @@ void run_explicit_bool()
 	foo e{ 5.5 }; // direct call // implicit call
 }
 
-#include <initializer_list>
 
-void function1(auto vec)
-{
-	cout << "function1" << endl;
-	cout << typeid(vec).name() << endl;
-	cout << typeid(decltype(vec)).name();;
-}
 
 void run_mix_main()
 {
-	auto var = { "hello", "world", "test" };
-	// function1( {"hello", "world", "test"} );
-	function1(var);
-
 
 	//run_explicit_bool();
 
@@ -159,4 +146,3 @@ void run_mix_main()
 //	return 1;
 //}
 
-#endif
