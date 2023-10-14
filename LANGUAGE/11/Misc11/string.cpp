@@ -8,12 +8,12 @@ void string_split() {
 
 	string str = "first 21 second 21 third ";
 	cout << endl << "string_split() for '2' in : " << str << endl;
-	
+
 	//1.
 	stringstream ss(str);
 	string strr;
 	cout << "using getline() " << endl;
-	while (getline(ss, strr, '2')) // '2' is delimiter // can go with only char
+	while (getline(ss, strr, '2')) // '2' is delimiter // can go with only char // defined in <string>
 	{
 		cout << strr << " ";
 	}
@@ -21,7 +21,7 @@ void string_split() {
 	//2.
 	cout << endl;
 	cout << "using strtok() " << endl;
-	char* token = strtok(const_cast<char*>(str.data()), "2"); // with string 
+	char* token = strtok(const_cast<char*>(str.data()), "2"); // with string // defined in C standard library <string.h>
 	while (token != nullptr) {
 		cout << token << " ";
 		token = strtok(0, "2");
@@ -32,22 +32,23 @@ void string_split() {
 }
 
 
-void findin_string() {
+void erase_string() {
 	string str = "I 2 m 2 r";
 	string tofind = "2";
-	uint32_t pos = 0;// = str.find(tofind);
-	uint32_t cpos = 0;
-	string sstr;
-	while ((pos = str.find(tofind, pos)) != string::npos) {
-		sstr = str.substr(cpos, pos - cpos);
-		cout << sstr << " ";
-		pos += tofind.length();
-		cpos = pos;
-	}
+	
 
-	//erase
+	//2. erase, For single char
 	//std::erase(str, ' '); // erase() c++20
 	cout << endl;
+
+	//3. 
+	string::size_type len = str.length();
+	for (string::size_type i = str.find(tofind);
+		i != str.length();
+		i = str.find(tofind)) {
+		
+		str.erase(i, len);
+	}
 }
 //.................................................
 
@@ -97,6 +98,7 @@ void run_string()
 {
 	string_remove_space();
 	find_substr_str();
+	erase_string();
 	string_split();
 	//
 }

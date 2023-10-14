@@ -150,7 +150,6 @@
     <ClCompile Include="src\reference_wrapper.cpp" />
     <ClCompile Include="src\template_lazy.cpp" />
     <ClCompile Include="src\template_lazy_initialization.cpp" />
-    <ClCompile Include="src\tuple_tie.cpp" />
     <ClCompile Include="src\type_alias.cpp" />
     <ClCompile Include="src\cast_static.cpp" />
     <ClCompile Include="src\conversion_operator.cpp" />
