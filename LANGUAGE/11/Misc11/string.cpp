@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string>
 using namespace std;
-#include <sstream> //getline(),  
+#include <sstream> //getline(), 
+#include <string_view>
 
 void string_split() {
 
