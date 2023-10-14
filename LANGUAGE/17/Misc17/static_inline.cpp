@@ -15,6 +15,6 @@ struct S {
 
 	/*
 	  without inline it gives error -
-	 'S::count': a static data member with an in - class initializer must have non - volatile const integral type or be specified as 'inline'	
+	 'S::count': a static data member with an "in - class initializer" must have non - volatile const integral type or be specified as 'inline'	
 	*/
 };

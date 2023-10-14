@@ -140,7 +140,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Misc17.cpp" />
     <ClCompile Include="static_inline.cpp" />
     <ClCompile Include="variants.cpp" />
     <ClCompile Include="templ_integer_seq.cpp" />

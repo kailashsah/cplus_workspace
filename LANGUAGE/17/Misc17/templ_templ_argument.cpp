@@ -1,9 +1,9 @@
 #include <iostream>
 #include <vector>
-
-
 // template as template argument
 using namespace std;
+
+//1.
 template<typename Type, typename... Types>
 auto build_vector(Type first, Types... args)
 {
@@ -11,6 +11,7 @@ auto build_vector(Type first, Types... args)
 	return v;
 }
 
+//2.
 template < template<typename> class container_type,
 	typename Type,
 	typename... Types>
@@ -21,12 +22,12 @@ template < template<typename> class container_type,
 
 }
 
-// this one also compiled without first type & type template parameter (good to know)
-template < template<typename> class container_type,	
+//3. this one also compiled without first type & type template parameter (good to know)
+template < template<typename> class container_type,
 	typename... Types>
 	auto build_vector_advanced1(Types&&... args)
 {
-	container_type<int> v{  args... };
+	container_type<int> v{ args... };
 	return v;
 
 }
