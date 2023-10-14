@@ -40,6 +40,8 @@ void run_decltype()
 	return;
 }
 
+
+
 //int main()
 //{
 //	run_decltype();

@@ -147,6 +147,7 @@
     <ClCompile Include="r_value.cpp" />
     <ClCompile Include="src\class_member.cpp" />
     <ClCompile Include="src\initializer_aggregate.cpp" />
+    <ClCompile Include="src\initializer_list.cpp" />
     <ClCompile Include="src\reference_wrapper.cpp" />
     <ClCompile Include="src\template_lazy.cpp" />
     <ClCompile Include="src\template_lazy_initialization.cpp" />

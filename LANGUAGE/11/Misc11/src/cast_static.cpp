@@ -2,7 +2,9 @@
 #include <string>
 using namespace std;
 
-
+/*
+	1. https://www.geeksforgeeks.org/static_cast-in-cpp/
+*/
 
 void run_static_cast()
 {
