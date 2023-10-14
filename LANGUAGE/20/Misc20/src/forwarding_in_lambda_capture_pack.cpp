@@ -2,7 +2,7 @@
 using namespace std;
 
 
-// lambda init capture
+//1. lambda init capture
 template <typename... Args>
 auto fun_aa(Args&&... args) // by value
 {
@@ -16,6 +16,7 @@ void run_lambda_returned()
 
 }
 
+//2. 
 template <typename... Args>
 auto print_lambda_capture(ostream& out, Args&&... args) // by value
 {
@@ -28,6 +29,7 @@ void run_cout()
 
 }
 
+//3.
 template <typename... Args>
 auto print_lambda_capture_ref(ostream& out, Args&&... args) // by reference 
 {
