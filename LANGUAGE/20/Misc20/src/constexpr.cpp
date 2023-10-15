@@ -14,3 +14,41 @@ constexpr int addOne(int n)
 constexpr void void_fn() {
 	// ok
 }
+
+// .............................................
+// A class with constexpr 
+// constructor and function 
+class Rectangle
+{
+    int _h, _w;
+public:
+    // A constexpr constructor 
+    constexpr Rectangle(int h, int w) : _h(h), _w(w) {}
+
+    constexpr int getArea() const { return _h * _w; }
+};
+
+// driver program to test function 
+int run_rectangle()
+{
+    // Below object is initialized at compile time 
+    constexpr Rectangle obj(10, 20);
+    std::cout << obj.getArea(); 
+    /*
+        cannot convert 'this' pointer from 'const Rectangle' to 'Rectangle &'
+        replace 
+         constexpr int getArea() { return _h * _w; }
+        with
+         constexpr int getArea() const { return _h * _w; }
+    */ 
+
+    /*
+        Restrictions on constructors that can use constexpr:
+            No virtual base class
+            Each parameter should be literal
+            It is not a try block function
+    */
+    return 0;
+}
+
+// .............................................

@@ -146,6 +146,7 @@
     <ClCompile Include="src\concept_in_fn.cpp" />
     <ClCompile Include="src\concept_require.cpp" />
     <ClCompile Include="src\concept_user_defined.cpp" />
+    <ClCompile Include="src\consteval.cpp" />
     <ClCompile Include="src\constexpr.cpp" />
     <ClCompile Include="src\container_contains.cpp" />
     <ClCompile Include="src\coroutine_generator.cpp" />
@@ -160,6 +161,9 @@
     <ClCompile Include="src\module\mod_adv_maths.ixx" />
     <ClCompile Include="src\module\mod_caller.cppm" />
     <ClCompile Include="src\nested_class.cpp" />
+    <ClCompile Include="src\ranges.cpp" />
+    <ClCompile Include="src\spaceship_operator.cpp" />
+    <ClCompile Include="src\spaceship_operator_in_class.cpp" />
     <ClCompile Include="src\span.cppm" />
     <ClCompile Include="src\string_view.cpp" />
     <ClCompile Include="src\templ_in_lambdas.cppm" />
