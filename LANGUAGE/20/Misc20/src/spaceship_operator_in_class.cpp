@@ -4,6 +4,7 @@ using namespace std;
 /*
 	1. default , delete - It means that you want to use the compiler-generated version of that function, so you don't need to specify a body.
         You can also use = delete to specify that you don't want the compiler to generate that function automatically.
+    
     2. struct compare_three_way;
 */
 
@@ -25,8 +26,8 @@ void run_class_with_spaceship_op() {
     //1.
     if(pt1 < pt2)
         std::cout <<"pt1 is less than pt2 "<< std::endl;
-    //else if (pt1 == pt2)
-    //    std::cout << "pt1 is equal to pt2 " << std::endl; // not calling operator <=>
+    else if (pt1 == pt2)
+        std::cout << "pt1 is equal to pt2 " << std::endl; // not calling operator <=>, calls operator==()
     else if (pt1 > pt2)
         std::cout << "pt1 is grater than pt2 " << std::endl;
 

@@ -41,7 +41,7 @@ void run_consteval() {
 	
 	//3.2
 	//int x = 100;					// fix is -> const int x=100;
-	//int r2 = sqr(x);				// Error: Call does not produce a constant
+	//int r2 = sqr(x);				// Error: Call does not produce a constant bcoz of x
 
 	
 

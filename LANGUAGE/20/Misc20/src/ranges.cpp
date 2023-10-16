@@ -87,8 +87,9 @@ void run_reverse_view() {
 		cout << i << " "; // 0 1 2 3 4 5
 
 }
-int main()
-{
+
+void run_all_views() {
+
 	//1.
 	run_filter_adaptor();
 	cout << endl;
@@ -97,7 +98,7 @@ int main()
 	puts("run_transform()");
 	run_transform();
 	cout << endl;
-	
+
 	//3.
 	puts("run_sort()");
 	run_sort();
@@ -105,7 +106,11 @@ int main()
 	//4.
 	puts("run_reverse_view()");
 	run_reverse_view();
-
-	return 1;
 }
+
+//int main()
+//{
+//	run_all_views();
+//	return 1;
+//}
 

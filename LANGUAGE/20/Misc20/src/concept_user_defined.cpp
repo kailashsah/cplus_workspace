@@ -9,7 +9,7 @@ using namespace std;
 
 	3. A concept is a named set of requirements.
 	4. Constraints
-		A constraint is a sequence of logical operations and operands that specifies requirements on template arguments. They can appear within requires expressions or directly as bodies of concepts
+		A constraint is a sequence of logical operations and operands that specifies requirements on template arguments. They can appear within requires expressions or directly as bodies of concepts.
 */
 
 //1.
@@ -43,7 +43,7 @@ void run_concepts_user_defined()
 	//1.
 	cout << func_addV1(4.5) << endl; // 6.5
 	cout << func_addV1(4) << endl; // 6
-	
+
 	//2.
 	//cout << func_addV2(4.5) << endl; // no instance of function templ matches the argument list
 	cout << func_addV2(4) << endl; // 6

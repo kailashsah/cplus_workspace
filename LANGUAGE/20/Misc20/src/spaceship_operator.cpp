@@ -26,7 +26,7 @@ void fn_two() {
 	constexpr auto res{ m <=> n };
 
 	//1.
-	if (std::is_lt(res)) {
+	if (std::is_lt(res)) { // header <compare>
 		std::cout << m << " is less than " << n << std::endl;
 	}
 	else if (std::is_gt(res)) {

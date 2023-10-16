@@ -2,6 +2,7 @@
 using namespace std;
 
 /*
+	1. use string_view when it is required to pass "const string&" in an argument
 */
 
 void func_sv(std::string_view sv)
