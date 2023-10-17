@@ -47,8 +47,8 @@ void run_unique_ptr_two()
 	case_two_unique(baseObj);
 }
 
-int main()
-{
-	run_unique_ptr_two();
-	return 0;
-}
+//int main()
+//{
+//	run_unique_ptr_two();
+//	return 0;
+//}

@@ -33,11 +33,12 @@ void run_move_constructor() {
 	cout << "prg ends" << endl;
 }
 
-int main()
-{
-	run_move_constructor();
-	return 0;
-}
+//int main()
+//{
+//	run_move_constructor();
+//	return 0;
+//}
+
 /*
  output-
 	move ctor called for a
