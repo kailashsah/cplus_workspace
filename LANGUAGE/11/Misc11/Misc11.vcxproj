@@ -142,11 +142,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cast_const.cpp" />
-    <ClCompile Include="Misc11.cpp" />
     <ClCompile Include="move_constructor.cpp" />
     <ClCompile Include="r_value.cpp" />
     <ClCompile Include="src\class_member.cpp" />
     <ClCompile Include="src\class_nullptr.cpp" />
+    <ClCompile Include="src\concepts\move_if_noexcept.cpp" />
+    <ClCompile Include="src\concepts\noexcept_and_throw.cpp" />
+    <ClCompile Include="src\concepts\reverse_to_forward_iterator.cpp" />
+    <ClCompile Include="src\exception_throw.cpp" />
     <ClCompile Include="src\initializer_aggregate.cpp" />
     <ClCompile Include="src\initializer_list.cpp" />
     <ClCompile Include="src\reference_wrapper.cpp" />
