@@ -88,6 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -102,6 +103,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,6 +142,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="MiscThreads.cpp" />
+    <ClCompile Include="src\basics_detach.cpp" />
+    <ClCompile Include="src\basics_join.cpp" />
+    <ClCompile Include="src\lock_guard_unique_lock.cpp" />
+    <ClCompile Include="src\prvalue_xvalue.cpp" />
+    <ClCompile Include="src\lock_scoped_lock.cpp" />
     <ClCompile Include="src\thread_basics.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
