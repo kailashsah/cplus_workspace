@@ -144,11 +144,15 @@
     <ClCompile Include="src\algo_stl\fill_n.cpp" />
     <ClCompile Include="src\algo_stl\iota.cpp" />
     <ClCompile Include="src\library_defined\array.cpp" />
+    <ClCompile Include="src\library_defined\container_adapters\priority_queue.cpp" />
+    <ClCompile Include="src\library_defined\container_adapters\queue.cpp" />
+    <ClCompile Include="src\library_defined\container_adapters\readme_container_adpaters.cpp" />
+    <ClCompile Include="src\library_defined\container_adapters\stack.cpp" />
+    <ClCompile Include="src\library_defined\deque.cpp" />
     <ClCompile Include="src\library_defined\foward_list.cpp" />
     <ClCompile Include="src\library_defined\list.cpp" />
     <ClCompile Include="src\library_defined\map.cpp" />
     <ClCompile Include="src\library_defined\map_multimap_range.cpp" />
-    <ClCompile Include="src\library_defined\priority_queue.cpp" />
     <ClCompile Include="src\library_defined\set.cpp" />
     <ClCompile Include="src\library_defined\tuple_tie.cpp" />
     <ClCompile Include="src\library_defined\vector.cpp" />
