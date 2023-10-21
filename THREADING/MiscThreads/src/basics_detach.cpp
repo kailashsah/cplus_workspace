@@ -19,6 +19,8 @@ using namespace std;
 	5. detach basically will release the resources needed to be able to implement join.
 
 	6. There is no way to make such a thread to exit gracefully so use of join will just lead to primary thread blocking. That's a situation when using detach would be a less evil alternative to, say, allocating thread object with dynamic storage duration and then purposely leaking it.
+
+	7. detach() is mainly useful when you have a task that has to be done in background, but you don't care about its execution. This is usually a case for some libraries. They may silently create a background worker thread and detach it so you won't even notice it.
 */
 
 #include <thread> // std::this_thread, thread class
