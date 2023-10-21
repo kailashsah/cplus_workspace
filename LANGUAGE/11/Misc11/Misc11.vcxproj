@@ -146,9 +146,12 @@
     <ClCompile Include="r_value.cpp" />
     <ClCompile Include="src\class_member.cpp" />
     <ClCompile Include="src\class_nullptr.cpp" />
+    <ClCompile Include="src\concepts\iterator_vs_const_iterator.cpp" />
     <ClCompile Include="src\concepts\move_if_noexcept.cpp" />
     <ClCompile Include="src\concepts\noexcept_and_throw.cpp" />
+    <ClCompile Include="src\concepts\return_vector_fm_func.cpp" />
     <ClCompile Include="src\concepts\reverse_to_forward_iterator.cpp" />
+    <ClCompile Include="src\concepts\stringstream_like_StringBuffer.cpp" />
     <ClCompile Include="src\exception_throw.cpp" />
     <ClCompile Include="src\initializer_aggregate.cpp" />
     <ClCompile Include="src\initializer_list.cpp" />

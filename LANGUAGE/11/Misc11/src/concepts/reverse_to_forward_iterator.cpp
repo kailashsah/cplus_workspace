@@ -15,6 +15,7 @@ typename ReverseIterator::iterator_type make_forward(ReverseIterator rit)
 		cout << "rit.base(): " << *(rit.base()) << endl;
 
 		return --(rit.base()); // move result of .base() back by one.
+		
 		// alternatively
 		// return (++rit).base() ;
 		// or
