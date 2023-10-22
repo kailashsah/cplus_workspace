@@ -10,9 +10,9 @@ void run_lock()
 	std::cout << "Hello World!\n";
 }
 
-int main()
-{
-	run_lock();
-	return 1;
-}
+//int main()
+//{
+//	run_lock();
+//	return 1;
+//}
 
