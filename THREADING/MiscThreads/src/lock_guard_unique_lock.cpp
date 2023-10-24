@@ -5,7 +5,7 @@
 	2. std::unique_lock might have a  more overhead.
 */
 
-void run_lock()
+void run_lockxyz()
 {
 	std::cout << "Hello World!\n";
 }

@@ -144,12 +144,18 @@
     <ClCompile Include="src\basics_detach.cpp" />
     <ClCompile Include="src\basics_join.cpp" />
     <ClCompile Include="src\condition_variable.cpp" />
+    <ClCompile Include="src\cplus20\async.cpp" />
+    <ClCompile Include="src\cplus20\thread_stop.cpp" />
     <ClCompile Include="src\cv_wait_for.cpp" />
+    <ClCompile Include="src\datarace.cpp" />
+    <ClCompile Include="src\deadlock.cpp" />
+    <ClCompile Include="src\future.cpp" />
     <ClCompile Include="src\lock.cpp" />
     <ClCompile Include="src\lock_guard_unique_lock.cpp" />
     <ClCompile Include="src\prvalue_xvalue.cpp" />
     <ClCompile Include="src\lock_scoped_lock.cpp" />
     <ClCompile Include="src\readme_threads.cpp" />
+    <ClCompile Include="src\future_shared_future.cpp" />
     <ClCompile Include="src\thread_basics.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

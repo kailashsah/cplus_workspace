@@ -44,14 +44,14 @@ void signals()
 	cv.notify_all();
 }
 
-void main()
-{
-	std::thread t1(waits, 1), t2(waits, 2), t3(waits, 3), t4(signals);
-	t1.join();
-	t2.join();
-	t3.join();
-	t4.join();
-}
+//void main()
+//{
+//	std::thread t1(waits, 1), t2(waits, 2), t3(waits, 3), t4(signals);
+//	t1.join();
+//	t2.join();
+//	t3.join();
+//	t4.join();
+//}
 
 /*
 	Thread 1 timed out. i == 0
