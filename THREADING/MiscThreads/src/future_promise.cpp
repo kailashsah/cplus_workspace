@@ -59,7 +59,7 @@ void run_promise()
     */
 }
 
-void main()
-{
-    run_promise();
-}
+//void main()
+//{
+//    run_promise();
+//}
