@@ -52,7 +52,7 @@ void thread_func()
         task = std::move(task_q.front());
         task_q.pop_front();
     }
-    task();
+    task(); // this stmt returns when task completes
 }
 
 // Driver Code 
@@ -83,3 +83,7 @@ void run_packaged_task()
 
 }
 
+//int main()
+//{
+//    run_packaged_task();
+//}
