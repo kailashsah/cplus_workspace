@@ -18,18 +18,18 @@ using namespace std;
 
 void run_future()
 {
-	// future from a packaged_task
+	//1. future from a packaged_task
 	std::packaged_task<int()> task([] { return 7; }); // wrap the function
 	std::future<int> f1 = task.get_future(); // get a future
-	std::thread t(std::move(task)); // launch on a thread
+	std::thread th(std::move(task)); // launch on a thread
 
-	// future from an async()
+	//2. future from an async()
 	std::future<int> f2 = std::async(std::launch::async, [] { return 8; });
 
-	// future from a promise
-	std::promise<int> p;
-	std::future<int> f3 = p.get_future();
-	std::thread([&p] { p.set_value_at_thread_exit(9); }).detach();
+	//3. future from a promise
+	std::promise<int> prom;
+	std::future<int> f3 = prom.get_future();
+	std::thread([&prom] { prom.set_value_at_thread_exit(9); }).detach(); // set_value_at_thread_exit()
 
 	std::cout << "Waiting..." << std::flush;
 	f1.wait();
@@ -37,7 +37,7 @@ void run_future()
 	f3.wait();
 	std::cout << "Done!\nResults are: "
 		<< f1.get() << ' ' << f2.get() << ' ' << f3.get() << '\n';
-	t.join();
+	th.join();
 
 	/*
 		Waiting...Done!
@@ -47,10 +47,10 @@ void run_future()
 
 void run_future_with_exception()
 {
-    std::promise<int> p;
-    std::future<int> f = p.get_future();
+    std::promise<int> prom;
+    std::future<int> fut = prom.get_future();
 
-    std::thread t([&p]
+    std::thread th([&prom]
         {
             try
             {
@@ -62,7 +62,7 @@ void run_future_with_exception()
                 try
                 {
                     // store anything thrown in the promise
-                    p.set_exception(std::current_exception());
+                    prom.set_exception(std::current_exception());
                 }
                 catch (...) {} // set_exception() may throw too
             }
@@ -70,13 +70,13 @@ void run_future_with_exception()
 
     try
     {
-        std::cout << f.get();
+        std::cout << fut.get();
     }
     catch (const std::exception& e)
     {
         std::cout << "Exception from the thread: " << e.what() << '\n';
     }
-    t.join();
+    th.join();
 
     /*
         Exception from the thread: Example

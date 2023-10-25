@@ -79,8 +79,8 @@ void run_by_promise() {
 	t.join(); // Join thread.
 }
 
-void main()
-{
-	run_async();
-	run_by_promise();
-}
+//void main()
+//{
+//	run_async();
+//	run_by_promise();
+//}
