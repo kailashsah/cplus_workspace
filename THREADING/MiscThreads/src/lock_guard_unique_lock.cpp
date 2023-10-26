@@ -2,7 +2,8 @@
 /*
 	1.  you can lock and unlock a std::unique_lock. std::lock_guard will be locked only once on construction and unlocked on destruction.
 
-	2. std::unique_lock might have a  more overhead.
+	2. std::unique_lock might have a  more overhead. 
+		we can unlock() unique_lock<> before the end of scope of parent.
 */
 
 void run_lockxyz()

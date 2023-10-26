@@ -147,6 +147,8 @@
     <ClCompile Include="src\concepts\deadlock.cpp" />
     <ClCompile Include="src\condition_variable.cpp" />
     <ClCompile Include="src\cplus20\async.cpp" />
+    <ClCompile Include="src\cplus20\jthread.cpp" />
+    <ClCompile Include="src\cplus20\jthread_cancel.cpp" />
     <ClCompile Include="src\cplus20\osyncstream.cpp" />
     <ClCompile Include="src\cplus20\request_stop.cpp" />
     <ClCompile Include="src\cv_wait_for.cpp" />
@@ -159,6 +161,7 @@
     <ClCompile Include="src\packaged_task_two.cpp" />
     <ClCompile Include="src\packaged_task_vs_async.cpp" />
     <ClCompile Include="src\problems\is_thread_running.cpp" />
+    <ClCompile Include="src\problems\is_thread_running_by_flag.cpp" />
     <ClCompile Include="src\problems\is_thread_running_by_joinable.cpp" />
     <ClCompile Include="src\problems\thread_pause.cpp" />
     <ClCompile Include="src\problems\thread_pause_multithreading.cpp" />

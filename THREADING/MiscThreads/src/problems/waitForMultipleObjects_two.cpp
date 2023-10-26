@@ -69,8 +69,8 @@ void run_wait_for_multiple_objects_two() {
     Winner result: 25488
 */
 
-int main() {
-
-    run_wait_for_multiple_objects_two();
-    return 0;
-}
+//int main() {
+//
+//    run_wait_for_multiple_objects_two();
+//    return 0;
+//}
