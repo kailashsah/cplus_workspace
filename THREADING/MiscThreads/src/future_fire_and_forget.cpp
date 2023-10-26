@@ -75,7 +75,8 @@ void run_future_non_blocking() {
 
 void run_fix() {
 	using namespace std::literals;
-	// get a std::future<> by std::async<>();
+	
+	//1. get a std::future<> by std::async<>();
 	std::future<int> BlockingFuture = std::async([]()
 		{
 			std::this_thread::sleep_for(2s);
@@ -83,7 +84,7 @@ void run_fix() {
 			return 1;
 		});
 
-	// get a std::future<> by packaged_task<>
+	//2. get a std::future<> by packaged_task<>
 	std::packaged_task<int()> task([]()
 		{
 			std::this_thread::sleep_for(1s);
