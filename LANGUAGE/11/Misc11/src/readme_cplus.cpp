@@ -8,5 +8,5 @@ using namespace std;
 
 	todo
 		1. bind expression 
-		2. 
+		2. designated constuctors
 */
