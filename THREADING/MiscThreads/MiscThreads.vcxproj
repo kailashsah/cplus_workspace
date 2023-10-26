@@ -163,7 +163,8 @@
     <ClCompile Include="src\problems\thread_pause_multithreading.cpp" />
     <ClCompile Include="src\problems\thread_stop.cpp" />
     <ClCompile Include="src\problems\thread_stop_atomic_bool.cpp" />
-    <ClCompile Include="src\problems\waitForMultipleObjects.cpp" />
+    <ClCompile Include="src\problems\waitForMultipleObjects_one.cpp" />
+    <ClCompile Include="src\problems\waitForMultipleObjects_two.cpp" />
     <ClCompile Include="src\prvalue_xvalue.cpp" />
     <ClCompile Include="src\lock_scoped_lock.cpp" />
     <ClCompile Include="src\readme_threads.cpp" />

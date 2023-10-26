@@ -31,8 +31,8 @@ void run_wait_for_multiple_objects()
 	cout << "finished" << endl;
 }
 
-int main() {
-
-	run_wait_for_multiple_objects();
-	return 0;
-}
+//int main() {
+//
+//	run_wait_for_multiple_objects();
+//	return 0;
+//}
