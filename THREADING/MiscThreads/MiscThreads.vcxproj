@@ -143,12 +143,13 @@
   <ItemGroup>
     <ClCompile Include="src\basics_detach.cpp" />
     <ClCompile Include="src\basics_join.cpp" />
+    <ClCompile Include="src\concepts\datarace.cpp" />
+    <ClCompile Include="src\concepts\deadlock.cpp" />
     <ClCompile Include="src\condition_variable.cpp" />
     <ClCompile Include="src\cplus20\async.cpp" />
+    <ClCompile Include="src\cplus20\osyncstream.cpp" />
     <ClCompile Include="src\cplus20\request_stop.cpp" />
     <ClCompile Include="src\cv_wait_for.cpp" />
-    <ClCompile Include="src\datarace.cpp" />
-    <ClCompile Include="src\deadlock.cpp" />
     <ClCompile Include="src\future.cpp" />
     <ClCompile Include="src\future_fire_and_forget.cpp" />
     <ClCompile Include="src\future_promise.cpp" />
@@ -165,6 +166,7 @@
     <ClCompile Include="src\problems\thread_stop_atomic_bool.cpp" />
     <ClCompile Include="src\problems\waitForMultipleObjects_one.cpp" />
     <ClCompile Include="src\problems\waitForMultipleObjects_two.cpp" />
+    <ClCompile Include="src\problems\writing_file_two_threads_osyncstream.cpp" />
     <ClCompile Include="src\prvalue_xvalue.cpp" />
     <ClCompile Include="src\lock_scoped_lock.cpp" />
     <ClCompile Include="src\readme_threads.cpp" />

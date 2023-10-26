@@ -8,5 +8,5 @@ using namespace std;
 		if (ss.stop_possible())
 			thread.request_stop();
 	
-	3. check section "thread_stop" 
+	3. check section "problems/thread_stop" 
 */
