@@ -36,8 +36,10 @@ auto LegacyApiThreadEntry(void)
 void run_thread_detach() {
 
 	::std::thread legacy_api_thread{ &LegacyApiThreadEntry };
+	
 	// do something...
-	legacy_api_thread.detach();
+	
+	legacy_api_thread.detach(); // if we call detach(), it won't crash at the func return.
 
 }
 

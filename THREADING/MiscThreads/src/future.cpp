@@ -30,6 +30,7 @@ void run_future()
 	std::promise<int> prom;
 	std::future<int> f3 = prom.get_future();
 	std::thread([&prom] { prom.set_value_at_thread_exit(9); }).detach(); // set_value_at_thread_exit()
+    // we safely detach() here bcoz f3.wait() is there in the call downstream. which will wait for the thread to complete. Otherwise, also with detach() it won't crash at caller func returns.
 
 	std::cout << "Waiting..." << std::flush;
 	f1.wait();

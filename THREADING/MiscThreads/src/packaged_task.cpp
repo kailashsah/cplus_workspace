@@ -3,6 +3,7 @@ using namespace std;
 
 /*
 	1. The  std::packaged_task class wraps any Callable objects (function, lambda expression, bind expression, or another function object) so that they can be invoked asynchronously. A packaged_task won’t start on its own, you have to invoke it, As its return value is stored in a shared state that can be called/accessed by  std::future objects.
+        "The template function async runs the function f asynchronously (potentially in a separate thread) and returns a std::future that will eventually hold the result of that function call."
 
 	2. Need of packaged_task
 

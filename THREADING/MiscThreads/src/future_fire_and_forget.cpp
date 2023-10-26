@@ -5,6 +5,7 @@ using namespace std;
 	1. fire & forget issue.
 	2. this issue not there in std::packaged_task or std::promise
 	3. https://www.modernescpp.com/index.php/the-special-futures/
+	4. 
 
 */
 #include <chrono>
@@ -107,7 +108,7 @@ void run_fix() {
 	*/
 }
 
-void main()
-{
-	run_fix();
-}
+//void main()
+//{
+//	run_fix();
+//}

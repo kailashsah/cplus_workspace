@@ -6,6 +6,7 @@ using namespace std;
 	2. ex. if one thread is preparing data & other thread is processing that data. these both thread should be in sync by condition variable, which gives us wait() facility.
 
 	3. one wants a thread to wait until an event occurs or until a condition becomes true. 
+		basically, it is a signalling facility
 
 	4. notify_all() - If there are ten threads blocked on the condition variable, for example, notify_one() will unblock only one thread, while notify_all() will unblock them all. In your case, you'll want to use notify_one().
 
@@ -82,7 +83,7 @@ void data_processing_thread()
 	while (true)
 	{
 		std::unique_lock lock(mutexv);              //-- (4)  
-		buffer_cond.wait(lock, [] {return !buffer.empty(); });    //-- (5)   
+		buffer_cond.wait(lock, [] {return !buffer.empty(); });    //-- (5)   // has callable predicate
 		buffer_data data = buffer.front();
 		buffer.pop();
 		lock.unlock();                                         //-- (6)   
