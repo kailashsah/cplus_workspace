@@ -48,7 +48,7 @@ void jthread_cancel() {
 	*/
 }
 
-//2. this thread blocking, doesn't return from func() .. case of without stop_token class
+//2. this thread is blocking, doesn't return from func() .. case of without "stop_token" class
 void jthread_cancel_indefinite_call() {
 	using namespace std::literals::chrono_literals;
 
@@ -61,9 +61,10 @@ void jthread_cancel_indefinite_call() {
 
 	std::this_thread::sleep_for(2s);
 }
-int main()
-{
-	jthread_cancel();
-	//jthread_cancel_indefinite_call();
-	return 1;
-}
+
+//int main()
+//{
+//	jthread_cancel();
+//	//jthread_cancel_indefinite_call();
+//	return 1;
+//}

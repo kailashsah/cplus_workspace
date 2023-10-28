@@ -72,7 +72,7 @@ void run_scoped_lock()
 {
 	mutex mtx;
 	//1.
-	scoped_lock{ mtx }; // c++17 // which constructs a prvalue object that is immediately destroyed)
+	scoped_lock{ mtx }; // c++17 // which constructs a prvalue object that is immediately destroyed) // not advised
 
 	//2.
 	Employee alice("Alice"), bob("Bob"), christina("Christina"), dave("Dave");

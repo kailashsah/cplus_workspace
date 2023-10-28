@@ -11,7 +11,7 @@ using namespace std;
 #include <thread>
 
 // unique function to avoid disambiguating the std::pow overload set
-int f(int x, int y) { return static_cast<int> ( std::pow(x, y) ); }
+int get_power(int x, int y) { return static_cast<int> ( std::pow(x, y) ); }
 
 void task_lambda()
 {
@@ -28,7 +28,7 @@ void task_lambda()
 
 void task_bind()
 {
-	std::packaged_task<int()> task(std::bind(f, 2, 11));
+	std::packaged_task<int()> task(std::bind(get_power, 2, 11));
 	std::future<int> result = task.get_future();
 
 	task();
@@ -38,7 +38,7 @@ void task_bind()
 
 void task_thread()
 {
-	std::packaged_task<int(int, int)> task(f);
+	std::packaged_task<int(int, int)> task(get_power);
 	std::future<int> result = task.get_future();
 
 	std::thread task_td(std::move(task), 2, 10);

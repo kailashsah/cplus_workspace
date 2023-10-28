@@ -70,7 +70,7 @@ void run_packaged_task()
     std::future<int> fu = task.get_future();
     {
         std::lock_guard<std::mutex> locker(mu);
-        task_q.push_back(std::move(task));
+        task_q.push_back(std::move(task)); // type: deque<std::packaged_task<int()>
     }
 
     cond.notify_one();
@@ -78,8 +78,7 @@ void run_packaged_task()
     // Fetch the result of packaged_task<> 
     cout << fu.get();
 
-    // Join the thread. Its blocking and  
-    // returns when thread is finished. 
+    // Join the thread. Its blocking and  returns when thread is finished. 
     th.join();
 
 }

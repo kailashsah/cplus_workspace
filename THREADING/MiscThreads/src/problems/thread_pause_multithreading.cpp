@@ -12,7 +12,7 @@ using namespace std;
 class ThreadPause {
 public:
 	explicit ThreadPause(bool paused = false);
-	[[nodiscard]]
+	[[nodiscard]] // C++ static code analysis, should be used when the return value of a function should not be ignored.
 	bool is_paused() const;
 	void wait();
 	void pause();
@@ -65,7 +65,7 @@ void run_pause_multithreader() {
 	std::size_t thread_count = 10;
 	std::atomic<bool> exit_threads(false);
 	ThreadPause thread_pause;
-	std::vector<int> increments(thread_count, 0);
+	std::vector<int> increments_vec(thread_count, 0);
 
 	auto thread_function = [](
 		std::atomic<bool>& exit_threads,
@@ -85,7 +85,7 @@ void run_pause_multithreader() {
 		threads.emplace_back(thread_function,
 			std::ref(exit_threads),
 			std::ref(thread_pause),
-			std::ref(increments[i]));
+			std::ref(increments_vec[i]));
 	}
 
 	std::this_thread::sleep_for(100ms);
@@ -93,13 +93,13 @@ void run_pause_multithreader() {
 
 	std::this_thread::sleep_for(100ms);
 	std::cout << "Current values for increments: \n";
-	for (auto increment : increments) {
+	for (auto increment : increments_vec) {
 		std::cout << increment << "\n";
 	}
 
 	std::this_thread::sleep_for(100ms);
 	std::cout << "Pause values for increments: (after wait for 100ms, thread still in paused state ) \n";
-	for (auto increment : increments) {
+	for (auto increment : increments_vec) {
 		std::cout << increment << "\n";
 	}
 	thread_pause.resume();
@@ -109,7 +109,7 @@ void run_pause_multithreader() {
 	std::this_thread::sleep_for(100ms);
 
 	std::cout << "Resume values for increments: \n";
-	for (auto increment : increments) {
+	for (auto increment : increments_vec) {
 		std::cout << increment << "\n";
 	}
 

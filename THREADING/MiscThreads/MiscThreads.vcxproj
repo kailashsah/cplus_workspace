@@ -145,10 +145,12 @@
     <ClCompile Include="src\basics_join.cpp" />
     <ClCompile Include="src\concepts\datarace.cpp" />
     <ClCompile Include="src\concepts\deadlock.cpp" />
+    <ClCompile Include="src\concepts\extra_scope.cpp" />
+    <ClCompile Include="src\concepts\raii.cpp" />
     <ClCompile Include="src\condition_variable.cpp" />
     <ClCompile Include="src\cplus20\async.cpp" />
     <ClCompile Include="src\cplus20\jthread.cpp" />
-    <ClCompile Include="src\cplus20\jthread_cancel.cpp" />
+    <ClCompile Include="src\cplus20\jthread_stop_token.cpp" />
     <ClCompile Include="src\cplus20\osyncstream.cpp" />
     <ClCompile Include="src\cplus20\request_stop.cpp" />
     <ClCompile Include="src\cv_wait_for.cpp" />
@@ -157,8 +159,8 @@
     <ClCompile Include="src\future_promise.cpp" />
     <ClCompile Include="src\lock.cpp" />
     <ClCompile Include="src\lock_guard_unique_lock.cpp" />
-    <ClCompile Include="src\packaged_task.cpp" />
-    <ClCompile Include="src\packaged_task_two.cpp" />
+    <ClCompile Include="src\packaged_task_over_promise.cpp" />
+    <ClCompile Include="src\packaged_task_creations.cpp" />
     <ClCompile Include="src\packaged_task_vs_async.cpp" />
     <ClCompile Include="src\problems\is_thread_running.cpp" />
     <ClCompile Include="src\problems\is_thread_running_by_flag.cpp" />
@@ -174,6 +176,7 @@
     <ClCompile Include="src\lock_scoped_lock.cpp" />
     <ClCompile Include="src\readme_threads.cpp" />
     <ClCompile Include="src\future_shared_future.cpp" />
+    <ClCompile Include="src\read_code.cpp" />
     <ClCompile Include="src\thread_basics.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

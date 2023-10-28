@@ -55,6 +55,6 @@ void run_deadlock()
 
 /*
     thread 1 called thread 2 called
-    prints like about with "cout", even "endl" is not captured in once interupped by other thread.
+    prints  "cout", even "endl" is not captured in once interupped by other thread.
 
 */

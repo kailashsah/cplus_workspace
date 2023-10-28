@@ -14,20 +14,20 @@ using namespace std;
 using namespace std::chrono_literals;
 
 std::condition_variable cv;
-std::mutex cv_m;
-int i;
+std::mutex cv_mutex;
+int g_i;
 
 void waits(int idx)
 {
-	std::unique_lock<std::mutex> lk(cv_m);
+	std::unique_lock<std::mutex> lk(cv_mutex);
 	/*
 		auto now = std::chrono::system_clock::now();
 		if (cv.wait_until(lk, now + idx*100ms, [](){ return i == 1; }))
 	*/
-	if (cv.wait_for(lk, idx * 100ms, [] { return i == 1; }))
-		std::cerr << "Thread " << idx << " finished waiting. i == " << i << '\n';
+	if (cv.wait_for(lk, idx * 100ms, [] { return g_i == 1; }))
+		std::cerr << "Thread " << idx << " finished waiting. i == " << g_i << '\n';
 	else
-		std::cerr << "Thread " << idx << " timed out. i == " << i << '\n';
+		std::cerr << "Thread " << idx << " timed out. i == " << g_i << '\n';
 }
 
 void signals()
@@ -37,8 +37,8 @@ void signals()
 	cv.notify_all();
 	std::this_thread::sleep_for(100ms);
 	{
-		std::lock_guard<std::mutex> lk(cv_m);
-		i = 1;
+		std::lock_guard<std::mutex> lk(cv_mutex);
+		g_i = 1;
 	}
 	std::cerr << "Notifying again...\n";
 	cv.notify_all();

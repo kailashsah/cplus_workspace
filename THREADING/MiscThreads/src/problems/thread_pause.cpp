@@ -38,12 +38,14 @@ public:
 		std::cout << "Finished!" << std::endl;
 		this->finished = true;
 	}
+	
 	void start() {
 		std::unique_lock<std::mutex> ul(this->mtx);
 		this->paused = false;
 		task_thread = std::thread([this] {this->task(); });
 		cv.notify_one(); // IMP .. required for first time
 	}
+	
 	void pause() {
 		std::unique_lock<std::mutex> ul(this->mtx);
 		if (!this->finished) {
@@ -51,6 +53,7 @@ public:
 			this->cv.notify_one();
 		}
 	}
+	
 	void resume() {
 		std::unique_lock<std::mutex> ul(this->mtx);
 		if (!this->finished) {
@@ -58,6 +61,7 @@ public:
 			this->cv.notify_one();
 		}
 	}
+	
 	int getCounter() {
 		return this->counter;
 	}
