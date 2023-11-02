@@ -15,10 +15,10 @@ using namespace std;
 #include <chrono>
 //
 void run_thread_pool();
-//void c_trim::launch_threads();
-//void c_trim::launch_threads_future()
-//int c_trim::wait_first_future();
-//int c_trim::wait_first();
+//void thread_pool::launch_threads();
+//void thread_pool::launch_threads_future()
+//int thread_pool::wait_first_future();
+//int thread_pool::wait_first();
 //
 #pragma warning(disable:4996)
 #pragma warning(disable:6031)
@@ -33,23 +33,24 @@ mutex mtx;           // mutex for critical section
 atomic <bool> th_end[MAX_THREADS];
 atomic <int> total_threads_ran;
 //
-typedef std::chrono::high_resolution_clock t_clock; //SOLO EN WINDOWS
+typedef std::chrono::high_resolution_clock t_clock;
 std::chrono::time_point<t_clock> start_time, stop_time;
 char null_char;
+const int TOTAL_THREAD_LOAD = 1000;
 //
 void timer(const char* title = 0, int data_size = 1)
 {
 	stop_time = t_clock::now();
 	double us = (double)chrono::duration_cast<chrono::microseconds>(stop_time - start_time).count();
 	if (title)
-		printf("%s time = %7lgms = %7lg MOPs\n", title, (double)us * 1e-3, (double)data_size / us); 
+		printf("%s time = %7lgms = %7lg MOPs\n", title, (double)us * 1e-3, (double)data_size / us);
 	start_time = t_clock::now();
 }
 
-class c_trim
+class thread_pool
 {
 	char line[200];
-	thread th[MAX_THREADS];
+	thread th_array[MAX_THREADS];
 	double th_result[MAX_THREADS];
 	int th_index;
 	double milliseconds_commanded; // total wait done by 4000 threads
@@ -80,7 +81,7 @@ public:
 	void launch_threads_future();//usa future
 };
 
-void c_trim::launch_threads()
+void thread_pool::launch_threads()
 {
 	th_index = 0;
 	total_threads_ran = 0;
@@ -95,20 +96,21 @@ void c_trim::launch_threads()
 	}
 
 
-	for (i = 0; i < 4000; i++)
+	for (i = 0; i < TOTAL_THREAD_LOAD; i++)
 	{
 		// run total 4000 threads
-		int milliseconds = 5 + (i % 10) * 2;
+		//int milliseconds = 5 + (i % 10) * 2;
+		int milliseconds = 5 + (i % 10);
 		{
 			int j = wait_first();
-			if (th[j].joinable())
+			if (th_array[j].joinable())
 			{
-				th[j].join();
+				th_array[j].join();
 				th_result[j] = timeout[j];
 			}
 			milliseconds_commanded += milliseconds;
 			th_end[j] = false; // re-init
-			th[j] = thread(&c_trim::hilo, this, j, milliseconds, std::ref(timeout[j]));
+			th_array[j] = thread(&thread_pool::hilo, this, j, milliseconds, std::ref(timeout[j]));
 			/*
 				std::ref(timeout[j]) - show result is returned from the thread & stored in the th_result[], notice it is passed as reference .
 			*/
@@ -116,9 +118,9 @@ void c_trim::launch_threads()
 	}
 	// wait for last 12 theads to end.
 	for (int j = 0; j < MAX_THREADS; j++)
-		if (th[j].joinable())
+		if (th_array[j].joinable())
 		{
-			th[j].join();
+			th_array[j].join();
 			th_result[j] = timeout[j];
 		}
 
@@ -126,7 +128,7 @@ void c_trim::launch_threads()
 	cout << endl << "Milliseconds commanded to wait=" << milliseconds_commanded << endl;
 }
 
-void c_trim::launch_threads_future()
+void thread_pool::launch_threads_future()
 {
 	futures.clear();
 	futures.resize(MAX_THREADS);
@@ -134,27 +136,31 @@ void c_trim::launch_threads_future()
 	total_threads_ran = 0;
 	milliseconds_commanded = 0;
 	double* timeout = new double[MAX_THREADS];
-	int i;
+	unsigned int i{};
 	for (i = 0; i < MAX_THREADS; i++)
 	{
 		th_result[i] = timeout[i] = -1;
 	}
 
 
-	for (i = 0; i < 4000; i++)
+	for (i = 0; i < TOTAL_THREAD_LOAD; i++)
 	{
-		int milliseconds = 5 + (i % 10) * 2;
+		//int milliseconds = 5 + (i % 10) * 2; // 5 7 9 11 13 15 17 19 21 23
+		int milliseconds = 5 + (i % 10);
 		{
-			int j;
-			if (i < MAX_THREADS) j = i;
+			int index_thread;
+			if (i < MAX_THREADS) 
+				index_thread = i;
 			else
 			{
-				j = wait_first_future();
-				futures[j].get();
-				th_result[j] = timeout[j];
+				// when i indicates the max_threads value ie 12
+				index_thread = wait_first_future(); // this index thread work is completed, & assigned with new thread below 
+				futures[index_thread].get();
+				th_result[index_thread] = timeout[index_thread];
 			}
 			milliseconds_commanded += milliseconds;
-			futures[j] = std::async(std::launch::async, &c_trim::hilo, this, j, milliseconds, std::ref(timeout[j]));
+			//cout << milliseconds << endl;
+			futures[index_thread] = std::async(std::launch::async, &thread_pool::hilo, this, index_thread, milliseconds, std::ref(timeout[index_thread]));
 		}
 	}
 	//Last MAX_THREADS:
@@ -168,10 +174,10 @@ void c_trim::launch_threads_future()
 	cout << endl << "Milliseconds commanded to wait=" << milliseconds_commanded << endl;
 }
 
-int c_trim::wait_first()
+int thread_pool::wait_first()
 {
 	int i;
-	while (1)
+	while (true) {
 		for (i = 0; i < MAX_THREADS; i++)
 		{
 			if (th_end[i] == true)
@@ -179,39 +185,46 @@ int c_trim::wait_first()
 				return i;
 			}
 		}
+	}
 }
 
-//Espera que acabe algun future y da su index
-int c_trim::wait_first_future()
+int thread_pool::wait_first_future()
 {
 	int i;
 	std::future_status status;
-	while (1)
+	while (true)
+	{
 		for (i = 0; i < MAX_THREADS; i++)
 		{
 			status = futures[i].wait_for(0ms);
 			if (status == std::future_status::ready)
 				return i;
 		}
+	}
 }
 
 void run_thread_pool() {
-	c_trim trim;
+	thread_pool tp_obj;
 	timer();
-	trim.launch_threads();
+	//1.
+	tp_obj.launch_threads();
 	cout << endl;
 	timer("4000 threads using THREAD + ATOMIC:", 4000);
-	trim.launch_threads_future();
+	
+	//2.
+	tp_obj.launch_threads_future();
 	cout << endl;
 	timer("4000 threads using FUTURE:", 4000);
 	cout << endl << "Total threads ran:" << total_threads_ran << endl;
-	cout << "=== END ===\n"; (void)getchar();
+	//3.
+	cout << "=== END ===\n"; 
+	(void)getchar();
 }
 
-//int main()
-//{
-//	run_thread_pool();
-//}
+int main()
+{
+	run_thread_pool();
+}
 
 /*
 	Milliseconds commanded to wait=56000
