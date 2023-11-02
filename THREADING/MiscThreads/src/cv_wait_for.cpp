@@ -18,7 +18,7 @@ void signals();
 using namespace std::chrono_literals;
 std::condition_variable cv;
 std::mutex cv_mutex;
-int g_i;
+int gl_i;
 
 void waits(int idx)
 {
@@ -27,10 +27,10 @@ void waits(int idx)
 		auto now = std::chrono::system_clock::now();
 		if (cv.wait_until(lk, now + idx*100ms, [](){ return i == 1; }))
 	*/
-	if (cv.wait_for(lk, idx * 100ms, [] { return g_i == 1; }))
-		std::cerr << "Thread " << idx << " finished waiting. i == " << g_i << '\n';
+	if (cv.wait_for(lk, idx * 100ms, [] { return gl_i == 1; }))
+		std::cerr << "Thread " << idx << " finished waiting. i == " << gl_i << '\n';
 	else
-		std::cerr << "Thread " << idx << " timed out. i == " << g_i << '\n';
+		std::cerr << "Thread " << idx << " timed out. i == " << gl_i << '\n';
 }
 
 void signals()
@@ -41,7 +41,7 @@ void signals()
 	std::this_thread::sleep_for(100ms);
 	{
 		std::lock_guard<std::mutex> lk(cv_mutex);
-		g_i = 1;
+		gl_i = 1;
 	}
 	std::cerr << "Notifying again...\n";
 	cv.notify_all();

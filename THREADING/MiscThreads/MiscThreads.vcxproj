@@ -153,6 +153,7 @@
     <ClCompile Include="src\cplus20\jthread_stop_token.cpp" />
     <ClCompile Include="src\cplus20\osyncstream.cpp" />
     <ClCompile Include="src\cplus20\request_stop.cpp" />
+    <ClCompile Include="src\cplus20\scoped_lock.cpp" />
     <ClCompile Include="src\cplus20\unique_lock_param_deduction.cpp" />
     <ClCompile Include="src\cv_wait_for.cpp" />
     <ClCompile Include="src\future.cpp" />
