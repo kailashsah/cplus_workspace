@@ -164,6 +164,7 @@
     <ClCompile Include="src\packaged_task_vs_async.cpp" />
     <ClCompile Include="src\problems\is_thread_running.cpp" />
     <ClCompile Include="src\problems\is_thread_running_by_flag.cpp" />
+    <ClCompile Include="src\problems\011.cpp" />
     <ClCompile Include="src\problems\is_thread_running_by_joinable.cpp" />
     <ClCompile Include="src\problems\thread_pause.cpp" />
     <ClCompile Include="src\problems\thread_pause_multithreading.cpp" />
