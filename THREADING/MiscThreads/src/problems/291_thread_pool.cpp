@@ -53,7 +53,7 @@ class thread_pool
 	thread th_array[MAX_THREADS];
 	double th_result[MAX_THREADS];
 	int th_index;
-	double milliseconds_commanded; // total wait done by 4000 threads
+	double milliseconds_commanded; // total wait done by TOTAL_THREAD_LOAD threads
 	void hilo(int hindex, int milliseconds, double& milliseconds2)
 	{
 		sprintf(line, "%i:%ia ", hindex, milliseconds); print_line(line);
@@ -207,11 +207,13 @@ void run_thread_pool() {
 	thread_pool tp_obj;
 	timer();
 	//1.
+	cout << "tp_obj.launch_threads() " << endl;
 	tp_obj.launch_threads();
 	cout << endl;
 	timer("4000 threads using THREAD + ATOMIC:", 4000);
 	
 	//2.
+	cout << "tp_obj.launch_threads_future() " << endl;
 	tp_obj.launch_threads_future();
 	cout << endl;
 	timer("4000 threads using FUTURE:", 4000);
