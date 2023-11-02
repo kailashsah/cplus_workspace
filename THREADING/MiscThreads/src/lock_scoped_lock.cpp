@@ -1,8 +1,8 @@
 #include <iostream>
 /*
-	1. The class scoped_lock is a mutex wrapper that provides a convenient RAII-style mechanism for owning zero or more mutexes for the duration of a scoped block.
+	1. c++17. The class scoped_lock is a mutex wrapper that provides a convenient RAII-style mechanism for owning zero or more mutexes for the duration of a scoped block.
 
-		When a scoped_lock object is created, it attempts to take ownership of the mutexes it is given. When control leaves the scope in which the scoped_lock object was created, the scoped_lock is destructed and the mutexes are released. If several mutexes are given, deadlock avoidance algorithm is used as if by std::lock.
+		When a scoped_lock object is created, it attempts to take ownership of the mutexes it is given. When control leaves the scope in which the scoped_lock object was created, the scoped_lock is destructed and the mutexes are released. If several mutexes are given, deadlock avoidance algorithm is used as if by std::lock().
 
 	2. The existence of std::scoped_lock means that most of the cases where you would have used std::lock prior to c++17 can now be written using std::scoped_lock, with less potential for mistakes, which can only be a good thing!
 */

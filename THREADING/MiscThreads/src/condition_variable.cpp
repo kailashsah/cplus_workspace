@@ -19,13 +19,19 @@ using namespace std;
 		Wait for an object to be in a signaled state	-> use notify()
 		Wait until a timeout elapses					-> use wait_for() or wait_until()
 
+	7. order of execution - see at bottom
+
 */
 #include <thread> // std::this_thread, thread class
 #include <mutex> // lock_guard<>
 #include <queue>
 #include <algorithm>
 #include <numeric> // iota()
-
+//
+void run_condition_variable();
+void data_preparation_thread();
+void data_processing_thread();
+//
 std::mutex mutexv;
 std::queue<string> buffer;
 std::condition_variable buffer_cond;
@@ -109,3 +115,36 @@ void run_condition_variable() {
 //	run_condition_variable();
 //	return 1;
 //}
+
+/*
+	1. mutex together with a condition variable and a predicate boolean. In pseudo-code:
+
+	To block:
+
+		Acquire the mutex.
+
+		While the predicate is false, block on the condition variable.
+
+		If you want to re-arm here, set the predicate to false.
+
+		Release the mutex.
+
+	To release:
+
+		Acquire the mutex.
+
+		Set the predicate to true.
+
+		Signal the condition variable.
+
+		Release the mutex.
+
+	To rearm:
+
+		Acquire the mutex.
+
+		Set the predicate to false.
+
+		Release the mutex.
+
+*/

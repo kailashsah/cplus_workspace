@@ -16,6 +16,9 @@ using namespace std;
 #include <iostream>
 #include <thread>
 
+void run_future();
+void run_future_with_exception();
+
 void run_future()
 {
 	//1. future from a packaged_task

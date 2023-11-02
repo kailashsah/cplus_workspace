@@ -18,6 +18,7 @@ void print(string log) {
 
 void run_deadlock()
 {
+    // for fix - see section "lock.cpp" -> std::lock(foo, bar); 
     std::mutex m1;
     std::mutex m2;
 

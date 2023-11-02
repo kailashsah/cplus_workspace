@@ -5,7 +5,7 @@ using namespace std;
 	1. fire & forget issue.
 	2. this issue not there in std::packaged_task or std::promise
 	3. https://www.modernescpp.com/index.php/the-special-futures/
-	4. 
+	4.
 
 */
 #include <chrono>
@@ -16,9 +16,13 @@ using namespace std;
 	1. The future that is created by std::async, waits in its destructor until its work is done. Another word for waiting is blocking. The future blocks the progress of the program in its destructor. This becomes obvious in case you use fire-and-forget futures.
 
 	2. The program executes two promises in its own thread. The resulting futures are fire-and-forget futures. These futures block in their destructor until the associated promise is done. The result is that the promise will be executed with high probability in that sequence in which you find them in the source code. That is exactly what you see in the output of the program.
-	
+
 	3. I want to stress this point once more. Although I create in the main-thread two promises, which are executed in separate threads, the threads run in sequence one after the other. That is why the thread with the more time-consuming work package (line 12) finishes first. Wow, that was disappointing. Instead of three threads running concurrently, each thread will be executed after another.
 */
+void run_future_blocking();
+void run_future_non_blocking();
+void run_fix();
+
 void run_future_blocking() {
 
 	std::cout << std::endl;
@@ -76,13 +80,13 @@ void run_future_non_blocking() {
 }
 
 /*
-	a, for fire-and-forget future, which is not bound to a variable, must be handled carefully. 
+	a, for fire-and-forget future, which is not bound to a variable, must be handled carefully.
 	b, But this point doesn’t hold for futures, which are created by std::packaged_task or std::promise
 */
 
 void run_fix() {
 	using namespace std::literals;
-	
+
 	//1. get a std::future<> by std::async<>();
 	std::future<int> BlockingFuture = std::async([]()
 		{
@@ -102,7 +106,7 @@ void run_fix() {
 	std::future<int>	NonBlockingFuture = task.get_future(); // not req
 	std::thread         task_thread(std::move(task));
 
-	std::cout << "BlockingFuture.get(): " << BlockingFuture.get() << std::endl;
+	cout << "BlockingFuture.get(): " << BlockingFuture.get() << std::endl;
 	cout << "NonBlockingFuture.get(): " << NonBlockingFuture.get() << std::endl;// not req
 
 	task_thread.join();

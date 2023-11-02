@@ -16,6 +16,9 @@ using namespace std;
 #include <thread>
 #include <vector>
 
+void run_promise();
+void run_promise_as_signal();
+
 //1.
 void accumulate_func(std::vector<int>::iterator first,
 	std::vector<int>::iterator last,

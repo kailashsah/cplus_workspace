@@ -13,34 +13,38 @@ using namespace std;
 #include <mutex>          // std::mutex
 #include <atomic>
 #include <chrono>
-
-
+//
+void run_thread_pool();
+//void c_trim::launch_threads();
+//void c_trim::launch_threads_future()
+//int c_trim::wait_first_future();
+//int c_trim::wait_first();
+//
 #pragma warning(disable:4996)
 #pragma warning(disable:6031)
 #pragma warning(disable:6387)//strout
 #pragma warning(disable:26451)
-
+//
 using namespace std;
 const bool FLAG_IMPRIME = false;
 const int MAX_THREADS = 12;
-
-
+//
 mutex mtx;           // mutex for critical section
 atomic <bool> th_end[MAX_THREADS];
 atomic <int> total_threads_ran;
-
+//
 typedef std::chrono::high_resolution_clock t_clock; //SOLO EN WINDOWS
 std::chrono::time_point<t_clock> start_time, stop_time;
 char null_char;
+//
 void timer(const char* title = 0, int data_size = 1)
 {
 	stop_time = t_clock::now();
 	double us = (double)chrono::duration_cast<chrono::microseconds>(stop_time - start_time).count();
-	if (title) 
-		printf("%s time = %7lgms = %7lg MOPs\n", title, (double)us * 1e-3, (double)data_size / us); start_time = t_clock::now();
+	if (title)
+		printf("%s time = %7lgms = %7lg MOPs\n", title, (double)us * 1e-3, (double)data_size / us); 
+	start_time = t_clock::now();
 }
-
-
 
 class c_trim
 {
@@ -55,17 +59,17 @@ class c_trim
 		this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
 		milliseconds2 = milliseconds * 1000;
 		sprintf(line, "%i:%ib ", hindex, milliseconds); print_line(line);
-		total_threads_ran++;  
+		total_threads_ran++;
 		th_end[hindex] = true; // signal thread has ended.
 	}
 	int wait_first();
-	void print_line(char* str) 
-	{ 
-		if (FLAG_IMPRIME) { 
-			mtx.lock(); 
-			cout << str; 
-			mtx.unlock(); 
-		} 
+	void print_line(char* str)
+	{
+		if (FLAG_IMPRIME) {
+			mtx.lock();
+			cout << str;
+			mtx.unlock();
+		}
 	}
 
 public:
@@ -76,7 +80,6 @@ public:
 	void launch_threads_future();//usa future
 };
 
-
 void c_trim::launch_threads()
 {
 	th_index = 0;
@@ -86,7 +89,7 @@ void c_trim::launch_threads()
 	int i;
 	for (i = 0; i < MAX_THREADS; i++) //MAX_THREADS is 12
 	{
-		
+
 		th_end[i] = true; // true means thread stopped.
 		th_result[i] = timeout[i] = -1;
 	}
@@ -105,7 +108,7 @@ void c_trim::launch_threads()
 			}
 			milliseconds_commanded += milliseconds;
 			th_end[j] = false; // re-init
-			th[j] = thread(&c_trim::hilo, this,   j, milliseconds, std::ref(timeout[j]));
+			th[j] = thread(&c_trim::hilo, this, j, milliseconds, std::ref(timeout[j]));
 			/*
 				std::ref(timeout[j]) - show result is returned from the thread & stored in the th_result[], notice it is passed as reference .
 			*/
@@ -178,8 +181,6 @@ int c_trim::wait_first()
 		}
 }
 
-
-
 //Espera que acabe algun future y da su index
 int c_trim::wait_first_future()
 {
@@ -194,21 +195,23 @@ int c_trim::wait_first_future()
 		}
 }
 
-
-
-int main()
-{
+void run_thread_pool() {
 	c_trim trim;
 	timer();
 	trim.launch_threads();
 	cout << endl;
-	timer("4000 threads using THREAD+ATOMIC:", 4000);
+	timer("4000 threads using THREAD + ATOMIC:", 4000);
 	trim.launch_threads_future();
 	cout << endl;
-	timer("4000 tareas using FUTURE:", 4000);
+	timer("4000 threads using FUTURE:", 4000);
 	cout << endl << "Total threads ran:" << total_threads_ran << endl;
 	cout << "=== END ===\n"; (void)getchar();
 }
+
+//int main()
+//{
+//	run_thread_pool();
+//}
 
 /*
 	Milliseconds commanded to wait=56000

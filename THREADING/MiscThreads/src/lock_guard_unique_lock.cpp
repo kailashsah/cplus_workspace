@@ -8,7 +8,6 @@
 
 void run_lockxyz()
 {
-	std::cout << "Hello World!\n";
 }
 
 //int main()

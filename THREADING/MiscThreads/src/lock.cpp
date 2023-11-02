@@ -10,6 +10,8 @@ using namespace std;
 
 	3. try_lock() - true if the function succeeds in locking the mutex for the thread.
 		false otherwise. Attempts to lock the mutex, without blocking. The mutex object is accessed/modified as an atomic operation
+	
+	4.  raii vesion is std::scoped_lock<>
 */
 
 #include <thread>         // std::thread
