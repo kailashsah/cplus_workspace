@@ -2,7 +2,7 @@
 using namespace std;
 
 /*
-	1. Locks all the objects passed as arguments
+	1. Locks all the objects passed as arguments, alternative is std::scoped_lock.
 
 	2. The function locks the objects using an unspecified sequence of calls to their members lock, try_lock and unlock that ensures that all arguments are locked on return (without producing any deadlocks).
 
@@ -10,8 +10,8 @@ using namespace std;
 
 	3. try_lock() - true if the function succeeds in locking the mutex for the thread.
 		false otherwise. Attempts to lock the mutex, without blocking. The mutex object is accessed/modified as an atomic operation
-	
-	4.  raii vesion is std::scoped_lock<>
+
+	4.  raii vesion is std::scoped_lock
 */
 
 #include <thread>         // std::thread

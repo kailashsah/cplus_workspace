@@ -4,6 +4,10 @@ using namespace std;
 	1.
 
 */
+void task_lambda();
+void task_bind();
+void task_thread();
+//
 #include <cmath>
 #include <functional>
 #include <future>

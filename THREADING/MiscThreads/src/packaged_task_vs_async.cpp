@@ -17,6 +17,9 @@ using namespace std;
 		Here is a practical example of a problem that can be solved with std::packaged_task but not with std::async.
 
 		Consider you want to implement a thread pool.It consists of a fixed number of worker threads and a shared queue. But shared queue of what ? std::packaged_task is quite suitable here.
+
+	5.	same ex there in -	packaged_task_over_promise.cpp,
+							condition_variable.cpp (data_processing_thread(), data_preparation_thread()),
 */
 
 #include <future>
@@ -33,7 +36,7 @@ public:
 
 		{
 			std::lock_guard<std::mutex> lock(mutex_);
-			tasks_.push(std::move(task));
+			tasks_.push(std::move(task)); // we can store packaged_task<> in vectors/queue,but not async 
 		}
 		cv_.notify_one();
 		return res;

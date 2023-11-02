@@ -8,7 +8,7 @@ using namespace std;
 
 	3. std::unique_lock use the RAII pattern
 
-	4. If a exceptions is thrown, the std::unique_lock destructer will be called and so the mutex will be unlocked.
+	4. If a exceptions is thrown, the std::unique_lock destructor will be called and so the mutex will be unlocked.
 
 */
 

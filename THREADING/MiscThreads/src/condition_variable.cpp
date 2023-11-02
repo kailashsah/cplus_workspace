@@ -20,6 +20,8 @@ using namespace std;
 		Wait until a timeout elapses					-> use wait_for() or wait_until()
 
 	7. order of execution - see at bottom
+		same ex there in -	packaged_task_over_promise.cpp, 
+							packaged_task_vs_async.cpp (ThreadPool class)
 
 */
 #include <thread> // std::this_thread, thread class
