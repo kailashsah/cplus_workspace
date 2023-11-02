@@ -181,7 +181,7 @@
     <ClCompile Include="src\future_shared_future.cpp" />
     <ClCompile Include="src\read_code.cpp" />
     <ClCompile Include="src\thread_basics.cpp" />
-    <ClCompile Include="src\unique_lock.cpp" />
+    <ClCompile Include="src\lock_unique_lock.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
