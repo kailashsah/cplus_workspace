@@ -157,6 +157,7 @@
     <ClCompile Include="src\cplus20\unique_lock_param_deduction.cpp" />
     <ClCompile Include="src\cv_wait_for.cpp" />
     <ClCompile Include="src\future.cpp" />
+    <ClCompile Include="src\future_empty.cpp" />
     <ClCompile Include="src\future_fire_and_forget.cpp" />
     <ClCompile Include="src\future_promise.cpp" />
     <ClCompile Include="src\lock.cpp" />
