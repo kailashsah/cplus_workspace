@@ -162,6 +162,7 @@
     <ClCompile Include="src\future_promise.cpp" />
     <ClCompile Include="src\lock.cpp" />
     <ClCompile Include="src\lock_guard_unique_lock.cpp" />
+    <ClCompile Include="src\lock_timed_mutex.cpp" />
     <ClCompile Include="src\packaged_task_over_promise.cpp" />
     <ClCompile Include="src\packaged_task_creations.cpp" />
     <ClCompile Include="src\packaged_task_vs_async.cpp" />
