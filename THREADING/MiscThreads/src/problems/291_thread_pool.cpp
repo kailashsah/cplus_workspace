@@ -223,10 +223,10 @@ void run_thread_pool() {
 	(void)getchar();
 }
 
-int main()
-{
-	run_thread_pool();
-}
+//int main()
+//{
+//	run_thread_pool();
+//}
 
 /*
 	Milliseconds commanded to wait=56000

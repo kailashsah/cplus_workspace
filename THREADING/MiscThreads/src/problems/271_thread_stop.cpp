@@ -14,18 +14,18 @@ using namespace std;
 */
 #include <chrono>
 const uint8_t max_time = 100;
-void fn() {
+void th_function() {
 
 	for (uint8_t i{}; i < 10; i++) {
 		this_thread::sleep_for( chrono::milliseconds(max_time) );
 		cout << i << endl;
 	}
-	cout << "fn() ends" << endl;
+	cout << "th_function() ends" << endl;
 	for (uint8_t i{}; i < 10; i++) {
 		this_thread::sleep_for(chrono::milliseconds(max_time));
 		cout << i << endl;
 	}
-	cout << "fn() ends" << endl;
+	cout << "th_function() ends" << endl;
 }
 void is_thread_alive(jthread& th) {
 
@@ -39,13 +39,13 @@ void is_thread_alive(jthread& th) {
 //.................................................
 
 void run_thread_request_stop() {
-	jthread thread(fn);
+	jthread thread(th_function);
 	string log = (thread.request_stop())?   "stop accepted": "stop rejected"; // Accepting the request does not guarantee that the thread will stop as soon as possible
 	cout << log << endl;
 	thread.join();
 }
 void run_thread_stop_possible() {
-	jthread thread(fn);
+	jthread thread(th_function);
 	stop_source ss =  thread.get_stop_source();
 	if (ss.stop_possible())
 	{
@@ -60,7 +60,7 @@ void run_thread_stop_possible() {
 }
 
 void run_thread_stop_requested() {
-	jthread thread(fn);
+	jthread thread(th_function);
 	jthread threadChecker(is_thread_alive, std::ref(thread));
 	
 	//
