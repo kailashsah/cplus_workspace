@@ -142,6 +142,7 @@
   <ItemGroup>
     <ClCompile Include="src\atomic_shared_ptr.cppm" />
     <ClCompile Include="src\atomic_shared_impl.cppm" />
+    <ClCompile Include="src\atomic_shared_ptr_two.cpp" />
     <ClCompile Include="src\bit_cast.cpp" />
     <ClCompile Include="src\concept_in_fn.cpp" />
     <ClCompile Include="src\concept_require.cpp" />
