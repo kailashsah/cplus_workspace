@@ -1,8 +1,15 @@
-#include <iostream>
+﻿#include <iostream>
 using namespace std;
 
 /*
+	1. The supported suffixes are:
 
+		h → std::chrono::hours
+		min → std::chrono::minutes
+		s → std::chrono::seconds
+		ms → std::chrono::milliseconds
+		us → std::chrono::microseconds
+		ns → std::chrono::nanoseconds
 */
 #include <shared_mutex>
 void foo() {

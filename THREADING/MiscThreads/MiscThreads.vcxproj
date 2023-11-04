@@ -151,6 +151,7 @@
     <ClCompile Include="src\cplus20\async.cpp" />
     <ClCompile Include="src\cplus20\jthread.cpp" />
     <ClCompile Include="src\cplus20\jthread_stop_token.cpp" />
+    <ClCompile Include="src\cplus20\latch.cpp" />
     <ClCompile Include="src\cplus20\osyncstream.cpp" />
     <ClCompile Include="src\cplus20\request_stop.cpp" />
     <ClCompile Include="src\cplus20\scoped_lock.cpp" />
@@ -162,8 +163,11 @@
     <ClCompile Include="src\future_promise.cpp" />
     <ClCompile Include="src\lock.cpp" />
     <ClCompile Include="src\lock_guard_unique_lock.cpp" />
+    <ClCompile Include="src\mutex_recursive_mutex.cpp" />
     <ClCompile Include="src\mutex_shared_lock.cpp" />
     <ClCompile Include="src\mutex_shared_lock_two.cpp" />
+    <ClCompile Include="src\mutex_shared_timed_mutex.cpp" />
+    <ClCompile Include="src\mutex_timed_mutex_two.cpp" />
     <ClCompile Include="src\mutex_timed_mutex.cpp" />
     <ClCompile Include="src\mutex_shared_mutex.cpp" />
     <ClCompile Include="src\packaged_task_over_promise.cpp" />
