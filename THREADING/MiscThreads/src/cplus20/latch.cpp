@@ -4,7 +4,8 @@ using namespace std;
 /*
 	1. Latches and barriers are coordination types that enable some threads to wait until a counter becomes zero. You can use a std::latch only once, but you can use a std::barrier more than once.
 
-	2. 
+	2. latch - single-use thread barrier
+
 */
 void run_latch();
 //
