@@ -23,9 +23,7 @@ void run_try_lock_until();
 // for more tutorials visit www.ProDeveloperTutorial.com
 
 using namespace std;
-
 std::timed_mutex mtx;
-
 int count_num = 0;
 
 void update_value(int i)
@@ -66,6 +64,7 @@ void run_try_lock_for() {
 	t2.join();
 
 }
+
 void update_value_v2(int i)
 {
 	auto now = std::chrono::steady_clock::now();
@@ -94,6 +93,7 @@ void update_value_v2(int i)
 	*/
 
 }
+
 void run_try_lock_until() {
 	std::thread t1(update_value_v2, 1);
 	std::thread t2(update_value_v2, 2);
