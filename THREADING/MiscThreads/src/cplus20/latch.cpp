@@ -6,6 +6,8 @@ using namespace std;
 
 	2. latch - single-use thread barrier
 
+	3. For some reasons to pause threatd, there could be a better approach, like C++20 latch/semaphore/barrier.
+
 */
 void run_latch();
 //

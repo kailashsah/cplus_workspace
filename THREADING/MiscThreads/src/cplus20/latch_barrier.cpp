@@ -6,6 +6,8 @@ using namespace std;
 		a std::barrier helps manage repeated tasks by multiple threads.
 
 	2. https://www.modernescpp.com/
+
+	3. Similar to a std::latch, the barrier is initialized with a counter; however, unlike std::latch, the barrier is re-usable and, on top of that, will call an optional completion function before unblocking the waiting threads.
 */
 #include <iostream> 
 #include <barrier>
