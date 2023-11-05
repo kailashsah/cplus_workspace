@@ -149,7 +149,7 @@
     <ClCompile Include="src\future_empty.cpp" />
     <ClCompile Include="src\future_fire_and_forget.cpp" />
     <ClCompile Include="src\future_promise.cpp" />
-    <ClCompile Include="src\lock.cpp" />
+    <ClCompile Include="src\lock_for_deadlock.cpp" />
     <ClCompile Include="src\lock_guard_unique_lock.cpp" />
     <ClCompile Include="src\mutex_recursive_mutex.cpp" />
     <ClCompile Include="src\mutex_shared_lock.cpp" />
