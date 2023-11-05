@@ -143,10 +143,6 @@
   <ItemGroup>
     <ClCompile Include="src\basics_detach.cpp" />
     <ClCompile Include="src\basics_join.cpp" />
-    <ClCompile Include="src\concepts\datarace.cpp" />
-    <ClCompile Include="src\concepts\deadlock.cpp" />
-    <ClCompile Include="src\concepts\extra_scope.cpp" />
-    <ClCompile Include="src\concepts\raii.cpp" />
     <ClCompile Include="src\condition_variable.cpp" />
     <ClCompile Include="src\cplus20\async.cpp" />
     <ClCompile Include="src\cplus20\jthread.cpp" />
@@ -192,6 +188,10 @@
     <ClCompile Include="src\readme_threads.cpp" />
     <ClCompile Include="src\future_shared_future.cpp" />
     <ClCompile Include="src\read_code.cpp" />
+    <ClCompile Include="src\src_concepts\datarace.cpp" />
+    <ClCompile Include="src\src_concepts\deadlock.cpp" />
+    <ClCompile Include="src\src_concepts\extra_scope.cpp" />
+    <ClCompile Include="src\src_concepts\raii.cpp" />
     <ClCompile Include="src\thread_basics.cpp" />
     <ClCompile Include="src\lock_unique_lock.cpp" />
     <ClCompile Include="src\yield_vs_sleep_for.cpp" />
