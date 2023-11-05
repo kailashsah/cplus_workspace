@@ -171,17 +171,6 @@
     <ClCompile Include="src\packaged_task_over_promise.cpp" />
     <ClCompile Include="src\packaged_task_creations.cpp" />
     <ClCompile Include="src\packaged_task_vs_async.cpp" />
-    <ClCompile Include="src\problems\203_is_thread_running_by_flag.cpp" />
-    <ClCompile Include="src\problems\201_is_thread_running.cpp" />
-    <ClCompile Include="src\problems\202_is_thread_running_by_joinable.cpp" />
-    <ClCompile Include="src\problems\251_thread_pause.cpp" />
-    <ClCompile Include="src\problems\252_thread_pause_multithreading.cpp" />
-    <ClCompile Include="src\problems\291_thread_pool.cpp" />
-    <ClCompile Include="src\problems\271_thread_stop.cpp" />
-    <ClCompile Include="src\problems\272_thread_stop_atomic_bool.cpp" />
-    <ClCompile Include="src\problems\281_waitForMultipleObjects_one.cpp" />
-    <ClCompile Include="src\problems\282_waitForMultipleObjects_two.cpp" />
-    <ClCompile Include="src\problems\101_writing_file_two_threads_osyncstream.cpp" />
     <ClCompile Include="src\prvalue_xvalue.cpp" />
     <ClCompile Include="src\lock_scoped_lock.cpp" />
     <ClCompile Include="src\readme_practice.cpp" />
@@ -195,6 +184,17 @@
     <ClCompile Include="src\thread_basics.cpp" />
     <ClCompile Include="src\lock_unique_lock.cpp" />
     <ClCompile Include="src\yield_vs_sleep_for.cpp" />
+    <ClCompile Include="src_problems\101_writing_file_two_threads_osyncstream.cpp" />
+    <ClCompile Include="src_problems\201_is_thread_running.cpp" />
+    <ClCompile Include="src_problems\202_is_thread_running_by_joinable.cpp" />
+    <ClCompile Include="src_problems\203_is_thread_running_by_flag.cpp" />
+    <ClCompile Include="src_problems\251_thread_pause.cpp" />
+    <ClCompile Include="src_problems\252_thread_pause_multithreading.cpp" />
+    <ClCompile Include="src_problems\271_thread_stop.cpp" />
+    <ClCompile Include="src_problems\272_thread_stop_atomic_bool.cpp" />
+    <ClCompile Include="src_problems\281_waitForMultipleObjects_one.cpp" />
+    <ClCompile Include="src_problems\282_waitForMultipleObjects_two.cpp" />
+    <ClCompile Include="src_problems\291_thread_pool.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
