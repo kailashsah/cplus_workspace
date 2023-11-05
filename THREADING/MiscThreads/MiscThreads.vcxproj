@@ -141,6 +141,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\atomic.cpp" />
+    <ClCompile Include="src\atomic_memory_order.cpp" />
     <ClCompile Include="src\basics_detach.cpp" />
     <ClCompile Include="src\basics_join.cpp" />
     <ClCompile Include="src\condition_variable.cpp" />
