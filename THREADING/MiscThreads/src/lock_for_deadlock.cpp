@@ -21,7 +21,7 @@ std::mutex foo, bar;
 
 void task_a() {
 	// foo.lock(); bar.lock(); // replaced by: // also this causes deadlock if one mem locked here & another somewhere.
-	std::lock(foo, bar); // this way no deadlocks
+	std::lock(foo, bar); // this way no deadlocks // for 2 or more mutexes
 	std::cout << "task a\n";
 	foo.unlock();
 	bar.unlock();
