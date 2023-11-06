@@ -16,7 +16,10 @@ using namespace std;
 		ATOMIC_FLAG_INIT – This is the only way to initialize std::atomic_flag to a definite value: the value held after any other initialization is unspecified.
 
 		std::atomic_flag is an atomic boolean type. Unlike all specializations of std::atomic, it is guaranteed to be lock-free. Unlike std::atomic<bool>, std::atomic_flag does not provide load or store operations.
-		ex. Spinlock class https://www.talkinghightech.com/en/implementing-a-spinlock-in-c/
+
+			std::atomic_flag is the only atomic data type that is always lock-free
+
+			ex. Spinlock class https://www.talkinghightech.com/en/implementing-a-spinlock-in-c/
 */
 struct ttas_lock;
 class Spinlock;
@@ -32,6 +35,7 @@ struct ttas_lock {
 	void lock() {
 		for (;;) {
 			if (!lock_.exchange(true, std::memory_order_acquire)) { // tries spin but failed
+				// for exchange() - https://en.cppreference.com/w/cpp/atomic/atomic/exchange
 				break;
 			}
 			//while (lock_.load(std::memory_order_relaxed));
@@ -159,7 +163,7 @@ void run_spin_lock() {
 
 }
 
-int main(int, char**)
-{
-	run_spin_lock();
-}
+//int main(int, char**)
+//{
+//	run_spin_lock();
+//}
