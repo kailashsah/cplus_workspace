@@ -69,10 +69,10 @@ void run_producer_consumer() {
 	t1.join(); t2.join();
 }
 
-int main()
-{
-	run_producer_consumer();
-}
+//int main()
+//{
+//	run_producer_consumer();
+//}
 
 /*
 memory_order_consume - A load operation with this memory order performs a consume operation on the affected memory location: no reads or writes in the current thread dependent on the value currently loaded can be reordered before this load. Writes to data-dependent variables in other threads that release the same atomic variable are visible in the current thread. On most platforms, this affects compiler optimizations only.
