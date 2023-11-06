@@ -186,6 +186,7 @@
     <ClCompile Include="src_cplus20\osyncstream.cpp" />
     <ClCompile Include="src_cplus20\request_stop.cpp" />
     <ClCompile Include="src_cplus20\scoped_lock.cpp" />
+    <ClCompile Include="src_cplus20\semaphore.cpp" />
     <ClCompile Include="src_cplus20\unique_lock_param_deduction.cpp" />
     <ClCompile Include="src_problems\101_writing_file_two_threads_osyncstream.cpp" />
     <ClCompile Include="src_problems\201_is_thread_running.cpp" />
