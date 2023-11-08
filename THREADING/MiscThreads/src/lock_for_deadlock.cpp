@@ -18,10 +18,12 @@ using namespace std;
 #include <mutex>          // std::mutex, std::lock
 
 std::mutex foo, bar;
+std::mutex bar2;
 
 void task_a() {
 	// foo.lock(); bar.lock(); // replaced by: // also this causes deadlock if one mem locked here & another somewhere.
-	std::lock(foo, bar); // this way no deadlocks // for 2 or more mutexes
+	//std::lock(foo, bar); // this way no deadlocks // for 2 or more mutexes
+	std::lock(foo, bar, bar2); // bar2 added to see no. of locks
 	std::cout << "task a\n";
 	foo.unlock();
 	bar.unlock();

@@ -2,7 +2,7 @@
 using namespace std;
 
 /*
-	1. While a regular mutex exposes 3 methods: lock, unlock and try_lock,
+	1. std::shared_mutex - While a regular mutex exposes 3 methods: lock, unlock and try_lock,
 
 		Shared Mutex however adds 3 more methods::
 		lock_shared
