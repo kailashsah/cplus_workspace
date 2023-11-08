@@ -20,8 +20,6 @@ void run_try_lock_until();
 #include <thread>         // std::thread
 #include <mutex>          // std::timed_mutex
 
-// for more tutorials visit www.ProDeveloperTutorial.com
-
 using namespace std;
 std::timed_mutex mtx;
 int count_num = 0;
