@@ -86,11 +86,11 @@ void run_semaphore() {
 
 }
 
-int main()
-{
-	run_semaphore();
-	return 0;
-}
+//int main()
+//{
+//	run_semaphore();
+//	return 0;
+//}
 
 /*
 	total seconds : 4

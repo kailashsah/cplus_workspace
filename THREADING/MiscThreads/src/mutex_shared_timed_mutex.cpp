@@ -14,7 +14,7 @@ using namespace std;
 	2. classifications timed/non-timed - https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n3891.htm
 */
 
-#include <shared_mutex>
+#include <shared_mutex> // shared_timed_mutex, shared_lock<>
 void foo() {
 	shared_timed_mutex m;
 	using namespace std::literals::chrono_literals;

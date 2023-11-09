@@ -27,7 +27,7 @@ int count_num = 0;
 void update_value(int i)
 {
 	//created a try_lock_for mutex
-	if (mtx.try_lock_for(std::chrono::seconds(2)))
+	if (mtx.try_lock_for(std::chrono::seconds(2))) // here whatif we change seconds like 4, 3 ...
 	{
 		count_num++;
 		std::this_thread::sleep_for(std::chrono::seconds(3));
@@ -68,7 +68,7 @@ void update_value_v2(int i)
 	auto now = std::chrono::steady_clock::now();
 
 	//created a try_lock_until mutex
-	if (mtx.try_lock_until(now + std::chrono::seconds(2)))
+	if (mtx.try_lock_until( now + std::chrono::seconds(2)) ) // using "now"
 	{
 		count_num++;
 		std::this_thread::sleep_for(std::chrono::seconds(1));

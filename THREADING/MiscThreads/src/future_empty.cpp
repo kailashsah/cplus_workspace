@@ -85,7 +85,7 @@ void run_assign_two_futures_in_same() {
 		cout << endl;
 		return 200; });
 	cout << &ft << endl; //001D3270
-	cout << ft._Ptr() << endl; // 00CB6588
+	cout << ft._Ptr() << endl; // 00CB6588 // here future ptr is different from the 1st one.
 
 	//3.
 	//ft = ft1; // if auto ft1 = async(launch::async ... // operator = deleted function

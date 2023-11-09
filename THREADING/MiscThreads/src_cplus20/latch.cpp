@@ -2,11 +2,12 @@
 using namespace std;
 
 /*
-	1. Latches and barriers are coordination types that enable some threads to wait until a counter becomes zero. You can use a std::latch only once, but you can use a std::barrier more than once.
+	1. Latches and barriers are coordination types that enable some threads to wait until a counter becomes zero. You can use a std::latch only once, 
+		but you can use a std::barrier more than once (like multiple call of arrive_and_wait()).
 
 	2. latch - single-use thread barrier
 
-	3. For some reasons to pause threatd, there could be a better approach, like C++20 latch/semaphore/barrier.
+	3. For some reasons to pause thread, there could be a better approach, like C++20 latch/semaphore/barrier.
 
 */
 void run_latch();
@@ -16,8 +17,8 @@ void run_latch();
 #include <latch>
 #include <thread>
 
-std::latch workDone(6);
-std::latch goHome(1);                                       // (4)
+std::latch workDone_latch(6);
+std::latch goHome_latch(1);                                       // (4)
 
 std::mutex coutMutex;
 
@@ -33,10 +34,10 @@ public:
 	void operator() () {
 		// notify the boss when work is done
 		synchronizedOut(name + ": " + "Work done!\n");
-		workDone.count_down();                          // (2)
+		workDone_latch.count_down();                          // (2)
 
 		// waiting before going home
-		goHome.wait();                                  // (5)
+		goHome_latch.wait();                                  // (5)
 		synchronizedOut(name + ": " + "Good bye!\n");
 	}
 private:
@@ -46,7 +47,6 @@ private:
 void run_latch() {
 
 	std::cout << '\n';
-
 	std::cout << "BOSS: START WORKING! " << '\n';
 
 	Worker herb("  Herb");
@@ -67,11 +67,11 @@ void run_latch() {
 	Worker david("            David");
 	std::thread davidWork(david);
 
-	workDone.wait();                                       // (3)
+	workDone_latch.wait();  //till the counter reaches to 0				// (3)
 
 	std::cout << '\n';
 
-	goHome.count_down();
+	goHome_latch.count_down(); // makes counter decrement by 1
 
 	std::cout << "BOSS: GO HOME!" << '\n';
 

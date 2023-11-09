@@ -19,7 +19,7 @@ void job(int id)
     using Ms = std::chrono::milliseconds;
     std::ostringstream stream;
 
-    for (int i = 0; i < 3; ++i) {
+    for (int i = 0; i < 3; ++i) { // 3 times try to get the lock by single thread
         if (t_mutex.try_lock_for(Ms(100))) {
             stream << "success ";
             std::this_thread::sleep_for(Ms(100));
