@@ -155,8 +155,9 @@
     <ClCompile Include="src\lock_for_deadlock.cpp" />
     <ClCompile Include="src\lock_guard_unique_lock.cpp" />
     <ClCompile Include="src\mutex_recursive_mutex.cpp" />
-    <ClCompile Include="src\mutex_shared_lock.cpp" />
-    <ClCompile Include="src\mutex_shared_lock_two.cpp" />
+    <ClCompile Include="src\mutex_shared_lock_difficult.cpp" />
+    <ClCompile Include="src\mutex_shared_lock_3.cpp" />
+    <ClCompile Include="src\mutex_shared_lock_2.cpp" />
     <ClCompile Include="src\mutex_shared_timed_mutex.cpp" />
     <ClCompile Include="src\mutex_timed_mutex_two.cpp" />
     <ClCompile Include="src\mutex_timed_mutex.cpp" />

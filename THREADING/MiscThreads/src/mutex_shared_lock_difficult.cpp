@@ -3,6 +3,7 @@ using namespace std;
 
 /*
     1. std::shared_lock
+   
 */
 void run_shared_lock();
 //
@@ -23,8 +24,7 @@ struct RecentSnapshots {
         ++offset_;
     }
     std::optional<Data> get(size_t index) const {
-        // We only read, but need to prevent 
-        // concurrent writes, grab a shared_lock
+        // We only read, but need to prevent concurrent writes, grab a shared_lock
         std::shared_lock lock(mux_);
         if (index >= offset_)
             return std::nullopt;
@@ -33,19 +33,20 @@ struct RecentSnapshots {
         return buffer_[index % 64];
     }
     size_t min_offset() const {
-        // We only read, but need to prevent 
-        // concurrent writes, grab a shared_lock
+        // We only read, but need to prevent concurrent writes, grab a shared_lock
         std::shared_lock lock(mux_);
         if (offset_ <= 64) return 0;
         return offset_ - 64;
     }
 private:
     // We need mutable, since we mutate the state
-    // of this mutex (by grabbing a lock) in const methods.
+    // of this mutex (by grabbing a lock) in const methods (like const unlock_shared() called at destructor).
     mutable std::shared_mutex mux_;
+    //mutable std::mutex mux_;
     std::array<Data, 64> buffer_;
     size_t offset_ = 0;
 };
+
 void run_shared_lock() {
     using namespace std::chrono_literals;
     RecentSnapshots snapshots;
