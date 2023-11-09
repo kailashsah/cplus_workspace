@@ -147,6 +147,7 @@
     <ClCompile Include="src\basics_detach.cpp" />
     <ClCompile Include="src\basics_join.cpp" />
     <ClCompile Include="src\condition_variable.cpp" />
+    <ClCompile Include="src\condition_variable_any.cpp" />
     <ClCompile Include="src\cv_wait_for.cpp" />
     <ClCompile Include="src\future.cpp" />
     <ClCompile Include="src\future_empty.cpp" />
