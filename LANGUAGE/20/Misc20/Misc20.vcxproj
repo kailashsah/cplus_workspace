@@ -156,6 +156,7 @@
     <ClCompile Include="src\format.cpp" />
     <ClCompile Include="src\forwarding_for_cout.cppm" />
     <ClCompile Include="src\forwarding_in_lambda_capture_pack.cpp" />
+    <ClCompile Include="src\forwarding_perfect_forwarding.cpp" />
     <ClCompile Include="src\is_standard_layout.cpp" />
     <ClCompile Include="src\jthread.cpp" />
     <ClCompile Include="src\maybe_unsed.cpp" />
@@ -165,6 +166,7 @@
     <ClCompile Include="src\nested_class.cpp" />
     <ClCompile Include="src\osyncstream.cpp" />
     <ClCompile Include="src\ranges.cpp" />
+    <ClCompile Include="src\read_code.cpp" />
     <ClCompile Include="src\readme_cplus20.cpp" />
     <ClCompile Include="src\spaceship_operator.cpp" />
     <ClCompile Include="src\spaceship_operator_in_class.cpp" />
