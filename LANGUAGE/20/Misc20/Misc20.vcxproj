@@ -172,6 +172,10 @@
     <ClCompile Include="src\string_view.cpp" />
     <ClCompile Include="src\templ_in_lambdas.cppm" />
     <ClCompile Include="src\to_array.cpp" />
+    <ClCompile Include="src_cplus17\static_inline.cpp" />
+    <ClCompile Include="src_cplus17\templ_integer_seq.cpp" />
+    <ClCompile Include="src_cplus17\templ_templ_argument.cpp" />
+    <ClCompile Include="src_cplus17\variants.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
