@@ -49,9 +49,9 @@ void run_osyncstream_two() {
 	} // characters are transferred and std::cout is flushed.
 }
 
-int main()
-{
-	run_osyncstream_one();
-	run_osyncstream_two();
-	return 1;
-}
+//int main()
+//{
+//	run_osyncstream_one();
+//	run_osyncstream_two();
+//	return 1;
+//}
