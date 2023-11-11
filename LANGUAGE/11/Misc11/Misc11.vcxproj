@@ -160,7 +160,10 @@
     <ClCompile Include="src\readme_cplus.cpp" />
     <ClCompile Include="src\reference_wrapper.cpp" />
     <ClCompile Include="src\src_adv\decay.cpp" />
+    <ClCompile Include="src\src_questions\binary_search.cpp" />
+    <ClCompile Include="src\src_questions\fill_vector_random_integer.cpp" />
     <ClCompile Include="src\src_questions\is_prime_optimized.cpp" />
+    <ClCompile Include="src\src_questions\random_numbers.cpp" />
     <ClCompile Include="src\src_questions\static_member_init.cpp" />
     <ClCompile Include="src\template_lazy.cpp" />
     <ClCompile Include="src\template_lazy_initialization.cpp" />
