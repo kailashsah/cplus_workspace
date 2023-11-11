@@ -9,6 +9,8 @@ using namespace std;
 	3. arrive(n=1) - Constructs an arrival_token object associated with the phase synchronization point for the current phase. Then, decrements the expected count by n.
 
 		This function executes atomically. The call to this function strongly happens-before the start of the phase completion step for the current phase.
+	
+	4. https://www.modernescpp.com/index.php/semaphores-in-c-20/ 
 */
 void run_barrier_on_completion_one();
 void run_barrier_on_completion_two();

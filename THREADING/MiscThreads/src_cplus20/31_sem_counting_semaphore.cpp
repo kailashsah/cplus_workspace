@@ -43,7 +43,7 @@ using namespace std;
 // Initialize semaphore with a count of 3 
 counting_semaphore<10> semaphoree(3);
 osyncstream os{ cout };
-#include <format>
+#include <format> // std::format(): string
 mutex mut_log;
 //unique_lock lk(mut_sem);
 #include <mutex> // std::lock()
