@@ -54,8 +54,8 @@ void run_return_vector_fm_func()
 
 }
 
-int main()
-{
-	run_return_vector_fm_func();
-	return 0;
-}
+//int main()
+//{
+//	run_return_vector_fm_func();
+//	return 0;
+//}
