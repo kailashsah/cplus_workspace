@@ -170,6 +170,7 @@
     <ClCompile Include="src\src_adv\concept_require.cpp" />
     <ClCompile Include="src\src_adv\coroutine_generator.cpp" />
     <ClCompile Include="src\src_adv\coroutine_resume.cpp" />
+    <ClCompile Include="src\src_adv\designated_constructor.cpp" />
     <ClCompile Include="src\src_adv\is_standard_layout.cpp" />
     <ClCompile Include="src\string_view.cpp" />
     <ClCompile Include="src\templ_in_lambdas.cppm" />
