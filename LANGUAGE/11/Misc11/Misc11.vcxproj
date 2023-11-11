@@ -141,9 +141,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="cast_const.cpp" />
     <ClCompile Include="move_constructor.cpp" />
     <ClCompile Include="r_value.cpp" />
+    <ClCompile Include="src\cast_const_cast_two.cpp" />
+    <ClCompile Include="src\cast_const_one.cpp" />
     <ClCompile Include="src\class_member.cpp" />
     <ClCompile Include="src\class_nullptr.cpp" />
     <ClCompile Include="src\concepts\iterator_vs_const_iterator.cpp" />
@@ -158,6 +159,7 @@
     <ClCompile Include="src\readme_cplus.cpp" />
     <ClCompile Include="src\reference_wrapper.cpp" />
     <ClCompile Include="src\src_adv\decay.cpp" />
+    <ClCompile Include="src\src_questions\static_member_init.cpp" />
     <ClCompile Include="src\template_lazy.cpp" />
     <ClCompile Include="src\template_lazy_initialization.cpp" />
     <ClCompile Include="src\type_alias.cpp" />
