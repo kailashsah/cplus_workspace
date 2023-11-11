@@ -157,12 +157,13 @@
     <ClCompile Include="src\initializer_list.cpp" />
     <ClCompile Include="src\readme_cplus.cpp" />
     <ClCompile Include="src\reference_wrapper.cpp" />
+    <ClCompile Include="src\src_adv\decay.cpp" />
     <ClCompile Include="src\template_lazy.cpp" />
     <ClCompile Include="src\template_lazy_initialization.cpp" />
     <ClCompile Include="src\type_alias.cpp" />
     <ClCompile Include="src\cast_static.cpp" />
     <ClCompile Include="src\conversion_operator.cpp" />
-    <ClCompile Include="src\draft.cpp" />
+    <ClCompile Include="src\read_code.cpp" />
     <ClCompile Include="src\exception.cpp" />
     <ClCompile Include="src\exception_inner.cpp" />
     <ClCompile Include="src\iterator_istream.cpp" />
