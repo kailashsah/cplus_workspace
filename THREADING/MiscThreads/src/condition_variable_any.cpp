@@ -8,6 +8,8 @@ using namespace std;
 		std::condition_variable_any can be used with std::shared_lock in order to wait on a std::shared_mutex in shared ownership mode.
 
 	3. A possible use for std::condition_variable_any with custom Lockable types is to provide convenient interruptible waits.
+
+	4. std::condition_variable_any also has the parameter to supply stop_token in wait() c++20
 */
 #include <iostream>
 #include <condition_variable>

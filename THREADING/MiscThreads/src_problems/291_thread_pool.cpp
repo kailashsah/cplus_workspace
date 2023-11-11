@@ -4,6 +4,9 @@ using namespace std;
 /*
 	1.
 
+	z. todo - https://codereview.stackexchange.com/questions/275834/tiny-thread-pool-implementation
+		https://www.cnblogs.com/sinkinben/p/16064857.html
+
 */
 
 #include <iostream>

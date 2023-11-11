@@ -9,7 +9,8 @@ using namespace std;
 	3. There are two points worth noting here. 
 		One, it doesn't seem to be specified whether std::jthread constructor initializes a stop-state or not if the passed function does not take a std::stop_token. 
 		Two, std::jthread cannot be initialized with an external std::stop_source. These points could be important in some cases because they can affect the application design.
-	4.
+	
+	4. https://www.nextptr.com/tutorial/ta1588653702/stdjthread-and-cooperative-cancellation-with-stop-token
 
 */
 #include <thread>
