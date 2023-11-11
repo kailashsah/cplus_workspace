@@ -143,6 +143,7 @@
   <ItemGroup>
     <ClCompile Include="move_constructor.cpp" />
     <ClCompile Include="r_value.cpp" />
+    <ClCompile Include="src\cast_const_cast_three.cpp" />
     <ClCompile Include="src\cast_const_cast_two.cpp" />
     <ClCompile Include="src\cast_const_one.cpp" />
     <ClCompile Include="src\class_member.cpp" />

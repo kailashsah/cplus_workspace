@@ -1,5 +1,9 @@
 #include <iostream>
 using namespace std;
+/*
+	1. run_const_two() - you never able to change the value of the "static const int".
+
+*/
 void run_const_one();
 void run_const_two();
 //
@@ -7,9 +11,9 @@ void run_const_one() {
 	// 1. 
 	static const  int a = 5;
 	//1.
-	int& b = const_cast<int&>(a);
+	int& b = const_cast<int&>(a); // we can only do const_cast<> bcoz src is const.
 	//2.
-	//int& b = static_cast<int&>(a); // error - static_cast<> cannot cast away const & other type  qualifier
+	//int& b = static_cast<int&>(a); // error - static_cast<> cannot cast away const & other type  qualifier (same for reinterpret_cast<int&>(a);)
 	//3.
 	//int& b = a; // error - initializing': cannot convert from 'const int' to 'int &'
 
@@ -24,7 +28,7 @@ void run_const_one() {
 
 	// 3.
 	static int aaa = 5;
-	const int& bbb = aaa;
+	const int& bbb = aaa; // you can create the const variable at run time from the static variable. IMP
 	cout << typeid(bbb).name(); //int
 	//bbb = 10;  //b': you cannot assign to a variable that is const
 }
@@ -55,7 +59,7 @@ void run_const_two() {
 	//1.
 	//int* bb = const_cast<int*>(&aa); //OK
 	//2.
-	int* bb = const_cast<int*>(ptr);//OK
+	int* bb = const_cast<int*>(ptr);//OK // it makes the local copy of int variable, check output 
 
 	cout << typeid(b).name() << endl;// int*
 	*bb = 10;

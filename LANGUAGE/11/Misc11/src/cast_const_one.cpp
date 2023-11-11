@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int fun(int* ptr)
+int fun_const_change(int* ptr)
 {
 	*ptr = *ptr + 10;
 	return (*ptr);
@@ -21,7 +21,7 @@ int const_modify(void)
 	const int val = 10;
 	const int* ptr = &val;
 	int* ptr1 = const_cast <int*>(ptr);
-	cout << "fun(ptr1) : " << fun(ptr1) << endl; // 20
+	cout << "fun(ptr1) : " << fun_const_change(ptr1) << endl; // 20
 	cout << "* ptr1 :" << *ptr1 << endl; // 20
 	cout << endl;
 	return 0;
