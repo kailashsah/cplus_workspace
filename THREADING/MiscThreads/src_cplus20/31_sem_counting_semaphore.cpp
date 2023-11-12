@@ -2,7 +2,10 @@
 using namespace std;
 
 /*
-	1.  1) A counting_semaphore is a lightweight synchronization primitive that can control access to a shared resource. Unlike a std::mutex, a counting_semaphore allows more than one concurrent access to the same resource, for at least LeastMaxValue concurrent accessors. The program is ill-formed if LeastMaxValue is negative.
+	1.  1) A counting_semaphore is a lightweight synchronization primitive that can control access to a shared resource. 
+	
+		IMP - Unlike a std::mutex, a counting_semaphore allows more than one concurrent access to the same resource, for at least LeastMaxValue concurrent accessors. The program is ill-formed if LeastMaxValue is negative.
+
 		2) binary_semaphore is an alias for specialization of std::counting_semaphore with LeastMaxValue being 1. Implementations may implement binary_semaphore more efficiently than the default implementation of std::counting_semaphore.
 
 	2. specialization binary_semaphore, LeastMaxValue is equal to 1.
@@ -31,6 +34,9 @@ using namespace std;
 		} else {
 			// Semaphore was not acquired within 1 second
 		}
+
+	7. https://www.geeksforgeeks.org/cpp-20-semaphore-header/
+		https://www.modernescpp.com/index.php/semaphores-in-c-20/
 }
 
 */
@@ -56,17 +62,16 @@ void worker_sem(int id)
 	mut_log.unlock();
 
 	// aquiring 
-	semaphoree.acquire();
+	semaphoree.acquire();// decrement count
 
 	// doing some work 
-	os << "Thread " << id << " acquired the semaphore."
-		<< endl;
+	os << "Thread " << id << " acquired the semaphore."	<< endl;
 
 	this_thread::sleep_for(2s);
+	
 	// releasing 
-	semaphoree.release();
-	os << "Thread " << id << " released the semaphore."
-		<< endl;
+	semaphoree.release();// increment count
+	os << "Thread " << id << " released the semaphore."	<< endl;
 }
 
 void run_semaphore() {

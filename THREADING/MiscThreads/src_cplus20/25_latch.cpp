@@ -9,6 +9,8 @@ using namespace std;
 
 	3. For some reasons to pause thread, there could be a better approach, like C++20 latch/semaphore/barrier.
 
+	4. https://www.modernescpp.com/index.php/latches-in-c-20/
+
 */
 void run_latch();
 //
