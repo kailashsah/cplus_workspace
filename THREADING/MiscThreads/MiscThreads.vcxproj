@@ -188,8 +188,12 @@
     <ClCompile Include="src_cplus20\12_osyncstream.cpp" />
     <ClCompile Include="src_cplus20\23_request_stop.cpp" />
     <ClCompile Include="src_cplus20\11_scoped_lock.cpp" />
+    <ClCompile Include="src_cplus20\30_sem_theory.cpp" />
     <ClCompile Include="src_cplus20\31_sem_counting_semaphore.cpp" />
     <ClCompile Include="src_cplus20\15_unique_lock_param_deduction.cpp" />
+    <ClCompile Include="src_cplus20\33_sem_binary_semaphore.cpp" />
+    <ClCompile Include="src_cplus20\35_sem_binary_semaphore_ex1.cpp" />
+    <ClCompile Include="src_cplus20\37_sem_user_defined.cpp" />
     <ClCompile Include="src_problems\101_writing_file_two_threads_osyncstream.cpp" />
     <ClCompile Include="src_problems\201_is_thread_running.cpp" />
     <ClCompile Include="src_problems\202_is_thread_running_by_joinable.cpp" />
