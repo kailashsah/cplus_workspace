@@ -2,7 +2,9 @@
 using namespace std;
 
 /*
-	1. Latches and barriers are coordination types that enable some threads to wait until a counter becomes zero. You can use a std::latch only once, 
+	1. Latches and barriers are coordination types
+	
+		that enable some threads to wait until a counter becomes zero. You can use a std::latch only once, 
 		but you can use a std::barrier more than once (like multiple call of arrive_and_wait()).
 
 	2. latch - single-use thread barrier
@@ -40,6 +42,8 @@ public:
 
 		// waiting before going home
 		goHome_latch.wait();                                  // (5)
+		// waiting for the count reaches to 0
+
 		synchronizedOut(name + ": " + "Good bye!\n");
 	}
 private:
