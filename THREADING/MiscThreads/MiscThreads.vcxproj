@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -86,9 +86,9 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE; _SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING ;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -142,8 +142,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\atomic.cpp" />
+    <ClCompile Include="src\atomic_compare_exchange_strong.cpp" />
+    <ClCompile Include="src\atomic_int.cpp" />
     <ClCompile Include="src\atomic_memory_order.cpp" />
     <ClCompile Include="src\atomic_spinlock.cpp" />
+    <ClCompile Include="src\atomic_udt_one.cpp" />
+    <ClCompile Include="src\atomic_udt_two.cpp" />
     <ClCompile Include="src\basics_detach.cpp" />
     <ClCompile Include="src\basics_join.cpp" />
     <ClCompile Include="src\condition_variable.cpp" />
@@ -194,6 +198,7 @@
     <ClCompile Include="src_cplus20\33_sem_binary_semaphore.cpp" />
     <ClCompile Include="src_cplus20\35_sem_binary_semaphore_ex1.cpp" />
     <ClCompile Include="src_cplus20\37_sem_user_defined.cpp" />
+    <ClCompile Include="src_cplus20\readme_cplus20.cpp" />
     <ClCompile Include="src_problems\101_writing_file_two_threads_osyncstream.cpp" />
     <ClCompile Include="src_problems\201_is_thread_running.cpp" />
     <ClCompile Include="src_problems\202_is_thread_running_by_joinable.cpp" />
