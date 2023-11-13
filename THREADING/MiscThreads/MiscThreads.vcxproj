@@ -143,6 +143,7 @@
   <ItemGroup>
     <ClCompile Include="src\atomic.cpp" />
     <ClCompile Include="src\atomic_compare_exchange_strong.cpp" />
+    <ClCompile Include="src\atomic_compare_exchange_weak.cpp" />
     <ClCompile Include="src\atomic_int.cpp" />
     <ClCompile Include="src\atomic_memory_order.cpp" />
     <ClCompile Include="src\atomic_spinlock.cpp" />

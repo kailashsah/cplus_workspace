@@ -10,7 +10,7 @@ using namespace std;
 
 
 */
-void run_atomit_udt_two_111();
+void run_atomit_udt_two_crashing();
 void run_atomit_udt_two_222();
 //
 #define _SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING // takes impact if defined in project preprocessor section
@@ -27,7 +27,8 @@ public:
 		cout << "class memeber value is " << x << endl;
 	}
 };
-void run_atomit_udt_two_111() {
+
+void run_atomit_udt_two_crashing() {
 	//1.
 	std::shared_ptr<test_atomic_my_data> p;
 	std::shared_ptr<test_atomic_my_data> p2 = std::atomic_load(&p);
@@ -57,7 +58,7 @@ void run_atomit_udt_two_222()
 
 //int main()
 //{
-//	//run_atomit_udt_two_111();
+//	//run_atomit_udt_two_crashing();
 //	run_atomit_udt_two_222();
 //
 //}

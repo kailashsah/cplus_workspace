@@ -8,16 +8,18 @@ using namespace std;
 		b) Otherwise, loads the actual value stored in the referenced object into expected (performs a load operation).
 
 	2. The comparison and copying are bitwise (similar to std::memcmp and std::memcpy); no constructor, assignment operator, or comparison operator are used.
-	
+
 	3. CAS - compare-and-swap operations
 	4.
 
 */
 #include <iostream>
-#include <atomic>
+#include <atomic> // compare_exchange_strong
 #include <random>
 using namespace std;
+#include <thread> // this_thread
 std::atomic<int> atomVal;
+
 
 void store_if_not_equal(int desired)
 {
@@ -25,11 +27,13 @@ void store_if_not_equal(int desired)
 	{
 		int expected = desired;
 
-		if (atomVal.compare_exchange_strong(expected, desired)) // if false, atomval copied into expected. 
+		if (atomVal.compare_exchange_strong(expected, desired))
+			// if false returned (atomVal != expected), atomVal copied into expected. 
+			//	true, if the underlying atomic value was successfully changed,
 		{
 			// values matched - do nothing
-			std::cout << expected << endl;
-			
+			std::cout << "if part " << expected << endl;
+
 		}
 		else
 		{
@@ -45,6 +49,7 @@ void store_if_not_equal(int desired)
 			}
 		}
 
+		this_thread::sleep_for(1s);
 		// if we arrive here, retry
 	}
 }
@@ -53,6 +58,27 @@ void run_compare_exchange_strong() {
 	atomVal.store(rand());
 	store_if_not_equal(2);
 }
+
+/*
+	41
+	2
+	2
+	if part 2
+	if part 2
+	if part 2
+	if part 2
+	if part 2
+	if part 2
+	if part 2
+	if part 2
+	if part 2
+	if part 2
+	if part 2
+	if part 2
+	if part 2
+	if part 2
+	if part 2
+*/
 
 //int main()
 //{
