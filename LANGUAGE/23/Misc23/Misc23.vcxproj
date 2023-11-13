@@ -132,6 +132,8 @@
     <ClCompile Include="src\flat_map.cpp" />
     <ClCompile Include="src\invoke.cpp" />
     <ClCompile Include="src\invoke_r.cpp" />
+    <ClCompile Include="src\readme_cplus23.cpp" />
+    <ClCompile Include="src\read_code.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
