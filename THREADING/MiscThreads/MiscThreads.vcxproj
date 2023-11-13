@@ -146,6 +146,7 @@
     <ClCompile Include="src\atomic_compare_exchange_weak.cpp" />
     <ClCompile Include="src\atomic_int.cpp" />
     <ClCompile Include="src\atomic_memory_order.cpp" />
+    <ClCompile Include="src\atomic_shared_ptr.cpp" />
     <ClCompile Include="src\atomic_spinlock.cpp" />
     <ClCompile Include="src\atomic_udt_one.cpp" />
     <ClCompile Include="src\atomic_udt_two.cpp" />
