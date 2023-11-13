@@ -22,7 +22,7 @@ void run_shared_ptr()
 	shared_ptr<int> sptr_int = make_shared<int>(5);
 
 	//3.
-	shared_ptr<int> sptr_int1 = sptr_int;
+	shared_ptr<int> sptr_int1 = sptr_int; // copy ctor
 	cout << sptr_int << endl; // print address
 	cout << *sptr_int << endl; // 5
 	cout << sptr_int.use_count() << endl; // 2,  count shared b/t pointers
