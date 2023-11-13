@@ -87,12 +87,12 @@ void run_weak_was_error_earlier() {
 	//  
 }
 
-int main()
-{
-
-	run_compare_exchange_weak();
-	return 0;
-}
+//int main()
+//{
+//
+//	run_compare_exchange_weak();
+//	return 0;
+//}
 
 /*
 	Possible output (the order may be different):
