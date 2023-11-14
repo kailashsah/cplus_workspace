@@ -13,8 +13,8 @@ using namespace std;
 void run_atomit_udt_two_crashing();
 void run_atomit_udt_two_222();
 //
-#define _SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING // takes impact if defined in project preprocessor section
-#define _SILENCE_ALL_CXX20_DEPRECATION_WARNINGS
+//#define _SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING // takes impact if defined in project preprocessor section
+//#define _SILENCE_ALL_CXX20_DEPRECATION_WARNINGS
 //
 
 class test_atomic_my_data {

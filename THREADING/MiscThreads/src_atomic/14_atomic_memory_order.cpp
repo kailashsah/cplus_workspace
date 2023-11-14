@@ -2,16 +2,18 @@
 using namespace std;
 
 /*
-	1.  'release' and 'acuire' can be used separately to prevent corresponding reordering.
+	1.  'release' and 'acquire' can be used separately to prevent corresponding reordering.
 
-		problem - The statements about 'moving before' or 'moving after' are instructions to the optimizer that it shouldn't re-order operations to take place . Optimizers are very good at re-ordering instructions and even omitting redundant reads/writes but if they re-organise the code across the memory barriers they may unwittingly violate that order.
+		problem - The statements about 'moving before' or 'moving after' are instructions to the optimizer that it shouldn't re-order operations to take place . Optimizers are very good at re-ordering instructions and even omitting redundant reads/writes 
+		
+		but if they re-organise the code across the memory barriers they may unwittingly violate that order.
 
 	2. memory_order_acquire and memory_order_release as:
 
 		Acquire operation: no reads in the current thread can be reordered before this load.
 		Release operation: no writes in the current thread can be reordered after this store.
 
-	3. The point is this: acquires and releases are sequentially consistent1 (all threads globally agree on the order in which acquires and releases happened.) All threads globally agree that the stuff that happens between an acquire and a release on a specific thread happened between the acquire and release.
+	3. The point is this: acquires and releases are sequentially consistent (all threads globally agree on the order in which acquires and releases happened.) All threads globally agree that the stuff that happens between an acquire and a release on a specific thread happened between the acquire and release.
 
 		But normal loads and stores after a release are allowed to be moved (either by hardware or the compiler) above the release,
 		and normal loads and stores before an acquire are allowed to be moved (either by hardware or the compiler) to after the acquire.
@@ -36,7 +38,7 @@ void run_producer_consumer();
 #include <string>
 #include <thread>
 
-std::atomic<std::string*> ptrr;
+std::atomic<std::string*> atomic_ptr;
 int data2;
 
 void producerr()
@@ -44,21 +46,21 @@ void producerr()
 	std::string* p = new std::string("Hello");
 	//this_thread::sleep_for(1s);
 	data2 = 42;
-	ptrr.store(p, std::memory_order_release);
+	atomic_ptr.store(p, std::memory_order_release);
 }
 
 void consumerr()
 {
 	std::string* p2;
-	while (!(p2 = ptrr.load(std::memory_order_consume)))
+	while (!(p2 = atomic_ptr.load(std::memory_order_consume)))
 		;
 	assert(*p2 == "Hello"); // never fires: *p2 carries dependency from ptr
 	assert(data2 == 42); // may or may not fire: data does not carry dependency from ptr
 }
-void consumer()
+void consumer_with_acquire()
 {
 	std::string* p2;
-	while (!(p2 = ptrr.load(std::memory_order_acquire)))
+	while (!(p2 = atomic_ptr.load(std::memory_order_acquire)))
 		;
 	assert(*p2 == "Hello"); // never fires
 	assert(data2 == 42); // never fires
@@ -77,7 +79,7 @@ void run_producer_consumer() {
 /*
 memory_order_consume - A load operation with this memory order performs a consume operation on the affected memory location: no reads or writes in the current thread dependent on the value currently loaded can be reordered before this load. Writes to data-dependent variables in other threads that release the same atomic variable are visible in the current thread. On most platforms, this affects compiler optimizations only.
 
-memory_order_acquire -	A load operation with this memory order performs the acquire operation on the affected memory location: no reads or writes in the current thread can be reordered before this load. All writes in other threads that release the same atomic variable are visible in the current thread .
+memory_order_acquire -	A load operation with this memory order performs the acquire operation on the affected memory location: no reads or writes in the current thread can be reordered before this load. All writes in other threads that release the same atomic variable are visible in the current thread.
 
 memory_order_release - 	A store operation with this memory order performs the release operation: no reads or writes in the current thread can be reordered after this store. All writes in the current thread are visible in other threads that acquire the same atomic variable (see Release-Acquire ordering below) and writes that carry a dependency into the atomic variable become visible in other threads that consume the same atomic .
 

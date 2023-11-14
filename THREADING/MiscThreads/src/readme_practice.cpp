@@ -22,7 +22,7 @@ using namespace std;
 		- condition_variable, wait(), 
 
 	todo
-		- run_promise_as_signal() - promise<>
+		- run_promise_as_signal() - promise<> - future_promise.cpp
 		- shared_future - one future obj used by multiple threads
 		- timed_mutex - try_lock_for(duration), try_lock_until(time), now + duration.
 		- shared_mutex - mutex_shared_mutex.cpp, same thing for shared_timed_mutex
@@ -31,7 +31,9 @@ using namespace std;
 	semaphores 
 		- latch
 		- barrier, on_completion function callback 
-		- 
+		- counting semaphore
+		- binary semaphore
+
 
 */
 
