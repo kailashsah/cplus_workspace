@@ -74,7 +74,7 @@ void run_atomic_shared_ptr_fix() {
 	}
 }
 
-void run_atomic_shared_ptr() {
+void run_atomic_shared_ptr_111() {
 	//run_atomic_shared_ptr_with_copy();
 	run_atomic_shared_ptr_with_reference();
 	//run_atomic_shared_ptr_fix();
@@ -85,6 +85,6 @@ void run_atomic_shared_ptr() {
 //int main()
 //{
 //	
-//	run_atomic_shared_ptr();
+//	run_atomic_shared_ptr_111();
 //}
 

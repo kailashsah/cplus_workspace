@@ -141,16 +141,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\atomic.cpp" />
-    <ClCompile Include="src\atomic_compare_exchange_strong.cpp" />
-    <ClCompile Include="src\atomic_compare_exchange_weak.cpp" />
-    <ClCompile Include="src\atomic_int.cpp" />
-    <ClCompile Include="src\atomic_memory_order.cpp" />
-    <ClCompile Include="src\atomic_shared_ptr.cpp" />
-    <ClCompile Include="src\atomic_shared_ptr_int.cpp" />
-    <ClCompile Include="src\atomic_spinlock.cpp" />
-    <ClCompile Include="src\atomic_udt_one.cpp" />
-    <ClCompile Include="src\atomic_udt_two.cpp" />
     <ClCompile Include="src\basics_detach.cpp" />
     <ClCompile Include="src\basics_join.cpp" />
     <ClCompile Include="src\condition_variable.cpp" />
@@ -182,6 +172,16 @@
     <ClCompile Include="src\thread_basics.cpp" />
     <ClCompile Include="src\lock_unique_lock.cpp" />
     <ClCompile Include="src\yield_vs_sleep_for.cpp" />
+    <ClCompile Include="src_atomic\atomic.cpp" />
+    <ClCompile Include="src_atomic\atomic_compare_exchange_strong.cpp" />
+    <ClCompile Include="src_atomic\atomic_compare_exchange_weak.cpp" />
+    <ClCompile Include="src_atomic\atomic_int.cpp" />
+    <ClCompile Include="src_atomic\atomic_memory_order.cpp" />
+    <ClCompile Include="src_atomic\atomic_shared_ptr.cpp" />
+    <ClCompile Include="src_atomic\atomic_shared_ptr_int.cpp" />
+    <ClCompile Include="src_atomic\atomic_spinlock.cpp" />
+    <ClCompile Include="src_atomic\atomic_udt_one.cpp" />
+    <ClCompile Include="src_atomic\atomic_udt_two.cpp" />
     <ClCompile Include="src_concepts\datarace.cpp" />
     <ClCompile Include="src_concepts\deadlock.cpp" />
     <ClCompile Include="src_concepts\extra_scope.cpp" />

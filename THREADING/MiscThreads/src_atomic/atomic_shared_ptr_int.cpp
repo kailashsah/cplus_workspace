@@ -8,6 +8,8 @@ using namespace std;
 		std::atomic<std::shared_ptr<int>> a{};	// 1
 		std::atomic<std::shared_ptr<int>> b{a.load()};	// 2
 		std::atomic<std::shared_ptr<int>> c{b};	// 3, error // b is not shared_ptr, it is atomic
+
+	3. https://openmynotepad.tistory.com/90
 */
 
 void run_atomic_shared_ptr();
