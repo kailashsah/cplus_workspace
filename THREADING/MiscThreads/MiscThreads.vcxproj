@@ -177,11 +177,13 @@
     <ClCompile Include="src_atomic\atomic_compare_exchange_weak.cpp" />
     <ClCompile Include="src_atomic\atomic_int.cpp" />
     <ClCompile Include="src_atomic\atomic_memory_order.cpp" />
+    <ClCompile Include="src_atomic\atomic_ref.cpp" />
     <ClCompile Include="src_atomic\atomic_shared_ptr.cpp" />
     <ClCompile Include="src_atomic\atomic_shared_ptr_int.cpp" />
     <ClCompile Include="src_atomic\atomic_spinlock.cpp" />
     <ClCompile Include="src_atomic\atomic_udt_one.cpp" />
     <ClCompile Include="src_atomic\atomic_udt_two.cpp" />
+    <ClCompile Include="src_atomic\atomic_wait.cpp" />
     <ClCompile Include="src_concepts\datarace.cpp" />
     <ClCompile Include="src_concepts\deadlock.cpp" />
     <ClCompile Include="src_concepts\extra_scope.cpp" />
