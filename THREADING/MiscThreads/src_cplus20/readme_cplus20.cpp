@@ -13,9 +13,16 @@ using namespace std;
 	
 	3. free functions atomic_load(shared_ptr), atomic_store(shared_ptr) deprecated in c++
 
+	4. atomic.wait(), notify(), notify_all(), atomic_ref()
+
 
 */
+/*
+	c++17
+	1. shared_mutex
 
+	
+*/
 
 //int main()
 //{

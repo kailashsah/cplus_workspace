@@ -3,20 +3,8 @@ using namespace std;
 
 /*
 	1. 
-		
-		
- 
-		atomic shared pointer
-		(class template specialization)
-		std::atomic<std::weak_ptr>
-  
-		(C++20)
- 
-		atomic weak pointer
-		(class template specialization)
 
-
-		atomic::wait() notify() notify_all() c++20
+		
 
 	2. thread stop, 
 		
@@ -27,6 +15,7 @@ using namespace std;
 			atomic<> for user defined type
 			compare_exchange_weak()
 			std::atomic<std::shared_ptr> 
+			atomic::wait() notify() notify_all() c++20
 
 	5. semaphores -
 		https://www.modernescpp.com/index.php/semaphores-in-c-20/

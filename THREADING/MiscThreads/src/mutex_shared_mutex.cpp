@@ -13,6 +13,8 @@ using namespace std;
 	2. shared mutex class adds the ability to provide shared access to the mutex.
 
 		This allows one to, for example, provide read access to a resource by multiple threads, while a writing thread would still be able to gain exclusive access.
+		
+		provides shared mutual exclusion facility
 
 	3. Point to note::
 		a, If one thread has acquired the exclusive lock (through lock, try_lock), no other threads can acquire the lock (including the shared).
