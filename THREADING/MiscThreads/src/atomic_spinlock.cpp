@@ -67,6 +67,7 @@ private:
 public:
 	void lock()
 	{
+		//while (atomic_flag.test_and_set()) //ok
 		while (atomic_flag.test_and_set(std::memory_order_acquire))
 		{
 		}
@@ -74,6 +75,7 @@ public:
 	}
 	void unlock()
 	{
+		//atomic_flag.clear(); //ok
 		atomic_flag.clear(std::memory_order_release);
 	}
 };
