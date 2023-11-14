@@ -31,7 +31,7 @@ using namespace std;
 
 	
 
-	6. compiler explorer c++23 - https://compiler-explorer.com/z/8a3Y6GG4Y
+	
 */
 
 /*
@@ -40,7 +40,10 @@ using namespace std;
 	2. What is the best way to wait a thread? - https://stackoverflow.com/questions/58740400/what-is-the-best-way-to-wait-a-thread 
 
 	3. Mircorsoft STL repo - https://github.com/microsoft/STL/tree/main
+	
 	4. MSVC c++ documentation - https://learn.microsoft.com/en-us/cpp/standard-library/memory-functions?view=msvc-170
+
+	6. compiler explorer c++23 - https://compiler-explorer.com/z/8a3Y6GG4Y
 
 */
 

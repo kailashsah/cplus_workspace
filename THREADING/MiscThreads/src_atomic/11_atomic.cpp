@@ -2,10 +2,12 @@
 using namespace std;
 
 /*
-	1.  two atomic operations that can be used with std::atomic types,  are atomic load and store operations.
-		Atomic types and operations provide a way of writing multi-threaded applications without using locks.
+	1. Atomic types ensure any read or write operation synchronizes as part of multi-thread operations, (i.e. using these types in std::thread). 
+	
+		They work well on any type that is trivially copyable types which means it has at least one eligible copy constructor, move constructor, copy assignment operator, or move assignment operator and has non-deleted trivial destructor.
 
-	2. Atomic types ensure any read or write operation synchronizes as part of multi-thread operations, (i.e. using these types in std::thread). They work well on any type that is trivially copyable types which means it has at least one eligible copy constructor, move constructor, copy assignment operator, or move assignment operator and has non-deleted trivial destructor.
+	2.  two atomic operations that can be used with std::atomic types,  are atomic load and store operations.
+		Atomic types and operations provide a way of writing multi-threaded applications without using locks.
 	
 	3. atomic operations are free of data races. atomic operations, i.e. load, store, operator=, wait, exchange, is_lock_free.
 		int *p = std::atomic_load(&ptr);

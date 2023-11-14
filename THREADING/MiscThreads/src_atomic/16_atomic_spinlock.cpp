@@ -88,7 +88,7 @@ mutex m;
 //2.
 ttas_lock l;
 
-int task(int count_to)
+int task_using_spinlock(int count_to)
 {
 
 	std::cout << "Started  " << count_to << std::endl;
@@ -110,8 +110,9 @@ int task(int count_to)
 	return 0;
 }
 
-int taskk(int count_to)
+int task_using_reg_lock_guard(int count_to)
 {
+	//this created to evaluate the time taken while using regular locks.
 	int local_var = 0;
 	std::cout << "Started  " << count_to << std::endl;
 	for (int i = 0; i < count_to; ++i)
@@ -139,7 +140,7 @@ void run_spin_lock() {
 	std::cout << "SpinLock inc MyTest start" << std::endl;
 	value = 0;
 	for (int i = 0; i < num_workers; ++i)
-		threads.push_back(std::move(std::thread(task, count_to)));
+		threads.push_back(std::move(std::thread(task_using_spinlock, count_to)));
 
 	for (auto it = threads.begin(); it != threads.end(); it++)
 		it->join();
