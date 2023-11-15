@@ -157,6 +157,7 @@
     <ClCompile Include="src\exception_throw.cpp" />
     <ClCompile Include="src\initializer_aggregate.cpp" />
     <ClCompile Include="src\initializer_list.cpp" />
+    <ClCompile Include="src\lambda_function_trailing_type.cpp" />
     <ClCompile Include="src\readme_cplus.cpp" />
     <ClCompile Include="src\reference_wrapper.cpp" />
     <ClCompile Include="src\src_adv\decay.cpp" />
