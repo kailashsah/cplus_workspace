@@ -141,13 +141,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="move_constructor.cpp" />
-    <ClCompile Include="r_value.cpp" />
+    <ClCompile Include="rvalue_move_constructor.cpp" />
+    <ClCompile Include="rvalue.cpp" />
     <ClCompile Include="src\cast_const_cast_three.cpp" />
     <ClCompile Include="src\cast_const_cast_two.cpp" />
     <ClCompile Include="src\cast_const_one.cpp" />
-    <ClCompile Include="src\class_member.cpp" />
+    <ClCompile Include="src\rvalue_class_member.cpp" />
     <ClCompile Include="src\class_nullptr.cpp" />
+    <ClCompile Include="src\clock.cpp" />
     <ClCompile Include="src\concepts\iterator_vs_const_iterator.cpp" />
     <ClCompile Include="src\concepts\move_if_noexcept.cpp" />
     <ClCompile Include="src\concepts\noexcept_and_throw.cpp" />
@@ -160,6 +161,7 @@
     <ClCompile Include="src\lambda_function_trailing_type.cpp" />
     <ClCompile Include="src\readme_cplus.cpp" />
     <ClCompile Include="src\reference_wrapper.cpp" />
+    <ClCompile Include="src\rvalue_move_function.cpp" />
     <ClCompile Include="src\src_adv\decay.cpp" />
     <ClCompile Include="src\src_pointers\pointers.cpp" />
     <ClCompile Include="src\src_pointers\pointer_shared.cpp" />
@@ -170,6 +172,7 @@
     <ClCompile Include="src\src_pointers\weak_ptr_lock.cpp" />
     <ClCompile Include="src\src_questions\binary_search.cpp" />
     <ClCompile Include="src\src_questions\fill_vector_random_integer.cpp" />
+    <ClCompile Include="src\src_questions\int_reference.cpp" />
     <ClCompile Include="src\src_questions\is_prime_optimized.cpp" />
     <ClCompile Include="src\src_questions\random_numbers.cpp" />
     <ClCompile Include="src\src_questions\static_member_init.cpp" />

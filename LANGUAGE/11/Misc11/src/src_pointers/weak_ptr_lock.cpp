@@ -42,12 +42,9 @@ void run_weak_ptr_is_expired() {
 	*/
 }
 
-int main() {
-
-	run_weak_ptr_is_expired();
-	return 0;
-}
-//int main()
-//{
+//int main() {
+//
+//	run_weak_ptr_is_expired();
 //	return 0;
 //}
+
