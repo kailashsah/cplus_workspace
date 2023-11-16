@@ -64,3 +64,8 @@ void run_shared_future()
 		Thread 2 received the signal 0.041 ms after start
 	*/
 }
+
+//void main()
+//{
+//	run_shared_future();
+//}

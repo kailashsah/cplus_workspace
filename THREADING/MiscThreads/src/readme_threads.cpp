@@ -16,6 +16,7 @@ using namespace std;
 			compare_exchange_weak()
 			std::atomic<std::shared_ptr> 
 			atomic::wait() notify() notify_all() c++20
+			https://stackoverflow.com/questions/14709233/how-to-use-create-unique-lock-in-c - auto MyFunction()->void
 
 	5. semaphores -
 		https://www.modernescpp.com/index.php/semaphores-in-c-20/
@@ -27,11 +28,9 @@ using namespace std;
 
 	4. 
 
-	5. https://stackoverflow.com/questions/14709233/how-to-use-create-unique-lock-in-c - auto MyFunction()->void
+	5.
 
-	
 
-	
 */
 
 /*
