@@ -122,10 +122,10 @@ void run_move_ctor() {
 */
 
 
-int main()
-{
-	run_copy_constructor();
-	//run_move_ctor();
-	return 0;
-}
+//int main()
+//{
+//	run_copy_constructor();
+//	//run_move_ctor();
+//	return 0;
+//}
 

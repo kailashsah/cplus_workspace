@@ -162,6 +162,7 @@
     <ClCompile Include="src\readme_cplus.cpp" />
     <ClCompile Include="src\reference_wrapper.cpp" />
     <ClCompile Include="src\rvalue_move_function.cpp" />
+    <ClCompile Include="src\rvalue_move_constructor_two.cpp" />
     <ClCompile Include="src\src_adv\decay.cpp" />
     <ClCompile Include="src\src_pointers\pointers.cpp" />
     <ClCompile Include="src\src_pointers\pointer_shared.cpp" />
