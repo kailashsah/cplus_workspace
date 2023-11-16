@@ -73,7 +73,7 @@ void run_aggregate_initialization()
 	a9 = A(1); // same
 
 	cout << endl << "A a10(A(1));  " << endl;
-	A a10(A{});
+	A a10(A{}); // <= IMP
 	/*
 		A a10(A())
 			will not create obj by A() .. so no output comes out of it

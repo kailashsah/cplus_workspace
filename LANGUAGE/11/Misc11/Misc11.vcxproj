@@ -185,7 +185,7 @@
     <ClCompile Include="src\read_code.cpp" />
     <ClCompile Include="src\exception.cpp" />
     <ClCompile Include="src\exception_inner.cpp" />
-    <ClCompile Include="src\iterator_istream.cpp" />
+    <ClCompile Include="src\64_iterator_istream.cpp" />
     <ClCompile Include="src\static_object.cpp" />
     <ClCompile Include="src\struct.cpp" />
     <ClCompile Include="src\template.cpp" />
@@ -202,7 +202,7 @@
     <ClCompile Include="src\virtual_inheritance_three.cpp" />
     <ClCompile Include="src\virtual_inheritance_two.cpp" />
     <ClCompile Include="src\virtual_static.cpp" />
-    <ClCompile Include="string.cpp" />
+    <ClCompile Include="62_string_operation_by_stl.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

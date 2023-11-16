@@ -3,7 +3,11 @@
 using namespace std;
 #include <sstream> //getline(), 
 #include <string_view>
-
+void string_split();
+void erase_string();
+void find_substr_str();
+void string_remove_space();
+//
 void string_split() {
 
 	string str = "first 21 second 21 third ";
