@@ -146,8 +146,8 @@
     <ClCompile Include="src\cast_const_cast_three.cpp" />
     <ClCompile Include="src\cast_const_cast_two.cpp" />
     <ClCompile Include="src\cast_const_one.cpp" />
+    <ClCompile Include="src\concepts\class_nullptr.cpp" />
     <ClCompile Include="src\rvalue_class_member.cpp" />
-    <ClCompile Include="src\class_nullptr.cpp" />
     <ClCompile Include="src\clock.cpp" />
     <ClCompile Include="src\concepts\iterator_vs_const_iterator.cpp" />
     <ClCompile Include="src\concepts\move_if_noexcept.cpp" />
@@ -162,7 +162,7 @@
     <ClCompile Include="src\readme_cplus.cpp" />
     <ClCompile Include="src\reference_wrapper.cpp" />
     <ClCompile Include="src\rvalue_move_function.cpp" />
-    <ClCompile Include="src\rvalue_move_constructor_two.cpp" />
+    <ClCompile Include="src\rvalue_move_constructor_if_not_defined.cpp" />
     <ClCompile Include="src\src_adv\decay.cpp" />
     <ClCompile Include="src\src_pointers\pointers.cpp" />
     <ClCompile Include="src\src_pointers\pointer_shared.cpp" />
