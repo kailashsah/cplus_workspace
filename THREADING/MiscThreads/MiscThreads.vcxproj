@@ -141,17 +141,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\basics_detach.cpp" />
-    <ClCompile Include="src\basics_join.cpp" />
-    <ClCompile Include="src\condition_variable.cpp" />
-    <ClCompile Include="src\condition_variable_any.cpp" />
-    <ClCompile Include="src\cv_wait_for.cpp" />
-    <ClCompile Include="src\future.cpp" />
-    <ClCompile Include="src\future_empty.cpp" />
-    <ClCompile Include="src\future_fire_and_forget.cpp" />
-    <ClCompile Include="src\future_promise.cpp" />
-    <ClCompile Include="src\lock_for_deadlock.cpp" />
-    <ClCompile Include="src\lock_guard_unique_lock.cpp" />
+    <ClCompile Include="src\12_basics_detach.cpp" />
+    <ClCompile Include="src\11_basics_join.cpp" />
+    <ClCompile Include="src\30_condition_variable.cpp" />
+    <ClCompile Include="src\34_condition_variable_any.cpp" />
+    <ClCompile Include="src\32_cv_wait_for.cpp" />
+    <ClCompile Include="src\21_future.cpp" />
+    <ClCompile Include="src\22_future_empty.cpp" />
+    <ClCompile Include="src\27_future_fire_and_forget.cpp" />
+    <ClCompile Include="src\23_future_promise.cpp" />
+    <ClCompile Include="src\16_lock_for_deadlock.cpp" />
+    <ClCompile Include="src\15_lock_guard_unique_lock.cpp" />
     <ClCompile Include="src\mutex_recursive_mutex.cpp" />
     <ClCompile Include="src\mutex_shared_lock_difficult.cpp" />
     <ClCompile Include="src\mutex_shared_lock_3.cpp" />
@@ -160,17 +160,17 @@
     <ClCompile Include="src\mutex_timed_mutex_two.cpp" />
     <ClCompile Include="src\mutex_timed_mutex.cpp" />
     <ClCompile Include="src\mutex_shared_mutex.cpp" />
-    <ClCompile Include="src\packaged_task_over_promise.cpp" />
-    <ClCompile Include="src\packaged_task_creations.cpp" />
-    <ClCompile Include="src\packaged_task_vs_async.cpp" />
+    <ClCompile Include="src\38_packaged_task_over_promise.cpp" />
+    <ClCompile Include="src\36_packaged_task_creations.cpp" />
+    <ClCompile Include="src\40_packaged_task_vs_async.cpp" />
     <ClCompile Include="src\prvalue_xvalue.cpp" />
-    <ClCompile Include="src\lock_scoped_lock.cpp" />
+    <ClCompile Include="src\17_lock_scoped_lock.cpp" />
     <ClCompile Include="src\readme_practice.cpp" />
     <ClCompile Include="src\readme_threads.cpp" />
-    <ClCompile Include="src\future_shared_future.cpp" />
+    <ClCompile Include="src\25_future_shared_future.cpp" />
     <ClCompile Include="src\read_code.cpp" />
     <ClCompile Include="src\thread_basics.cpp" />
-    <ClCompile Include="src\lock_unique_lock.cpp" />
+    <ClCompile Include="src\14_lock_unique_lock.cpp" />
     <ClCompile Include="src\yield_vs_sleep_for.cpp" />
     <ClCompile Include="src_atomic\11_atomic.cpp" />
     <ClCompile Include="src_atomic\21_atomic_compare_exchange_strong.cpp" />
