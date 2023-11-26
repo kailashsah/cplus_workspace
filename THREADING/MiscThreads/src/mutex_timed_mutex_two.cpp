@@ -41,7 +41,9 @@ void run_timed_mutex_v2() {
         threads.emplace_back(job, i);
     }
 
-    for (auto& i : threads) {
+    for (auto& i : threads) // if auto i : threads ----> error C2280: 'std::thread::thread(const std::thread &)': attempting to reference a deleted function.
+        // no copy constructor available
+    {
         i.join();
     }
     /*
