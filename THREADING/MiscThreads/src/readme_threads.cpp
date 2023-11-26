@@ -3,7 +3,8 @@ using namespace std;
 
 /*
 	1. 
-
+		jthread.interrupt();      
+		interrupt vs stop_token
 		
 
 	2. thread stop, 

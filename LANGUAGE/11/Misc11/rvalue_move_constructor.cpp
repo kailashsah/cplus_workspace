@@ -36,14 +36,11 @@ struct B {
 	B(B&& val) noexcept {
 		cout << "move copy ctor " << endl;
 		*this = move(val); // calling move assignment //Use move semantics to improve performance
-
-
-		// "val" will die there ( if rvalue provided  move(B("string_move_ctor_")) ) & prints dtor for value : string_move_ctor_ -- imp
-
 	}
 	/*
 			If you provide both a move constructor and a move assignment operator for your class, you can eliminate redundant code by writing the move constructor to call the move assignment operator. The following example shows a revised version of the move constructor that calls the move assignment operator:
-		*/
+	*/
+
 	B& operator=(B&& arg) noexcept {
 		cout << "move assignment fn " << endl;
 		if (this != &arg) {
@@ -72,6 +69,7 @@ struct B {
 };
 
 void run_copy_constructor() {
+	// IMP - but these are not copy ctor, it translated into simple constructions, see output
 
 	string a;
 	B b_a(string("a")); // these all call - ctor called for rvalue argument
@@ -98,6 +96,7 @@ void run_copy_constructor() {
 	dtor for value : b1
 	dtor for value : a
 */
+
 void run_move_ctor() {
 	//1.
 	B b_a4 = move(B("string_move_ctor_"));// move copy ctor // see ouput, it calls dtor also 
@@ -130,7 +129,7 @@ B&& func_rvalue_return() noexcept {
 	//return  move(B("rrr_func"));
 
 	//2.
-	B obj = B("obj_rrr_");
+	B obj = B("obj_rrr_"); 
 	return move(obj);
 }
 
@@ -144,7 +143,7 @@ void run_rvalue_returned_by_func() {
 	*/
 
 	//2.
-	//B& a = func_rvalue_return(); //cannot convert from 'B' to 'B &'
+	//B& a = func_rvalue_return(); //error - cannot convert from 'B' to 'B &'
 
 	//3.
 	//B a = func_rvalue_return();// this crashes .. .. b is dangling object, read explaination 
@@ -152,7 +151,7 @@ void run_rvalue_returned_by_func() {
 	cout << "run_rvalue_returned_by_func() ends here" << endl;
 	/*
 		When a nameless temporary, not bound to any references, would be moved or copied into an object of the same cv-unqualified type, the copy/move is omitted. When that temporary is constructed, it is constructed directly in the storage where it would otherwise be moved or copied to. When the nameless temporary is the argument of a return statement, this variant of copy elision is known as RVO, "return value optimization".
-		
+
 		auto&& values = makeWidget().data();
 			values will be dangling as binding an xvalue(expiring value) to a reference doesn't extend anythings lifetime.
 
@@ -185,12 +184,13 @@ void run_lvalue_returned_by_func()
 	/*
 		Returning a reference to an object being about to be destroyed is always wrong: the referenced object will be destroyed before it can be used in any form. Making the reference an rvalue reference doesn't change that, it just makes returning a temporary compile.
 
-		Note that returning a temporary string by value will probably result in copy elision, i.e., the object is probably going to be constructed directly in the location where it is used. 
+		Note that returning a temporary string by value will probably result in copy elision, i.e., the object is probably going to be constructed directly in the location where it is used.
 			see run_value_returned_by_func().
 		If that doesn't happen the object will be moved if there is a move constructor for the return type (there is for std::string). Note that the same applies when returning a function local variable instead of the temporary.
 		fm - https://stackoverflow.com/questions/29332516/return-rvalue-reference-vs-return-by-value-in-function-return-type
 	*/
 }
+
 //3.
 B func_value_return() noexcept {
 
