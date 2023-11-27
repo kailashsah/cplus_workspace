@@ -210,14 +210,14 @@ void run_value_returned_by_func()
 	*/
 }
 
-int main()
-{
-	//run_copy_constructor();
-	//run_move_ctor();
-	// 
-	//run_value_returned_by_func();
-	//run_lvalue_returned_by_func();
-	run_rvalue_returned_by_func();
-	return 0;
-}
+//int main()
+//{
+//	//run_copy_constructor();
+//	//run_move_ctor();
+//	// 
+//	//run_value_returned_by_func();
+//	//run_lvalue_returned_by_func();
+//	run_rvalue_returned_by_func();
+//	return 0;
+//}
 

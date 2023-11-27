@@ -2,7 +2,7 @@
 using namespace std;
 
 /*
-	'auto' lets you declare a variable with a particular type whereas decltype lets you extract the type from the variable so decltype is sort of an operator that evaluates the type of passed expression
+	'auto' lets you declare a variable with a particular type whereas decltype lets you extract the type from the variable so decltype is sort of an operator that evaluates the type of passed expression.
 */
 //auto test(const auto & v) // parameter cannot have a type that contains 'auto'
 auto test(const int& v)
@@ -19,7 +19,7 @@ auto test(const int& v)
 	decltype(v) a2{ 2 }; // what is a2's qualified TYPE?
 	cout << typeid(a2).raw_name() << endl; //.h //typeid(a2).name() retuns i
 	/*
-	 a2++; // is this legal? Why
+	 a2++; // is this legal? Why  -> no its not legal
 	'a2': you cannot assign to a variable that is const	Misc11
 
 	*/
@@ -28,8 +28,9 @@ auto test(const int& v)
 
 
 	//
-	//Note: reference(&) is ignored in auto keyword, but reference(&) is not ignored in decltype.
-	//auto - const, reference & is ignored
+	//Note: 
+	// auto - reference(&) is ignored in auto keyword, but reference(&) is not ignored in decltype.
+	// auto - const, 'reference &' is ignored  (Remember)
 }
 
 void run_decltype()

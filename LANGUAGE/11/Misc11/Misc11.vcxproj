@@ -143,10 +143,12 @@
   <ItemGroup>
     <ClCompile Include="rvalue_move_constructor.cpp" />
     <ClCompile Include="rvalue.cpp" />
+    <ClCompile Include="src\83_mem_fn_vs_bind.cpp" />
     <ClCompile Include="src\cast_const_cast_three.cpp" />
     <ClCompile Include="src\cast_const_cast_two.cpp" />
     <ClCompile Include="src\cast_const_one.cpp" />
     <ClCompile Include="src\concepts\class_nullptr.cpp" />
+    <ClCompile Include="src\81_function_class_template.cpp" />
     <ClCompile Include="src\rvalue_class_member.cpp" />
     <ClCompile Include="src\clock.cpp" />
     <ClCompile Include="src\concepts\iterator_vs_const_iterator.cpp" />
@@ -195,8 +197,8 @@
     <ClCompile Include="src\template_two.cpp" />
     <ClCompile Include="src\test_shallowcopy.cpp" />
     <ClCompile Include="src\tutorial_one.cpp" />
-    <ClCompile Include="src\type_decltype.cpp" />
-    <ClCompile Include="src\version_cplus.cpp" />
+    <ClCompile Include="src\91_type_decltype.cpp" />
+    <ClCompile Include="src\98_version_cplus.cpp" />
     <ClCompile Include="src\virtual_from_constructor.cpp" />
     <ClCompile Include="src\virtual_inheritance.cpp" />
     <ClCompile Include="src\virtual_inheritance_three.cpp" />

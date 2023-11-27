@@ -9,9 +9,9 @@ using namespace std;
 		If the function cannot lock all objects (such as because one of its internal calls threw an exception), the function first unlocks all objects it successfully locked (if any) before failing.
 
 	3. try_lock() - true if the function succeeds in locking the mutex for the thread.
-		false otherwise. Attempts to lock the mutex, without blocking. The mutex object is accessed/modified as an atomic operation
+		false otherwise. Attempts to lock the mutex, without blocking. The mutex object is accessed/modified as an atomic operation.
 
-	4.  raii vesion is std::scoped_lock
+	4.  raii vesion is std::scoped_lock.
 */
 
 #include <thread>         // std::thread
