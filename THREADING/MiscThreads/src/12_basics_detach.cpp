@@ -14,7 +14,7 @@ using namespace std;
 	4. So, should you use join or detach ?
 
 		Use join
-		Unless you need to have more flexibility AND are willing to provide a synchronization mechanism to wait for the thread completion on your own, in which case you may use detach
+		Unless you need to have more flexibility AND are willing to provide a synchronization mechanism to wait for the thread completion on your own, in which case you may use detach.
 
 	5. detach basically will release the resources needed to be able to implement join.
 

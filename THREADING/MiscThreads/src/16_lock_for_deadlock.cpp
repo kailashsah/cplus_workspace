@@ -2,7 +2,7 @@
 using namespace std;
 
 /*
-	1. Locks all the objects passed as arguments, alternative is std::scoped_lock.
+	1. Locks all the objects passed as arguments, alternative is std::scoped_lock class (type deduced runtime).
 
 	2. The function locks the objects using an unspecified sequence of calls to their members lock, try_lock and unlock that ensures that all arguments are locked on return (without producing any deadlocks).
 
