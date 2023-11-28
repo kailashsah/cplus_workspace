@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
-
+void run_multi_inheritance_v1();
+void run_multi_inheritance_v2();
+//
 class top {
 public:
 	virtual void foo(void) { cout << "I am top foo\n"; }

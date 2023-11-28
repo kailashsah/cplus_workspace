@@ -10,7 +10,7 @@ void print_num(int i)
 {
 	std::cout << i << '\n';
 }
-#include <functional>
+#include <functional> // function<>, mem_fn()
 struct Foo
 {
 	Foo(int num) : num_(num) {}

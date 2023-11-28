@@ -4,7 +4,10 @@ using namespace std;
 /*
 	1. you can't really compare std::function with std::mem_fn. The former is a class template whose type you specify, and the latter is a function template with unspecified return type. There really isn't a situation in which you'd actually consider one versus the other.
 
-	2. A better comparison might be between mem_fn and std::bind. There, for the specific use-case of a pointer-to-member, mem_fn is going to a lot less verbose if all you want to do is pass-through all the arguments. Given this simple type:
+	2. A better comparison might be between mem_fn and std::bind. 
+		std::bind - function template
+		std::mem_fn - function template
+		There, for the specific use-case of a pointer-to-member, mem_fn is going to a lot less verbose if all you want to do is pass-through all the arguments. Given this simple type:
 
 */
 void run_mem_fn_vs_bind();
