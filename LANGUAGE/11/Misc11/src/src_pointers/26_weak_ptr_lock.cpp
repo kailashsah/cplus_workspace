@@ -53,10 +53,10 @@ void run_weak_ptr_is_expired() {
 	*/
 }
 
-int main() {
-
-	run_weak_ptr_lock();
-	run_weak_ptr_is_expired();
-	return 0;
-}
+//int main() {
+//
+//	run_weak_ptr_lock();
+//	run_weak_ptr_is_expired();
+//	return 0;
+//}
 

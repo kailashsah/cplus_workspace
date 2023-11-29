@@ -123,7 +123,7 @@ void run_move_ctor() {
 	dtor for value :
 */
 
-//1.
+//1. ------------------
 B&& func_rvalue_return() noexcept {
 	//1.
 	//return  move(B("rrr_func"));
@@ -159,7 +159,7 @@ void run_rvalue_returned_by_func() {
 	*/
 }
 
-//2.
+//2. ------------------
 B& func_lvalue_return() noexcept {
 	//1.
 	B obj = B("obj_rrr_");
@@ -191,7 +191,7 @@ void run_lvalue_returned_by_func()
 	*/
 }
 
-//3.
+//3. ------------------
 B func_value_return() noexcept {
 
 	return B("obj_rrr_");

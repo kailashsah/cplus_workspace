@@ -8,7 +8,7 @@ public:
 		cout << "dtor" << endl;
 		/*
 			//1.
-			throw 1;  // terminate the program
+			throw 1;  // terminates the program
 			// solution is below step 2.
 
 			output -

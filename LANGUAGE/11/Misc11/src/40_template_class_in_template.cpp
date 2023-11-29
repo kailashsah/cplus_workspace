@@ -1,7 +1,9 @@
 #include <iostream>
 using namespace std;
 
-
+/*
+	use of template class inside template
+*/
 template<class A1>
 class B
 {

@@ -46,26 +46,7 @@ void run_chrono()
 }
 
 //.................................................
-void update(int& data)  //expects a reference to int
-{
-	// demo of std::ref(data)
-	data = 15;
-}
-int run_ref()
-{
-	int data = 10;
 
-	//1. This doesn't compile as the data value is copied when its reference is expected.
-	//std::thread t2(update, data);   
-	//std::thread t3(update, move(data));
-
-	//2.
-	std::thread t1(update, std::ref(data));  // works, if reference provided in this way
-	t1.join();
-	printt(to_string(data)); //  15
-
-	return 0;
-}
 
 //-------------------------------------------------------
 

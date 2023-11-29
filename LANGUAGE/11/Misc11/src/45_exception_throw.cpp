@@ -12,10 +12,10 @@ void handler() {
 }
 
 //1.
-void f1(void) throw(int) {
+void f1(void) throw(int) { // it shows f1 can throw as int value
 	printf_s("About to throw 1\n");
 	if (1)
-		throw 1;
+		throw 1; //(1).
 }
 
 //2. throw() -> means no exception thrown
@@ -30,7 +30,15 @@ void f5(void) throw() {
 }
 void run_throw()
 {
+	//1.
+	//f1(); // it crash at (1). boz not handled.
 
+	//2.
+	f5();
+	/*
+		About to throw 1
+		in handler
+	*/
 
 }
 
