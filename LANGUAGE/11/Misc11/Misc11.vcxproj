@@ -141,14 +141,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="rvalue_move_constructor.cpp" />
-    <ClCompile Include="rvalue.cpp" />
     <ClCompile Include="src\83_mem_fn_vs_bind.cpp" />
     <ClCompile Include="src\cast_const_cast_three.cpp" />
     <ClCompile Include="src\cast_const_cast_two.cpp" />
     <ClCompile Include="src\cast_const_one.cpp" />
     <ClCompile Include="src\concepts\class_nullptr.cpp" />
     <ClCompile Include="src\81_function_class_template.cpp" />
+    <ClCompile Include="src\rvalue.cpp" />
     <ClCompile Include="src\rvalue_class_member.cpp" />
     <ClCompile Include="src\clock.cpp" />
     <ClCompile Include="src\concepts\iterator_vs_const_iterator.cpp" />
@@ -163,16 +162,17 @@
     <ClCompile Include="src\lambda_function_trailing_type.cpp" />
     <ClCompile Include="src\readme_cplus.cpp" />
     <ClCompile Include="src\reference_wrapper.cpp" />
+    <ClCompile Include="src\rvalue_move_constructor.cpp" />
     <ClCompile Include="src\rvalue_move_function.cpp" />
     <ClCompile Include="src\rvalue_move_constructor_if_not_defined.cpp" />
     <ClCompile Include="src\src_adv\decay.cpp" />
-    <ClCompile Include="src\src_pointers\pointers.cpp" />
-    <ClCompile Include="src\src_pointers\pointer_shared.cpp" />
-    <ClCompile Include="src\src_pointers\pointer_shared_cyclic_dep.cpp" />
-    <ClCompile Include="src\src_pointers\pointer_shared_two.cpp" />
-    <ClCompile Include="src\src_pointers\pointer_unique.cpp" />
-    <ClCompile Include="src\src_pointers\pointer_unique_two.cpp" />
-    <ClCompile Include="src\src_pointers\weak_ptr_lock.cpp" />
+    <ClCompile Include="src\src_pointers\13_pointers.cpp" />
+    <ClCompile Include="src\src_pointers\21_shared_ptr.cpp" />
+    <ClCompile Include="src\src_pointers\24_shared_ptr_cyclic_dep.cpp" />
+    <ClCompile Include="src\src_pointers\22_shared_ptr_two.cpp" />
+    <ClCompile Include="src\src_pointers\15_unique_ptr.cpp" />
+    <ClCompile Include="src\src_pointers\17_unique_ptr_two.cpp" />
+    <ClCompile Include="src\src_pointers\26_weak_ptr_lock.cpp" />
     <ClCompile Include="src\src_questions\binary_search.cpp" />
     <ClCompile Include="src\src_questions\fill_vector_random_integer.cpp" />
     <ClCompile Include="src\src_questions\int_reference.cpp" />

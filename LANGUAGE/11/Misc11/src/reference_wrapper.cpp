@@ -14,7 +14,7 @@ public:
 	int i;
 };
 
-void run_vectorr()
+void run_pointer_vectorr()
 {
 	// why use reference_wrapper over pointers (pointers drawback)
 	vector <RefTest*> vec;

@@ -29,10 +29,16 @@ void shared(shared_ptr<Base> baseObj); // fwd declaration
 void shared(shared_ptr<Base> baseObj)
 {
 	cout << "reassignment of shared_ptr" << endl;
-	//baseObj = make_unique<Derived>();// if Derived(string name), default ctor would be removed thus compilarion error 
-	baseObj = make_unique<Derived>("bb"); // assignment unique -> shared, make shared ref to zero  (IMP)
+	//1.
+	//baseObj = make_unique<Derived>();// if Derived(string name), default ctor would be removed thus compilation error 
+	//2.
+	baseObj = make_unique<Derived>("bb"); // assignment unique -> shared, makes old shared ref to zero  (IMP)
 	baseObj->foo();
 
+	//3.
+	shared_ptr<Base> baseObj2(baseObj);// shows assigning of ptr return by make_unique() to shared_ptr objs
+	shared_ptr<Base> baseObj3 = baseObj;
+	cout << "baseObj3.use_count() : " << baseObj3.use_count() << endl; //3 bcoz of baseObj2, baseObj3
 }
 
 void run_shared_ptr_two() {
