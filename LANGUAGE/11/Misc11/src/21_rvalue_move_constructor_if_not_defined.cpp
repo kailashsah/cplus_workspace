@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 /*
-	1. what will happend if no move functions defined.
+	1. what will happend if no move functions defined.  --- no problems, it calls normal ctors.
 */
 
 struct B2 {
