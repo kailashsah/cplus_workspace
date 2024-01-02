@@ -3,9 +3,20 @@
 #include <algorithm>
 #include <numeric>
 using namespace std;
-
+//
+void fill_array();
+void run_unique_on_vector();
+void vector_2D_array();
+void run_vector_insert();
+void run_vector_erase();
+void vector_for_each_one();
+void vector_size();
+void vector_swap();
+void run_ways_to_copy_vectors();
+//
 void fill_array() {
 	vector<int> vec(100, 0);
+	
 	//1.
 	for_each(vec.begin(), vec.end(), [](auto a) { cout << a << " "; }); cout << endl; // print
 	for_each(vec.begin(), vec.end(), [i = 0](auto& a) mutable { i++; a = i; return a; }); cout << endl; // fill
@@ -16,9 +27,14 @@ void fill_array() {
 	srand(time(nullptr));
 	for_each(vec.begin(), vec.end(), [](auto& a) {a = 1 + rand() % 99; ; return a; });
 	sort(vec.begin(), vec.end());
-	for_each(vec.begin(), vec.end(), [](auto a) { cout << a << " "; }); cout << endl;
+	for_each(vec.begin(), vec.end(), [](auto a) { cout << a << " "; }); cout << endl;// print
 
-	//3. std::unique is used to remove duplicates of any element present consecutively in a range[first, last)
+}
+
+void run_unique_on_vector() {
+	vector<int> vec(100, 0);
+
+	//3. std::unique() is used to remove duplicates of any element present consecutively in a range[first, last)
 	cout << endl << "unique() : " << endl;
 	//3.1
 	auto last = unique(vec.begin(), vec.end(), [=](auto l, auto r) -> bool {
@@ -30,7 +46,7 @@ void fill_array() {
 
 	//3.2
 	//auto last = unique(vec.begin(), vec.end());
-	int unique_elements = std::distance(vec.begin(), last);
+	int unique_elements = std::distance(vec.begin(), last);// final elements in vector
 	cout << "unique_elements are  " << unique_elements << endl;
 
 	vec.erase(last, vec.end());
@@ -66,10 +82,8 @@ void vector_2D_array() {
 	}
 }
 //.................................................
-
-void vec_impl()
-{
-	std::string cs = "hello";
+void run_vector_insert() {
+	
 	vector<int> veci = { 1,2,5,2,4,5 };
 	//veci.push_back(5);
 	//veci.pop_back();
@@ -79,8 +93,13 @@ void vec_impl()
 	/*
 		push_back("foo") constructs a temporary string from the string literal, and then moves that string into the container, whereas my_vec. emplace_back("foo") just constructs the string directly in the container, avoiding the extra move
 	*/
+}
+void run_vector_erase()
+{
+	std::string cs = "hello";
+	vector<int> veci = { 1,2,5,2,4,5 };
 
-	//1. iterate &  erase
+	//1. iterate &  erase -- if multiple 5 is present
 	for (auto it = veci.begin(); it != veci.end(); ) {
 		it = find(it, veci.end(), 5);
 
@@ -90,9 +109,11 @@ void vec_impl()
 			it = veci.erase(it);
 			//it++;
 		}
+		else
+			break; // no more 5 is found
 	}
 
-	//2. erase if 2 is found
+	//2.  iterate &  erase - erase if 2 is found
 	for (auto it = veci.begin(); it < veci.end();)
 	{
 		if (*it == 2)
@@ -130,6 +151,7 @@ void vector_for_each_two() {
 
 	std::vector<double> v{ 1.0, 2.2, 4.0, 5.5, 7.2 };
 	double r = 4.0;
+	// add 4 to each elements
 	std::for_each(v.begin(), v.end(), [&](double& v) {
 		v += r;
 		});
@@ -145,7 +167,7 @@ void vector_size() {
 	vector<int> vec;
 	cout << " vec.max_size()" << vec.max_size() << endl; // 1.073.741.823
 	vector <Person> v_per;
-	cout << sizeof(Person) << endl; // 1
+	cout << sizeof(Person) << endl; // 1 byte
 	cout << " v_per.max_size()" << v_per.max_size() << endl; //2.147.483.647 -> 2GB
 	cout << endl;
 
@@ -165,11 +187,19 @@ void vector_swap() {
 	cout << endl;
 
 }
+void run_ways_to_copy_vectors() {
+	// https://www.tutorialspoint.com/ways-to-copy-a-vector-in-cplusplus
+	//copy(v1.begin(), v1.end(), back_inserter(v2));
+	//v2.assign(v1.begin(), v1.end());
+	//v2 = v1;
+	//v2.push_back(v1[i]);
+	//vector<int> v2(v1);
+}
 void run_vector()
 {
 	fill_array();
 	vector_2D_array();
-	vec_impl();
+	run_vector_insert();
 	vector_for_each_one();
 	vector_for_each_two();
 	vector_size();
