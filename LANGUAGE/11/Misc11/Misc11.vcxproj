@@ -171,6 +171,7 @@
     <ClCompile Include="src\37_ref.cpp" />
     <ClCompile Include="src\src_adv\decay.cpp" />
     <ClCompile Include="src\src_pointers\13_pointers.cpp" />
+    <ClCompile Include="src\src_pointers\18_unique_ptr_vector_pushback.cpp" />
     <ClCompile Include="src\src_pointers\21_shared_ptr.cpp" />
     <ClCompile Include="src\src_pointers\24_shared_ptr_cyclic_dep.cpp" />
     <ClCompile Include="src\src_pointers\22_shared_ptr_two.cpp" />
