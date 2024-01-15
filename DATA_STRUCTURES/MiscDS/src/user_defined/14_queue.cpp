@@ -28,7 +28,7 @@ int dequeue()
 	return elem;
 }
 
-void run_queue() {
+void run_queue_customized() {
 	int i, n = 0, x, elem;
 	char ch[100]; // enqueue/dequeue for 100 times
 	scanf_s("%d", &n);
@@ -57,6 +57,6 @@ void run_queue() {
 
 //int main()
 //{
-//	run_queue();
+//	run_queue_customized();
 //	return 0;
 //}

@@ -92,7 +92,7 @@ public:
 
 };
 
-void run_stack() {
+void run_stack_customized() {
 	Stack orderStack;
 	int noOfQueries;
 	cin >> noOfQueries;
@@ -122,7 +122,7 @@ void run_stack() {
 //int main()
 //{
 //	run_stack_as_array();
-//	run_stack();
+//	run_stack_customized();
 //	return 0;
 //}
 
