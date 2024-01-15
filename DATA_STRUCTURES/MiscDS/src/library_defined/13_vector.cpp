@@ -3,6 +3,15 @@
 #include <algorithm>
 #include <numeric>
 using namespace std;
+/*
+	1. capactiy() -
+		Returns the size of the storage space currently allocated for the vector, expressed in terms of elements.
+
+		This capacity is not necessarily equal to the vector size. It can be equal or greater, with the extra space allowing to accommodate for growth without the need to reallocate on each insertion.
+		The theoretical limit on the size of a vector is given by member "max_size".
+
+*/
+
 //
 void fill_array();
 void run_unique_on_vector();
@@ -96,6 +105,23 @@ void run_vector_insert() {
 }
 void run_vector_erase()
 {
+	/*
+		1. The destructor is called on the objects, but the memory remains allocated. No, memory are not freed. In C++11, you can use the "shrink_to_fit()" method for force the vector to free memory
+		
+		2. .resize(0) and .clear() don't release or reallocate allocated memory, they just resize vector to zero size, leaving capacity same.
+
+			If we need to clear with freeing (releasing) memory following works:
+
+			Try it online!
+
+			v = std::vector<T>();
+			It calls && overload of = operator, which does moving, similar behaviour as with swap() solution.
+		
+		3. clear() - The vector's memory is not guaranteed to be cleared. You cannot safely access the elements after a clear. To make sure the memory is deallocated Scott Meyers advised to do this:
+
+			vector<myStruct>().swap( vecs );
+
+	*/
 	std::string cs = "hello";
 	vector<int> veci = { 1,2,5,2,4,5 };
 
