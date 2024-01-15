@@ -26,7 +26,7 @@ struct B {
 		val_ = val.val_;
 
 		cout << "move copy ctor " << endl;
-		// "val" will die there ( if rvalue provided  move(B("string_move_ctor_")) ) & prints dtor for value : string_move_ctor_ -- imp
+		// "val" should die here ( if rvalue provided  move(B("string_move_ctor_")) ) & prints dtor for value : string_move_ctor_ -- imp
 
 	}
 	*/
