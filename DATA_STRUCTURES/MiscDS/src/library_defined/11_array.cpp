@@ -27,7 +27,7 @@ void array_fill() {
 	for_each(arr.begin(), arr.end() - 1, [i = 0](auto& a) mutable {a = ++i; return a; });
 	const int* p = arr.data();
 
-	cout << "arr.size() : " << arr.size()<< endl ; // 10
+	cout << "arr.size() : " << arr.size() << endl; // 10
 	cout << "arr.max_size() " << arr.max_size() << endl; //10
 	for (auto a : arr)
 		cout << a << " "; // 1 2 ... 0
@@ -36,7 +36,7 @@ void array_fill() {
 void array_impl()
 {
 	cout << endl << "array_impl() : ";
-	
+
 	//1. regular array
 	int arr[] = { 9,8,3,4,5,6 };
 	int size = sizeof(arr) / sizeof(arr[0]);
@@ -53,7 +53,7 @@ void array_impl()
 
 	//3.
 	cout << "data() " << sta.data()[0] << endl; // item at first position // 7
-	
+
 	//4.
 	auto pos = find(sta.begin(), sta.end(), 4); // find item
 	auto itrEnd = remove(sta.begin(), sta.end(), 5); // remove all occurrence of item  5 in the given range
@@ -71,6 +71,35 @@ void array_impl()
 		cout << n << endl; // 7 6 4 4 5
 
 	//6.
+}
+class A {
+public:
+	~A() {
+		cout << "dest " << endl;
+	}
+};
+void array_with_userdefined() {
+	array<A*, 2>* arra = new array<A*, 2>;
+	arra->fill(nullptr);
+	arra->_Elems[0] = new A();
+
+	//1.
+	//A* obj = arra->at(0);
+	//delete obj;
+	//2.
+	for (auto* item : *arra) {
+		delete item;
+		item = nullptr; // this will not make element position to zero .. no use of doing this
+	}
+	arra->fill(nullptr); // good if we make all positions nullptr
+
+	//3.
+	for (auto i = arra->begin(); i != arra->end(); i++) {
+		if (*i)
+			delete* i;
+	}
+	//4.
+	delete arra; // delete the final parent container array
 }
 void run_array()
 {
