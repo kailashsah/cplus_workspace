@@ -3,16 +3,22 @@
 #include<iostream>
 #include <list>
 using namespace std;
+/*
+	1. Graph DS - https://medium.com/@vinay.vashist2003/graphs-data-structure-in-c-ab7b4205f41a
 
+	2. depth first traversal
+	3. breadth first traversal
+*/
 class Graph
 {
 	int V;    // No. of vertices
-	list<int>* adj;    // Pointer to an array containing adjacency lists
 	bool isCyclicUtil(int v, bool visited[], bool* rs);  // used by isCyclic()
 public:
+	list<int>* adj;    // Pointer to an array containing adjacency lists
+
 	Graph(int V);   // Constructor
 	void addEdge(int v, int w);   // to add an edge to graph
-	bool isCyclic();    // returns true if there is a cycle in this graph
+	bool isCyclic_caller();    // returns true if there is a cycle in this graph
 };
 
 Graph::Graph(int V)
@@ -54,7 +60,7 @@ bool Graph::isCyclicUtil(int v, bool visited[], bool* recStack)
 // Returns true if the graph contains a cycle, else false.
 // This function is a variation of DFS() in 
 // https://www.geeksforgeeks.org/archives/18212
-bool Graph::isCyclic()
+bool Graph::isCyclic_caller()
 {
 	// Mark all the vertices as not visited and not part of recursion
 	// stack
@@ -74,24 +80,99 @@ bool Graph::isCyclic()
 
 	return false;
 }
+//......................DFS traversal
+#include <vector>
+#include <unordered_map>
+void dfs(vector<int>& answer, unordered_map<int, bool>& visited, int node, list<int>* adj) {
+	visited[node] = true;
+	answer.push_back(node);
+
+	for (auto item : adj[node]) {
+		if (!visited[item])
+			dfs(answer, visited, item, adj);
+	}
+}
+vector<int> dfs_of_graph_caller(list<int>* adj) {	
+	cout << "depth first traversal" << endl;
+
+	vector<int> answer;
+	unordered_map<int, bool> visited;
+
+	for (auto item : *adj) {
+		if (!visited[item])
+			dfs(answer, visited, item, adj);
+	}
+	return answer;
+}
+//......................DFS traversal <end>
+
+//......................BFS traversal
+#include <queue>
+void bfs(vector<int>& answer, unordered_map<int, bool>& visited, int node, list<int>* adj) {
+	visited[node] = true;
+	queue<int> que; //use queue ds here
+	que.push(node);
+	answer.push_back(node); // whenever there is push in que, there shuld be push in answer vector also.
+
+	while (!que.empty()) {
+		int node_front = que.front();
+		que.pop();
+
+		for (auto neighbour : adj[node_front]) {
+			if (!visited[neighbour]) {
+				visited[neighbour] = true;
+				que.push(neighbour);
+				answer.push_back(neighbour);
+			}
+		}
+
+	}
+}
+
+vector<int> bfs_of_graph_caller(list<int>* adj) {
+	cout << "breadth first traversal" << endl;
+	vector<int> answer;
+	unordered_map<int, bool> visited;
+
+	for (auto node : *adj) {
+		if (!visited[node])
+			bfs(answer, visited, node, adj);
+	}
+	return answer;
+}
+//......................BFS traversal <end>
+
 void graph_cyclecpp()
 {
 	// Create a graph given in the above diagram
-	Graph g(4);
+	const int vertices = 4;
+	Graph g(vertices);
 	g.addEdge(0, 1);
 	//g.addEdge(0, 2);
 	g.addEdge(1, 2);
-	//g.addEdge(2, 0);
+	g.addEdge(2, 0);
    // g.addEdge(2, 3);
    // g.addEdge(3, 3);
 
-	if (g.isCyclic())
-		cout << "Graph contains cycle";
+	//1.
+	if (g.isCyclic_caller())
+		cout << "Graph contains cycle" << endl;
 	else
-		cout << "Graph doesn't contain cycle";
+		cout << "Graph doesn't contain cycle" << endl;
+
+	//2.
+	vector<int> result_nodes = dfs_of_graph_caller(g.adj);	
+	copy(result_nodes.begin(), result_nodes.end(), ostream_iterator<int>(cout, " ")); // 1 2
+	cout << endl;
+
+	//3.	
+	vector<int> result = bfs_of_graph_caller(g.adj);
+	copy(result.begin(), result.end(), ostream_iterator<int>(cout, " "));
+	cout << endl;
 }
+
 //int main()
 //{
-//    graph_cyclecpp();
-//    return 0;
+//	graph_cyclecpp();
+//	return 0;
 //}
