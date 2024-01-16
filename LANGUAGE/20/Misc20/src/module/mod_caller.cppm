@@ -4,7 +4,7 @@ import <iostream>;
 using namespace std;
 
 
-import AdvancedMathematicsModule;   // module
+import AdvancedMathematicsModule;   // module imported
 
 void run_module() {
 	//1.
