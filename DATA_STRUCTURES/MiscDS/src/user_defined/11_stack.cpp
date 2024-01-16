@@ -2,8 +2,12 @@
 
 #include <iostream>
 #include "conio.h"
-
 using namespace std;
+/*
+	1. Two ways of doing it
+		using array
+		using class
+*/
 
 #include <stdio.h>
 //................................................. as array
@@ -25,16 +29,18 @@ void pop()
 
 	top = top - 1;
 }
-
+enum class type_of_op {PUSH , POP};
 void run_stack_as_array() {
 	int q;
-	int type, cost;
+	type_of_op push_or_pop;
+	int  cost;
+	
 	scanf_s("%d", &q); // q = time want to run loop
 	while (q > 0)
 	{
-		scanf_s("%d", &type);
+		scanf_s("%d", &push_or_pop); // was int earlier .. I changed for readability
 
-		if (type == 1) // pop
+		if (push_or_pop == type_of_op::POP) // pop
 		{
 			if (top != -1)
 			{
@@ -46,7 +52,7 @@ void run_stack_as_array() {
 
 			}
 		}
-		if (type == 2) // push
+		if (push_or_pop == type_of_op::PUSH) // push
 		{
 			scanf_s("%d", &cost);
 

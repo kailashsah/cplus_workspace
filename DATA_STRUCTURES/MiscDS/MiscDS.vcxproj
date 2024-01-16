@@ -156,6 +156,7 @@
     <ClCompile Include="src\library_defined\31_set.cpp" />
     <ClCompile Include="src\library_defined\41_tuple_tie.cpp" />
     <ClCompile Include="src\library_defined\13_vector.cpp" />
+    <ClCompile Include="src\user_defined\19_scanf_mechanism.cpp" />
     <ClCompile Include="src\user_defined\22_graph_cycle.cpp" />
     <ClCompile Include="src\user_defined\16_linkedlist.cpp" />
     <ClCompile Include="src\user_defined\14_queue.cpp" />
