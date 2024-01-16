@@ -4,7 +4,8 @@
 using namespace std;
 /*
 	1. map is used to store elements as key,value pairs in order sorted by key. unordered_map is used to store elements as key,value pairs in non-sorted order.
-	2. In the average case, the unordered_map is faster than a map since it uses a hash table, while a map is implemented using a self-balancing binary tree like a Red-Black tree.
+	2. In the average case, the unordered_map is faster than a map since it uses a "hash table", 
+		while a map is implemented using a self-balancing binary tree like a "Red-Black tree".
 
 */
 void map_impl()

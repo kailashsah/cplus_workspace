@@ -5,7 +5,11 @@ using namespace std;
 /*
 Forward List is preferred over the list when only forward traversal is required (same as the singly linked list is preferred over doubly linked list) as we can save space. Some example cases are, chaining in hashing, adjacency list representation of the graph, etc.
 */
-void run_forward_list()
+//
+void run_forward_list_insert();
+void run_forward_list_push_front();
+//
+void run_forward_list_insert()
 {
 	forward_list<int> flist1;
 
@@ -29,18 +33,18 @@ void run_forward_list()
 	// Displaying forward lists
 	cout << "The elements of first forward list are : ";
 	for (int& a : flist1)
-		cout << a << " ";
+		cout << a << " "; // 1 2 3
 	cout << endl;
 
 	cout << "The elements of second forward list are : ";
 	for (int& b : flist2)
-		cout << b << " ";
+		cout << b << " "; // 10 10 10 10 10
 	cout << endl;
 
 
 	cout << "The elements of third forward list are : ";
 	for (int& c : flist3)
-		cout << c << " ";
+		cout << c << " "; // 1 2 3
 	cout << endl;
 
 	puts("aaaa"); // output in console
@@ -54,7 +58,7 @@ void run_forward_list()
 	*/
 }
 #include<algorithm> // for_each
-void run_forward_list_second() {
+void run_forward_list_push_front() {
 	forward_list<int> flist(5);
 	puts("");
 
