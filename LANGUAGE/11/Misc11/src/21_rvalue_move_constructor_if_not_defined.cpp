@@ -2,6 +2,7 @@
 using namespace std;
 /*
 	1. what will happend if no move functions defined.  --- no problems, it calls normal ctors.
+	2. by default it is not provided.
 */
 
 struct B2 {
@@ -74,9 +75,12 @@ void run_move_ctorr() {
 	cout << "fn ends" << endl;
 }
 /*
-	ctor called for rvalue argument string_value
+	//1.
+	ctor called for rvalue argument "string_value"
 	copy ctor
 	dtor for value : string_value
+	
+	//2.
 	---------------
 	ctor called
 	assignment function

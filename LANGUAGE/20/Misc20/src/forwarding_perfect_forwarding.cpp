@@ -5,7 +5,7 @@ using namespace std;
 
 	2. Perfecting forwarding is an important technique built atop rvalue references. It allows move semantics to be automatically applied, even when the source and the destination of a move are separated by intervening function calls.
 
-	Common examples -  standard library functions like make_shared, which “perfect-forwards” its arguments to the class constructor of whatever object the to-be-created shared_ptr is to point to.
+	Common examples -  standard library functions like make_shared, which “perfect-forwards” its arguments to the class constructor of whatever object  to-be-created shared_ptr is to point to.
 
 	3. https://www.justsoftwaresolutions.co.uk/cplusplus/rvalue_references_and_perfect_forwarding.html
 

@@ -22,7 +22,8 @@ struct B {
 	B(const B& val) { cout << "copy ctor " << endl; }
 
 	//1.
-	/*B(B&& val) noexcept {
+	/*
+	B(B&& val) noexcept {
 		val_ = val.val_;
 
 		cout << "move copy ctor " << endl;
