@@ -2,7 +2,7 @@
 using namespace std;
 /*
 	1. rvalue return fm function
-	2. One thing that can greatly benefit from returning an rvalue reference is a member function of a temporary object.
+	2. One thing that can greatly benefit for returning an rvalue reference is via member function of a temporary object. see case (2.)
 		
 */
 
@@ -20,7 +20,7 @@ void run_rvalue_return_v1 () {
 	auto vec = foo_basic(10).get_vec(); // you have to copy because get_vec returns an lvalue.
 }
 
-//2.	
+//(2.)	
 class foo_fix
 {
 	std::vector<int> bar;

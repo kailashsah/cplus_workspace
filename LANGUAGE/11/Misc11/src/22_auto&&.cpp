@@ -6,7 +6,7 @@ using namespace std;
 
 		This is typically used for forwarding (usually with T&&). The reason this works is because a forwarding reference, auto&& or T&&, will bind to anything.
 
-	2. const auto& - hat will also bind to anything? -- you won't be able to later bind it to any non-const references or invoke any member functions that are not marked const.
+	2. const auto& - that will also bind to anything? -- you won't be able to later bind it to any non-const references or invoke any member functions that are not marked const.
 
 	3.	auto         => will copy the vector, but we wanted a reference
 		auto&        => will only bind to modifiable lvalues
@@ -56,7 +56,9 @@ X getX()
 }
 void run_lifetime_extension() {
 	std::cout << "before getX()\n";
+	
 	auto&& rx = getX(); // (1)
+	
 	std::cout << "after getX()\n";
 
 	/*

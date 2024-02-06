@@ -57,6 +57,8 @@ void run_auto_ptr_usage() {
 		
 		3. const int* const // constant pointer to const int 
 
+		demo below--
+
 	*/
 	int a;
 	//1
