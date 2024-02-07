@@ -1,5 +1,9 @@
 #include <iostream>
 using namespace std;
+/*
+	1. It shows upcasting
+*/
+
 void run_multi_inheritance_v1();
 void run_multi_inheritance_v2();
 //
@@ -18,6 +22,7 @@ class lower : public middle {
 public:
 	virtual void foo(void) { cout << "I am lower foo()\n"; }
 	void foo(int a) { cout << "I am lower int foo()\n"; }
+
 	virtual void bar(void) { cout << "I am lower bar()\n"; }
 };
 
@@ -31,8 +36,8 @@ void run_multi_inheritance_v1()
 	if (t != nullptr)
 		cout << "top* t = dynamic_cast<top*>(l) -  is not null " << endl;
 	
-	//t->bar(); // top (parent) has no memeber as bar  (IMP)
-	//t->foo(5); // function doesnot take 1 argu
+	//t->bar(); // compliation error - top (parent) has no memeber as bar  (IMP)
+	//t->foo(5); //  compliation error - function doesnot take 1 argu
 
 	cout << endl;
 
