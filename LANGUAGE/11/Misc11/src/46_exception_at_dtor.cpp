@@ -2,7 +2,7 @@
 using namespace std;
 /*
 	1. noexcept(true) is equivalent to noexcept , meaning the function is non-throwing. 
-	2. noexcept(false) means the function is potentially throwing
+	2. noexcept(false) means the function is potentially throwing.
 */
 
 class TryException {

@@ -2,7 +2,9 @@
 using namespace std;
 
 /*
-	1. you can't really compare std::function with std::mem_fn. The former is a class template whose type you specify, and the latter is a function template with unspecified return type. There really isn't a situation in which you'd actually consider one versus the other.
+	1. you can't really compare std::function with std::mem_fn. 
+		std::function - is a class template whose type you specify, 
+		std::mem_fn -  is a function template with unspecified return type. There really isn't a situation in which you'd actually consider one versus the other.
 
 	2. A better comparison might be between mem_fn and std::bind. 
 		std::bind - function template
@@ -59,7 +61,7 @@ void run_with_additional_argument() {
 }
 
 void run_memfn_with_unique_ptr() {
-	//mem_fn - Function template std::mem_fn generates wrapper objects for pointers to members, which can store, copy, and invoke a pointer to member.Both referencesand pointers(including smart pointers) to an object can be used when invoking a std::mem_fn.
+	//mem_fn - Function template std::mem_fn generates wrapper objects for pointers to members, which can store, copy, and invoke a pointer to member. Both references and pointers (including smart pointers) to an object can be used when invoking a std::mem_fn.
 
 	cout << "run_bind_with_unique_ptr" << endl;
 	A a{ 2 };

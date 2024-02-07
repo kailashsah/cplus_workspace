@@ -31,7 +31,9 @@ void run_function_template()
 		// store a call to a data member accessor
 		std::function<int(Foo const&)> f_num = &Foo::num_;
 		std::cout << "num_: " << f_num(foo) << '\n';
-
+	}
+	{
+		const Foo foo(314159);
 		// store a call to a member function and object
 		//1.
 		//using std::placeholders::_1;

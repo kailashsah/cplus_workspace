@@ -8,7 +8,8 @@ public:
 	{
 		//delete this;
 		/*
-			unhandled exception - stack overflow
+			if we delete inside dtor -
+				unhandled exception - stack overflow
 		*/
 	}
 };
