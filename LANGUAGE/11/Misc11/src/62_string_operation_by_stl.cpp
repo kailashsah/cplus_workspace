@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-#include <sstream> //getline(), 
+#include <sstream> //getline(), header read as stringstream
 #include <string_view>
 void string_split();
 void erase_string();
@@ -33,6 +33,14 @@ void string_split() {
 	}
 
 	cout << endl;
+
+	/*
+		string_split() for '2' in : first 21 second 21 third
+		using getline()
+		first  1 second  1 third
+		using strtok()
+		first  1 second  1 third
+	*/
 }
 
 
@@ -48,11 +56,14 @@ void erase_string() {
 	//3. 
 	string::size_type len = str.length();
 	for (string::size_type i = str.find(tofind);
-		i != str.length();
+		i <= str.length();
 		i = str.find(tofind)) {
 		
-		str.erase(i, len);
+		str.erase(i, 1); // erase(index, count)
+		// str.erase() deletes all characters
 	}
+
+	cout << str; // I  m  r
 }
 //.................................................
 
@@ -73,7 +84,14 @@ void find_substr_str() {
 		cout << str.substr(lpos, str.length() - lpos);
 
 	cout << endl;
+	/*
+		
+		find_substr_str() for '21' in : first 21 second 21 third
+		first   second   third
+
+	*/
 }
+
 //.................................................
 void string_remove_space()
 {
@@ -96,14 +114,24 @@ void string_remove_space()
 	// Note, we use view, the original string is still not shrunk:
 	cout << std::string_view(str1.begin(), noSpaceEndItr) << " size: " << str1.size() << '\n'; // C++20
 	cout << endl;
+
+	/*
+		string_remove_space()
+		noSpace iterator value p
+		after remove() is called Textwithsomespacespaces  24
+		after erase() is called Textwithsomespaces 18
+		Textwithsomespaces size: 18 //std::string_view(str1.begin(), noSpaceEnd)
+	*/
 }
 
 void run_string()
 {
-	string_remove_space();
-	find_substr_str();
-	erase_string();
-	string_split();
+	//string_remove_space();
+	//erase_string();
+	
+	//find_substr_str();
+	
+	//string_split();
 	//
 }
 
@@ -115,19 +143,8 @@ void run_string()
 
 /*
 	output -
-		string_remove_space()
-		noSpace iterator value p
-		after remove() is called Textwithsomespacespaces  24
-		after erase() is called Textwithsomespaces 18
-		Textwithsomespaces size: 18 //std::string_view(str1.begin(), noSpaceEnd)
+		
 
 
-		find_substr_str() for '21' in : first 21 second 21 third
-		first   second   third
-
-		string_split() for '2' in : first 21 second 21 third
-		using getline()
-		first  1 second  1 third
-		using strtok()
-		first  1 second  1 third
+		
 */
