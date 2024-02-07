@@ -44,16 +44,18 @@ void run_reference_vector()
 	}
 
 	//2.
-	vector <reference_wrapper<RefTest>> vec;
-	
-	RefTest b;
-	b.i = 20;
+	{
+		vector <reference_wrapper<RefTest>> vec;
 
-	vec.push_back(b);
+		RefTest b;
+		b.i = 20;
 
-	b.i = 40;
-	auto a = vec[0];
-	cout << to_string(a.get().i) << endl; // 40 // a.i is not possible
+		vec.push_back(b);
+
+		b.i = 40;
+		auto a = vec[0];
+		cout << to_string(a.get().i) << endl; // 40 // a.i is not possible
+	}
 }
 
 //int main()
