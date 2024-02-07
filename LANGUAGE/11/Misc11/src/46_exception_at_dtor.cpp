@@ -1,5 +1,9 @@
 #include <iostream>
 using namespace std;
+/*
+	1. noexcept(true) is equivalent to noexcept , meaning the function is non-throwing. 
+	2. noexcept(false) means the function is potentially throwing
+*/
 
 class TryException {
 public:
@@ -42,7 +46,7 @@ void run_dtor_exception()
 		cout << "exc" << endl;
 	}
 
-	// code to check conituation of prg, above code terminated the process if more than one inner exception called & not handled inside the source point.
+	// code to check conituation of prg, above code terminates the process if more than one inner exception called & not handled inside the source point.
 	int i;
 	cout << "int i " << endl;
 	std::cout << "ends";

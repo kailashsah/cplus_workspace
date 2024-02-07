@@ -2,8 +2,25 @@
 using namespace std;
 
 /*
-	https://www.learncpp.com/cpp-tutorial/struct-aggregate-initialization/
+	1. https://www.learncpp.com/cpp-tutorial/struct-aggregate-initialization/
+	2. aggregate initialization, which allows us to directly initialize the members of aggregates. To do this, we provide an initializer list as an initializer, which is just a braced list of comma-separated values.
+	struct Employee
+	{
+		int id {};
+		int age {};
+		double wage {};
+	};
+
+	int main()
+	{
+		Employee frank = { 1, 32, 60000.0 }; // copy-list initialization using braced list
+		Employee joe { 2, 28, 45000.0 };     // list initialization using braced list (preferred)
+
+		return 0;
+	}
 */
+
+
 class A
 {
 	int i;
@@ -13,10 +30,15 @@ public:
 	A(int i) {
 		cout << "ctor 1 param" << endl;
 	}
+
 	A(int i, int y) : i{ i } { cout << "ctor 2 param" << endl; }
+
 	A(const A&) { cout << "copy" << endl; }
+
 	A(A&& obj) { cout << "move" << endl; }
+
 	A& operator=(A&&) { cout << "move assignment" << endl; return *this; }
+
 	A& operator=(const A&) {
 		cout << "assignent" << endl;
 		return *this;

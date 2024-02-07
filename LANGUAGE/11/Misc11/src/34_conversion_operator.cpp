@@ -76,7 +76,8 @@ void run_conversion_operator()
 	cout << endl << "//5. string str2 = static_cast<string>(obj); - ";
 	string str2 = static_cast<string>(obj); cout << str2 << endl;
 	/*
-		translated into -- string str2 = static_cast<string>(	static_cast<string>(obj.operator string())	);
+		translated into --
+			 string str2 = static_cast<string>(	static_cast<string>(obj.operator string())	);
 	*/
 
 	cout << endl << "//6. obj = static_cast<Int>(40);; - ";

@@ -165,10 +165,10 @@
     <ClCompile Include="src\31_initializer_list.cpp" />
     <ClCompile Include="src\87_lambda_function_trailing_type.cpp" />
     <ClCompile Include="src\readme_cplus.cpp" />
-    <ClCompile Include="src\36_reference_wrapper.cpp" />
+    <ClCompile Include="src\35_reference_wrapper.cpp" />
     <ClCompile Include="src\20_rvalue_move_constructor.cpp" />
     <ClCompile Include="src\21_rvalue_move_constructor_if_not_defined.cpp" />
-    <ClCompile Include="src\37_ref.cpp" />
+    <ClCompile Include="src\36_ref.cpp" />
     <ClCompile Include="src\src_adv\decay.cpp" />
     <ClCompile Include="src\src_pointers\13_pointers.cpp" />
     <ClCompile Include="src\src_pointers\18_unique_ptr_vector_pushback.cpp" />
@@ -184,7 +184,7 @@
     <ClCompile Include="src\src_questions\is_prime_optimized.cpp" />
     <ClCompile Include="src\src_questions\random_numbers.cpp" />
     <ClCompile Include="src\src_questions\static_member_init.cpp" />
-    <ClCompile Include="src\36_template_lazy.cpp" />
+    <ClCompile Include="src\37_template_lazy.cpp" />
     <ClCompile Include="src\37_template_lazy_initialization.cpp" />
     <ClCompile Include="src\92_type_alias.cpp" />
     <ClCompile Include="src\25_cast_static.cpp" />

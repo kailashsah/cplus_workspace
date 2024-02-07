@@ -17,11 +17,13 @@ void run_const() {
 	cout << fun(ptr1) << endl;				//20
 	cout << "org value: " << val << endl;	//10
 }
+
 void run_const_2() {
 
 	const int src = 1;
 	int* p = const_cast<int*>(&src);	// p becomes the local copy inside fn scope.
 	cout << "src before=" << *p << endl;//1
+	
 	//1.
 	*p = 10;
 	cout << "src after=" << src << endl;//1
@@ -42,8 +44,9 @@ void run_const_3() {
 	//2.
 	//*const_cast<int*>(ip) = 321;
 	//3.
-	//*const_cast<int*>(ptr) = 321; //ok
+	//*const_cast<int*>(ptr) = 321; //ok - all three versions
 	cout << "*ip: " << *ip << endl; // 321
+	
 	/*
 		for (1), it remains 123 becoz in global scope
 	*/
@@ -53,7 +56,7 @@ void run_const_4() {
 	int a1 = 40;
 	const int* b1 = &a1;
 	//1.
-	//char* c1 = const_cast <char*> (b1); // compiler error 'const_cast': cannot convert from 'const int *' to 'char *'	
+	//char* c1 = const_cast <char*> (b1); // compiler error 'const_cast': cannot convert from 'const int *' to 'char *'	.. but stati_cast<> does
 
 	//2.
 	//*b1 = 5; //'b1': you cannot assign to a variable that is const
