@@ -2,11 +2,15 @@
 using namespace std;
 
 /*
-	'auto' lets you declare a variable with a particular type whereas decltype lets you extract the type from the variable so decltype is sort of an operator that evaluates the type of passed expression.
+	1. 'auto' lets you declare a variable with a particular type 
+	2. whereas decltype lets you extract the type from the variable so decltype is sort of an operator that evaluates the type of passed expression.
 */
+
+//1.
 //auto test(const auto & v) // parameter cannot have a type that contains 'auto'
 auto test(const int& v)
 {
+	//1.
 	auto a1 = decltype(v){2}; // what is a1's qualified TYPE?
 	/*
 		Note: const is ignored in auto keyword, but const is not ignored in decltype.
@@ -15,7 +19,7 @@ auto test(const int& v)
 	cout << ss << endl; //int
 	a1++; // is this legal? Why -> becoz const is ignored in "auto"
 
-
+	//2.
 	decltype(v) a2{ 2 }; // what is a2's qualified TYPE?
 	cout << typeid(a2).raw_name() << endl; //.h //typeid(a2).name() retuns i
 	/*
@@ -37,7 +41,7 @@ void run_decltype()
 {
 	int x = 6;
 	auto c = test(x);
-	cout << "auto c = test(x); : " << c << endl; // 5
+	cout << "auto c = test(x); : " << c << endl; // 5 .. expected is 5.
 	return;
 }
 

@@ -2,7 +2,8 @@
 using namespace std;
 
 /*
-	Objects are stored in a stack during static initialization and have an automatic storage duration, i.e., the object will be destroyed automatically at the end of the scope, but during dynamic initialization, objects are stored in a heap and we must manually delete the object after use.
+	1. Objects are stored in a stack during static initialization and have an automatic storage duration, i.e., the object will be destroyed automatically at the end of the scope, 
+	2. but during dynamic initialization, objects are stored in a heap and we must manually delete the object after use.
 
 */
 class TryStaticBase
@@ -19,6 +20,7 @@ class B
 public:
 	static void start(); // could be with/without static
 };
+
 /*
 *	If I removed this, it issues unresolved symbol
 */
