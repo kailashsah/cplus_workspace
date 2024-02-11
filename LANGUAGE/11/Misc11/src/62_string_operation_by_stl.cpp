@@ -59,8 +59,8 @@ void erase_string() {
 		i <= str.length();
 		i = str.find(tofind)) {
 		
-		str.erase(i, 1); // erase(index, count)
-		// str.erase() deletes all characters
+		str.erase(i, 1); // erase(index, count) .. here it shuld be 'tofind.length()'
+		// str.erase() deletes all characters .. second version
 	}
 
 	cout << str; // I  m  r
@@ -68,6 +68,7 @@ void erase_string() {
 //.................................................
 
 void find_substr_str() {
+	// second version to make split strings
 
 	string str = "first 21 second 21 third ";
 	cout << endl << "find_substr_str() for '21' in : " << str << endl;

@@ -1,6 +1,11 @@
 #include <iostream>
 #include <iomanip>
 using namespace std;
+/*
+	1. Demonstrate how to call move ctor & move assignment
+	2. 
+
+*/
 class EmptyClass
 {
 	int i;

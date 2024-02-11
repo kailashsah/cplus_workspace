@@ -2,6 +2,7 @@
 using namespace std;
 /*
 	1. run_const_two() - you never able to change the value of the "static const int".
+	2. if const int in local fn scope & we const_cast<int>, it creates the local copy of it. see 'run_const_two()'
 
 */
 void run_const_one();

@@ -37,6 +37,7 @@ void run_auto_references_v2() {
 
 	cout << "The value is " << x << endl;
 }
+
 void run_auto_ptr_usage() {
 	/*
 		1.

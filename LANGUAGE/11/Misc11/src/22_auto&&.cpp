@@ -57,7 +57,7 @@ X getX()
 void run_lifetime_extension() {
 	std::cout << "before getX()\n";
 	
-	auto&& rx = getX(); // (1)
+	auto&& rx = getX(); // (1)  .. lifetime extension
 	
 	std::cout << "after getX()\n";
 

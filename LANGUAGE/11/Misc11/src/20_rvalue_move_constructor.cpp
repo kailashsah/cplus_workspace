@@ -1,6 +1,9 @@
 #include <iostream>
-
 using namespace std;
+/*
+	1. create a move contructor using move assignment reducing code repetition.
+	
+*/
 
 struct B {
 	string val_{ "default_val" };
@@ -73,7 +76,7 @@ void run_copy_constructor() {
 	// IMP - but these are not copy ctor, it translated into simple constructions, see output
 
 	string a;
-	B b_a(string("a")); // these all call - ctor called for rvalue argument
+	B b_a(string("a")); // these call - ctor called for rvalue argument
 	auto b2 = B("b1");
 	auto* b1 = new B("b2");
 
@@ -113,8 +116,8 @@ void run_move_ctor() {
 /*
 	ctor called for rvalue argument string_move_ctor_
 	move copy ctor
-	move assignment fn
-	dtor for value :
+	move assignment fn  (bcoz we are calling move assign' from move copy)
+	dtor for value :	(this is empty because value has been already moved.)
 	---------------
 	ctor called
 	move assignment fn
@@ -124,7 +127,7 @@ void run_move_ctor() {
 	dtor for value :
 */
 
-//1. ------------------
+//1. ------------------ demonstration function returns universal reference
 B&& func_rvalue_return() noexcept {
 	//1.
 	//return  move(B("rrr_func"));
@@ -138,7 +141,7 @@ void run_rvalue_returned_by_func() {
 	//1.
 	B&& a = func_rvalue_return(); // not calling move function // 
 	/*
-		ctor called for rvalue argument obj_rrr_
+		ctor called for rvalue argument 'obj_rrr_'
 		dtor for value : obj_rrr_
 		run_rvalue_returned_by_func() ends here
 	*/
@@ -160,7 +163,7 @@ void run_rvalue_returned_by_func() {
 	*/
 }
 
-//2. ------------------
+//2. ------------------ demonstration function returns lvalue reference
 B& func_lvalue_return() noexcept {
 	//1.
 	B obj = B("obj_rrr_");
@@ -192,7 +195,7 @@ void run_lvalue_returned_by_func()
 	*/
 }
 
-//3. ------------------
+//3. ------------------ demonstration function returns xvalue (expiring value)
 B func_value_return() noexcept {
 
 	return B("obj_rrr_");
