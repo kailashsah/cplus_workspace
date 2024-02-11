@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="MiscAlgo.cpp" />
     <ClCompile Include="src\dynamic_prog\fibonacci.cpp" />
     <ClCompile Include="src\easy\array_product.cpp" />
     <ClCompile Include="src\easy\find_smallest_in_array.cpp" />
