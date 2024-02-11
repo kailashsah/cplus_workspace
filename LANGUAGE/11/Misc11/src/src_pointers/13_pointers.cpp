@@ -34,8 +34,8 @@ void run_pointers() {
 
 	//3. 
 	cout << *OurObject.p; // valid // 1
-	*OurObject.p = 20;
-	*(OurObject.p + 1) = 10;
+	*OurObject.p = 20;					// index 0
+	*(OurObject.p + 1) = 10;			// index 1
 	cout << *(OurObject.p); // ok // 20
 	cout << *(OurObject.p + 1); // ok // 10
 

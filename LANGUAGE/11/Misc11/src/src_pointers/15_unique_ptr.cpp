@@ -24,10 +24,12 @@ void uniqueptr()
 	for (int i{}; i < 10; ++i)
 		cout << arr[i];
 	endll(); // 0000000000-33686019 (garbage for 11th) 
+	//copy(begin(*arr.get()), end(arr.get()), ostream_iterator<int>(cout)); // error .. see (5)
+	
 
 	// 4.
 	//unique_ptr<int[10]> arr1 = make_unique<int [10]>(10);	// error
-	//copy(begin(*arr.get()), end(arr.get()), ostream_iterator<int>(cout)); // error
+	
 
 	// 5. print array into console
 	int arr_two[10];

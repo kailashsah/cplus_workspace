@@ -15,7 +15,7 @@ vector<string>& fn(vector<string>& vtr) {
 }
 
 //2. 
-vector<string>& fn_v2(vector<string> vtr) {
+vector<string>& fn_v2(vector<string> vtr) { // without reference version
 
 	return vtr; // warning C4172: returning address of local variable or temporary: vtr
 	// *v[i] prints garbage chars
@@ -35,7 +35,7 @@ void run_return_vector_fm_func()
 {
 	vector<string> store = { "bread", "meat", "rice", "tomato sauce", "Cheese" };
 	//1.
-	vector<string>* v = &fn(store); // prints the elements inside it // OK
+	vector<string>* v = &fn(store); // prints the elements inside it // OK .. taking address of return & assigning in ptr
 	
 	//3.
 	{
@@ -48,7 +48,7 @@ void run_return_vector_fm_func()
 	//v = &fn_v3(); // runtime issue // Not OK
 
 	for (unsigned int i = 0; i < v->size(); i++)
-		cout << (*v)[i] << ", ";
+		cout << (*v)[i] << ", "; // or other way, v->at(i);
 
 	cout << endl;
 

@@ -28,7 +28,7 @@ int run_ref()
 	//std::thread t3(update, move(data));
 
 	//2.
-	std::thread t1(update, std::ref(data));  // works, if reference provided in this way
+	std::thread t1(update, std::ref(data));  // works, if reference provided in this way .. regular references are not copyable
 	t1.join();
 	cout<< to_string(data); //  15
 

@@ -19,31 +19,31 @@ void run_ostringstream()
 }
 //2.
 void run_stringstream() {
-    std::stringstream str1;
+    std::stringstream strStream;
     std::string my_name = "Hamza";
     int my_age = 22;
 
     // Insert data into the string stream
-    str1 << "My name is " << my_name << " and I am " << my_age << " years old.";
+    strStream << "My name is " << my_name << " and I am " << my_age << " years old.";
 
     // Get the string from the stringstream
-    std::string final_result = str1.str();
+    std::string final_result = strStream.str();
 
     // Print the result
     std::cout << "The inserted string is :" << final_result << std::endl;
 
     // Clear the stringstream
-    str1.str("");
+    strStream.str("");
 
     // Modify the string
     my_name = "Ali";
     my_age = 25;
 
     // Insert new data into the stringstream
-    str1 << "My name is " << my_name << " and I am " << my_age << " years old.";
+    strStream << "My name is " << my_name << " and I am " << my_age << " years old.";
 
     // Get the modified string from the string stream
-    final_result = str1.str();
+    final_result = strStream.str();
 
     // Print the changed string
     std::cout << "The modified string is :" << final_result << std::endl;

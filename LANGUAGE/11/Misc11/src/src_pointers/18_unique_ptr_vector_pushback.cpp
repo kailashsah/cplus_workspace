@@ -21,7 +21,7 @@ void run_unique_ptr_pushback()
 		1. vec.push_back(std::move(ptr2x));
 		unique_ptr guarantees that a single unique_ptr container has ownership of the held pointer. This means that you can't make copies of a unique_ptr (because then two unique_ptrs would have ownership), so you can only move it.
 
-		2. std::unique_ptr has no copy constructor. You create an instance and then ask the std::vector to copy that instance during initialisation.
+		2. std::unique_ptr has no copy constructor. You create an instance and then ask the std::vector to copy that instance during initialisation. that's not possible.
 	*/
 }
 

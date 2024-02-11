@@ -57,7 +57,7 @@ void run_unique_ptr_two()
 	BaseUq* baseObj2 = baseObj1.release(); // Releases the ownership of the managed object, if any.
 	//3.2
 	baseObj1.reset(); //Release and delete the owned baseObj1, equivalent to reset(nullptr)
-					// up.reset(new Foo());  // calls deleter for the old one
+					// ptr.reset(new Foo());  // calls deleter for the old one
 
 	//3.3
 	//baseObj1 = baseObj; // error:for assignment

@@ -2,7 +2,7 @@
 using namespace std;
 
 /*
-	1.  throw() is an alias for noexcept(true)
+	1. throw() is an alias for noexcept(true)
 	2. noexcept() - By declaring a function, a method, or a lambda function as noexcept, you specify that these do not throw an exception, and if they throw, you do not care and let the program crash.
 
 

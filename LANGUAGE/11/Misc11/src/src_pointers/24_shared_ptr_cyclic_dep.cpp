@@ -76,7 +76,7 @@ void run_shared_cyclic_dep()
 		aa destroyed
 	*/
 
-	//2.1
+	//2.1 ------------------ this way you can get the address of the static object.
 	Person&& s = std::move(GetPerson());
 	cout << endl << "Person&& s = std::move(GetPerson()) : " << endl;
 	cout << &s << endl;

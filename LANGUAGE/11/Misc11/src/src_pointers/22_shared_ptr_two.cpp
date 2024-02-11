@@ -33,32 +33,39 @@ void shared(shared_ptr<Base> baseObj)
 	//baseObj = make_unique<Derived>();// if Derived(string name), default ctor would be removed thus compilation error 
 	//2.
 	baseObj = make_unique<Derived>("bb"); // assignment unique -> shared, makes old shared ref to zero  (IMP)
-	baseObj->foo();
+	baseObj->foo();	//derived foo
 
 	//3.
 	shared_ptr<Base> baseObj2(baseObj);// shows assigning of ptr return by make_unique() to shared_ptr objs
 	shared_ptr<Base> baseObj3 = baseObj;
 	cout << "baseObj3.use_count() : " << baseObj3.use_count() << endl; //3 bcoz of baseObj2, baseObj3
+	cout << "end of internal fn" << endl;
 }
 
 void run_shared_ptr_two() {
 	shared_ptr<Base> baseObj{ new Derived("aa") };
 	baseObj->foo(); //  derived foo
 	shared(baseObj);
+	cout << "end of calling fn" << endl;
 }
 
-//int main()
-//{
-//	run_shared_ptr_two();
-//	return 0;
-//}
+int main()
+{
+	run_shared_ptr_two();
+	return 0;
+}
 
 /*
-	   aa derived foo
+note: TAB is the fun scope changes
+
+	aa derived foo
 		reassignment of shared_ptr
 		bb derived foo
-		bb derived dtor
-		bb base dtor
+		baseObj3.use_count() : 3
+		end of internal fn
+	bb derived dtor
+	bb base dtor
+	end of calling fn
 		aa derived dtor
 		aa base dtor
-	*/
+*/
