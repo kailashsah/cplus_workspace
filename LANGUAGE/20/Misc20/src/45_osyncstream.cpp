@@ -35,7 +35,7 @@ void runThreads(std::ostream& os)
 //1.
 void run_osyncstream_one()
 {
-	std::ofstream file{ "out.txt" };
+	std::ofstream file{ "out.txt" }; // ofstream - output stream, used ot create files & to write data to files.
 	runThreads(file);
 }
 //2.

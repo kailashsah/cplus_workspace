@@ -141,6 +141,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\16_variants_c17.cpp" />
+    <ClCompile Include="src\17_designated_constructor.cpp" />
     <ClCompile Include="src\39_atomic_shared_ptr.cppm" />
     <ClCompile Include="src\38_atomic_shared_ptr_two.cpp" />
     <ClCompile Include="src\bit_cast.cpp" />
@@ -155,7 +156,7 @@
     <ClCompile Include="src\forwarding_in_lambda_capture_pack.cpp" />
     <ClCompile Include="src\forwarding_perfect_forwarding.cpp" />
     <ClCompile Include="src\21_jthread.cpp" />
-    <ClCompile Include="src\17_maybe_unsed.cpp" />
+    <ClCompile Include="src\48_maybe_unsed.cpp" />
     <ClCompile Include="src\mix.cppm" />
     <ClCompile Include="src\module\mod_adv_maths.ixx" />
     <ClCompile Include="src\module\mod_caller.cppm" />
@@ -171,10 +172,9 @@
     <ClCompile Include="src\src_adv\concept_require.cpp" />
     <ClCompile Include="src\src_adv\coroutine_generator.cpp" />
     <ClCompile Include="src\src_adv\coroutine_resume.cpp" />
-    <ClCompile Include="src\src_adv\designated_constructor.cpp" />
     <ClCompile Include="src\src_adv\is_standard_layout.cpp" />
     <ClCompile Include="src\13_string_view.cpp" />
-    <ClCompile Include="src\templ_in_lambdas.cppm" />
+    <ClCompile Include="src\46_templ_in_lambdas.cppm" />
     <ClCompile Include="src\11_to_array.cpp" />
     <ClCompile Include="src_cplus17\static_inline.cpp" />
     <ClCompile Include="src_cplus17\templ_integer_seq.cpp" />
