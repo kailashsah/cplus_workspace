@@ -39,7 +39,7 @@
     <ClCompile Include="src_3\14_lock_unique_lock.cpp" />
     <ClCompile Include="src_3\15_lock_guard_unique_lock.cpp" />
     <ClCompile Include="src_3\16_lock_for_deadlock.cpp" />
-    <ClCompile Include="src_3\17_lock_scoped_lock.cpp" />
+    <ClCompile Include="src_3\17_lock_scoped_lock_c17.cpp" />
     <ClCompile Include="src_3\21_future.cpp" />
     <ClCompile Include="src_3\22_future_empty.cpp" />
     <ClCompile Include="src_3\23_future_promise.cpp" />

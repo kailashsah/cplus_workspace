@@ -2,9 +2,11 @@
 using namespace std;
 
 /*
-	1. Locks all the objects passed as arguments, alternative is std::scoped_lock class (type deduced runtime).
+	1. std::lock() - Locks all the objects passed as arguments, alternative is std::scoped_lock class (type deduced runtime).
+		std::lock(foo, bar, bar2);
 
-	2. The function locks the objects using an unspecified sequence of calls to their members lock, try_lock and unlock that ensures that all arguments are locked on return (without producing any deadlocks).
+	2.	The function locks the objects using an unspecified sequence of calls to their members.
+		lock, try_lock and unlock that ensures that all arguments are locked on return (without producing any deadlocks).
 
 		If the function cannot lock all objects (such as because one of its internal calls threw an exception), the function first unlocks all objects it successfully locked (if any) before failing.
 
@@ -21,16 +23,19 @@ std::mutex foo, bar;
 std::mutex bar2;
 
 void task_a() {
-	// foo.lock(); bar.lock(); // replaced by: // also this causes deadlock if one mem locked here & another somewhere.
-	//std::lock(foo, bar); // this way no deadlocks // for 2 or more mutexes
-	std::lock(foo, bar, bar2); // bar2 added to see no. of locks
+	//1.
+	// foo.lock(); bar.lock();	// replaced by: // also this causes deadlock if one mem locked here & another somewhere.
+	
+	//2.
+	//std::lock(foo, bar);		// this way no deadlocks // for 2 or more mutexes
+	std::lock(foo, bar, bar2);	// bar2 added to see no. of locks
 	std::cout << "task a\n";
-	foo.unlock();
+	foo.unlock();				// required
 	bar.unlock();
 }
 
 void task_b() {
-	// bar.lock(); foo.lock(); // replaced by:
+	// bar.lock(); foo.lock();	// replaced by:
 	std::lock(bar, foo);
 	std::cout << "task b\n";
 	bar.unlock();
