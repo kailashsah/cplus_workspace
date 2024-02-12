@@ -160,7 +160,7 @@
     <ClCompile Include="src\module\mod_adv_maths.ixx" />
     <ClCompile Include="src\module\mod_caller.cppm" />
     <ClCompile Include="src\nested_class.cpp" />
-    <ClCompile Include="src\osyncstream.cpp" />
+    <ClCompile Include="src\45_osyncstream.cpp" />
     <ClCompile Include="src\33_ranges.cpp" />
     <ClCompile Include="src\read_code.cpp" />
     <ClCompile Include="src\readme_cplus20.cpp" />
