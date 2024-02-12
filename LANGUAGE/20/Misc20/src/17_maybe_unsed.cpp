@@ -6,6 +6,7 @@ using namespace std;
 	2. Suppresses warnings on unused entities.
 	3. https://riptutorial.com/cplusplus/example/19126/--maybe-unused--
 */
+
 #include <vector>
 #include <algorithm>
 void fun() {
@@ -23,12 +24,12 @@ void fun() {
 	}
 
 	std::string createConfigFilePath(const std::string& relativePath) {
-	#if OS == "WINDOWS"
+	#if		OS == "WINDOWS"
 		return createWindowsConfigFilePath(relativePath);
-	#elif OS == "LINUX"
+	#elif	OS == "LINUX"
 		return createLinuxConfigFilePath(relativePath);
 	#else
-	#error "OS is not yet supported"
+		#error "OS is not yet supported"
 	#endif
 	}
 

@@ -140,13 +140,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\atomic_shared_ptr.cppm" />
-    <ClCompile Include="src\atomic_shared_ptr_two.cpp" />
+    <ClCompile Include="src\16_variants_c17.cpp" />
+    <ClCompile Include="src\39_atomic_shared_ptr.cppm" />
+    <ClCompile Include="src\38_atomic_shared_ptr_two.cpp" />
     <ClCompile Include="src\bit_cast.cpp" />
     <ClCompile Include="src\concept_in_fn.cpp" />
     <ClCompile Include="src\concept_user_defined.cpp" />
-    <ClCompile Include="src\consteval.cpp" />
-    <ClCompile Include="src\constexpr.cpp" />
+    <ClCompile Include="src\42_consteval.cpp" />
+    <ClCompile Include="src\43_constexpr.cpp" />
     <ClCompile Include="src\19_container_contains.cpp" />
     <ClCompile Include="src\explicit_constructor.cpp" />
     <ClCompile Include="src\15_format.cpp" />
@@ -178,7 +179,6 @@
     <ClCompile Include="src_cplus17\static_inline.cpp" />
     <ClCompile Include="src_cplus17\templ_integer_seq.cpp" />
     <ClCompile Include="src_cplus17\templ_templ_argument.cpp" />
-    <ClCompile Include="src_cplus17\variants.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -13,6 +13,7 @@ using namespace std;
 
 void run_atomic_shared_ptr_2()
 {
+	// see store() & load() calls
 	std::atomic<std::shared_ptr<int>> ptr; // <memory>
 	shared_ptr<int> sp = make_shared<int>(10);
 	ptr.store(sp);

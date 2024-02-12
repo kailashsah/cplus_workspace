@@ -1,8 +1,10 @@
 import <iostream>;
-
 using namespace std;
 
-// Type your code here, or load an example.
+//
+void run_atomic_shared_ptr();
+void run_simple_shared_ptr();
+//
 #include <memory>
 // #include  <experimental/atomic>
 
@@ -12,10 +14,11 @@ using namespace std;
 #include <thread>
 #include <syncstream> // osyncstream
 
+//1. ------------------ using shared_ptr<> as atomic<> type
 void run_atomic_shared_ptr()
 {
 	atomic< shared_ptr<int>> ptr = make_shared<int>(10);
-	//    shared_ptr<int> ptr = make_shared<int> (10); 
+	// shared_ptr<int> ptr = make_shared<int> (10); 
 	std::jthread thread1(
 		[&ptr]() mutable {
 
@@ -41,8 +44,14 @@ void run_atomic_shared_ptr()
 	//    thread1.join();
 	//    thread2.join();
 	std::osyncstream(std::cout) << "ends" << endl;
+	/*
+		2 value 10
+		1 value 10
+		value 6
+		ends
+	*/
 }
-
+//2.  ------------------ using shared_ptr<> direct in thread
 void run_simple_shared_ptr()
 {
 	shared_ptr<int> ptr = make_shared<int>(10);
@@ -68,24 +77,21 @@ void run_simple_shared_ptr()
 	//    thread1.join();
 	//    thread2.join();
 	std::osyncstream(std::cout) << "ends" << endl;
-}
-
-void run_file_atomic_src() {
-	//1.
-	run_atomic_shared_ptr();
-	/*  2 value 10
-	   1 value 10
-	   value 6
-	   ends
-	*/
-
-	//2.
-	run_simple_shared_ptr();
 	/*  2 value 10
 		1 value 10
 		value 5
 		ends
 	 */
+}
+
+
+void run_file_atomic_src() {
+	//1.
+	run_atomic_shared_ptr();
+
+	//2.
+	run_simple_shared_ptr();
+
 }
 
 //int main()

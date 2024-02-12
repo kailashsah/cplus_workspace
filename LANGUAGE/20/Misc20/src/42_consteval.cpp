@@ -9,14 +9,13 @@ using namespace std;
 	3.
 */
 
-//1. This function might be evaluated at compile-time, if the input
-// is known at compile-time. Otherwise, it is executed at run-time.
+//1. This function might be evaluated at compile-time, if the input is known at compile-time. Otherwise, it is executed at run-time.
 constexpr unsigned factorial(unsigned n)
 {
 	return n < 2 ? 1 : n * factorial(n - 1);
 }
 
-//2. With consteval we enforce that the function will be evaluated at compile-time.
+//2. With consteval we "enforce" that the function will be evaluated at compile-time.
 consteval unsigned combination(unsigned m, unsigned n)
 {
 	return factorial(n) / factorial(m) / factorial(n - m);
@@ -34,14 +33,15 @@ consteval int sqr(int n) // immediate function
 //	return 2 * sqr(n);      // Error: Enclosing function is not consteval // Error: Call does not produce a constant
 //							// and value of n cannot be used as constant
 //}
+
 void run_consteval() {
 	
 	//3.1
 	constexpr int r = sqr(100); // OK
 	
 	//3.2
-	//int x = 100;					// fix is -> const int x=100;
-	//int r2 = sqr(x);				// Error: Call does not produce a constant bcoz of x
+	//int x = 100;					// fix is -> const int x=100;  (1)
+	//int r2 = sqr(x);				// Error: Call does not produce a constant bcoz of x .. fix is (1)
 
 	
 

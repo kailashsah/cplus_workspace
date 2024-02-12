@@ -73,9 +73,15 @@ void run_sort() {
 	
 	cout << endl;
 	for (int i : *intss)
-		cout << i << " "; // 5 4 3 2 1 0 // strange - if reverse_view saved in local variable it mutates the orignal container; if used directly in for(), it won't be changed.
+		cout << i << " "; // 5 4 3 2 1 0 
+	/* 
+		strange - if reverse_view saved in local variable it mutates the orignal container; 
+		if used directly in for(), it won't be changed. see (3)
+	*/
 
 }
+
+//(3).
 void run_reverse_view() {
 	std::vector<int> ints{ 0,1,2,3,4,5 };
 	

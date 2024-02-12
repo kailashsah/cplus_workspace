@@ -6,6 +6,7 @@ using namespace std;
 	3. constexpr can be used with constructors but with condition that argument and return type must be of literal types. 
 	4. Literals - https://www.geeksforgeeks.org/literals-in-c-cpp-with-examples/, interger, float, char, string, bool. Literals represent fixed values that cannot be modified
 */
+
 constexpr int addOne(int n)
 {
 	return [n] { return n + 1; }();

@@ -16,27 +16,27 @@ struct Point {
             return cmp;
         return y <=> other.y;
     }
-    bool operator==(const Point& other) const = default;
+    bool operator==(const Point& other) const = default; // writing this way is must for spaceship operator, reason below.
 };
 
 void run_class_with_spaceship_op() {
     Point pt1{ 1, 1 }, pt2{ 1, 2 };
     //Point pt1{ 1, 1 }, pt2{ 1, 1 };
     
-    //1.
+    //1.  ------------------ these all are hitting operator <=>. except == opeator
     if(pt1 < pt2)
         std::cout <<"pt1 is less than pt2 "<< std::endl;
-    else if (pt1 == pt2)
+    if (pt1 == pt2)
         std::cout << "pt1 is equal to pt2 " << std::endl; // not calling operator <=>, calls operator==()
-    else if (pt1 > pt2)
-        std::cout << "pt1 is grater than pt2 " << std::endl;
+    if (pt1 > pt2)
+        std::cout << "pt1 is greater than pt2 " << std::endl;
 
     /*
         1. if below is given
             auto operator<=>(const Point&)const = default;
         then all the operators ==, <,>,<=,>= comes free
 
-        2. auto operator<=>(const Point& other) const {...} if defined explicitly
+        2.  auto operator<=>(const Point& other) const {...} if defined explicitly
             bool operator==(const Point& other) this op has not got defaulted by self, so we have to mention. 
             2.1 if operator==() not defined, no compilation error
                  2.1.1  but stmt else if (pt1 == pt2) -> gives the compilation error for operator==()
