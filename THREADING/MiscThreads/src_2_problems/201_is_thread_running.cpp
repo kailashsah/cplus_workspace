@@ -2,8 +2,9 @@
 using namespace std;
 
 /*
-	1.
+	1.	use of if (status == std::future_status::ready) 
 */
+
 #include <future>
 #include <thread>
 #include <chrono>

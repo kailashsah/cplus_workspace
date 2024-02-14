@@ -2,7 +2,7 @@
 using namespace std;
 
 /*
-	1. The class template std::future provides a mechanism to access the result of asynchronous operations:
+	1. The class template std::future<> provides a mechanism to access the result of asynchronous operations:
 
 		An asynchronous operation (created via std::async, std::packaged_task, or std::promise) can provide a std::future object to the creator of that asynchronous operation.
     
@@ -21,15 +21,15 @@ void run_future_with_exception();
 
 void run_future()
 {
-	//1. future from a packaged_task
+	//1. ------------------ future from a packaged_task
 	std::packaged_task<int()> task([] { return 7; }); // wrap the function
 	std::future<int> f1 = task.get_future(); // get a future
 	std::thread th(std::move(task)); // launch on a thread
 
-	//2. future from an async()
+	//2. ------------------ future from an async()
 	std::future<int> f2 = std::async(std::launch::async, [] { return 8; });
 
-	//3. future from a promise
+	//3. ------------------ future from a promise
 	std::promise<int> prom;
 	std::future<int> f3 = prom.get_future();
 	std::thread([&prom] { prom.set_value_at_thread_exit(9); }).detach(); // set_value_at_thread_exit()

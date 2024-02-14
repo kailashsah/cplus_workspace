@@ -2,7 +2,10 @@
 using namespace std;
 
 /*
-	1. The  std::packaged_task class wraps any Callable objects (function, lambda expression, bind expression, or another function object) so that they can be invoked asynchronously. A packaged_task won’t start on its own, you have to invoke it, As its return value is stored in a shared state that can be called/accessed by  std::future objects.
+	packaged_task over promise --
+
+	1.	The  std::packaged_task class wraps any Callable objects (function, lambda expression, bind expression, or another function object) so that they can be invoked asynchronously. A packaged_task<> won’t start on its own, you have to invoke it, As its return value is stored in a shared state that can be called/accessed by  std::future objects.
+		
 		"The template function async runs the function f asynchronously (potentially in a separate thread) and returns a std::future that will eventually hold the result of that function call."
 
 	2. Need of packaged_task
@@ -25,6 +28,7 @@ void run_packaged_task();
 #include <deque>
 #include <mutex>
 #include <future> // packaged_task<>
+//
 std::deque<std::packaged_task<int()> > task_q;
 std::mutex mu;
 std::condition_variable cond;
@@ -70,6 +74,7 @@ void run_packaged_task()
 	th.join();
 
 }
+
 int factorial(int N)
 {
 	//the factorial of 4 is 4 × 3 × 2 × 1

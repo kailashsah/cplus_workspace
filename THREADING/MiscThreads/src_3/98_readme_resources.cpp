@@ -27,7 +27,7 @@ using namespace std;
 		https://devtut.github.io/cpp/semaphore.html#semaphore-c-11 (non library)
 		https://www.codespeedy.com/semaphores-in-cpp/
 
-	4. 
+	4. //1. ------------------
 
 	5.
 

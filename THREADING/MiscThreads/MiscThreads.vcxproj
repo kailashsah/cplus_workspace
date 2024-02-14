@@ -60,9 +60,9 @@
     <ClCompile Include="src_3\mutex_timed_mutex.cpp" />
     <ClCompile Include="src_3\mutex_timed_mutex_two.cpp" />
     <ClCompile Include="src_3\prvalue_xvalue.cpp" />
-    <ClCompile Include="src_3\readme_practice.cpp" />
-    <ClCompile Include="src_3\readme_threads.cpp" />
-    <ClCompile Include="src_3\read_code.cpp" />
+    <ClCompile Include="src_3\96_readme_practice.cpp" />
+    <ClCompile Include="src_3\98_readme_resources.cpp" />
+    <ClCompile Include="src_3\99_read_code.cpp" />
     <ClCompile Include="src_3\thread_basics.cpp" />
     <ClCompile Include="src_3\yield_vs_sleep_for.cpp" />
     <ClCompile Include="src_4_atomic\11_atomic.cpp" />

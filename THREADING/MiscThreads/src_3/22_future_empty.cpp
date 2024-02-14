@@ -20,7 +20,7 @@ void run_future_valid() {
 	async(launch::async, []() {return 100; });
 	if (ft.valid())
 	{
-		int a = ft.get(); //exception: std::future_error // if not used under ft.valid()
+		int a = ft.get(); //exception: std::future_error,  if not used under ft.valid()
 		cout << "result: " << a << endl;
 	}
 }
@@ -31,7 +31,7 @@ void run_future_get_two_times() {
 	{
 		int a = ft.get(); //exception: std::future_error 
 		try {
-			a = ft.get(); // 2nd get() cause exception // ft state is pending
+			a = ft.get(); // 2nd get() cause exception, ft state is pending
 		}
 		catch (const std::future_error& e) {
 			//1.

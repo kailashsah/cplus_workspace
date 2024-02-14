@@ -15,13 +15,14 @@ void task_thread();
 #include <thread>
 
 // unique function to avoid disambiguating the std::pow overload set
-int get_power(int x, int y) { return static_cast<int> ( std::pow(x, y) ); }
+int get_power(int x, int y) { return static_cast<int> (std::pow(x, y)); }
 
+//1.
 void task_lambda()
 {
 	std::packaged_task<int(int, int)> task([](int a, int b)
 		{
-			return static_cast<int>( std::pow(a, b) ); // reinterpret_cast<int> (double) -> compiler error showing conversion not possible
+			return static_cast<int>(std::pow(a, b)); // reinterpret_cast<int> (double) -> compiler error showing conversion not possible
 		});
 	std::future<int> result = task.get_future();
 
@@ -30,6 +31,7 @@ void task_lambda()
 	std::cout << "task_lambda:\t" << result.get() << '\n';
 }
 
+//2.
 void task_bind()
 {
 	std::packaged_task<int()> task(std::bind(get_power, 2, 11));
@@ -40,6 +42,7 @@ void task_bind()
 	std::cout << "task_bind:\t" << result.get() << '\n';
 }
 
+//3.
 void task_thread()
 {
 	std::packaged_task<int(int, int)> task(get_power);
