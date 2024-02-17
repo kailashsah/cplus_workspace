@@ -1,7 +1,12 @@
 #include <iostream>
 using namespace std;
 
-
+/*
+	1. Constructor can't be virtual but here we've simulated the virtual constructor.
+	1. Base class creates the Derived class objects with the help of static method.
+	2. Consumer class calls the interface method which in turn calls the Derived class method
+	3.
+*/
 
 //// LIBRARY START
 class Base
@@ -9,7 +14,7 @@ class Base
 public:
 
 	// The "Virtual Constructor"
-	static Base *Create( int id );
+	static Base* Create(int id);
 
 	Base() {}
 
@@ -79,16 +84,16 @@ public:
 
 // We can also declare "Create" outside Base
 // But it is more relevant to limit it's scope to Base
-Base *Base::Create( int id )
+Base* Base::Create(int id)
 {
 	// Just expand the if-else ladder, if new Derived class is created
 	// User code need not be recompiled to create newly added class objects
 
-	if( id == 1 )
+	if (id == 1)
 	{
 		return new Derived1;
 	}
-	else if( id == 2 )
+	else if (id == 2)
 	{
 		return new Derived2;
 	}
@@ -103,7 +108,7 @@ Base *Base::Create( int id )
 class User
 {
 public:
-	User() : pBase(0)
+	User() : pBase(0) // initialize the private member
 	{
 		// Receives an object of Base heirarchy at runtime
 
@@ -154,5 +159,18 @@ void run_virtual_ctr()
 	delete user;
 	getchar();
 	getchar();
+
+	/*
+		Enter ID (1, 2 or 3):
+		1
+		Derived1 created
+		Action from Derived1
+		Derived1 destroyed
+	*/
+}
+
+void main()
+{
+	run_virtual_ctr();
 }
 
