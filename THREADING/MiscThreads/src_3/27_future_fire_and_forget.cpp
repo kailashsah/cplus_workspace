@@ -2,7 +2,7 @@
 using namespace std;
 
 /*
-	1. fire & forget issue.
+	1. fire & forget issue. Advised always capture the return from the std::async() call.
 	2. this issue not there in std::packaged_task or std::promise
 	3. https://www.modernescpp.com/index.php/the-special-futures/
 	4.
@@ -24,7 +24,8 @@ void run_future_non_blocking();
 void run_fix();
 
 void run_future_blocking() {
-
+	
+	// this version is without the return value capture from async() call
 	std::cout << std::endl;
 	//1.
 	std::async(std::launch::async, [] {
@@ -38,7 +39,12 @@ void run_future_blocking() {
 		std::this_thread::sleep_for(std::chrono::seconds(1));
 		std::cout << "second thread" << std::endl; }
 	);
-	// here future waits in ~future() for completion of above async task/work. so, it is behaving sequential.
+	/*
+		1. warning C4858: discarding return value: The result of 'std::async' should be stored in a variable. If the return value is discarded, the temporary 'std::future' is destroyed, waiting for an async result or evaluating a deferred result, thus defeating the purpose of 'std::async'.
+
+		2. here future waits in ~future() for completion of above async task/work. so, it is behaving sequential.
+	*/
+	
 
 	std::cout << "main thread" << std::endl;
 	/*

@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 /*
-	1. we cannot set value to future directly, can be done via promise
+	1. future<> - we cannot set value to future directly, can be done via promise
 	2. same future object can be used in multiple async functions. compiles ok
 	3. everytime its ptr points to different location of Associated_state<int>. (IMP)
 */
@@ -62,8 +62,8 @@ void run_future_get_two_times() {
 void run_assign_two_futures_in_same() {
 	// checked seq or parallel in this case
 	//1.
-	cout << &ft << endl; //001D3270
-	cout << ft._Ptr() << endl; // 0000000
+	cout << &ft << endl;		//001D3270
+	cout << ft._Ptr() << endl;	// 0000000
 	ft = async(launch::async, []() {
 		int itr = 1;
 		while (itr < 30) {
@@ -72,8 +72,8 @@ void run_assign_two_futures_in_same() {
 		}
 		cout << endl;
 		return 100; });
-	cout << &ft << endl; //001D3270
-	cout << ft._Ptr() << endl; // 00CB5178
+	cout << &ft << endl;		//001D3270
+	cout << ft._Ptr() << endl;	// 00CB5178 .. this time we get the pointer value.
 
 	//2.
 	ft = async(launch::async, []() {
@@ -84,7 +84,7 @@ void run_assign_two_futures_in_same() {
 		}
 		cout << endl;
 		return 200; });
-	cout << &ft << endl; //001D3270
+	cout << &ft << endl;		//001D3270
 	cout << ft._Ptr() << endl; // 00CB6588 // here future ptr is different from the 1st one.
 
 	//3.

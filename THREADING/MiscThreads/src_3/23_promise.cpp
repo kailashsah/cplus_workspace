@@ -16,11 +16,12 @@ using namespace std;
 #include <thread>
 #include <vector>
 
-void run_promise();
+void run_promise_in_thread_func();
 void run_promise_as_signal();
 
 //1.
-void accumulate_func(std::vector<int>::iterator first,
+void accumulate_func(
+	std::vector<int>::iterator first,
 	std::vector<int>::iterator last,
 	std::promise<int>&& accumulate_promise) // also OK , std::promise<int> accumulate_promise
 {
@@ -28,7 +29,7 @@ void accumulate_func(std::vector<int>::iterator first,
 	accumulate_promise.set_value(sum); // Notify future
 }
 
-void run_promise()
+void run_promise_in_thread_func()
 {
 	// Demonstrate using promise<int> to transmit a result between threads.
 	std::vector<int> numbers = { 1, 2, 3, };
@@ -63,6 +64,7 @@ void run_promise_as_signal() {
 	std::promise<void> barrier;
 	std::future<void> barrier_future = barrier.get_future();
 	std::thread new_work_thread(do_work, std::move(barrier));
+	
 	barrier_future.wait();
 	new_work_thread.join();
 }

@@ -31,7 +31,7 @@ using namespace std;
 #include <thread>
 #include <shared_mutex>
 
-int value = 0;
+int g_iValue = 0;
 std::shared_mutex smutex;
 
 // Reads the value and sets v to that value
@@ -39,7 +39,7 @@ void readValue(int& v) {
 	smutex.lock_shared();
 	// Simulate some latency/time to run
 	std::this_thread::sleep_for(std::chrono::seconds(1));
-	v = value;
+	v = g_iValue;
 	smutex.unlock_shared();
 }
 
@@ -48,7 +48,7 @@ void setValue(int v) {
 	smutex.lock();
 	// Simulate some latency/time to run
 	std::this_thread::sleep_for(std::chrono::seconds(1));
-	value = v;
+	g_iValue = v;
 	smutex.unlock();
 }
 void run_shared_mutex() {
@@ -68,7 +68,7 @@ void run_shared_mutex() {
 	std::cout << read1 << "\n";
 	std::cout << read2 << "\n";
 	std::cout << read3 << "\n";
-	std::cout << value << "\n";
+	std::cout << g_iValue << "\n";
 	/*
 		0
 		0

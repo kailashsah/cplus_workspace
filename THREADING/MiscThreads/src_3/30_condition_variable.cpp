@@ -63,10 +63,12 @@ buffer_data prepare_data() {
 	stringstream ss;
 	if (countt < max_count)
 		ss << vec[countt];
-	/* if (countt > 48)
-		 countt = 0;
+	/* 
+		if (countt > 48)
+			 countt = 0;
 
-	 else*/
+		 else
+	 */
 	countt++;
 	buffer_data s;
 	ss >> s;
