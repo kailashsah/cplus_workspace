@@ -18,6 +18,7 @@ using namespace std;
 void foo() {
 	shared_timed_mutex m;
 	using namespace std::literals::chrono_literals;
+
 	std::shared_lock<std::shared_timed_mutex> lk(m, 50ms);
 	//1.
 	//lk.release(); // this will release the lock & without lock condition will be executed.

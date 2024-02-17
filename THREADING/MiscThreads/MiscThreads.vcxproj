@@ -52,13 +52,13 @@
     <ClCompile Include="src_3\38_packaged_task_over_promise.cpp" />
     <ClCompile Include="src_3\40_packaged_task_vs_async.cpp" />
     <ClCompile Include="src_3\51_mutex_recursive_mutex.cpp" />
-    <ClCompile Include="src_3\41_mutex_shared_lock_2.cpp" />
+    <ClCompile Include="src_3\42_shared_lock_2.cpp" />
     <ClCompile Include="src_3\47_mutex_shared_lock_3.cpp" />
     <ClCompile Include="src_3\49_mutex_shared_lock_difficult.cpp" />
-    <ClCompile Include="src_3\42_mutex_shared_mutex.cpp" />
+    <ClCompile Include="src_3\41_shared_mutex.cpp" />
     <ClCompile Include="src_3\46_mutex_shared_timed_mutex.cpp" />
-    <ClCompile Include="src_3\43_mutex_timed_mutex.cpp" />
-    <ClCompile Include="src_3\44_mutex_timed_mutex_two.cpp" />
+    <ClCompile Include="src_3\43_timed_mutex.cpp" />
+    <ClCompile Include="src_3\44_timed_mutex_two.cpp" />
     <ClCompile Include="src_3\55_prvalue_xvalue.cpp" />
     <ClCompile Include="src_3\96_readme_practice.cpp" />
     <ClCompile Include="src_3\98_readme_resources.cpp" />

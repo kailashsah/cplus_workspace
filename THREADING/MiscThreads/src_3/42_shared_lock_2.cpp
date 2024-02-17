@@ -4,7 +4,8 @@ using namespace std;
 /*
     1.  shared_lock<> - Locks the associated mutex in shared mode by calling m.lock_shared().
     2.  2. std::shared_mutex mux_ - 
-        a) if shared_lock <mutex> - gives error 'unlock_shared': is not a member of 'std::mutex'
+        
+        a) if shared_lock <mutex> - gives error 'unlock_shared': is not a member of 'std::mutex' .. bcoz mutex is used instead of shared_mutex
         b) use shared_lock<shared_mutex> or any variant of shared mutexes.
 */
 void run_shared_lock_two();
@@ -19,7 +20,7 @@ void run_shared_lock_two();
 //std::shared_timed_mutex m;
 //2.
 std::shared_mutex m;
-int i = 10;
+int g_i = 10;
 
 void read_shared_var(int id)
 {
@@ -28,7 +29,7 @@ void read_shared_var(int id)
     //std::shared_lock<std::shared_timed_mutex> slk(m);
     //2.
     std::shared_lock<std::shared_mutex> slk(m); // OK
-    const int ii = i; // reads global i
+    const int ii = g_i; // reads global i
 
     std::osyncstream(std::cout) << '#' << id << " read i as " << ii << "...\n";
     std::this_thread::sleep_for(std::chrono::milliseconds(10));

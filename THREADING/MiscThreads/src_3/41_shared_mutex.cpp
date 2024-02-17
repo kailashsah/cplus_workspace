@@ -2,7 +2,7 @@
 using namespace std;
 
 /*
-	1. std::shared_mutex - While a regular mutex exposes 3 methods: lock, unlock and try_lock,
+	1. std::shared_mutex class - While a regular mutex exposes 3 methods: lock, unlock and try_lock,
 
 		Shared Mutex however adds 3 more methods::
 		lock_shared
@@ -36,7 +36,7 @@ std::shared_mutex smutex;
 
 // Reads the value and sets v to that value
 void readValue(int& v) {
-	smutex.lock_shared();
+	smutex.lock_shared();  // note: here we haven't used shared_lock() instead used direct shared_mutex methods.
 	// Simulate some latency/time to run
 	std::this_thread::sleep_for(std::chrono::seconds(1));
 	v = g_iValue;

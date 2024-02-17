@@ -6,7 +6,8 @@ using namespace std;
 		try_lock_for: Tries to lock till timeout occurs
 		try_lock_until: Tries to lock till specified amount of time.
 
-	2. When you use try_lock_for() to lock a mutex, then the second thread [T2] will wait for that amount of time for the first thread [T1] to be unlocked. If it reaches the T2 thread reaches the timeout, then it will simply return.
+	2.	When you use try_lock_for() to lock a mutex, then the second thread [T2] will wait for that amount of time for the first thread [T1] to be unlocked. 
+		If it reaches the T2 thread reaches the timeout, then it will simply return.
 
 	3. In try_lock_until(), we wait from current time till the time mentioned. If the timeout occurs it will return false.
 
@@ -20,16 +21,16 @@ void run_try_lock_until();
 #include <thread>         // std::thread
 #include <mutex>          // std::timed_mutex
 
-using namespace std;
 std::timed_mutex mtx;
-int count_num = 0;
+int g_icount_num = 0;
 
+//1.
 void update_value(int i)
 {
 	//created a try_lock_for mutex
 	if (mtx.try_lock_for(std::chrono::seconds(2))) // here whatif we change seconds like 4, 3 ...
 	{
-		count_num++;
+		g_icount_num++;
 		std::this_thread::sleep_for(std::chrono::seconds(3));
 		cout << "Thread " << i << " acquired lock" << endl;
 		mtx.unlock();
@@ -63,6 +64,7 @@ void run_try_lock_for() {
 
 }
 
+//2.
 void update_value_v2(int i)
 {
 	auto now = std::chrono::steady_clock::now();
@@ -70,7 +72,7 @@ void update_value_v2(int i)
 	//created a try_lock_until mutex
 	if (mtx.try_lock_until( now + std::chrono::seconds(2)) ) // using "now"
 	{
-		count_num++;
+		g_icount_num++;
 		std::this_thread::sleep_for(std::chrono::seconds(1));
 		cout << "Thread " << i << " acquired lock" << endl;
 		mtx.unlock();

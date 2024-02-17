@@ -29,7 +29,7 @@ using namespace std;
 
 #include <thread> // std::this_thread, thread class
 
-auto NastyBlockingFunction() { return int{}; }
+auto NastyBlockingFunction() { return int{}; } // assume
 auto LegacyApiThreadEntry(void)
 {
 	auto result = NastyBlockingFunction();

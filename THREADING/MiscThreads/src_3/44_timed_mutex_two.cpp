@@ -11,8 +11,8 @@ using namespace std;
 #include <sstream>
 void run_timed_mutex_v2();
 //
-std::mutex cout_mutex; // control access to std::cout
-std::timed_mutex t_mutex;
+std::mutex          cout_mutex; // control access to std::cout
+std::timed_mutex    t_mutex;
 
 void job(int id)
 {
