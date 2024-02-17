@@ -1,7 +1,9 @@
 #include <iostream>
 using namespace std;
 /*
-	https://www.geeksforgeeks.org/a-product-array-puzzle/ 
+	1. Given an array arr[] of n integers, construct a Product Array prod[] (of the same size) such that prod[i] is equal to the product of all the elements of arr[] except arr[i].  
+	2. https://www.geeksforgeeks.org/a-product-array-puzzle/ 
+
 */
 
 void productArray(int arr[], int n)
