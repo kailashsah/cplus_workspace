@@ -2,6 +2,8 @@
 using namespace std;
 /*
 	1.  0 1 1 2 3 4 8 13 
+	2.	F(n) = F(n-1) + F(n-2), 
+		F(0) = 0, F(1) = 1
 
 */
 constexpr int fib(int n)

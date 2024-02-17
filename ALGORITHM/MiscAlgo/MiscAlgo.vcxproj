@@ -142,6 +142,7 @@
     <ClCompile Include="src\dynamic_prog\fibonacci.cpp" />
     <ClCompile Include="src\easy\array_product.cpp" />
     <ClCompile Include="src\easy\find_smallest_binary_search.cpp" />
+    <ClCompile Include="src\easy\readme.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
