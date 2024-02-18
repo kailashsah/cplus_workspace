@@ -152,7 +152,7 @@ void thread_pool::launch_threads_future()
 		int milliseconds = 5 + (i % 10);
 		{
 			int index_thread;
-			if (i < MAX_THREADS) 
+			if (i < MAX_THREADS)
 				index_thread = i;
 			else
 			{
@@ -214,7 +214,7 @@ void run_thread_pool() {
 	tp_obj.launch_threads();
 	cout << endl;
 	timer("4000 threads using THREAD + ATOMIC:", 4000);
-	
+
 	//2.
 	cout << "tp_obj.launch_threads_future() " << endl;
 	tp_obj.launch_threads_future();
@@ -222,7 +222,7 @@ void run_thread_pool() {
 	timer("4000 threads using FUTURE:", 4000);
 	cout << endl << "Total threads ran:" << total_threads_ran << endl;
 	//3.
-	cout << "=== END ===\n"; 
+	cout << "=== END ===\n";
 	(void)getchar();
 }
 

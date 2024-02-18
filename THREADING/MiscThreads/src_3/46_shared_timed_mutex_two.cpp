@@ -17,7 +17,7 @@ class PhoneBook {
 public:
     string getPhoneNo(const std::string& name)
     {
-        shared_lock<shared_timed_mutex> r(_protect);
+        shared_lock<shared_timed_mutex> r(_protect); //read lock
         auto it = _phonebook.find(name);
         if (it == _phonebook.end())
             return (*it).second;
@@ -25,12 +25,12 @@ public:
     }
     void addPhoneNo(const std::string& name, const std::string& phone)
     {
-        unique_lock<shared_timed_mutex> w(_protect);
+        unique_lock<shared_timed_mutex> w(_protect); //write lock
         _phonebook[name] = phone;
     }
 
-    shared_timed_mutex _protect;
-    unordered_map<string, string>  _phonebook;
+    shared_timed_mutex              _protect;
+    unordered_map<string, string>   _phonebook;
 };
 
 

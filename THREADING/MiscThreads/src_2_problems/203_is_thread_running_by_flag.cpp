@@ -10,24 +10,24 @@ using namespace std;
 
 std::atomic<bool> thread_done = false;
 
-void* real_thread_function(void* ) {
+void* real_thread_function(void*) {
 
-    return nullptr;
+	return nullptr;
 }
 
 void* run_thread(void* arg)
 {
-    void* res = nullptr;
+	void* res = nullptr;
 
-    try
-    {
-        res = real_thread_function(arg);
-    }
-    catch (...)
-    {
-    }
+	try
+	{
+		res = real_thread_function(arg);
+	}
+	catch (...)
+	{
+	}
 
-    thread_done = true;
+	thread_done = true;
 
-    return res;
+	return res;
 }

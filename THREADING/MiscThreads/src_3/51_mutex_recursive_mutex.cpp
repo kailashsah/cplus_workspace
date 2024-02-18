@@ -33,15 +33,15 @@ class X
 {
 	std::recursive_mutex m;
 	//mutex mr;
-	std::string shared;
+	std::string sharedStr;
 public:
 	void fun1()
 	{
 		std::lock_guard<std::recursive_mutex> lk(m);
 		//unique_lock<mutex> lk(mr);
 		//lock_guard<mutex> lk(mr);
-		shared = "fun1";
-		std::cout << "in fun1, shared variable is now " << shared << '\n';
+		sharedStr = "fun1";
+		std::cout << "in fun1, shared variable is now " << sharedStr << '\n';
 	}
 	void fun2()
 	{
@@ -58,10 +58,10 @@ public:
 			crashed.
 		*/
 
-		shared = "fun2";
-		std::cout << "in fun2, shared variable is now " << shared << '\n';
-		fun1(); // recursive lock becomes useful here
-		std::cout << "back in fun2, shared variable is " << shared << '\n';
+		sharedStr = "fun2";
+		std::cout << "in fun2, shared variable is now " << sharedStr << '\n';
+		fun1();						// recursive lock becomes useful here
+		std::cout << "back in fun2, shared variable is " << sharedStr << '\n';
 	}
 };
 

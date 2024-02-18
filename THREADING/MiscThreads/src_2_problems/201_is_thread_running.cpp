@@ -2,7 +2,7 @@
 using namespace std;
 
 /*
-	1.	use of if (status == std::future_status::ready) 
+	1.	use of if (status == std::future_status::ready)
 */
 
 #include <future>

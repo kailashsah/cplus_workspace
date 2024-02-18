@@ -13,7 +13,7 @@ using namespace std;
 const uint8_t max_time = 100;
 void thread_fn() {
 
-	
+
 	cout << "thread_fn() ends" << endl;
 }
 void is_thread_alive_v2(jthread& th) {

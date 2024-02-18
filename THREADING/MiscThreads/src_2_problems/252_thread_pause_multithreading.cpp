@@ -71,14 +71,14 @@ void run_pause_multithreader() {
 		std::atomic<bool>& exit_threads,
 		ThreadPause& thread_pause,
 		int& increment)
-	{
-		while (!(exit_threads.load())) 
 		{
-			thread_pause.wait();
-			//... your work would normally go here
-			increment += 10;
-		}
-	};
+			while (!(exit_threads.load()))
+			{
+				thread_pause.wait();
+				//... your work would normally go here
+				increment += 10;
+			}
+		};
 
 	std::vector<std::thread> threads;
 	for (std::size_t i = 0; i < thread_count; ++i) {
