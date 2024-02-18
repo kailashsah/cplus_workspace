@@ -1,8 +1,11 @@
 #include <iostream>
 using namespace std;
 /*
-	1.
+	1. waitForMutipleObjects simulation using vector of futures got from the packaged_task<>
+	2. they all are checked using it->wait_for(std::chrono::milliseconds(TIME_BETWEEN_POLLS_MS));
 */
+void run_wait_for_multiple_objects_two();
+//
 #include <iostream>
 #include <vector>
 #include <thread>
@@ -16,7 +19,7 @@ template <typename Iterator>
 Iterator finishingThread(Iterator first, Iterator last) {
 	auto it = first;
 	auto status = std::future_status::timeout;
-	while (status != std::future_status::ready) {
+	while (status != std::future_status::ready) {//'status' updated in body
 		if (++it == last) {
 			it = first;
 		}
@@ -34,9 +37,7 @@ std::thread::id sleepFor(int millisec) {
 
 void run_wait_for_multiple_objects_two() {
 	// Create three separate tasks.
-	std::packaged_task<std::thread::id(int)> task1{ sleepFor },
-		task2{ sleepFor },
-		task3{ sleepFor };
+	std::packaged_task<std::thread::id(int)> task1{ sleepFor }, task2{ sleepFor }, task3{ sleepFor };
 
 	// Store futures.
 	std::vector<std::future<std::thread::id>> futures;
@@ -50,7 +51,7 @@ void run_wait_for_multiple_objects_two() {
 	tasks.emplace_back(std::move(task2), 500);
 	tasks.emplace_back(std::move(task3), 1000);
 
-	auto it = finishingThread(std::begin(futures), std::end(futures));
+	auto it = finishingThread(std::begin(futures), std::end(futures)); // here all futures are checked -> status = it->wait_for(std::chrono::milliseconds(TIME_BETWEEN_POLLS_MS));
 
 	std::cout << "We have result of the task that finished first!" << std::endl;
 

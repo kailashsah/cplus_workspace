@@ -2,7 +2,7 @@
 using namespace std;
 
 /*
-	1.
+	1. using while (th.joinable()), we can identify whether thread is alive or not. 
 */
 #include <future>
 #include <thread>
@@ -16,6 +16,7 @@ void thread_fn() {
 
 	cout << "thread_fn() ends" << endl;
 }
+
 void is_thread_alive_v2(jthread& th) {
 
 	while (th.joinable())
@@ -30,7 +31,7 @@ void is_thread_alive_v2(jthread& th) {
 
 void run_is_thread_running() {
 	jthread thread(thread_fn);
-	jthread threadChecker(is_thread_alive_v2, std::ref(thread));
+	jthread threadChecker(is_thread_alive_v2, std::ref(thread)); //ref of first thread
 	thread.join();
 }
 

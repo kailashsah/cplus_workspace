@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 /*
-	1.
+	1. we can simulate the waitForMultipleObjects by passing the boolean value inside the thread function via shared_ptr<>
 
 */
 #include <thread>

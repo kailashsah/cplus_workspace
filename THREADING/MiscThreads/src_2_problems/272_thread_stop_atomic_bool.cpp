@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 /*
-
+	1. use 'std::atomic<bool> stop_thread ' to identify the thread is stopped.
 */
 #include <chrono>
 void run_stop_thread() {

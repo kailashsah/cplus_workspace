@@ -4,22 +4,28 @@ using namespace std;
 /*
 	1.	use of if (status == std::future_status::ready)
 */
-
+void run_by_future();
+void run_by_promise();
+//
 #include <future>
 #include <thread>
 #include <chrono>
 #include <iostream>
 
+//1.
 class X {};
-void run_async() {
+void run_by_future() {
 	using namespace std::chrono_literals;
 
-	/* Run some task on new thread. The launch policy std::launch::async
-	   makes sure that the task is run asynchronously on a new thread. */
-	auto future = std::async(std::launch::async, [] {
-		std::this_thread::sleep_for(1s);
-		//return 8;     // (1)
-		return new X;   // (2)
+	/*
+		Run some task on new thread. The launch policy std::launch::async
+		makes sure that the task is run asynchronously on a new thread.
+	*/
+	auto future = std::async(std::launch::async,
+		[] {
+			std::this_thread::sleep_for(1s);
+			//return 8;     // (1)
+			return new X;   // (2)
 		});
 
 	// Use wait_for() with zero milliseconds to check thread status.
@@ -33,10 +39,11 @@ void run_async() {
 		std::cout << "Thread still running" << std::endl;
 	}
 
-	auto result = future.get(); // Get result. // it takes the time here, rest of the stmts return immediatly
+	auto result = future.get(); // Get result. // it takes the time here, rest of the stmts return immediately
 	cout << typeid(result).name() << endl; //class X *
 }
 
+//2.
 void run_by_promise() {
 	using namespace std::chrono_literals;
 

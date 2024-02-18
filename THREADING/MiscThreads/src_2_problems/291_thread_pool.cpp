@@ -52,11 +52,12 @@ void timer(const char* title = 0, int data_size = 1)
 
 class thread_pool
 {
-	char line[200];
-	thread th_array[MAX_THREADS];
-	double th_result[MAX_THREADS];
-	int th_index;
-	double milliseconds_commanded; // total wait done by TOTAL_THREAD_LOAD threads
+	char	line[200];
+	thread	th_array[MAX_THREADS];
+	double	th_result[MAX_THREADS];
+	int		th_index;
+	double	milliseconds_commanded; // total wait done by TOTAL_THREAD_LOAD threads
+
 	void hilo(int hindex, int milliseconds, double& milliseconds2)
 	{
 		sprintf(line, "%i:%ia ", hindex, milliseconds); print_line(line);
@@ -221,6 +222,7 @@ void run_thread_pool() {
 	cout << endl;
 	timer("4000 threads using FUTURE:", 4000);
 	cout << endl << "Total threads ran:" << total_threads_ran << endl;
+	
 	//3.
 	cout << "=== END ===\n";
 	(void)getchar();

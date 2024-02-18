@@ -18,8 +18,8 @@ public:
 	void pause();
 	void resume();
 private:
-	bool m_paused;
-	std::mutex m_mutex;
+	bool		m_paused;
+	std::mutex	m_mutex;
 	std::condition_variable m_cv;
 };
 
@@ -43,7 +43,7 @@ void ThreadPause::wait() {
 
 void ThreadPause::pause() {
 	cout << "thread paused" << endl;
-	//lock around the variable so with can modify it
+	//lock around the variable so we can modify it
 	std::unique_lock<std::mutex> lock(m_mutex);
 	m_paused = true;
 }
@@ -64,6 +64,7 @@ void run_pause_multithreader() {
 
 	std::size_t thread_count = 10;
 	std::atomic<bool> exit_threads(false);
+	
 	ThreadPause thread_pause;
 	std::vector<int> increments_vec(thread_count, 0);
 
@@ -80,10 +81,14 @@ void run_pause_multithreader() {
 			}
 		};
 
+	/*
+		1. create 10 threads .. given reference value from vector element to increment 10.
+		2. exit_threads is bool value to signal the exit. see below exit_threads.store(true);
+	*/
 	std::vector<std::thread> threads;
-	for (std::size_t i = 0; i < thread_count; ++i) {
+	for (std::size_t i = 0; i < thread_count; ++i) {// thread_count is 10.
 		threads.emplace_back(thread_function,
-			std::ref(exit_threads),
+			std::ref(exit_threads),	
 			std::ref(thread_pause),
 			std::ref(increments_vec[i]));
 	}
@@ -114,6 +119,7 @@ void run_pause_multithreader() {
 	}
 
 	thread_pause.resume();
+
 	exit_threads.store(true);
 
 	for (auto& thread : threads) {

@@ -28,23 +28,17 @@ void th_function() {
 	}
 	cout << "th_function() ends" << endl;
 }
-void is_thread_alive(jthread& th) {
 
-	while (th.joinable())
-	{
-		this_thread::sleep_for(chrono::milliseconds(max_time));
-		cout << "thread is still alive" << endl;
-	}
-	cout << "fn_thread_checker() ends" << endl;
-}
 //.................................................
-
+//1.
 void run_thread_request_stop() {
 	jthread thread(th_function);
 	string log = (thread.request_stop()) ? "stop accepted" : "stop rejected"; // Accepting the request does not guarantee that the thread will stop as soon as possible
 	cout << log << endl;
 	thread.join();
 }
+
+//2.
 void run_thread_stop_possible() {
 	jthread thread(th_function);
 	stop_source ss = thread.get_stop_source();
@@ -60,22 +54,39 @@ void run_thread_stop_possible() {
 	thread.join();
 }
 
+//3.
+/*
+	1.	thread.get_stop_source();
+		thread.request_stop();
+
+	2.	thread.get_stop_token();
+		st.stop_requested();
+*/
+void is_thread_alive(jthread& th) {
+
+	while (th.joinable())
+	{
+		this_thread::sleep_for(chrono::milliseconds(max_time));
+		cout << "thread is still alive" << endl;
+	}
+	cout << "fn_thread_checker() ends" << endl;
+}
 void run_thread_stop_requested() {
 	jthread thread(th_function);
 	jthread threadChecker(is_thread_alive, std::ref(thread));
 
-	//
+	//1.
 	stop_source ss = thread.get_stop_source();
 	if (ss.stop_possible())
 	{
-		string log = (thread.request_stop()) ? "stop accepted" : "stop rejected"; // Accepting the request does not guarantee that the thread will stop as soon as possible
+		string log = (thread.request_stop()) ? "stop accepted" : "stop rejected";
 		cout << log << endl;
 	}
 	else {
 		cout << "stop is not possible" << endl;
 	}
 
-	//
+	//2.
 	stop_token st = thread.get_stop_token();
 	string log = st.stop_requested() ? "stop requested" : "stop not requested";
 	cout << log << endl;
