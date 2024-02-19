@@ -3,7 +3,7 @@ using namespace std;
 
 /*
 	1. Spurious Failure
-		This is due to spurious failure on some platforms where a sequence of instructions (instead of one as on x86) are used to implement it. On such platforms, context switch, reloading of the same address (or cache line) by another thread, etc. can fail the primitive. It’s spurious as it’s not the value of the object (not equal to expected) that fails the operation. Instead, it’s kind of timing issue. On the contrary, the strong version conceptually wraps this around and tries in case of any spurious failure.
+		This is due to spurious(false,fake) failure on some platforms where a sequence of instructions (instead of one as on x86) are used to implement it. On such platforms, context switch, reloading of the same address (or cache line) by another thread, etc. can fail the primitive. It’s spurious as it’s not the value of the object (not equal to expected) that fails the operation. Instead, it’s kind of timing issue. On the contrary, the strong version conceptually wraps this around and tries in case of any spurious failure.
 
 	2. Why Bother to Use compare_exchange_weak() and Write the Loop Ourselves? Why Not Compare_exchange_strong()?
 		When a compare-and-exchange is in a loop, the weak version will yield better performance on some platforms.
@@ -34,12 +34,15 @@ void run_weak_was_error_earlier();
 #include <vector>         // std::vector
 
 // a simple global linked list:
-struct Node { int value; Node* next; };
+struct Node {
+	int value; 
+	Node* next; 
+};
 std::atomic<Node*> list_head(nullptr);
 
 void append(int val) {     // append an element to the list
 	Node* oldHead = list_head;
-	Node* newNode = new Node{ val,oldHead };// put the current value of head into new_node->next
+	Node* newNode = new Node{ val, oldHead };// put the current value of head into new_node->next .. aggregate initializer
 
 	// what follows is equivalent to: list_head = newNode, but in a thread-safe way:
 	// now make new_node the new head, but if the head
@@ -77,13 +80,14 @@ void run_weak_was_error_earlier() {
 	// Note: the above use is not thread-safe in at least 
 	// GCC prior to 4.8.3 (bug 60272), clang prior to 2014-05-05 (bug 18899)
 	// MSVC prior to 2014-03-17 (bug 819819). The following is a workaround:
+	// 
 	//      node<T>* old_head = head.load(std::memory_order_relaxed);
 	//      do
 	//      {
 	//          new_node->next = old_head;
 	//      }
 	//      while (!head.compare_exchange_weak(old_head, new_node,
-	//                                         std::memory_order_release,
+	//                                         std::memory_order_release))
 	//  
 }
 

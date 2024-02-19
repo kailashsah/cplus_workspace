@@ -42,7 +42,7 @@ void run_atomic_user_defined_type() {
 	test_atomic a2{ 2 };
 	std::atomic<test_atomic> atomicA{ a1 };
 	//1.
-	atomicA.load().Show();//the original atomicA //1
+	atomicA.load().Show();//the original atomicA	//1
 	atomicA.compare_exchange_strong(a2, test_atomic{ 2 });// this makes no change
 	atomicA.load().Show(); //1
 
@@ -51,7 +51,7 @@ void run_atomic_user_defined_type() {
 
 	//2.
 	if (atomicA.is_lock_free())
-		cout << "atomicA is lock free " << endl;
+		cout << "atomicA is lock free " << endl; // atomicA has real atomic behavior
 
 }
 

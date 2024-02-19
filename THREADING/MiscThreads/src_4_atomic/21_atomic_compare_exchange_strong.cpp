@@ -28,8 +28,8 @@ void store_if_not_equal(int desired)
 		int expected = desired;
 
 		if (atomVal.compare_exchange_strong(expected, desired))
-			// if false returned (atomVal != expected), atomVal copied into expected. 
-			//	true, if the underlying atomic value was successfully changed,
+			// if false returned by (atomVal != expected) ==> expected = atomVal . 
+			// true, if the underlying atomic value was successfully changed,
 		{
 			// values matched - do nothing
 			std::cout << "if part " << expected << endl;
@@ -37,10 +37,11 @@ void store_if_not_equal(int desired)
 		}
 		else
 		{
-			//expected now contains the "current value"
+			// expected now contains the "current value"
 			// another thread could have sneaked in and changed it,
 			// so only replace it if it still matches
 			if (atomVal.compare_exchange_strong(expected, desired))
+				// if atomval == expected ==> atomval = desired.
 			{
 				// success
 				std::cout << expected << "  " << endl; //1804289383 
