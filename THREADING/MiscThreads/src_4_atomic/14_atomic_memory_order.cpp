@@ -4,8 +4,8 @@ using namespace std;
 /*
 	1.  'release' and 'acquire' can be used separately to prevent corresponding reordering.
 
-		problem - The statements about 'moving before' or 'moving after' are instructions to the optimizer that it shouldn't re-order operations to take place . Optimizers are very good at re-ordering instructions and even omitting redundant reads/writes 
-		
+		problem - The statements about 'moving before' or 'moving after' are instructions to the optimizer that it shouldn't re-order operations to take place . Optimizers are very good at re-ordering instructions and even omitting redundant reads/writes
+
 		but if they re-organise the code across the memory barriers they may unwittingly violate that order.
 
 	2. memory_order_acquire and memory_order_release as:
@@ -65,6 +65,7 @@ void consumer_with_acquire()
 	assert(*p2 == "Hello"); // never fires
 	assert(data2 == 42); // never fires
 }
+
 void run_producer_consumer() {
 	std::thread t1(producerr);
 	std::thread t2(consumerr);
@@ -77,12 +78,13 @@ void run_producer_consumer() {
 //}
 
 /*
-memory_order_consume - A load operation with this memory order performs a consume operation on the affected memory location: no reads or writes in the current thread dependent on the value currently loaded can be reordered before this load. Writes to data-dependent variables in other threads that release the same atomic variable are visible in the current thread. On most platforms, this affects compiler optimizations only.
+memory_order_consume - A load operation with this memory order performs a consume operation on the affected memory location: no reads or writes in the current thread dependent on the value currently loaded can be reordered "before" this load. Writes to data-dependent variables in other threads that release the same atomic variable are visible in the current thread. On most platforms, this affects compiler optimizations only.
 
-memory_order_acquire -	A load operation with this memory order performs the acquire operation on the affected memory location: no reads or writes in the current thread can be reordered before this load. All writes in other threads that release the same atomic variable are visible in the current thread.
+memory_order_acquire -	A load operation with this memory order performs the acquire operation on the affected memory location: no reads or writes in the current thread can be reordered "before" this load. All writes in other threads that release the same atomic variable are visible in the current thread.
 
-memory_order_release - 	A store operation with this memory order performs the release operation: no reads or writes in the current thread can be reordered after this store. All writes in the current thread are visible in other threads that acquire the same atomic variable (see Release-Acquire ordering below) and writes that carry a dependency into the atomic variable become visible in other threads that consume the same atomic .
+memory_order_release - 	A store operation with this memory order performs the release operation: no reads or writes in the current thread can be reordered "after" this store. All writes in the current thread are visible in other threads that acquire the same atomic variable (see Release-Acquire ordering below) and writes that carry a dependency into the atomic variable become visible in other threads that consume the same atomic .
 
 memory_order_seq_cst -	A load operation with this memory order performs an acquire operation, a store performs a release operation, and read-modify-write performs both an acquire operation and a release operation, plus a single total order exists in which all threads observe all modifications in the same order.
+	* default memory order
 */
 
