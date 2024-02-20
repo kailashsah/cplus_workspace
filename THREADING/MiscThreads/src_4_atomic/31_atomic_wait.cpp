@@ -29,10 +29,10 @@ void run_atomic_wait();
 using namespace std::literals;
 
 void run_atomic_wait() {
-	std::atomic<bool> all_tasks_completed{ false };
-	std::atomic<unsigned> completion_count{};
-	std::future<void> task_futures[16];
-	std::atomic<unsigned> outstanding_task_count{ 16 };
+	std::atomic<bool>		all_tasks_completed{ false };
+	std::atomic<unsigned>	completion_count{};
+	std::future<void>		task_futures[16];
+	std::atomic<unsigned>	outstanding_task_count{ 16 };
 
 	// Spawn several tasks which take different amounts of
 	// time, then decrement the outstanding task count.
@@ -49,12 +49,12 @@ void run_atomic_wait() {
 				// the waiter (main thread in this case).
 				if (outstanding_task_count.load() == 0)
 				{
-					all_tasks_completed = true;
-					all_tasks_completed.notify_one();
+					all_tasks_completed = true;			// (IMP)
+					all_tasks_completed.notify_one();	// (1)
 				}
 			});
 
-	all_tasks_completed.wait(false);
+	all_tasks_completed.wait(false); // it waits until notifies by (1)
 
 	std::cout << "Tasks completed = " << completion_count.load() << '\n';
 }

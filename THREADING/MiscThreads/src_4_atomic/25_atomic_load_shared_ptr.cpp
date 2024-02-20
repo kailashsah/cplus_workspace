@@ -23,14 +23,14 @@ public:
 	test_atomic_my_data(int arg) :x{ arg } {
 
 	}
-	virtual void print() { // IMP - we defined virtual here.
+	virtual void print() { // IMP - we defined virtual here. so it is not real atomic type
 		cout << "class memeber value is " << x << endl;
 	}
 };
 
 void run_atomit_udt_two_crashing() {
 	//1.
-	std::shared_ptr<test_atomic_my_data> p;
+	std::shared_ptr<test_atomic_my_data> p;// make_shared<>() is not used, so not valid memory associated 
 	std::shared_ptr<test_atomic_my_data> p2 = std::atomic_load(&p);
 	p2->print();// gives a crash
 }

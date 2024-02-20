@@ -41,13 +41,18 @@ struct ttas_lock {
 	atomic<bool> lock_{ false };
 
 	void lock() {
+		// if it is not locked, the value of lock_ is false.
 		for (;;) {
-			if (!lock_.exchange(true, std::memory_order_acquire)) {
-				// tries spin but failed
+			if (!lock_.exchange(true, std::memory_order_acquire)) //return previous value of lock_
+			{
+				
 				// for exchange() - https://en.cppreference.com/w/cpp/atomic/atomic/exchange
 				break;
-			}
-			while (lock_.load(std::memory_order_relaxed)) { // if spin failed, do wait
+			} 
+			// tries spin but failed
+
+			while (lock_.load(std::memory_order_relaxed)) { // if spin failed, do wait .. lock_ has true value.
+
 				//__builtin_ia32_pause(); // On GCC 
 				_mm_pause(); // on msvc
 				/*
@@ -96,7 +101,7 @@ public:
 		atomic_flag.clear(std::memory_order_release);
 	}
 };
-const int count_to = 1000000;
+const int COUNT_TO = 1000000;
 volatile int g_iValue = 0;
 //1.
 //Spinlock l;
@@ -153,7 +158,7 @@ void run_spin_lock() {
 	std::cout << "SpinLock inc MyTest start" << std::endl;
 	g_iValue = 0;
 	for (int i = 0; i < num_workers; ++i)
-		threads.push_back(std::move(std::thread(task_using_spinlock, count_to)));
+		threads.push_back(std::move(std::thread(task_using_spinlock, COUNT_TO)));
 
 	for (auto it = threads.begin(); it != threads.end(); it++)
 		it->join();
@@ -165,8 +170,8 @@ void run_spin_lock() {
 	std::cout << "time taken for function() %.2lf seconds.\n" << std::endl;
 
 	//std::cout << std::fixed << std::setw(11) << std::setprecision(6)  << std::setfill('0') << difference;
-	std::cout << difference;
-	if (g_iValue == count_to * num_workers)
+	std::cout << difference << endl;
+	if (g_iValue == COUNT_TO * num_workers)
 	{
 		std::cout << "SpinLock  passed" << std::endl;
 		return;
@@ -179,7 +184,7 @@ void run_spin_lock() {
 
 }
 
-//int main(int, char**)
-//{
-//	run_spin_lock();
-//}
+int main(int, char**)
+{
+	run_spin_lock();
+}

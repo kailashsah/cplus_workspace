@@ -71,9 +71,9 @@
     <ClCompile Include="src_4_atomic\21_atomic_compare_exchange_strong.cpp" />
     <ClCompile Include="src_4_atomic\22_atomic_compare_exchange_weak.cpp" />
     <ClCompile Include="src_4_atomic\24_atomic_udt_one.cpp" />
-    <ClCompile Include="src_4_atomic\25_atomic_udt_two.cpp" />
-    <ClCompile Include="src_4_atomic\27_atomic_shared_ptr.cpp" />
-    <ClCompile Include="src_4_atomic\28_atomic_shared_ptr_int.cpp" />
+    <ClCompile Include="src_4_atomic\25_atomic_load_shared_ptr.cpp" />
+    <ClCompile Include="src_4_atomic\27_shared_ptr_multithreading.cpp" />
+    <ClCompile Include="src_4_atomic\28_atomic_shared_ptr.cpp" />
     <ClCompile Include="src_4_atomic\29_atomic_int.cpp" />
     <ClCompile Include="src_4_atomic\31_atomic_wait.cpp" />
     <ClCompile Include="src_4_atomic\33_atomic_ref.cpp" />
