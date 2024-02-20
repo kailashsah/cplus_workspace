@@ -49,11 +49,11 @@ void run_shared_ptr_two() {
 	cout << "end of calling fn" << endl;
 }
 
-int main()
-{
-	run_shared_ptr_two();
-	return 0;
-}
+//int main()
+//{
+//	run_shared_ptr_two();
+//	return 0;
+//}
 
 /*
 note: TAB is the fun scope changes
