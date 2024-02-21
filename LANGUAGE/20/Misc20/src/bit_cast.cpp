@@ -5,8 +5,20 @@ using namespace std;
 	1. reinterpret_cast<> https://www.geeksforgeeks.org/reinterpret_cast-in-c-type-casting-operators/ 
 	2. When it is needed to interpret the bytes of an object as a value of a different type, std::memcpy or std::bit_cast (since C++20) can be used
 	3. It is generating a new object as if by copying its value representation from an existing one. It's a low-level tool, but it's not a tool that messes with the type system. So it would be strange to spell a "safe" operation the same way you spell a "dangerous" one.
-*/
 
+	4. 
+		bit_cast(const From& src) noexcept
+		{
+			static_assert(std::is_trivially_constructible_v<To>,
+				"This implementation additionally requires "
+				"destination type to be trivially constructible");
+ 
+			To dst;
+			std::memcpy(&dst, &src, sizeof(To)); // <--
+			return dst;
+		}
+*/
+#include <bit> // std::bit_cast
 void run_bit_cast()
 {
 	// int ptr & float ptr
