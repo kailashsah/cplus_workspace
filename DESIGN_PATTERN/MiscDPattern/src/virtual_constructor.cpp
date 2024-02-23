@@ -107,6 +107,9 @@ Base* Base::Create(int id)
 //// UTILITY START
 class User
 {
+private:
+	Base* pBase;
+
 public:
 	User() : pBase(0) // initialize the private member
 	{
@@ -142,8 +145,6 @@ public:
 		pBase->DisplayAction();
 	}
 
-private:
-	Base* pBase;
 };
 
 //// UTILITY END
