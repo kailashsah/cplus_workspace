@@ -169,8 +169,8 @@ void run_virtual_ctr()
 	*/
 }
 
-void main()
-{
-	run_virtual_ctr();
-}
+//void main()
+//{
+//	run_virtual_ctr();
+//}
 
