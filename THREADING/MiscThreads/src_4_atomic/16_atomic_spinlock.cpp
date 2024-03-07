@@ -184,7 +184,7 @@ void run_spin_lock() {
 
 }
 
-int main(int, char**)
-{
-	run_spin_lock();
-}
+//int main(int, char**)
+//{
+//	run_spin_lock();
+//}

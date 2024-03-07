@@ -20,7 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\crtp.cpp" />
-    <ClCompile Include="src\singleton.cpp" />
+    <ClCompile Include="src\singleton_by_sidd.cpp" />
     <ClCompile Include="src\virtual_constructor.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
