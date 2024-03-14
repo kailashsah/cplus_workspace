@@ -17,11 +17,29 @@ using namespace std;
 */
 
 #include <thread> // std::this_thread, thread class
+//1. ------------------
 void run_thread_basics()
 {
 	//1.
 	unsigned num_threads = std::thread::hardware_concurrency();
 	
+}
+
+
+//2. ------------------
+struct my_thread {
+	int my_data = 0;
+	void operator()() { my_data = 1; }
+};
+
+my_thread this_threadfn;
+std::thread t1;
+
+void run() {
+	int a;
+	t1 = thread(std::ref(this_threadfn));
+	if (t1.joinable()) // check required to see if t1 hold the alive thread or valid thread.
+		t1.join();
 }
 
 //int main()

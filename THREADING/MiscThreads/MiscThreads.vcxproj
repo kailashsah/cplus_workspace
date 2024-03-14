@@ -66,6 +66,7 @@
     <ClCompile Include="src_3\13_thread_basics.cpp" />
     <ClCompile Include="src_3\56_yield_vs_sleep_for.cpp" />
     <ClCompile Include="src_4_atomic\11_atomic.cpp" />
+    <ClCompile Include="src_4_atomic\12_atomic_basics.cpp" />
     <ClCompile Include="src_4_atomic\14_atomic_memory_order.cpp" />
     <ClCompile Include="src_4_atomic\16_atomic_spinlock.cpp" />
     <ClCompile Include="src_4_atomic\21_atomic_compare_exchange_strong.cpp" />
