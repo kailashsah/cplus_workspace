@@ -8,8 +8,11 @@ using namespace std;
 
 	2. The program increments the values in a container using several threads. Then the final sum is printed. Non-atomic access may "loss" the results of some operations due to data-races.
 
-	3. todo -	https://mariusbancila.ro/blog/2020/04/21/cpp20-atomic_ref/
-				https://www.linkedin.com/pulse/atomic-references-c20-rainer-grimm 
+	3. std::atomic and std::atomic_ref support in C++20 member functions notify_one, notify_all, and wait. The three functions provide a convenient way to synchronize threads.
+
+
+	4. todo -	https://mariusbancila.ro/blog/2020/04/21/cpp20-atomic_ref/
+				https://www.linkedin.com/pulse/atomic-references-c20-rainer-grimm
 */
 void run_atomic_ref();
 //
