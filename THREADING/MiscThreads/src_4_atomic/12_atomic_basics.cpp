@@ -35,6 +35,9 @@ void run_copy_ctor_deleted() {
 }
 
 void run_ref_inside_atomic_int() {
+	// atomic<int> always copy the reference whereas atomic_ref<> can take the actual reference
+
+	//1.
 	{
 
 		int val{ 5 };
@@ -47,7 +50,7 @@ void run_ref_inside_atomic_int() {
 
 		std::cout << std::endl;
 	}
-
+	//2.
 	{
 
 		int val{ 5 };
