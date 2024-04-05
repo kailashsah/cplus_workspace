@@ -5,10 +5,17 @@ using namespace std;
 #define cplus20
 #ifdef cplus20
 
-#include <coroutine> 
-// https://www.youtube.com/watch?v=TgAFja228HU
-// Implementing Lazy generators with Coroutines
+/* 
+	1. Implementing Lazy generators with Coroutines
+	2. https://www.youtube.com/watch?v=TgAFja228HU
+	3. The C++ coroutines are a control structure in which the control flow is passed along with the different routines without returning.
+		The C++ coroutine is a function that can prevent the execution that needs to be resumed later.
 
+	3. The C++ coroutines are of stackless behavior which is why this function returns the result to the caller and continues the specified coroutine that's again stored within the isolated area or stack that's as of now defined.
+
+	4. https://www.scaler.com/topics/cpp-coroutines/ - for understanding
+*/
+#include <coroutine> 
 template<typename T>
 class generator {
 public:
@@ -62,7 +69,8 @@ generator<int> getInt(int start = 0, int step =1)
 	auto value = start;
 	for (int i = 0;; ++i)
 	{
-		co_yield value;  // co_yield is operator
+		co_yield value;  // co_yield is operator 
+		// the co_yield expression — to suspend execution returning a value
 
 		value += step;
 
