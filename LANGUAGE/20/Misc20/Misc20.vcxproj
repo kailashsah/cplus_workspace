@@ -170,8 +170,8 @@
     <ClCompile Include="src\31_span.cppm" />
     <ClCompile Include="src\src_adv\atomic_shared_impl.cppm" />
     <ClCompile Include="src\src_adv\concept_require.cpp" />
-    <ClCompile Include="src\src_adv\coroutine_generator.cpp" />
-    <ClCompile Include="src\src_adv\coroutine_resume.cpp" />
+    <ClCompile Include="src\src_adv\coroutine_02_generator.cpp" />
+    <ClCompile Include="src\src_adv\coroutine_01_resume.cpp" />
     <ClCompile Include="src\src_adv\is_standard_layout.cpp" />
     <ClCompile Include="src\13_string_view.cpp" />
     <ClCompile Include="src\46_templ_in_lambdas.cppm" />

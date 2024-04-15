@@ -57,6 +57,7 @@ resumable fun_corountine()
 	cout << "b" << endl;
 	co_await std::suspend_always(); 
 	cout << "c" << endl;
+	co_return; // can able to return the coroutine functn from anywhere in the fn
 }
 
 //int main()
