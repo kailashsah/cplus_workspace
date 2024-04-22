@@ -55,7 +55,7 @@ struct B {
 			val_ = arg.val_;
 
 			//3. release data pointer from source object.
-			arg.val_ = {};  // arg.Val_ = nullptr			
+			arg.val_ = {};  // arg.Val_ = nullptr (if val_ is a pointer)			
 
 		}
 

@@ -141,6 +141,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\21_rvalue_when_use_move_ctor.cpp" />
     <ClCompile Include="src\22_auto&amp;&amp;.cpp" />
     <ClCompile Include="src\23_auto_pointer.cpp" />
     <ClCompile Include="src\24_rvalue_return_fm_function.cpp" />
