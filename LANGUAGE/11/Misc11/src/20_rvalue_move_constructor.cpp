@@ -84,6 +84,13 @@ void run_copy_constructor() {
 	B b_a2(B("a"));
 	B b_a3 = B("a");
 
+	{
+		//copy ctor with dynamic object
+		B* pB1 = new B;
+		B* pB2 = pB1;			// simple pointer assignment, this will not call copy ctor
+		B* pB3 = new B(*pB1);	// copy ctr
+	}
+
 	cout << "prg ends" << endl;
 }
 /*

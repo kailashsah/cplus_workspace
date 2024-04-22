@@ -38,7 +38,8 @@ struct B2 {
 		val_ = val.val_;
 
 		cout << "move copy ctor " << endl;
-		// "val" will die there ( if rvalue provided  move(B("string_move_ctor_")) ) & prints dtor for value : string_move_ctor_ -- imp
+		// "val" will die there ( if rvalue provided  move(B("string_move_ctor_")) ) & 
+			prints dtor for value : string_move_ctor_ -- imp
 
 	}
 	*/
@@ -56,7 +57,7 @@ struct B2 {
 
 void run_move_ctorr() {
 	//1.
-	B2 b_a4 = move(B2("string_value"));// copy ctor <=
+	B2 b_a4 = move(B2("string_value"));// copy ctor <= if not deleted also not defined
 	/*
 		if B2(B2&&) = delete;
 		error C2280: 'B2::B2(B2 &&)': attempting to reference a deleted function
@@ -65,7 +66,7 @@ void run_move_ctorr() {
 	//2.
 	cout << "---------------" << endl;
 	B2 b_a5;
-	b_a5 = move(b_a4);//  assignment fn <=
+	b_a5 = move(b_a4);//  assignment fn <=   if not deleted also not defined
 	/*
 		if B2& operator=(B2&&) = delete;
 		error C2280: 'B2 &B2::operator =(B2 &&)': attempting to reference a deleted function
