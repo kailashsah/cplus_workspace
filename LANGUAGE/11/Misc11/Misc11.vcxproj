@@ -178,6 +178,7 @@
     <ClCompile Include="src\src_pointers\22_shared_ptr_two.cpp" />
     <ClCompile Include="src\src_pointers\15_unique_ptr.cpp" />
     <ClCompile Include="src\src_pointers\17_unique_ptr_two.cpp" />
+    <ClCompile Include="src\src_pointers\25_shared_ptr_custom.cpp" />
     <ClCompile Include="src\src_pointers\26_weak_ptr_lock.cpp" />
     <ClCompile Include="src\src_questions\binary_search.cpp" />
     <ClCompile Include="src\src_questions\fill_vector_random_integer.cpp" />
