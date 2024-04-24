@@ -17,7 +17,8 @@ void func_str(std::string str)
 void run_stringview()  // string view
 {
 	string_view sv = "str literal";
-	//1.
+	
+	//1. string_view - to - string object
 	string str_reg{ sv };
 	cout << str_reg << endl; // str literal
 	

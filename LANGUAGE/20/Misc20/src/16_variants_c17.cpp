@@ -14,6 +14,7 @@ using namespace std;
 void run_variant() {
 	//1.
 	std::variant<int, double> var{ 11 };
+	
 	cout << get<int>(var) << endl;
 	cout << get<0>(var) << endl;
 

@@ -3,17 +3,21 @@ using namespace std;
 
 /*
 	1. container.contains()
-	2. 
+	2.
 */
 #include <map>
 #include <array>
+#include <list>
+#include <set>
 void run_map()
 {
 	//1.
+
 	/*
-		list<int> ll = {2,5,6};
-		if(ll.contains(2))			// list don't has contains, it has elements not key
-			cout << " list contains " << endl;
+	list<int> ll = { 2,5,6 };
+	if (ll.contains(2))			// list don't has contains, it has elements not key
+		// contains is not the member of list<>
+		cout << " list contains " << endl;
 	*/
 
 	//2.
@@ -27,10 +31,14 @@ void run_map()
 	if (mmap.contains(1))
 		cout << " multimap found " << (*(mmap.find(1))).second << endl;  // multimap found a
 
+
 	//4.
 	//array arr{ 1,2,3 };
 	//arr.contains(1); // error - 'contains': is not a member of 'std::array<_First,3>'
 
-
+	//5.
+	set<int> sett = { 1,2,3 };
+	if (sett.contains(3))
+		cout << "element found in set " << endl;
 }
 
