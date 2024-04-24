@@ -1,7 +1,16 @@
 #include <iostream>
-
 using namespace std;
 
+/*
+	1. custom shared_ptr<> 
+	2. reference- 
+		https://codereview.stackexchange.com/questions/283909/implementation-of-a-shared-pointer-constructors-and-destructor
+		https://pvs-studio.com/en/blog/terms/6515/ 
+
+	3.
+
+
+*/
 #include <memory>
 
 class A {

@@ -3,7 +3,8 @@
 using namespace std;
 
 /*
-Forward List is preferred over the list when only forward traversal is required (same as the singly linked list is preferred over doubly linked list) as we can save space. Some example cases are, chaining in hashing, adjacency list representation of the graph, etc.
+	1. Forward List is preferred over the list when only forward traversal is required (same as the singly linked list is preferred over doubly linked list) as we can save space. 
+		Some example cases are, chaining in hashing, adjacency list representation of the graph, etc.
 */
 //
 void run_forward_list_insert();

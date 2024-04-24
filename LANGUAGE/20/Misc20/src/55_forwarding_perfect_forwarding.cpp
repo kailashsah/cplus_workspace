@@ -80,7 +80,8 @@ void run_perfect_forwarding()
 
 		Within a function that takes its arguments as rvalue references, the named parameter is treated as an lvalue reference. Consequently the call to g(t) from h always calls the lvalue overload.
 
-		If we changed the call to g(std::forward<X>(t)) then it would always call the rvalue-reference overload.
+		g(std::forward<X>(t)) - If we changed the call to g(std::forward<X>(t)) then it would always call the rvalue-reference overload.
+		
 		The only way to do this with "normal" functions is to create two overloads: one for lvalues and one for rvalues.
 	*/
 	h(X()); // 3
