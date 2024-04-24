@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 /*
-	1. 
+	1. prime numbers - 
+		a whole number greater than 1 that cannot be exactly divided by any whole number other than itself and 1 (e.g. 2, 3, 5, 7, 11).
 	2. 
 */
 void run_isPrime();
@@ -37,21 +38,24 @@ bool is_prime_optimized(int n) {
 
 }
 void run_isPrime() {
-	int K = 10;
-	int i = 2; int k = 0;
-	while (k < K) {
-		if (is_prime_optimized(i))	 // 5 7 11 13 17 19 23 29 31
-		//if (is_prime(i)) // 2 3 5 7 11 13 17 19 23 29
+	int till_this_count = 10;
+	int incrementor = 2;
+	int countof_found_elements = 0; 
+
+	while (countof_found_elements < till_this_count) {
+		
+		if (is_prime_optimized(incrementor))	 //2 3 5 7 11 13 17 19 23 29 31
+		//if (is_prime(incrementor))			// 2 3 5 7 11 13 17 19 23 29
 		{
-			cout << i << " ";
-			k++;
+			cout << incrementor << " ";
+			countof_found_elements++;
 		}
-		i++;
+		incrementor++;
 	}
 }
 
-//int main()
-//{
-//	run_isPrime();
-//	return 0;
-//}
+int main()
+{
+	run_isPrime();
+	return 0;
+}
