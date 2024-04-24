@@ -3,8 +3,10 @@ using namespace std;
 /*
 	1. prime numbers - 
 		a whole number greater than 1 that cannot be exactly divided by any whole number other than itself and 1 (e.g. 2, 3, 5, 7, 11).
-	2. 
+	
+	2. find first 10 prime numbers.
 */
+
 void run_isPrime();
 //
 bool isPrime(int n) {
@@ -27,7 +29,7 @@ bool isPrime(int n) {
 }
 bool is_prime_optimized(int n) {
 
-	int m = n / 2;
+	int m = n / 2;  // (IMP)
 	int flag = 0;
 	for (int i = 2; i <= m; ++i) {
 		if (n % i == 0) {
@@ -54,8 +56,8 @@ void run_isPrime() {
 	}
 }
 
-int main()
-{
-	run_isPrime();
-	return 0;
-}
+//int main()
+//{
+//	run_isPrime();
+//	return 0;
+//}

@@ -15,26 +15,26 @@ void pointers_rvalue()
 	S s;
 	int& a = s.get();
 	s.get()++;
-	cout << "int& a : " << a << endl;
+	cout << "int& a : " << a << endl; //1
 
 	cout << "rvalue" << endl;
 	int x{};
-	cout << "int x{} : " << x << endl;
+	cout << "int x{} : " << x << endl; // 0
 
 	int& ref1{ x };
 	cout << "int& ref1{ x } : " << ref1 << endl;
 	ref1 = 1;
 	cout << "after ref1 = 1;: " << endl;
-	cout << "value of x: " << x << endl;
-	cout << "value of ref1: " << ref1 << endl;
+	cout << "value of x: " << x << endl;// 1
+	cout << "value of ref1: " << ref1 << endl; //1
 
 	//int& ref2{ 5 }; // connot conver int to int&
 
 	const int& ref3{ 5 };
-	cout << "const int& ref3{ 5 } : " << ref3 << endl;
+	cout << "const int& ref3{ 5 } : " << ref3 << endl;//5
 
 	int&& ref5{ 5 };
-	cout << "int&& ref5{ 5 }: " << ref3 << endl;
+	cout << "int&& ref5{ 5 }: " << ref3 << endl; //5
 
 }
 

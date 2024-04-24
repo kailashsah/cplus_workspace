@@ -50,6 +50,8 @@ public:
 
 		//2.
 		//breadth = sample.breadth; // crash at destructor
+		
+		//fix
 		*breadth = *(sample.breadth);
 		height = sample.height;
 	}

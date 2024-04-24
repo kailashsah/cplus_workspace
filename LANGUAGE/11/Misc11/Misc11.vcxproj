@@ -180,10 +180,10 @@
     <ClCompile Include="src\src_pointers\17_unique_ptr_two.cpp" />
     <ClCompile Include="src\src_pointers\25_shared_ptr_custom.cpp" />
     <ClCompile Include="src\src_pointers\26_weak_ptr_lock.cpp" />
-    <ClCompile Include="src\src_questions\binary_search.cpp" />
+    <ClCompile Include="src\src_questions\10_binary_search.cpp" />
     <ClCompile Include="src\src_questions\fill_vector_random_integer.cpp" />
     <ClCompile Include="src\src_questions\int_reference.cpp" />
-    <ClCompile Include="src\src_questions\is_prime_optimized.cpp" />
+    <ClCompile Include="src\src_questions\13_is_prime_optimized.cpp" />
     <ClCompile Include="src\src_questions\random_numbers.cpp" />
     <ClCompile Include="src\src_questions\static_member_init.cpp" />
     <ClCompile Include="src\37_template_lazy.cpp" />
@@ -202,7 +202,7 @@
     <ClCompile Include="src\is_pointer_src.cpp" />
     <ClCompile Include="src\tutorial_two.cpp" />
     <ClCompile Include="src\40_template_class_in_template.cpp" />
-    <ClCompile Include="src\test_shallowcopy.cpp" />
+    <ClCompile Include="src\15_test_shallowcopy.cpp" />
     <ClCompile Include="src\tutorial_one.cpp" />
     <ClCompile Include="src\91_type_decltype.cpp" />
     <ClCompile Include="src\98_version_cplus.cpp" />
