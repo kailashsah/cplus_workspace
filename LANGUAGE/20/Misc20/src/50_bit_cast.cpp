@@ -37,7 +37,7 @@ void run_bit_cast()
 	// static cast
 	int i = 8;
 	float f = 5.5;
-	int ii = static_cast<int>(f);
+	int ii = static_cast<int>(f);	// 5
 	float ff = static_cast<float>(i);
 	//cout << ii; // 5
 	cout << ff;

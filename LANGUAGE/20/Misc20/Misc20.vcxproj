@@ -144,7 +144,8 @@
     <ClCompile Include="src\17_designated_constructor.cpp" />
     <ClCompile Include="src\39_atomic_shared_ptr.cppm" />
     <ClCompile Include="src\38_atomic_shared_ptr_two.cpp" />
-    <ClCompile Include="src\bit_cast.cpp" />
+    <ClCompile Include="src\50_bit_cast.cpp" />
+    <ClCompile Include="src\53_forwarding.cpp" />
     <ClCompile Include="src\concept_in_fn.cpp" />
     <ClCompile Include="src\concept_user_defined.cpp" />
     <ClCompile Include="src\42_consteval.cpp" />
