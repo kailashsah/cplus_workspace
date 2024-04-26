@@ -165,6 +165,7 @@
     <ClCompile Include="src\33_initializer_aggregate.cpp" />
     <ClCompile Include="src\31_initializer_list.cpp" />
     <ClCompile Include="src\87_lambda_function_trailing_type.cpp" />
+    <ClCompile Include="src\oops\11_abstract_class_fn_call.cpp" />
     <ClCompile Include="src\readme_cplus.cpp" />
     <ClCompile Include="src\35_reference_wrapper.cpp" />
     <ClCompile Include="src\20_rvalue_move_constructor.cpp" />
