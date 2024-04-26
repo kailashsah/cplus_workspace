@@ -2,11 +2,11 @@
 using namespace std;
 
 /*
-	1. you can't really compare std::function with std::mem_fn. 
-		std::function - is a class template whose type you specify, 
+	1. you can't really compare std::function with std::mem_fn.
+		std::function - is a class template whose type you specify,
 		std::mem_fn -  is a function template with unspecified return type. There really isn't a situation in which you'd actually consider one versus the other.
 
-	2. A better comparison might be between mem_fn and std::bind. 
+	2. A better comparison might be between mem_fn and std::bind.
 		std::bind - function template
 		std::mem_fn - function template
 		There, for the specific use-case of a pointer-to-member, mem_fn is going to a lot less verbose if all you want to do is pass-through all the arguments. Given this simple type:
@@ -68,18 +68,19 @@ void run_memfn_with_unique_ptr() {
 	auto access_data = std::mem_fn(&A::x);
 	//1.
 	auto ptr = make_unique<A>(); // prints '0'
-	
+
 	//2.
 	//auto ptr = make_unique<A>(a); // call copy ctor // prints 2.
-	
-	
-	cout << access_data(ptr) << endl;
+
+	cout << access_data(a) << endl; // 2 .. bcoz A a{ 2 };
+
+	cout << access_data(ptr) << endl; // 0
 }
 
 //int main()
 //{
-//	run_mem_fn_vs_bind();
-//	run_with_additional_argument();
+//	//run_mem_fn_vs_bind();
+//	//run_with_additional_argument();
 //	run_memfn_with_unique_ptr();
 //	return 0;
 //}
