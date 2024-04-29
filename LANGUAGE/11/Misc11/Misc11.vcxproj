@@ -146,6 +146,8 @@
     <ClCompile Include="src\23_auto_pointer.cpp" />
     <ClCompile Include="src\24_rvalue_return_fm_function.cpp" />
     <ClCompile Include="src\62_string_operation_by_stl.cpp" />
+    <ClCompile Include="src\66_scoped_enum.cpp" />
+    <ClCompile Include="src\67_unscoped_enum_issues.cpp" />
     <ClCompile Include="src\83_mem_fn_vs_bind.cpp" />
     <ClCompile Include="src\29_cast_const_cast_three.cpp" />
     <ClCompile Include="src\28_cast_const_cast_two.cpp" />
