@@ -8,7 +8,7 @@
 #define new DEBUG_NEW
 #endif
 
-#include "process_class.h"
+#include "src/process_class.h" 
 // The one and only application object
 
 CWinApp theApp;

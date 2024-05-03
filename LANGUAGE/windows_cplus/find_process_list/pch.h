@@ -9,5 +9,4 @@
 
 // add headers that you want to pre-compile here
 #include "framework.h"
-#define _CRT_SECURE_NO_WARNINGS
 #endif //PCH_H

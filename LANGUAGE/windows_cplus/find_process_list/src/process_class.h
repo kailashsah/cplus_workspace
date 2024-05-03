@@ -1,7 +1,7 @@
 // find_process_list.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 #pragma once
-#include "pch.h"
+#include "../pch.h"
 
 #include <fstream> // ifstream
 #include <string> // getline()
@@ -14,6 +14,6 @@ inline CString Truncate(CString str, int start);
 
 void GetRunningProcessListUsingTaskList(CString& strProcessList);
 
-
+bool IsDLLInBlockedlist();
 
 
