@@ -144,6 +144,7 @@
     <ClCompile Include="src\algo_stl\fill_n.cpp" />
     <ClCompile Include="src\algo_stl\iota.cpp" />
     <ClCompile Include="src\library_defined\11_array.cpp" />
+    <ClCompile Include="src\library_defined\14_vector_elements_dtor.cpp" />
     <ClCompile Include="src\library_defined\container_adapters\20_priority_queue.cpp" />
     <ClCompile Include="src\library_defined\container_adapters\15_queue.cpp" />
     <ClCompile Include="src\library_defined\container_adapters\90_readme_container_adpaters.cpp" />
