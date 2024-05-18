@@ -72,8 +72,8 @@ void find_substr_str() {
 
 	string str = "first 21 second 21 third ";
 	cout << endl << "find_substr_str() for '21' in : " << str << endl;
-	uint32_t pos = 0;
-	uint32_t  lpos = 0; //last position
+	size_t pos = 0;
+	size_t  lpos = 0; //last position
 	string tofind = "21";
 	while ((pos = str.find(tofind, pos)) != string::npos) {
 		string ss = str.substr(lpos, pos - lpos);

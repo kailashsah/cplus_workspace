@@ -47,7 +47,6 @@ void run_dtor_exception()
 	}
 
 	// code to check conituation of prg, above code terminates the process if more than one inner exception called & not handled inside the source point.
-	int i;
 	cout << "int i " << endl;
 	std::cout << "ends";
 	return;

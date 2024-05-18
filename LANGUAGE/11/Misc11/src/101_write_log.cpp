@@ -18,7 +18,7 @@ void WriteDebugLog(string str)
 		out << this_thread::get_id() << " " << str << "\n";
 		out.close();
 	}
-	catch (exception& e)
+	catch (exception& )
 	{
 
 

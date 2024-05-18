@@ -20,6 +20,7 @@ int bin_search(int key, int* a, int l, int h) {
 		int i = 0;
 		return 999;
 	}
+	return 999;
 }
 
 

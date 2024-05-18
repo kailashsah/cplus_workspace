@@ -13,7 +13,9 @@ void handler() {
 }
 
 //1.
-void f1(void) throw(int) { // it shows f1 can throw as int value
+void f1(void) noexcept(false)			//throw(int) -> only valid in c++14
+{ 
+	// it shows f1 can throw as int value
 	printf_s("About to throw 1\n");
 	if (1)
 		throw 1; //(1).

@@ -24,10 +24,10 @@ void run_exception()
 	}
 
 
-	catch (Derived& d) {
+	catch (Derived& ) {
 		cout << "Caught Derived Exception";
 	}
-	catch (Base& b) {
+	catch (Base& ) {
 		cout << "Caught Base Exception";
 	}
 	//getchar();

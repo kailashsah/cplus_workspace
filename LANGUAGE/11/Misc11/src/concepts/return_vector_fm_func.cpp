@@ -24,7 +24,7 @@ vector<string>& fn_v2(vector<string> vtr) { // without reference version
 //3.
 vector<string>& fn_v3() {
 	vector<string> vtr = { "a", "b", "c" };
-	return vtr; // warning C4172: returning address of local variable or temporary: vtr
+	return vtr;			// warning C4172: returning address of local variable or temporary: vtr
 	// print blanks.
 	// not advised
 }
