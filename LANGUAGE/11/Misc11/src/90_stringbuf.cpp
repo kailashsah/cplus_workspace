@@ -30,9 +30,35 @@ void run_stringbuf()
 
 }
 
+void run_read_line_by_line() {
+
+	string text = "12\n34\n56\n67\n89";
+
+	//1. Using stringstreams
+	istringstream iss(text);
+	string line;
+	while (getline(iss, line)) {
+		cout << line << '\n';
+	}
+
+	//2. iterator approach
+	string::iterator line_start, line_end;
+	line_start = text.begin();
+
+	while (line_start != text.end()) {
+		line_end = find(line_start, text.end(), '\n');
+		
+		cout << string(line_start, line_end) << '\n';
+		if (line_end == text.end())
+			break;
+
+		line_start = line_end + 1;
+	}
+}
 
 //int main()
 //{
-//	run_stringbuf();
+//	//run_stringbuf();
+//	run_read_line_by_line();
 //	return 0;	
 //}
