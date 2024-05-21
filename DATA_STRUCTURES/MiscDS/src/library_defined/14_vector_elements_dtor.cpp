@@ -4,19 +4,19 @@
 #include <numeric>
 using namespace std;
 /*
-	1. 
+	1.
 
 */
 
 //......................................... class inside vector
 
-class CPersonA{
+class CPersonA {
 public:
 	char ch;
 	CPersonA(char arg) :ch(arg) {}
 	virtual ~CPersonA() {
 		cout << "dtor " << ch << endl;
-}
+	}
 };
 
 
@@ -55,10 +55,10 @@ void run_vector_inside_class() {
 	b.vec.emplace_back('1');
 	b.vec.emplace_back('2');
 	/*
-		dtor 1
+		dtor 1		CPersonA
 		dtor  CPersonB A
-		dtor 1
-		dtor 2
+		dtor 1		CPersonA
+		dtor 2		CPersonA
 
 		clear off members inside the vecotr
 	*/
@@ -90,7 +90,7 @@ unique_ptr<CPersonA> fun() {
 	auto a = make_unique<CPersonA>('3');
 	// std::unique_ptr<CPersonA, std::default_delete<CPersonA> > a = std::make_unique<CPersonA>('3') 
 	// /* NRVO variable */;
-	
+
 	return a;
 }
 
@@ -98,7 +98,7 @@ void run_vector_with_unique_ptr_auto() {
 	//3.
 	auto c = fun();
 	//auto d = c; // error deleted function
-	
+
 	unique_ptr<CPersonA> ptr;
 	//ptr = c; // error op = deleted function
 
@@ -106,24 +106,26 @@ void run_vector_with_unique_ptr_auto() {
 	//1.
 	//auto a = make_unique<CPersonA>('1');
 	//b.vec.emplace_back(a);// error - calling copy constuctor of unique_ptr<>, its a deleted function.
-	
+
 	//2.
 	b.vec.emplace_back(make_unique < CPersonA>('2'));
 
-	
+
 	/*
 		dtor  CPersonC A
-		dtor 1
-		dtor 2
+		dtor 1			CPersonA
+		dtor 2			CPersonA
 
 	*/
 }
+//......................................... main
+ 
 
-int main()
-{
-	//run_vector_dtor();
-	//run_vector_inside_class();
-	//run_vector_with_unique_ptr();	
-	run_vector_with_unique_ptr_auto();
-	return 0;
-}
+//int main()
+//{
+//	//run_vector_dtor();
+//	//run_vector_inside_class();
+//	//run_vector_with_unique_ptr();	
+//	run_vector_with_unique_ptr_auto();
+//	return 0;
+//}
