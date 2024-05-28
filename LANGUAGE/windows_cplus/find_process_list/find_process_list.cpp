@@ -48,11 +48,13 @@ int main()
 
 void driverCode()
 {
-    CString strProcessList;
+    CStringArray strProcessList;
 
     auto fut = async(launch::async, [&]() { GetRunningProcessListUsingTaskList(strProcessList); });
     //GetRunningProcessListUsingTaskList(strProcessList);
     fut.get();
+    
     //wprintf(L"%s \n", strProcessList.GetString()); // not printing
-    AfxMessageBox(strProcessList.GetString());
+    
+    //AfxMessageBox(strProcessList));
 }

@@ -9,6 +9,11 @@
 #define new DEBUG_NEW
 #endif
 
+/*
+	1.  GetRunningProcessListUsingTaskList() saves the ProcessList.txt file in current directory.
+		_tcscat(tcTempPath, _T("//ProcessList.txt"));
+
+*/
 
 inline CString Truncate(CString str, int start)
 {
@@ -24,7 +29,7 @@ inline CString Truncate(CString str, int start)
 *
 * <b> Input Parameters </b>
 *
-* strSoruce - CString object contains the source string to be splitted.
+* strSource - CString object contains the source string to be splitted.
 * strDelimiter - CString object contains the delimiter to be used to split the
 *                 string.
 * nMaxTokens - Unsigned integer contains the count of the tokens splitted from
@@ -61,7 +66,7 @@ vector<CString> Split(CString strSource, CString strDelimiter, unsigned int nMax
 	return vTokens;
 }
 
-void GetRunningProcessListUsingTaskList(CString& strProcessList)
+void GetRunningProcessListUsingTaskList(CStringArray& strProcessList)
 {
 	try
 	{
@@ -69,11 +74,15 @@ void GetRunningProcessListUsingTaskList(CString& strProcessList)
 		FindExecutable(L"cmd.exe", NULL, tcCmdPath);
 
 		TCHAR tcTempPath[MAX_PATH];
-		GetTempPath(MAX_PATH, tcTempPath);
-		_tcscat(tcTempPath, _T("ProcessList.txt"));
+		//GetTempPath(MAX_PATH, tcTempPath);
+		GetCurrentDirectory(MAX_PATH, tcTempPath);
+		_tcscat(tcTempPath, _T("//ProcessList.txt"));
+
+		DeleteFile(tcTempPath); // write afresh
 
 		TCHAR tcProcessParam[MAX_PATH];
-		_tcscpy(tcProcessParam, _T("/K tasklist.exe >> "));
+		//_tcscpy(tcProcessParam, _T("/K tasklist.exe >> "));
+		_tcscpy(tcProcessParam, _T("/K tasklist.exe /V >> "));// detailed
 		_tcscat(tcProcessParam, tcTempPath);
 
 		STARTUPINFO         siStartupInfo;
@@ -126,27 +135,32 @@ void GetRunningProcessListUsingTaskList(CString& strProcessList)
 				vector<CString> vstr = ::Split(CString(STRING.c_str()), L" ");
 				if (vstr.size() > 0)
 				{
-					strProcessList += vstr[0] + L" "/* delimiter */;
+					//strProcessList += vstr[0] + L" <space> "/* delimiter */;
+					strProcessList.Add(vstr[0]);
 				}
 			}
 		}
 		infile.close();
-		DeleteFile(tcTempPath);
+		//DeleteFile(tcTempPath); // dont delete, see the saved file
+		
 		//TerminateProcess(piProcessInfo.hProcess, 1);
 	}
 	catch (CMemoryException* e)
 	{
-		strProcessList += _T("CMemoryException in GetRunningProcessListUsingTaskList");
+		//strProcessList += _T("CMemoryException in GetRunningProcessListUsingTaskList");
+		strProcessList.Add( _T("CMemoryException in GetRunningProcessListUsingTaskList"));
 		e->Delete();
 	}
 	catch (CFileException* e)
 	{
-		strProcessList += _T("CFileException in GetRunningProcessListUsingTaskList");
+		//strProcessList += _T("CFileException in GetRunningProcessListUsingTaskList");
+		strProcessList.Add(_T("CFileException in GetRunningProcessListUsingTaskList"));
 		e->Delete();
 	}
 	catch (CException* e)
 	{
-		strProcessList += _T("CException in GetRunningProcessListUsingTaskList");
+		//strProcessList += _T("CException in GetRunningProcessListUsingTaskList");
+		strProcessList.Add( _T("CFileException in GetRunningProcessListUsingTaskList"));
 		e->Delete();
 	}
 }
@@ -199,6 +213,7 @@ typedef HANDLE(CALLBACK* CREATETOOLHELP32SNAPSHOTFUNC)(DWORD dwFlags, DWORD th32
 typedef BOOL(CALLBACK* PROCESS32FIRSTFUNC)(HANDLE hSnapshot, LPPROCESSENTRY32 lppe);
 typedef BOOL(CALLBACK* PROCESS32NEXTFUNC)(HANDLE hSnapshot, LPPROCESSENTRY32 lppe);
 typedef BOOL(CALLBACK* GETPROCESSMEMORY)(HANDLE hProcess, PPROCESS_MEMORY_COUNTERS ppsmemCounters, DWORD cb);
+
 BOOL LogApplicationsRunning()
 {
 	/*OSVERSIONINFO osvi;

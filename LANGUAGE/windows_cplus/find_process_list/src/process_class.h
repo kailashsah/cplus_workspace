@@ -12,7 +12,7 @@ std::vector<CString> Split(CString strSource, CString strDelimiter, unsigned int
 
 inline CString Truncate(CString str, int start);
 
-void GetRunningProcessListUsingTaskList(CString& strProcessList);
+void GetRunningProcessListUsingTaskList(CStringArray& strProcessList);
 
 bool IsDLLInBlockedlist();
 
