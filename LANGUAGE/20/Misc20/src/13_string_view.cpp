@@ -2,7 +2,10 @@
 using namespace std;
 
 /*
-	1. use string_view when it is required to pass "const string&" in an argument
+	1. use string_view when it is required to pass "const string&" in an argument.
+	2. std::string_view provides read-only access to an existing string (a C-style string, a std::string, or another std::string_view) without making a copy. 
+	
+		Read-only means that we can access and use the value being viewed, but we can not modify it.
 */
 
 void func_sv(std::string_view sv)
