@@ -32,7 +32,13 @@ void run_bit_cast()
 	int newint = static_cast<int>(*pFloat); cout << "newint " << newint << endl; // 6
 	int& int_ref = reinterpret_cast<int&>(*pFloat); cout << "int_ref " << int_ref << endl; //  garbage value 
 	cout << pFloat;// print address 00DCE570
-	int int_bit = std::bit_cast<int>(pFloat); cout << "int_bit " << int_bit << endl; // bit_cast c++20
+	
+	//int int_bit1 = std::bit_cast<int>(pFloat); cout << "int_bit " << int_bit << endl; // bit_cast c++20 // runs fine in win32
+	/*
+		if x64 selected for release or debug, gives error
+		'std::enable_if_t<false,int>' Failed to specialize alias template type traits
+	*/
+	size_t int_bit = std::bit_cast<size_t>(pFloat); cout << "int_bit " << int_bit << endl; // bit_cast c++20
 
 	// static cast
 	int i = 8;
