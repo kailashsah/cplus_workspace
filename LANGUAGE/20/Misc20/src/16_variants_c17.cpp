@@ -53,8 +53,8 @@ void run_variant_two() {
 
 	//2. emplace()
 
-	std::variant<int, std::string> myVariant;
-	myVariant.emplace<std::string>("Hello");
+	std::variant<int, std::string> myVar;
+	myVar.emplace<std::string>("Hello");
 }
 
 #include <algorithm>
