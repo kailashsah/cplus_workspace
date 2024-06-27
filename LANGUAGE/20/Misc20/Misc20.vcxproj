@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\16_variants_c17.cpp" />
+    <ClCompile Include="src\16_visit.cpp" />
     <ClCompile Include="src\17_designated_constructor.cpp" />
     <ClCompile Include="src\39_atomic_shared_ptr.cppm" />
     <ClCompile Include="src\38_atomic_shared_ptr_two.cpp" />
