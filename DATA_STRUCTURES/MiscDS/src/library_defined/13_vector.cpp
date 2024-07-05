@@ -55,7 +55,7 @@ void run_unique_on_vector() {
 
 	//3.2
 	//auto last = unique(vec.begin(), vec.end());
-	int unique_elements = std::distance(vec.begin(), last);// final elements in vector
+	int unique_elements = std::distance(vec.begin(), last);// last = final elements in vector
 	cout << "unique_elements are  " << unique_elements << endl;
 
 	vec.erase(last, vec.end());
@@ -119,7 +119,7 @@ void run_vector_erase()
 		
 		3. clear() - The vector's memory is not guaranteed to be cleared. You cannot safely access the elements after a clear. To make sure the memory is deallocated Scott Meyers advised to do this:
 
-			vector<myStruct>().swap( vecs );
+			vector<myStruct>().swap( vecs ); --> empty vector swap
 
 	*/
 	std::string cs = "hello";
@@ -167,7 +167,9 @@ void vector_for_each_one()
 	cout << endl << "vector_for_each_one() : " << endl;
 
 	vector<int> v_int = { 1,2,3,6,5 };
+	//1.
 	for_each(v_int.begin(), v_int.end(), print); cout << endl;
+	//2.
 	for_each(v_int.begin(), v_int.end(), [](int& a) { cout << " " << a; });
 	cout << endl;
 }
