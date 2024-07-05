@@ -24,7 +24,10 @@ void array_fill() {
 
 	array<int, 10> arr = { 0 };
 	array<int, 50> arro;
+	//1.
 	for_each(arr.begin(), arr.end() - 1, [i = 0](auto& a) mutable {a = ++i; return a; });
+	
+	//2.
 	const int* p = arr.data();
 
 	cout << "arr.size() : " << arr.size() << endl; // 10
@@ -39,8 +42,8 @@ void array_impl()
 
 	//1. regular array
 	int arr[] = { 9,8,3,4,5,6 };
-	int size = sizeof(arr) / sizeof(arr[0]);
-	sort(arr, arr + size, less<int>()); // ascending order
+	int count = sizeof(arr) / sizeof(arr[0]);
+	sort(arr, arr + count, less<int>()); // ascending order
 	for (auto n : arr)
 		cout << n << endl; // 4 5 6 ...
 
@@ -86,6 +89,7 @@ void array_with_userdefined() {
 	//1.
 	//A* obj = arra->at(0);
 	//delete obj;
+	
 	//2.
 	for (auto* item : *arra) {
 		delete item;
@@ -98,6 +102,8 @@ void array_with_userdefined() {
 		if (*i)
 			delete* i;
 	}
+	
+	
 	//4.
 	delete arra; // delete the final parent container array
 }
