@@ -15,7 +15,7 @@ public:
 	char ch;
 	CPersonA(char arg) :ch(arg) {}
 	virtual ~CPersonA() {
-		cout << "dtor " << ch << endl;
+		cout << "dtor for " << ch << endl;
 	}
 };
 
@@ -29,9 +29,11 @@ void run_vector_dtor()
 	/*
 		dtor called for CPersonA
 		dtor a
+
 		dtor a
 		dtor b
-		dtor a
+
+		dtor a  --> in third insert it puts all the 3 elem. so 3 dtor called
 		dtor b
 		dtor c
 
@@ -46,7 +48,7 @@ public:
 	vector<CPersonA> vec;
 	CPersonB(char arg) :ch(arg) {}
 	virtual ~CPersonB() {
-		cout << "dtor  CPersonB " << ch << endl;
+		cout << "dtor  CPersonB for " << ch << endl;
 	}
 };
 
@@ -55,10 +57,11 @@ void run_vector_inside_class() {
 	b.vec.emplace_back('1');
 	b.vec.emplace_back('2');
 	/*
-		dtor 1		CPersonA
-		dtor  CPersonB A
-		dtor 1		CPersonA
-		dtor 2		CPersonA
+		dtor for 1  //--> vec
+
+		dtor  CPersonB for A
+		dtor for 1	//--> vec
+		dtor for 2	//--> vec
 
 		clear off members inside the vecotr
 	*/
@@ -119,13 +122,13 @@ void run_vector_with_unique_ptr_auto() {
 	*/
 }
 //......................................... main
- 
 
-//int main()
-//{
-//	//run_vector_dtor();
-//	//run_vector_inside_class();
-//	//run_vector_with_unique_ptr();	
-//	run_vector_with_unique_ptr_auto();
-//	return 0;
-//}
+
+int main()
+{
+	//run_vector_dtor();
+	//run_vector_inside_class();
+	//run_vector_with_unique_ptr();	
+	//run_vector_with_unique_ptr_auto();
+	return 0;
+}
