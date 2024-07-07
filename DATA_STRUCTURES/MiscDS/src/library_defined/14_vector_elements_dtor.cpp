@@ -124,11 +124,11 @@ void run_vector_with_unique_ptr_auto() {
 //......................................... main
 
 
-int main()
-{
-	//run_vector_dtor();
-	//run_vector_inside_class();
-	//run_vector_with_unique_ptr();	
-	//run_vector_with_unique_ptr_auto();
-	return 0;
-}
+//int main()
+//{
+//	//run_vector_dtor();
+//	//run_vector_inside_class();
+//	//run_vector_with_unique_ptr();	
+//	//run_vector_with_unique_ptr_auto();
+//	return 0;
+//}
