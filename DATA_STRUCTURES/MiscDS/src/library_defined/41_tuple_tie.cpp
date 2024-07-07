@@ -2,7 +2,12 @@
 #include <set>
 #include <tuple>
 using namespace std;
+/*
+	1. tuple<int, string, double>
+	2. make_tuple();
+	3. tie
 
+*/
 
 void print_tuple(set<tuple<int, int, int> >& setOfTuples)
 {
@@ -21,10 +26,10 @@ void print_tuple(set<tuple<int, int, int> >& setOfTuples)
 void run_print_tuple_caller()
 {
 	cout << endl << "run_print_tuple_caller() : " << endl;
-	set<tuple<int, int, int>> stup;
+	set<tuple<int, int, int>> setoftup;
 	tuple<int, int, int> tuple1 = make_tuple(1, 2, 3);
-	stup.insert(tuple1);
-	print_tuple(stup);
+	setoftup.insert(tuple1);
+	print_tuple(setoftup);
 }
 
 void run_tie()
@@ -32,20 +37,23 @@ void run_tie()
 	cout << endl << "run_tie() : " << endl;
 	//useful for unpacking std::pair and std::tuple objects
 	
-	//1. With tuples...
+	//........................................... 1. With tuples...
 	std::string playerName;
 	std::tie(std::ignore, playerName, std::ignore) = std::make_tuple(91, "John Tavares", "NYI");
 
-	//2. With pairs...
+	//........................................... 2. With pairs...
 	std::string yes, no;
 	std::tie(yes, no) = std::make_pair("yes", "no");
 }
+
 void run_tuple()
 {
 	cout << endl << "run_tuple() : " << endl;
 	auto playerProfile = std::make_tuple(51, "Frans Nielsen", "NYI");
+	
 	//1.
 	cout << tuple_size<decltype(playerProfile)>::value << endl; //3
+	
 	//2.
 	cout << std::get<0>(playerProfile) << " "; // 51
 	cout << std::get<1>(playerProfile) << " "; // "Frans Nielsen"

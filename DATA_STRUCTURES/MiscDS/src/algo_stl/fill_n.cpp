@@ -36,6 +36,10 @@ void array_class_fill() {
 	//2.
 	array<int, 100> arr{};
 	//for_each(begin(arr), end(arr), ostream_iterator<int>(cout, " ")); // error: C2064: term does not evaluate to a function taking 1 arguments	
+	/*
+		for_each() last argument needs a callable function, but we are passing object of ostream_iterator.
+		copy() needs output iteration, therefore no issue with it.
+	*/
 	copy(begin(arr), end(arr), ostream_iterator<int>(cout, " "));//ok
 	for_each(begin(arr), end(arr), [](int x) {cout << x; }); // ok
 

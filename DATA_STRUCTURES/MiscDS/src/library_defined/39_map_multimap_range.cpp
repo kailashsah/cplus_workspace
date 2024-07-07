@@ -15,7 +15,7 @@ void run_multimap()
 	colors.insert({ 5, "violet" });
 
 
-	//2. find value 
+	//........................................... 2. find value 
 	// error - requires : c++17 for structural bindings
 	
 	/*auto [begin, end] = colors.equal_range(4);
@@ -24,13 +24,13 @@ void run_multimap()
 		std::cout << "    " << it.second << std::endl;
 	}*/
 	
-	//3.
+	//........................................... 3. equal_range()
 	auto ran = colors.equal_range(4);	
 	for (auto it = ran.first; it != ran.second; ++it) {
 		cout << it->second << " "; // blue green
 	}
 
-	//4.
+	//........................................... 4. using for_each()
 	for_each(
 		ran.first,
 		ran.second,

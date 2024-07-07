@@ -26,7 +26,7 @@ void unordered_multiset_impl()
 	cout << *it << endl;
 	cout << "size" << set_unorder.size() << endl;
 
-	// remove all occurrences of item 5
+	//........................................... remove all occurrences of item 5
 	for (auto it = set_unorder.begin(); it != set_unorder.end(); ) {
 		
 		it = set_unorder.find(5);
@@ -38,7 +38,9 @@ void unordered_multiset_impl()
 		}
 	}
 
-	//seti.erase(5);
+	//........................................... remove all occurrences of item 5 (2)
+	//set_unorder.erase(5);//param is value, earse of occurrences of 5,
+	
 	for (auto n : set_unorder)
 	{
 		cout << n << endl;
