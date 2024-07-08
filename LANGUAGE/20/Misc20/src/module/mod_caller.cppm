@@ -41,6 +41,8 @@ void run_module() {
 
 	6.
 	What is the difference between import and include?
-	include is used for including the content of a file into your current program. It has per se nothing to do with modules or namespaces. using import on the other hand have nothing to do with files, and deal exclusively with modules/namespaces.
+	include is used for including the content of a file into your current program. It has nothing to do with modules or namespaces. 
+	
+	using import on the other hand have nothing to do with files, and deal exclusively with modules/namespaces.
 
 */

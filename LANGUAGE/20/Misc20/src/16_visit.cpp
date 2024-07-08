@@ -32,7 +32,13 @@ void run_visit() {
 			func(arg);
 			}, element);
 	}// for
-
+	
+	 /*
+		Called func(int): 1
+		Called func(double): 3.14
+		Called func(string): Hello
+	
+	*/
 }
 
 void run_without_visit() {

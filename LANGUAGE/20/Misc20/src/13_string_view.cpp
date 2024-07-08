@@ -21,11 +21,11 @@ void run_stringview()  // string view
 {
 	string_view sv = "str literal";
 	
-	//1. string_view - to - string object
+	//........................................... 1. string_view - to - string object
 	string str_reg{ sv };
 	cout << str_reg << endl; // str literal
 	
-	//2. passing string_view to string
+	//........................................... 2. passing string_view to string
 	//func_str(sv);			//No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called, fix below
 	func_str(static_cast<string>(sv)); // str literal -> fun with regular string
 

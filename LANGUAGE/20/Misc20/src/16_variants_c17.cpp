@@ -61,9 +61,11 @@ void run_variant_two() {
 void run_variant_three()
 {
 	std::vector<std::variant<int, double, std::string>> data;
+	
 	// Can use standard algorithms with std::variant
-	std::for_each(data.begin(), data.end(), [](auto& item) {
-		std::visit([](auto&& arg) { std::cout << arg << std::endl; }, item);
+	std::for_each(data.begin(), data.end(),
+		[](auto& item) {
+			std::visit([](auto&& arg) { std::cout << arg << std::endl; }, item);
 		});
 
 }

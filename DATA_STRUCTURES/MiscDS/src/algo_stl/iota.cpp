@@ -1,7 +1,11 @@
 #include <iostream>
 #include <numeric> // iota
 using namespace std;
-
+/*
+	1. iota() - Store increasing sequence 
+		Assigns to every element in the range [first, last] successive values of val, as if incremented with ++val after each element is written.
+	2.
+*/
 void run_iota()
 {
 
