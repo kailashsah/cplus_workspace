@@ -4,6 +4,7 @@ using namespace std;
 
 // for blackberry
 void array_oneD(int (&p) [3]) {
+	// ........................................... count of elements in array
 	int count = sizeof p / sizeof(int);
 	for (int i{}; i < count; ++i) {
 		cout << i << " ";
@@ -12,10 +13,12 @@ void array_oneD(int (&p) [3]) {
 
 void array_twoD(int (&p) [2][3]) {
 	cout << endl;
-	int r_count = sizeof (p) / sizeof(p[0]);
-	int c_count = sizeof(p[0]) / sizeof(int);
-	for (int i{}; i < r_count; ++i) {
-		for (int j{}; j < c_count; ++j) {
+	
+	//........................................... get row and column of array
+	int row_count = sizeof (p) / sizeof(p[0]);
+	int col_count = sizeof(p[0]) / sizeof(int);
+	for (int i{}; i < row_count; ++i) {
+		for (int j{}; j < col_count; ++j) {
 			cout << p[i][j] << " ";
 		}
 		cout << endl;
@@ -23,6 +26,8 @@ void array_twoD(int (&p) [2][3]) {
 	cout << endl;
 }
 void array_pointer(int (*p)[2][3]) {
+
+	//........................................... access array using pointer
 	for (int i{}; i < 2; ++i) {
 		for (int j{}; j < 3; ++j) {
 			cout << (*p)[i][j] << " ";
@@ -38,6 +43,7 @@ void array_size() {
 	int r = sizeof(arr_2) / sizeof(arr_2[0]);
 	int c = sizeof(arr_2) / sizeof(int);
 	//int size = sizeof(int) * 2 * 3;
+	//........................................... get total size of array for memcpy
 	int size = sizeof(int) * r * c;
 
 	int arr_dest[2][3] = {0};
@@ -47,7 +53,8 @@ void array_size() {
 	array_twoD(arr_dest);
 	cout << endl;
 	//
-	// access a[1][2]
+	
+	//........................................... access a[1][2]
 	int ele = *(&arr_2[0][0] + 1 * r + 2); // 2 col index
 	cout << ele;
 
@@ -56,6 +63,8 @@ void array_size() {
 #include <array>
 void array_stl() {
 	cout <<"array<> stl:"<< endl;
+
+	//........................................... stl array
 	array<int, 5> arr = {0};
 	for (int n : arr) {
 		cout << n << " ";
@@ -63,7 +72,9 @@ void array_stl() {
 }
 #include <vector>
 void array_vec(vector<vector<int>>& vec) {
-	cout << "array by vector" << endl;
+	cout << "array by vector (dynamic 2D array)" << endl;
+
+	//...........................................  dynamic 2D array using vector
 	vector<vector<int>> vec_sample = { {0,0}, {1,1}, {2,2} }; // not used
 	int r = vec.size();
 	int c = vec[0].size();
