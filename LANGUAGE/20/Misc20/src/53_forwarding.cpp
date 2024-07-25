@@ -75,8 +75,9 @@ void run_perfect_forwarding_ggg() {
 		calling UseObject(Object &&)
 	*/
 }
-int main() {
 
-	//run_half_forwarding_ggg();
-	run_perfect_forwarding_ggg();
-}
+//int main() {
+//
+//	//run_half_forwarding_ggg();
+//	run_perfect_forwarding_ggg();
+//}
