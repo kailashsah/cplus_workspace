@@ -125,6 +125,26 @@ void string_remove_space()
 	*/
 }
 
+//................................................. trim()
+const std::string WHITESPACE = " \n\r\t\f\v";
+
+std::string ltrim(const std::string& s)
+{
+	size_t start = s.find_first_not_of(WHITESPACE);
+	return (start == std::string::npos) ? "" : s.substr(start);
+}
+
+std::string rtrim(const std::string& s)
+{
+	size_t end = s.find_last_not_of(WHITESPACE);
+	return (end == std::string::npos) ? "" : s.substr(0, end + 1);
+}
+
+std::string trim(const std::string& s) {
+	return rtrim(ltrim(s));
+}
+
+
 void run_string()
 {
 	//string_remove_space();
@@ -134,6 +154,11 @@ void run_string()
 	
 	//string_split();
 	//
+
+	//................................................. trim() 
+	std::string s = " \n\tHello World  \r\n";
+	std::cout << "START::" << trim(s) << "::END"; // START::Hello World::END
+
 }
 
 //int main()
