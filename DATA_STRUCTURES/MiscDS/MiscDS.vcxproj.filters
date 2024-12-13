@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\library_defined\11_array.cpp" />
+    <ClCompile Include="src\library_defined\14_vector_elements_dtor.cpp" />
+    <ClCompile Include="src\library_defined\15_vector_delimiters.cpp" />
+    <ClCompile Include="src\library_defined\container_adapters\20_priority_queue.cpp" />
+    <ClCompile Include="src\library_defined\container_adapters\15_queue.cpp" />
+    <ClCompile Include="src\library_defined\container_adapters\90_readme_container_adpaters.cpp" />
+    <ClCompile Include="src\library_defined\container_adapters\10_stack.cpp" />
+    <ClCompile Include="src\library_defined\16_deque.cpp" />
+    <ClCompile Include="src\library_defined\24_foward_list.cpp" />
+    <ClCompile Include="src\library_defined\21_list.cpp" />
+    <ClCompile Include="src\library_defined\35_map.cpp" />
+    <ClCompile Include="src\library_defined\39_map_multimap_range.cpp" />
+    <ClCompile Include="src\library_defined\31_set.cpp" />
+    <ClCompile Include="src\library_defined\41_tuple_tie.cpp" />
+    <ClCompile Include="src\library_defined\13_vector.cpp" />
+    <ClCompile Include="src\user_defined\19_scanf_mechanism.cpp" />
+    <ClCompile Include="src\user_defined\22_graph_cycle.cpp" />
+    <ClCompile Include="src\user_defined\16_linkedlist.cpp" />
+    <ClCompile Include="src\user_defined\14_queue.cpp" />
+    <ClCompile Include="src\user_defined\11_stack.cpp" />
+    <ClCompile Include="src\user_defined\18_String.cpp" />
+    <ClCompile Include="src\user_defined\21_tree_size.cpp" />
+    <ClCompile Include="src\algo_stl\fill.cpp">
+      <Filter>algo_stl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\algo_stl\fill_n.cpp">
+      <Filter>algo_stl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\algo_stl\iota.cpp">
+      <Filter>algo_stl</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="algo_stl">
+      <UniqueIdentifier>{441bf59e-ed27-4e0a-a81d-297c5f225d82}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
