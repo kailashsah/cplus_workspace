@@ -1,50 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="src_3\11_basics_join.cpp" />
-    <ClCompile Include="src_3\12_basics_detach.cpp" />
-    <ClCompile Include="src_3\14_unique_lock.cpp" />
-    <ClCompile Include="src_3\15_lock_guard.cpp" />
-    <ClCompile Include="src_3\16_lock_for_deadlock.cpp" />
-    <ClCompile Include="src_3\17_scoped_lock_c17.cpp" />
-    <ClCompile Include="src_3\21_future_get_some_ways.cpp" />
-    <ClCompile Include="src_3\22_future_some_cases.cpp" />
-    <ClCompile Include="src_3\23_promise.cpp" />
-    <ClCompile Include="src_3\25_shared_future.cpp" />
-    <ClCompile Include="src_3\27_future_fire_and_forget.cpp" />
-    <ClCompile Include="src_3\30_condition_variable.cpp" />
-    <ClCompile Include="src_3\32_cv_wait_for.cpp" />
-    <ClCompile Include="src_3\34_condition_variable_any.cpp" />
-    <ClCompile Include="src_3\36_packaged_task_creations.cpp" />
-    <ClCompile Include="src_3\38_packaged_task_over_promise.cpp" />
-    <ClCompile Include="src_3\40_packaged_task_vs_async.cpp" />
-    <ClCompile Include="src_3\51_recursive_mutex.cpp" />
-    <ClCompile Include="src_3\42_shared_lock_2.cpp" />
-    <ClCompile Include="src_3\46_shared_timed_mutex_two.cpp" />
-    <ClCompile Include="src_3\49_shared_lock_difficult.cpp" />
-    <ClCompile Include="src_3\41_shared_mutex.cpp" />
-    <ClCompile Include="src_3\47_shared_timed_mutex.cpp" />
-    <ClCompile Include="src_3\43_timed_mutex.cpp" />
-    <ClCompile Include="src_3\44_timed_mutex_two.cpp" />
-    <ClCompile Include="src_3\55_prvalue_xvalue.cpp" />
-    <ClCompile Include="src_3\96_readme_practice.cpp" />
-    <ClCompile Include="src_3\98_readme_resources.cpp" />
-    <ClCompile Include="src_3\99_read_code.cpp" />
-    <ClCompile Include="src_3\13_thread_basics.cpp" />
-    <ClCompile Include="src_3\56_yield_vs_sleep_for.cpp" />
-    <ClCompile Include="src_4_atomic\11_atomic.cpp" />
-    <ClCompile Include="src_4_atomic\12_atomic_basics.cpp" />
-    <ClCompile Include="src_4_atomic\14_atomic_memory_order.cpp" />
-    <ClCompile Include="src_4_atomic\16_atomic_spinlock.cpp" />
-    <ClCompile Include="src_4_atomic\21_atomic_compare_exchange_strong.cpp" />
-    <ClCompile Include="src_4_atomic\22_atomic_compare_exchange_weak.cpp" />
-    <ClCompile Include="src_4_atomic\24_atomic_udt_one.cpp" />
-    <ClCompile Include="src_4_atomic\25_atomic_load_shared_ptr.cpp" />
-    <ClCompile Include="src_4_atomic\27_shared_ptr_multithreading.cpp" />
-    <ClCompile Include="src_4_atomic\28_atomic_shared_ptr.cpp" />
-    <ClCompile Include="src_4_atomic\29_atomic_int.cpp" />
-    <ClCompile Include="src_4_atomic\31_atomic_wait.cpp" />
-    <ClCompile Include="src_4_atomic\33_atomic_ref.cpp" />
+    
+
     <ClCompile Include="src_5_cplus20\10_async.cpp" />
     <ClCompile Include="src_5_cplus20\11_scoped_lock.cpp" />
     <ClCompile Include="src_5_cplus20\12_osyncstream.cpp" />
@@ -105,7 +63,139 @@
     </ClCompile>
     <ClCompile Include="src_2_problems\291_thread_pool.cpp">
       <Filter>src_2_problems</Filter>
-    </ClCompile>
+    </ClCompile>	
+	<ClCompile Include="src_3\11_basics_join.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\12_basics_detach.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\14_unique_lock.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\15_lock_guard.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\16_lock_for_deadlock.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\17_scoped_lock_c17.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\21_future_get_some_ways.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\22_future_some_cases.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\23_promise.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\25_shared_future.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\27_future_fire_and_forget.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\30_condition_variable.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\32_cv_wait_for.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\34_condition_variable_any.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\36_packaged_task_creations.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\38_packaged_task_over_promise.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\40_packaged_task_vs_async.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\51_recursive_mutex.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\42_shared_lock_2.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\46_shared_timed_mutex_two.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\49_shared_lock_difficult.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\41_shared_mutex.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\47_shared_timed_mutex.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\43_timed_mutex.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\44_timed_mutex_two.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\55_prvalue_xvalue.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\96_readme_practice.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\98_readme_resources.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\99_read_code.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\13_thread_basics.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+    <ClCompile Include="src_3\56_yield_vs_sleep_for.cpp" >
+	<Filter>src_3</Filter>
+	</ClCompile>
+	<ClCompile Include="src_4_atomic\11_atomic.cpp" >
+    <Filter>src_4_atomic</Filter>
+	</ClCompile>
+	<ClCompile Include="src_4_atomic\12_atomic_basics.cpp" >
+    <Filter>src_4_atomic</Filter>
+	</ClCompile>
+	<ClCompile Include="src_4_atomic\14_atomic_memory_order.cpp" >
+	<Filter>src_4_atomic</Filter>
+	</ClCompile>
+    <ClCompile Include="src_4_atomic\16_atomic_spinlock.cpp" >
+	<Filter>src_4_atomic</Filter>
+	</ClCompile>
+    <ClCompile Include="src_4_atomic\21_atomic_compare_exchange_strong.cpp" >
+	<Filter>src_4_atomic</Filter>
+	</ClCompile>
+    <ClCompile Include="src_4_atomic\22_atomic_compare_exchange_weak.cpp" >
+	<Filter>src_4_atomic</Filter>
+	</ClCompile>
+    <ClCompile Include="src_4_atomic\24_atomic_udt_one.cpp" >
+	<Filter>src_4_atomic</Filter>
+	</ClCompile>
+    <ClCompile Include="src_4_atomic\25_atomic_load_shared_ptr.cpp" >
+	<Filter>src_4_atomic</Filter>
+	</ClCompile>
+    <ClCompile Include="src_4_atomic\27_shared_ptr_multithreading.cpp" >
+	<Filter>src_4_atomic</Filter>
+	</ClCompile>
+    <ClCompile Include="src_4_atomic\28_atomic_shared_ptr.cpp" >
+	<Filter>src_4_atomic</Filter>
+	</ClCompile>
+    <ClCompile Include="src_4_atomic\29_atomic_int.cpp" >
+	<Filter>src_4_atomic</Filter>
+	</ClCompile>
+    <ClCompile Include="src_4_atomic\31_atomic_wait.cpp" >
+	<Filter>src_4_atomic</Filter>
+	</ClCompile>
+    <ClCompile Include="src_4_atomic\33_atomic_ref.cpp" >
+	<Filter>src_4_atomic</Filter>
+	</ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src_1_concepts">
