@@ -1,17 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="src_2_problems\101_writing_file_two_threads_osyncstream.cpp" />
-    <ClCompile Include="src_2_problems\201_is_thread_running_by_future.cpp" />
-    <ClCompile Include="src_2_problems\202_is_thread_running_by_joinable.cpp" />
-    <ClCompile Include="src_2_problems\203_is_thread_running_by_flag.cpp" />
-    <ClCompile Include="src_2_problems\251_thread_pause_by_class.cpp" />
-    <ClCompile Include="src_2_problems\252_thread_pause_multithreading.cpp" />
-    <ClCompile Include="src_2_problems\271_thread_stop.cpp" />
-    <ClCompile Include="src_2_problems\272_thread_stop_atomic_bool.cpp" />
-    <ClCompile Include="src_2_problems\281_waitForMultipleObjects_one.cpp" />
-    <ClCompile Include="src_2_problems\282_waitForMultipleObjects_two.cpp" />
-    <ClCompile Include="src_2_problems\291_thread_pool.cpp" />
     <ClCompile Include="src_3\11_basics_join.cpp" />
     <ClCompile Include="src_3\12_basics_detach.cpp" />
     <ClCompile Include="src_3\14_unique_lock.cpp" />
@@ -83,6 +72,39 @@
     </ClCompile>
     <ClCompile Include="src_1_concepts\datarace.cpp">
       <Filter>src_1_concepts</Filter>
+    </ClCompile>
+    <ClCompile Include="src_2_problems\101_writing_file_two_threads_osyncstream.cpp">
+      <Filter>src_2_problems</Filter>
+    </ClCompile>
+    <ClCompile Include="src_2_problems\201_is_thread_running_by_future.cpp">
+      <Filter>src_2_problems</Filter>
+    </ClCompile>
+    <ClCompile Include="src_2_problems\202_is_thread_running_by_joinable.cpp">
+      <Filter>src_2_problems</Filter>
+    </ClCompile>
+    <ClCompile Include="src_2_problems\203_is_thread_running_by_flag.cpp">
+      <Filter>src_2_problems</Filter>
+    </ClCompile>
+    <ClCompile Include="src_2_problems\251_thread_pause_by_class.cpp">
+      <Filter>src_2_problems</Filter>
+    </ClCompile>
+    <ClCompile Include="src_2_problems\252_thread_pause_multithreading.cpp">
+      <Filter>src_2_problems</Filter>
+    </ClCompile>
+    <ClCompile Include="src_2_problems\271_thread_stop.cpp">
+      <Filter>src_2_problems</Filter>
+    </ClCompile>
+    <ClCompile Include="src_2_problems\272_thread_stop_atomic_bool.cpp">
+      <Filter>src_2_problems</Filter>
+    </ClCompile>
+    <ClCompile Include="src_2_problems\281_waitForMultipleObjects_one.cpp">
+      <Filter>src_2_problems</Filter>
+    </ClCompile>
+    <ClCompile Include="src_2_problems\282_waitForMultipleObjects_two.cpp">
+      <Filter>src_2_problems</Filter>
+    </ClCompile>
+    <ClCompile Include="src_2_problems\291_thread_pool.cpp">
+      <Filter>src_2_problems</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
