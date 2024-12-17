@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\16_variants_c17.cpp" />
+    <ClCompile Include="src\16_visit.cpp" />
+    <ClCompile Include="src\17_designated_constructor.cpp" />
+    <ClCompile Include="src\39_atomic_shared_ptr.cppm" />
+    <ClCompile Include="src\38_atomic_shared_ptr_two.cpp" />
+    <ClCompile Include="src\50_bit_cast.cpp" />
+    <ClCompile Include="src\53_forwarding.cpp" />
+    <ClCompile Include="src\concept_in_fn.cpp" />
+    <ClCompile Include="src\concept_user_defined.cpp" />
+    <ClCompile Include="src\42_consteval.cpp" />
+    <ClCompile Include="src\43_constexpr.cpp" />
+    <ClCompile Include="src\19_container_contains.cpp" />
+    <ClCompile Include="src\explicit_constructor.cpp" />
+    <ClCompile Include="src\15_format.cpp" />
+    <ClCompile Include="src\forwarding_for_cout.cppm" />
+    <ClCompile Include="src\forwarding_in_lambda_capture_pack.cpp" />
+    <ClCompile Include="src\55_forwarding_perfect_forwarding.cpp" />
+    <ClCompile Include="src\21_jthread.cpp" />
+    <ClCompile Include="src\48_maybe_unsed.cpp" />
+    <ClCompile Include="src\mix.cppm" />
+    <ClCompile Include="src\nested_class.cpp" />
+    <ClCompile Include="src\45_osyncstream.cpp" />
+    <ClCompile Include="src\33_ranges.cpp" />
+    <ClCompile Include="src\read_code.cpp" />
+    <ClCompile Include="src\readme_cplus20.cpp" />
+    <ClCompile Include="src\23_spaceship_operator.cpp" />
+    <ClCompile Include="src\24_spaceship_operator_in_class.cpp" />
+    <ClCompile Include="src\31_span.cppm" />
+    <ClCompile Include="src\13_string_view.cpp" />
+    <ClCompile Include="src\46_templ_in_lambdas.cppm" />
+    <ClCompile Include="src\11_to_array.cpp" />
+    <ClCompile Include="src_cplus17\static_inline.cpp">
+      <Filter>src_cplus17</Filter>
+    </ClCompile>
+    <ClCompile Include="src_cplus17\templ_integer_seq.cpp">
+      <Filter>src_cplus17</Filter>
+    </ClCompile>
+    <ClCompile Include="src_cplus17\templ_templ_argument.cpp">
+      <Filter>src_cplus17</Filter>
+    </ClCompile>
+    <ClCompile Include="src\module\mod_adv_maths.ixx">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="src\module\mod_caller.cppm">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_adv\atomic_shared_impl.cppm">
+      <Filter>src_adv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_adv\concept_require.cpp">
+      <Filter>src_adv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_adv\coroutine_01_resume.cpp">
+      <Filter>src_adv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_adv\coroutine_02_generator.cpp">
+      <Filter>src_adv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_adv\is_standard_layout.cpp">
+      <Filter>src_adv</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src_cplus17">
+      <UniqueIdentifier>{d402433e-c846-489c-bd6d-bb0736cf3be7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="module">
+      <UniqueIdentifier>{e704d42c-dedd-46de-a52c-527794893922}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_adv">
+      <UniqueIdentifier>{95486686-9eaf-462c-abfc-83307ef0650a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
