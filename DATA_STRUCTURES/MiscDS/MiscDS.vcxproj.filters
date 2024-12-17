@@ -1,28 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="src\library_defined\11_array.cpp" />
-    <ClCompile Include="src\library_defined\14_vector_elements_dtor.cpp" />
-    <ClCompile Include="src\library_defined\15_vector_delimiters.cpp" />
-    <ClCompile Include="src\library_defined\container_adapters\20_priority_queue.cpp" />
-    <ClCompile Include="src\library_defined\container_adapters\15_queue.cpp" />
-    <ClCompile Include="src\library_defined\container_adapters\90_readme_container_adpaters.cpp" />
-    <ClCompile Include="src\library_defined\container_adapters\10_stack.cpp" />
-    <ClCompile Include="src\library_defined\16_deque.cpp" />
-    <ClCompile Include="src\library_defined\24_foward_list.cpp" />
-    <ClCompile Include="src\library_defined\21_list.cpp" />
-    <ClCompile Include="src\library_defined\35_map.cpp" />
-    <ClCompile Include="src\library_defined\39_map_multimap_range.cpp" />
-    <ClCompile Include="src\library_defined\31_set.cpp" />
-    <ClCompile Include="src\library_defined\41_tuple_tie.cpp" />
-    <ClCompile Include="src\library_defined\13_vector.cpp" />
-    <ClCompile Include="src\user_defined\19_scanf_mechanism.cpp" />
-    <ClCompile Include="src\user_defined\22_graph_cycle.cpp" />
-    <ClCompile Include="src\user_defined\16_linkedlist.cpp" />
-    <ClCompile Include="src\user_defined\14_queue.cpp" />
-    <ClCompile Include="src\user_defined\11_stack.cpp" />
-    <ClCompile Include="src\user_defined\18_String.cpp" />
-    <ClCompile Include="src\user_defined\21_tree_size.cpp" />
     <ClCompile Include="src\algo_stl\fill.cpp">
       <Filter>algo_stl</Filter>
     </ClCompile>
@@ -32,10 +10,85 @@
     <ClCompile Include="src\algo_stl\iota.cpp">
       <Filter>algo_stl</Filter>
     </ClCompile>
+    <ClCompile Include="src\library_defined\container_adapters\10_stack.cpp">
+      <Filter>library_defined\container_adapters</Filter>
+    </ClCompile>
+    <ClCompile Include="src\library_defined\container_adapters\15_queue.cpp">
+      <Filter>library_defined\container_adapters</Filter>
+    </ClCompile>
+    <ClCompile Include="src\library_defined\container_adapters\20_priority_queue.cpp">
+      <Filter>library_defined\container_adapters</Filter>
+    </ClCompile>
+    <ClCompile Include="src\library_defined\container_adapters\90_readme_container_adpaters.cpp">
+      <Filter>library_defined\container_adapters</Filter>
+    </ClCompile>
+    <ClCompile Include="src\user_defined\11_stack.cpp">
+      <Filter>user_defined</Filter>
+    </ClCompile>
+    <ClCompile Include="src\user_defined\14_queue.cpp">
+      <Filter>user_defined</Filter>
+    </ClCompile>
+    <ClCompile Include="src\user_defined\16_linkedlist.cpp">
+      <Filter>user_defined</Filter>
+    </ClCompile>
+    <ClCompile Include="src\user_defined\18_String.cpp">
+      <Filter>user_defined</Filter>
+    </ClCompile>
+    <ClCompile Include="src\user_defined\19_scanf_mechanism.cpp">
+      <Filter>user_defined</Filter>
+    </ClCompile>
+    <ClCompile Include="src\user_defined\21_tree_size.cpp">
+      <Filter>user_defined</Filter>
+    </ClCompile>
+    <ClCompile Include="src\user_defined\22_graph_cycle.cpp">
+      <Filter>user_defined</Filter>
+    </ClCompile>
+    <ClCompile Include="src\library_defined\11_array.cpp">
+      <Filter>library_defined</Filter>
+    </ClCompile>
+    <ClCompile Include="src\library_defined\13_vector.cpp">
+      <Filter>library_defined</Filter>
+    </ClCompile>
+    <ClCompile Include="src\library_defined\14_vector_elements_dtor.cpp">
+      <Filter>library_defined</Filter>
+    </ClCompile>
+    <ClCompile Include="src\library_defined\15_vector_delimiters.cpp">
+      <Filter>library_defined</Filter>
+    </ClCompile>
+    <ClCompile Include="src\library_defined\16_deque.cpp">
+      <Filter>library_defined</Filter>
+    </ClCompile>
+    <ClCompile Include="src\library_defined\21_list.cpp">
+      <Filter>library_defined</Filter>
+    </ClCompile>
+    <ClCompile Include="src\library_defined\24_foward_list.cpp">
+      <Filter>library_defined</Filter>
+    </ClCompile>
+    <ClCompile Include="src\library_defined\31_set.cpp">
+      <Filter>library_defined</Filter>
+    </ClCompile>
+    <ClCompile Include="src\library_defined\35_map.cpp">
+      <Filter>library_defined</Filter>
+    </ClCompile>
+    <ClCompile Include="src\library_defined\39_map_multimap_range.cpp">
+      <Filter>library_defined</Filter>
+    </ClCompile>
+    <ClCompile Include="src\library_defined\41_tuple_tie.cpp">
+      <Filter>library_defined</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="algo_stl">
       <UniqueIdentifier>{441bf59e-ed27-4e0a-a81d-297c5f225d82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="library_defined">
+      <UniqueIdentifier>{8b47ae4d-d34d-446a-897b-7fca32dabb80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="library_defined\container_adapters">
+      <UniqueIdentifier>{8bc4eadd-ca4d-4bd7-9560-23752bcc2f11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="user_defined">
+      <UniqueIdentifier>{1aa778ca-f69a-4f9e-82eb-ea493903e22c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
