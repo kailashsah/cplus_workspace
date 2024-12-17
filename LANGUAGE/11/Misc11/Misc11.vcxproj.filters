@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\101_write_log.cpp" />
+    <ClCompile Include="src\21_rvalue_when_use_move_ctor.cpp" />
+    <ClCompile Include="src\22_auto&amp;&amp;.cpp" />
+    <ClCompile Include="src\23_auto_pointer.cpp" />
+    <ClCompile Include="src\24_rvalue_return_fm_function.cpp" />
+    <ClCompile Include="src\62_string_operation_by_stl.cpp" />
+    <ClCompile Include="src\66_scoped_enum.cpp" />
+    <ClCompile Include="src\67_unscoped_enum_issues.cpp" />
+    <ClCompile Include="src\83_mem_fn_vs_bind.cpp" />
+    <ClCompile Include="src\29_cast_const_cast_three.cpp" />
+    <ClCompile Include="src\28_cast_const_cast_two.cpp" />
+    <ClCompile Include="src\27_cast_const_one.cpp" />
+    <ClCompile Include="src\90_stringbuf.cpp" />
+    <ClCompile Include="src\81_function_class_template.cpp" />
+    <ClCompile Include="src\18_rvalue.cpp" />
+    <ClCompile Include="src\19_rvalue_class_member.cpp" />
+    <ClCompile Include="src\95_clock.cpp" />
+    <ClCompile Include="src\45_exception_throw.cpp" />
+    <ClCompile Include="src\33_initializer_aggregate.cpp" />
+    <ClCompile Include="src\31_initializer_list.cpp" />
+    <ClCompile Include="src\87_lambda_function_trailing_type.cpp" />
+    <ClCompile Include="src\readme_cplus.cpp" />
+    <ClCompile Include="src\35_reference_wrapper.cpp" />
+    <ClCompile Include="src\20_rvalue_move_constructor.cpp" />
+    <ClCompile Include="src\21_rvalue_move_constructor_if_not_defined.cpp" />
+    <ClCompile Include="src\36_ref.cpp" />
+    <ClCompile Include="src\37_template_lazy.cpp" />
+    <ClCompile Include="src\37_template_lazy_initialization.cpp" />
+    <ClCompile Include="src\92_type_alias.cpp" />
+    <ClCompile Include="src\25_cast_static.cpp" />
+    <ClCompile Include="src\34_conversion_operator.cpp" />
+    <ClCompile Include="src\read_code.cpp" />
+    <ClCompile Include="src\47_exception_order_of_catch.cpp" />
+    <ClCompile Include="src\46_exception_at_dtor.cpp" />
+    <ClCompile Include="src\64_iterator_istream.cpp" />
+    <ClCompile Include="src\89_static_object.cpp" />
+    <ClCompile Include="src\88_struct_size.cpp" />
+    <ClCompile Include="src\38_template_for_each.cpp" />
+    <ClCompile Include="src\26_cast_dynamic.cpp" />
+    <ClCompile Include="src\is_pointer_src.cpp" />
+    <ClCompile Include="src\tutorial_two.cpp" />
+    <ClCompile Include="src\40_template_class_in_template.cpp" />
+    <ClCompile Include="src\tutorial_one.cpp" />
+    <ClCompile Include="src\91_type_decltype.cpp" />
+    <ClCompile Include="src\98_version_cplus.cpp" />
+    <ClCompile Include="src\virtual_from_constructor.cpp" />
+    <ClCompile Include="src\virtual_inheritance.cpp" />
+    <ClCompile Include="src\virtual_inheritance_three.cpp" />
+    <ClCompile Include="src\virtual_inheritance_two.cpp" />
+    <ClCompile Include="src\virtual_static.cpp" />
+    <ClCompile Include="src\concepts\class_nullptr.cpp">
+      <Filter>concepts</Filter>
+    </ClCompile>
+    <ClCompile Include="src\concepts\iterator_vs_const_iterator.cpp">
+      <Filter>concepts</Filter>
+    </ClCompile>
+    <ClCompile Include="src\concepts\move_if_noexcept.cpp">
+      <Filter>concepts</Filter>
+    </ClCompile>
+    <ClCompile Include="src\concepts\noexcept_and_throw.cpp">
+      <Filter>concepts</Filter>
+    </ClCompile>
+    <ClCompile Include="src\concepts\return_vector_fm_func.cpp">
+      <Filter>concepts</Filter>
+    </ClCompile>
+    <ClCompile Include="src\concepts\reverse_to_forward_iterator.cpp">
+      <Filter>concepts</Filter>
+    </ClCompile>
+    <ClCompile Include="src\concepts\stringstream_like_StringBuffer.cpp">
+      <Filter>concepts</Filter>
+    </ClCompile>
+    <ClCompile Include="src\oops\11_abstract_class_fn_call.cpp">
+      <Filter>oops</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_adv\decay.cpp">
+      <Filter>src_adv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_pointers\13_pointers.cpp">
+      <Filter>src_pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_pointers\15_unique_ptr.cpp">
+      <Filter>src_pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_pointers\17_unique_ptr_two.cpp">
+      <Filter>src_pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_pointers\18_unique_ptr_vector_pushback.cpp">
+      <Filter>src_pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_pointers\21_shared_ptr.cpp">
+      <Filter>src_pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_pointers\22_shared_ptr_two.cpp">
+      <Filter>src_pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_pointers\24_shared_ptr_cyclic_dep.cpp">
+      <Filter>src_pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_pointers\25_shared_ptr_custom.cpp">
+      <Filter>src_pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_pointers\26_weak_ptr_lock.cpp">
+      <Filter>src_pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_questions\10_binary_search.cpp">
+      <Filter>src_questions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_questions\13_is_prime_optimized.cpp">
+      <Filter>src_questions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_questions\15_test_shallowcopy.cpp">
+      <Filter>src_questions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_questions\17_performance_any_of.cpp">
+      <Filter>src_questions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_questions\fill_vector_random_integer.cpp">
+      <Filter>src_questions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_questions\int_reference.cpp">
+      <Filter>src_questions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_questions\random_numbers.cpp">
+      <Filter>src_questions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src_questions\static_member_init.cpp">
+      <Filter>src_questions</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src_questions">
+      <UniqueIdentifier>{df30d7bb-2518-4120-81a0-72ea6d8e05d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_pointers">
+      <UniqueIdentifier>{eedb1f61-7402-44f8-96a5-25606f7053dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_adv">
+      <UniqueIdentifier>{0f56f17b-bdc9-46e6-99f5-feb3ef59a9b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="oops">
+      <UniqueIdentifier>{d62335b6-4431-4194-89d0-003aaccfb498}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="concepts">
+      <UniqueIdentifier>{88c42d82-dae1-48cb-870b-00835fba1d3d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
