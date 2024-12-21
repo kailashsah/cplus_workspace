@@ -8,7 +8,7 @@
 #include <map>
 #include <unordered_map>
 #include <unordered_set>
-
+#include <array>
 //#include <linked_list>
 #include <forward_list>
 #include <stack>
@@ -22,6 +22,8 @@ void ds()
     v.emplace_back(1);
     for_each(v.begin(), v.end(), [](auto i) { cout << i << endl;  });
 
+    array<int, 2>  arr_of_two;
+
     set<string> s;
     unordered_set<string> uos;
     map<int, string> om;
@@ -34,6 +36,15 @@ void ds()
     stack<string> st;
     queue<Person> que;
 
+    cout << "priority_queue" << endl;
+    //priority_queue<int> pq;
+    priority_queue<int, vector<int>, less<int>> pq; // max heap
+    pq.push(2);
+    pq.push(1);
+    for (int i = 0; pq.size(); i++) {
+        cout << pq.top() << endl;
+        pq.pop();
+    }
 
 }
 
