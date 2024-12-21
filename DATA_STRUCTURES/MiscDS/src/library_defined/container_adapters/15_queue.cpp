@@ -31,7 +31,7 @@ void run_queue() {
     cout << "\ngquiz.back() : " << gquiz.back();
 
     cout << "\ngquiz.pop() : ";
-    gquiz.pop();
+    gquiz.pop(); // from front
     showq(gquiz);
 
 }

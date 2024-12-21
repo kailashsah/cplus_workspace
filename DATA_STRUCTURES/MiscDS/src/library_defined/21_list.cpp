@@ -13,6 +13,7 @@ void data_str_list_erase() {
 	ls.push_back(1);
 	ls.push_back(3);
 	ls.push_back(6);
+	//ls.push_front(); // also available
 	for (auto a : ls) {
 		cout << a << " ";
 	}
@@ -24,5 +25,9 @@ void data_str_list_erase() {
 	for (auto a : ls) {
 		cout << a << " ";
 	}
+
+	//
+	ls.pop_back();
+	ls.pop_front();
 
 }
