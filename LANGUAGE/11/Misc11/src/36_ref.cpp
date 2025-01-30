@@ -37,7 +37,7 @@ int run_ref()
 
 //2.
 #include<functional> //function<> .. bind()
-void f(int& n1, int& n2, const int& n3)
+void func(int& n1, int& n2, const int& n3)
 {
 	std::cout << "In function: " << n1 << ' ' << n2 << ' ' << n3 << '\n';
 	++n1; // increments the copy of n1 stored in the function object
@@ -48,7 +48,7 @@ void f(int& n1, int& n2, const int& n3)
 void run_with_bind()
 {
 	int n1 = 1, n2 = 2, n3 = 3;
-	std::function<void()> bound_f = std::bind(f, n1, std::ref(n2), std::cref(n3));
+	std::function<void()> bound_f = std::bind(func, n1, std::ref(n2), std::cref(n3));
 	n1 = 10;
 	n2 = 11;
 	n3 = 12;

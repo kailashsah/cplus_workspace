@@ -55,7 +55,7 @@ int volatile_func(void)
 	cout << "typeid of b1 (const volatile int* b1 = &a1;) :  " << typeid(b1).name() << '\n' << endl;
 
 	// 1.
-	int* c1 = const_cast <int*> (b1); // const_cast  also removes the volatile from variable
+	int* c1 = const_cast <int*> (b1); // const_cast  also removes the volatile from variable  (IMP)
 	cout << "typeid of c1 (int* c1 = const_cast <int*> (b1)) :  " << typeid(c1).name() << '\n';
 	
 	// 2. 

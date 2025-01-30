@@ -55,7 +55,7 @@ void run_class_members()
 	EmptyClass objTwo(1);		// EmptyClass(int i)
 
 	cout << setw(width) << "EmptyClass objThree(1, 2);	";
-	EmptyClass objThree(1, 2);	// EmptyClass(int i, int y)
+	EmptyClass objThree(1, 2);	// EmptyClass(int i, int y)					// copy ctor
 
 	cout << setw(width) << "EmptyClass objFour(objThree)	";
 	EmptyClass objFour(objThree);// EmptyClass(const EmptyClass&)
@@ -64,13 +64,13 @@ void run_class_members()
 	EmptyClass objMove = std::move(objFour); // EmptyClass(EmptyClass&&)  (IMP)  move ctor
 
 	cout << setw(width) << "EmptyClass objFive = objFour;	";
-	EmptyClass objFive = objFour; // EmptyClass(const EmptyClass&) // copy ctor
+	EmptyClass objFive = objFour; // EmptyClass(const EmptyClass&)			// copy ctor
 
 	cout << setw(width) << "objFive = objFour;	";
-	objFive = objFour; // EmptyClass& operator=(const EmptyClass&)
+	objFive = objFour; // EmptyClass& operator=(const EmptyClass&)			// assignment
 
 	cout << setw(width) << "objFive = move(objFour);	";
-	objFive = move(objFour); // EmptyClass& operator=(EmptyClass&&) (IMP) // move assignment
+	objFive = move(objFour); // EmptyClass& operator=(EmptyClass&&) (IMP)	// move assignment
 
 	cout << setw(width) << "EmptyClass objSix{ 1,2 }; ";
 	EmptyClass objSix{ 1,2,4,5 }; // EmptyClass(initializer_list<int>)
