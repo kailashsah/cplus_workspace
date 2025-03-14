@@ -13,6 +13,7 @@
 #include <forward_list>
 #include <stack>
 #include <queue>
+#include "practice_202412.h"
 using namespace std;
 class Person {};
 void ds()
@@ -22,7 +23,8 @@ void ds()
     v.emplace_back(1);
     for_each(v.begin(), v.end(), [](auto i) { cout << i << endl;  });
 
-    array<int, 2>  arr_of_two;
+    //array<int, 2>  arr_of_two; // unreference variable if only declared 
+    array <int, 2> arr_of_two = {0,1};
 
     set<string> s;
     unordered_set<string> uos;
@@ -47,11 +49,51 @@ void ds()
     }
 
 }
-
-
-int main()
+//.......................................
+class Abss
 {
-    std::cout << "starts ...\n";
-    ds();
-}
+public:
+    virtual void method() = 0;
+};
+
+class deAbs : public Abss {
+public:
+    void method() {
+        cout << "deAbs method" << endl;
+    }
+
+};
+
+class Abstract
+{
+public:
+    virtual void foo() = 0;
+};
+
+class Implementation : public Abstract
+{
+public:
+    void foo() { std::cout << "Foo!" << std::endl; }
+};
+
+void call_foo(Abstract& obj) { obj.foo(); }
+void call_foo(Abstract* obj) { obj->foo(); }
+
+//int main()
+//{
+//    Abstract* bar = new Implementation();
+//    Abss* pAbs = new deAbs();
+//    call_foo(*bar);
+//    call_foo(bar);
+//
+//    delete bar;
+//}
+
+//int main()
+//{
+//    std::cout << "starts ...\n";
+//    abs* pabs = new deAbs();
+//    //
+//    //ds();
+//}
 

@@ -129,6 +129,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="practice_202412.cpp" />
+    <ClCompile Include="practice_202501.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="practice_202412.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

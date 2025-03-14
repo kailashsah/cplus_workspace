@@ -18,5 +18,13 @@
     <ClCompile Include="practice_202412.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="practice_202501.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="practice_202412.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
