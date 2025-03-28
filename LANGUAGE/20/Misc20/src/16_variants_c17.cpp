@@ -34,25 +34,29 @@ void run_variant_two() {
 	variant<int, double, string> myVariant; // <-- here used string also
 
 	myVariant = 42; // Assign an int 
-	// Access the int 
+
+
+	//1. Access the int 
 	if (holds_alternative<int>(myVariant)) {
 		cout << get<int>(myVariant) << endl;
 	}
 
+
+	//2. Access the double 
 	myVariant = 3.14; // Assign a double 
-	// Access the double 
 	if (holds_alternative<double>(myVariant)) {
 		cout << get<double>(myVariant) << endl;
 	}
 
+
+	//3. Access the string 
 	myVariant = "Hello, Variant!"; // Assign a string 
-	// Access the string 
 	if (holds_alternative<string>(myVariant)) {
 		cout << get<string>(myVariant) << endl;
 	}
 
-	//2. emplace()
 
+	//2. emplace()
 	std::variant<int, std::string> myVar;
 	myVar.emplace<std::string>("Hello");
 }
@@ -61,12 +65,12 @@ void run_variant_two() {
 void run_variant_three()
 {
 	std::vector<std::variant<int, double, std::string>> data;
-	
+
 	// Can use standard algorithms with std::variant
 	std::for_each(data.begin(), data.end(),
 		[](auto& item) {
-			std::visit([](auto&& arg) { std::cout << arg << std::endl; }, item);
-		});
+		std::visit([](auto&& arg) { std::cout << arg << std::endl; }, item);
+	});
 
 }
 //int main()

@@ -29,7 +29,7 @@ void run_stringview()  // string view
 	//func_str(sv);			//No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called, fix below
 	func_str(static_cast<string>(sv)); // str literal -> fun with regular string
 
-	//3. passing string to string_view
+	//........................................... 3. passing string to string_view
 	std::string s = "abc";
 	func_sv(s);				// abc
 

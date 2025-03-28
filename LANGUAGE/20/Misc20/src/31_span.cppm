@@ -5,7 +5,7 @@ using namespace std;
 
 	1. A very lightweight abstraction of a contiguous sequence of values of type T somewhere in memory.
 	2. Basically a struct { T * ptr; std::size_t length; } with a bunch of convenience methods.
-	3. A non-owning type (i.e. a "reference-type" rather than a "value type"): It never allocates nor deallocates anything and does not keep smart pointers alive.
+	3. A non-owning type (i.e. a "reference-type" rather than a "value type"): It never allocates nor deallocates anything and does not keep smart pointers alive.(like a weak pointer)
 	
 	4. Use span<T> (respectively, span<const T>) instead of a free-standing T* (respectively const T*) when the allocated length or size also matter. So, replace functions like:
 			void read_into(int* buffer, size_t buffer_size);

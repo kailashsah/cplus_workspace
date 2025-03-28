@@ -28,23 +28,27 @@ void run_visit() {
 	std::vector<std::variant<int, double, std::string>> myVector = { 1, 3.14, "Hello" };
 
 	for (auto& element : myVector) {
+
 		std::visit([](auto&& arg) {
 			func(arg);
-			}, element);
+		}, element);
+
 	}// for
-	
+
 	 /*
 		Called func(int): 1
 		Called func(double): 3.14
 		Called func(string): Hello
-	
+
 	*/
 }
 
 void run_without_visit() {
+
 	std::vector<std::variant<int, double, std::string>> vec = { 1, 3.14, "hello" };
 
 	for (const auto& variant : vec) {
+
 		if (std::holds_alternative<int>(variant)) {
 			int value = std::get<int>(variant);
 			func(value);
@@ -57,6 +61,8 @@ void run_without_visit() {
 			std::string value = std::get<std::string>(variant);
 			func(value);
 		}
+
+
 	}
 }
 
