@@ -25,7 +25,7 @@ public:
 		cout << "derived fun1()" << endl;
 	}
 
-	//2. void fun2(int) //if this is defined insted of above -	Error	C2259	'derived': cannot instantiate abstract class	
+	//2. void fun2(int) //if this is defined instead of above -	Error	C2259	'derived': cannot instantiate abstract class	
 
 };
 

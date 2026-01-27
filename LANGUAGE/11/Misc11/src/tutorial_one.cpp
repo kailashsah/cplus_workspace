@@ -34,13 +34,13 @@ void run_member_init()
 }
 
 //-------------------------------------------------------
-
+using high_resolution_clock = std::chrono::steady_clock;
 void run_chrono()
 {
-	auto start = chrono::high_resolution_clock::now();
+	auto start = high_resolution_clock::now();
 
 	this_thread::sleep_for(chrono::milliseconds(2500));
-	auto end = chrono::high_resolution_clock::now();
+	auto end = high_resolution_clock::now();
 	auto aa = chrono::duration_cast<chrono::milliseconds> (end - start);
 	printt(to_string(aa.count()));
 }
@@ -74,7 +74,8 @@ void run_tute()
 
 //int main()
 //{
-//	run_tute();
+//	run_chrono();
+//	//run_tute();
 //	return 0;
 //}
 

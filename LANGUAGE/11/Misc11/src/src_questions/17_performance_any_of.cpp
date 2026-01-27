@@ -16,6 +16,12 @@ using namespace std;
 		- for_each()
 		- Concurrency::parallel_for_each()
 */
+/*
+	chrono::high_resolution_clock::now();
+	high_resolution_clock -> gives a type issue if built on vs22 prof with cpp14/20 config
+	In MSVC it’s usually the same as steady_clock, so I typedef as std::chrono::steady_clock;
+
+*/
 
 #include <vector>
 #include <thread>
@@ -25,12 +31,13 @@ initializer_list<int> ilist = { 10, 9,8 };
 vector<int> vec(10);
 
 #include <ppl.h> // parallel_for_each()
+using high_resolution_clock = std::chrono::steady_clock;
 void run_per1() {
 
 
 	//fill(vec.begin(), vec.end(), 10);
 	iota(vec.begin(), vec.end(), 0);
-	auto start = chrono::high_resolution_clock::now();
+	auto start = high_resolution_clock::now();
 
 	//this_thread::sleep_for(chrono::milliseconds(100));
 
@@ -57,7 +64,7 @@ void run_per1() {
 			}))
 			cout << "match" << endl;*/
 	}
-	auto end = chrono::high_resolution_clock::now();
+	auto end = high_resolution_clock::now();
 	auto aa = chrono::duration_cast<chrono::microseconds> (end - start);
 	cout << aa.count() << endl;
 }
@@ -65,7 +72,7 @@ void run_per1() {
 void run_per2() {
 	iota(vec.begin(), vec.end(), 0);
 
-	auto start = chrono::high_resolution_clock::now();
+	auto start = high_resolution_clock::now();
 	//this_thread::sleep_for(chrono::milliseconds(100));
 	//for (int i : vec)
 	//{
@@ -90,14 +97,14 @@ void run_per2() {
 			}
 			});
 	}
-	auto end = chrono::high_resolution_clock::now();
+	auto end = high_resolution_clock::now();
 	auto aa = chrono::duration_cast<chrono::microseconds> (end - start);
 	cout << aa.count() << endl;
 }
 void run_per3() {
 	iota(vec.begin(), vec.end(), 0);
 
-	auto start = chrono::high_resolution_clock::now();
+	auto start = high_resolution_clock::now();
 	//this_thread::sleep_for(chrono::milliseconds(100));
 	for (int i : vec)
 	{
@@ -108,7 +115,7 @@ void run_per3() {
 			cout << "match" << endl;
 	}
 
-	auto end = chrono::high_resolution_clock::now();
+	auto end = high_resolution_clock::now();
 	auto aa = chrono::duration_cast<chrono::microseconds> (end - start);
 	cout << aa.count() << endl;
 }
