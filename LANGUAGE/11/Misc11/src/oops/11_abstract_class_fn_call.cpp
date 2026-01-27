@@ -34,6 +34,7 @@ void run_derived_class() {
 	derived* der_obj = new derived;
 	der_obj->func2(); // func2() not present present in child class
 	/*
+		output - 
 		base func2
 		derived fun1()
 	*/

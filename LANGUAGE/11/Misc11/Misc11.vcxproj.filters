@@ -129,6 +129,9 @@
     <ClCompile Include="src\src_questions\static_member_init.cpp">
       <Filter>src_questions</Filter>
     </ClCompile>
+    <ClCompile Include="src\oops\12_abstract_class_ptr_args.cpp">
+      <Filter>oops</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src_questions">
