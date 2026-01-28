@@ -132,6 +132,9 @@
     <ClCompile Include="src\oops\12_abstract_class_ptr_args.cpp">
       <Filter>oops</Filter>
     </ClCompile>
+    <ClCompile Include="src\oops\13_simpleclass_move_constructs.cpp">
+      <Filter>oops</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src_questions">
